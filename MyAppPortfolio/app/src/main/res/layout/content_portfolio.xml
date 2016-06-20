@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="arturvasilov.udacity.nanodegree.myappportfolio.PortfolioActivity"
+    tools:showIn="@layout/activity_portfolio">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/buttons_padding"
+        android:paddingRight="@dimen/buttons_padding"
+        android:paddingTop="@dimen/button_top_padding"
+        android:paddingBottom="@dimen/button_bottom_padding">
+
+        <Button
+            android:id="@+id/popular_movies_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/popular_movies"
+            style="@style/ProjectButton.Project"/>
+
+        <Button
+            android:id="@+id/stock_hawk_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/stock_hawk"
+            style="@style/ProjectButton.Project"/>
+
+        <Button
+            android:id="@+id/build_it_bigger_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/build_it_bigger"
+            style="@style/ProjectButton.Project"/>
+
+        <Button
+            android:id="@+id/make_your_app_material_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/make_your_app_material"
+            style="@style/ProjectButton.Project"/>
+
+        <Button
+            android:id="@+id/go_ubiquitous_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/go_ubiquitous"
+            style="@style/ProjectButton.Project"/>
+
+        <Button
+            android:id="@+id/capstone_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/capstone"
+            style="@style/ProjectButton.Capstone"/>
+
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>
