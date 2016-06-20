@@ -23,6 +23,7 @@
         <item name="android:textAllCaps">true</item>
         <item name="android:layout_marginTop">8dp</item>
         <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:padding">6dp</item>
     </style>
 
     <style name="ProjectButton.Project">

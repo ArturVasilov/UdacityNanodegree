@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">My App Portfolio</string>
 
+    <string name="navigation_text">This button will launch my %1$s app</string>
     <string name="popular_movies">Popular Movies</string>
     <string name="stock_hawk">Stock Hawk</string>
     <string name="build_it_bigger">Build it Bigger</string>
