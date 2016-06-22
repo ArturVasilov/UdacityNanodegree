@@ -7,6 +7,8 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.TypedValue;
+import android.view.View;
+import android.widget.ImageView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -67,18 +69,14 @@ public class MoviesActivity extends AppCompatActivity implements MoviesView, Bas
     }
 
     @Override
-    public void onItemClick(@NonNull Movie item) {
-        mPresenter.onItemClick(item);
+    public void onItemClick(@NonNull View view, @NonNull Movie movie) {
+        ImageView imageView = (ImageView) view.findViewById(R.id.image);
+        mRouter.openMovieScreen(imageView, movie);
     }
 
     @Override
     public void showMovies(@NonNull List<Movie> movies) {
         mAdapter.setNewValues(movies);
-    }
-
-    @Override
-    public void openMovieScreen(@NonNull Movie movie) {
-        mRouter.openMovieScreen(movie);
     }
 
     @Override

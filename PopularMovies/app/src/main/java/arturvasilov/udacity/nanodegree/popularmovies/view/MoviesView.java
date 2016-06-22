@@ -13,6 +13,4 @@ public interface MoviesView extends LoadingView {
 
     void showMovies(@NonNull List<Movie> movies);
 
-    void openMovieScreen(@NonNull Movie movie);
-
 }

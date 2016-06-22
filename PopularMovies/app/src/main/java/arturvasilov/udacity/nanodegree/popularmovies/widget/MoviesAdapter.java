@@ -41,7 +41,7 @@ public class MoviesAdapter extends BaseAdapter<MoviesAdapter.ViewHolder, Movie> 
     public void onBindViewHolder(ViewHolder holder, int position) {
         super.onBindViewHolder(holder, position);
         Movie movie = getItem(position);
-        Images.loadMovie(holder.mImageView, movie);
+        Images.loadMovie(holder.mImageView, movie, Images.WIDTH_185);
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {

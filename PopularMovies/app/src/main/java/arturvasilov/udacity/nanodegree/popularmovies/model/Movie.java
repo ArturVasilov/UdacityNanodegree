@@ -20,19 +20,25 @@ public class Movie implements Parcelable {
     @SerializedName("overview")
     private String mOverview;
 
-    @SerializedName("title")
+    @SerializedName("original_title")
     private String mTitle;
+
+    @SerializedName("release_date")
+    private String mReleasedDate;
+
+    @SerializedName("vote_average")
+    private double mVoteAverage;
 
     public Movie() {
     }
 
     public Movie(Parcel in) {
         mId = in.readInt();
-        String[] parcel = new String[3];
-        in.readStringArray(parcel);
-        mPosterPath = parcel[0];
-        mOverview = parcel[1];
-        mTitle = parcel[2];
+        mPosterPath = in.readString();
+        mOverview = in.readString();
+        mTitle = in.readString();
+        mReleasedDate = in.readString();
+        mVoteAverage = in.readDouble();
     }
 
     public int getId() {
@@ -54,6 +60,15 @@ public class Movie implements Parcelable {
         return mTitle;
     }
 
+    @NonNull
+    public String getReleasedDate() {
+        return mReleasedDate;
+    }
+
+    public double getVoteAverage() {
+        return mVoteAverage;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -62,7 +77,11 @@ public class Movie implements Parcelable {
     @Override
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeInt(mId);
-        parcel.writeStringArray(new String[]{mPosterPath, mOverview, mTitle});
+        parcel.writeString(mPosterPath);
+        parcel.writeString(mOverview);
+        parcel.writeString(mTitle);
+        parcel.writeString(mReleasedDate);
+        parcel.writeDouble(mVoteAverage);
     }
 
     public static final Parcelable.Creator<Movie> CREATOR = new Parcelable.Creator<Movie>() {

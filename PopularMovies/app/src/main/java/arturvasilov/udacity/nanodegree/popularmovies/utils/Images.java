@@ -13,11 +13,15 @@ import arturvasilov.udacity.nanodegree.popularmovies.model.Movie;
  */
 public final class Images {
 
+    public static final String WIDTH_185 = "w185";
+    public static final String WIDTH_780 = "w780";
+
     private Images() {
     }
 
-    public static void loadMovie(@NonNull ImageView imageView, @NonNull Movie movie) {
-        String url = BuildConfig.IMAGES_BASE_URL + "w185" + movie.getPosterPath();
+    public static void loadMovie(@NonNull ImageView imageView, @NonNull Movie movie,
+                                 @NonNull String size) {
+        String url = BuildConfig.IMAGES_BASE_URL + size + movie.getPosterPath();
         Picasso.with(imageView.getContext())
                 .load(url)
                 .noFade()
