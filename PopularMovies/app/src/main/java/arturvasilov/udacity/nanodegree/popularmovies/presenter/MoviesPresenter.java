@@ -43,4 +43,8 @@ public class MoviesPresenter {
         RxLoader.create(mContext, mLm, R.id.movies_loader_id, movies)
                 .init(mView::showMovies, throwable -> mView.showError());
     }
+
+    public void onItemClick(@NonNull Movie movie) {
+        mView.openMovieScreen(movie);
+    }
 }

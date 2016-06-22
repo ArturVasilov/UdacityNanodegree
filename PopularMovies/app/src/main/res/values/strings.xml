@@ -3,4 +3,5 @@
     <string name="please_wait">Please, wait</string>
     <string name="loading_progress">Loading…</string>
     <string name="movies_progress">Loading movies…</string>
+    <string name="empty_movies">No movies :(</string>
 </resources>
