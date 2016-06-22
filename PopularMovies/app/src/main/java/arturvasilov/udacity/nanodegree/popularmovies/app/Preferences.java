@@ -26,14 +26,6 @@ public class Preferences {
         return TextUtils.equals(POPULAR_MOVIE_TYPE, prefs.getString(TYPE_KEY, ""));
     }
 
-    public static void setPopularMovieType(@NonNull Context context) {
-        getPrefs(context).edit().putString(TYPE_KEY, POPULAR_MOVIE_TYPE).apply();
-    }
-
-    public static void setTopRatedMovieType(@NonNull Context context) {
-        getPrefs(context).edit().putString(TYPE_KEY, TOP_RATED_MOVIE_TYPE).apply();
-    }
-
     @NonNull
     public static SharedPreferences getPrefs(@NonNull Context context) {
         return context.getSharedPreferences(SETTINGS_NAME, Context.MODE_PRIVATE);
