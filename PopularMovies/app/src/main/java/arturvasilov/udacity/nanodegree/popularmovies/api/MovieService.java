@@ -12,4 +12,7 @@ public interface MovieService {
     @GET("popular/")
     Observable<MoviesResponse> popularMovies();
 
+    @GET("top_rated/")
+    Observable<MoviesResponse> topRatedMovies();
+
 }

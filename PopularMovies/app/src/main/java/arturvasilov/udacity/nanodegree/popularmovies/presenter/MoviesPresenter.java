@@ -8,6 +8,7 @@ import java.util.List;
 
 import arturvasilov.udacity.nanodegree.popularmovies.R;
 import arturvasilov.udacity.nanodegree.popularmovies.api.ApiFactory;
+import arturvasilov.udacity.nanodegree.popularmovies.app.Preferences;
 import arturvasilov.udacity.nanodegree.popularmovies.model.Movie;
 import arturvasilov.udacity.nanodegree.popularmovies.model.MoviesResponse;
 import arturvasilov.udacity.nanodegree.popularmovies.rx.RxLoader;
@@ -25,6 +26,8 @@ public class MoviesPresenter {
     private final MoviesView mView;
     private final LoaderManager mLm;
 
+    private boolean mIsPopular;
+
     public MoviesPresenter(@NonNull Context context, @NonNull MoviesView view, @NonNull LoaderManager lm) {
         mContext = context;
         mView = view;
@@ -32,15 +35,34 @@ public class MoviesPresenter {
     }
 
     public void init() {
-        Observable<List<Movie>> movies = Observable.defer(() -> ApiFactory.getMoviesService()
-                .popularMovies()
+        mIsPopular = Preferences.isPopularMovies(mContext);
+        load(false);
+    }
+
+    public void onResume() {
+        boolean isPopular = Preferences.isPopularMovies(mContext);
+        if (isPopular != mIsPopular) {
+            mIsPopular = isPopular;
+            load(true);
+        }
+    }
+
+    private void load(boolean restart) {
+        Observable<MoviesResponse> observable = mIsPopular
+                ? ApiFactory.getMoviesService().popularMovies()
+                : ApiFactory.getMoviesService().topRatedMovies();
+        Observable<List<Movie>> movies = Observable.defer(() -> observable
                 .doOnSubscribe(mView::showLoading)
                 .doAfterTerminate(mView::hideLoading)
                 .map(MoviesResponse::getMovies)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread()));
 
-        RxLoader.create(mContext, mLm, R.id.movies_loader_id, movies)
-                .init(mView::showMovies, throwable -> mView.showError());
+        RxLoader<List<Movie>> loader = RxLoader.create(mContext, mLm, R.id.movies_loader_id, movies);
+        if (restart) {
+            loader.restart(mView::showMovies, throwable -> mView.showError());
+        } else {
+            loader.init(mView::showMovies, throwable -> mView.showError());
+        }
     }
 }

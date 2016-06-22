@@ -7,6 +7,8 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.TypedValue;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -69,9 +71,30 @@ public class MoviesActivity extends AppCompatActivity implements MoviesView, Bas
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_movies, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.action_settings) {
+            mRouter.navigateToSettingsActivity();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mPresenter.onResume();
+    }
+
+    @Override
     public void onItemClick(@NonNull View view, @NonNull Movie movie) {
         ImageView imageView = (ImageView) view.findViewById(R.id.image);
-        mRouter.openMovieScreen(imageView, movie);
+        mRouter.navigateToMovieScreen(imageView, movie);
     }
 
     @Override

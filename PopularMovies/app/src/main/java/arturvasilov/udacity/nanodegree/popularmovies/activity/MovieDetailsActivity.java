@@ -61,7 +61,8 @@ public class MovieDetailsActivity extends AppCompatActivity implements MovieView
 
         ViewCompat.setTransitionName(findViewById(R.id.app_bar), IMAGE);
 
-        setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }

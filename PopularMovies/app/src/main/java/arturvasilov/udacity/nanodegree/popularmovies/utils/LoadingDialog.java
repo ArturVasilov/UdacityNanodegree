@@ -29,6 +29,9 @@ public class LoadingDialog extends DialogFragment {
     }
 
     public void show(@NonNull FragmentManager manager) {
+        if (manager.findFragmentByTag(TAG) != null) {
+            return;
+        }
         show(manager, TAG);
     }
 
