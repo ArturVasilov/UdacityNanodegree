@@ -1,0 +1,64 @@
+[
+    {
+        "outputFile": "D:\\Git\\Github\\UdacityNanodegree\\PopularMovies\\app\\build\\intermediates\\res\\merged\\debug\\values-sw600dp-land-v13\\values-sw600dp-land-v13.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 46,
+                    "endOffset": 97
+                },
+                "from": {
+                    "file": "D:\\Git\\Github\\UdacityNanodegree\\PopularMovies\\app\\src\\main\\res\\values-sw600dp-land\\dimens.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 57,
+                        "endColumn": 46,
+                        "endOffset": 99
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 102,
+                    "endColumn": 66,
+                    "endOffset": 164
+                },
+                "from": {
+                    "file": "D:\\Git\\Github\\UdacityNanodegree\\PopularMovies\\app\\src\\main\\res\\values-sw600dp-land\\integers.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 104,
+                        "endColumn": 66,
+                        "endOffset": 166
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 169,
+                    "endColumn": 45,
+                    "endOffset": 210
+                },
+                "from": {
+                    "file": "D:\\Git\\Github\\UdacityNanodegree\\PopularMovies\\app\\src\\main\\res\\values-sw600dp-land\\integers.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 57,
+                        "endColumn": 45,
+                        "endOffset": 98
+                    }
+                }
+            }
+        ]
+    }
+]
