@@ -6,6 +6,7 @@
         <variable
             name="model"
             type="arturvasilov.udacity.nanodegree.popularmoviesdatabinding.databinding.viewmodel.MoviesViewModel"/>
+
     </data>
 
     <android.support.design.widget.CoordinatorLayout
@@ -40,6 +41,7 @@
                 app:layoutManager="@{model.layoutManager}"
                 app:empty="@{empty}"
                 app:adapter="@{model.adapter}"
+                app:onItemClick="@{model::onItemClick}"
                 app:movies="@{model.movies}"/>
 
             <arturvasilov.udacity.nanodegree.popularmoviesdatabinding.widget.RefreshingDialogView

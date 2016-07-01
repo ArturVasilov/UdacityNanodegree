@@ -2,22 +2,17 @@ package arturvasilov.udacity.nanodegree.popularmoviesdatabinding.activity;
 
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ImageView;
 
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.R;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.databinding.ActivityMoviesBinding;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.databinding.viewmodel.MoviesViewModel;
-import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.model.Movie;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.router.MoviesRouter;
-import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.widget.BaseAdapter;
 
-public class MoviesActivity extends AppCompatActivity implements BaseAdapter.OnItemClickListener<Movie> {
+public class MoviesActivity extends AppCompatActivity {
 
     private MoviesViewModel mViewModel;
     private MoviesRouter mRouter;
@@ -27,14 +22,13 @@ public class MoviesActivity extends AppCompatActivity implements BaseAdapter.OnI
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movies);
 
+        mRouter = new MoviesRouter(this);
         ActivityMoviesBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_movies);
-        mViewModel = new MoviesViewModel(this, getLoaderManager());
+        mViewModel = new MoviesViewModel(this, getLoaderManager(), mRouter);
         binding.setModel(mViewModel);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        mRouter = new MoviesRouter(this);
 
         mViewModel.init();
     }
@@ -58,11 +52,5 @@ public class MoviesActivity extends AppCompatActivity implements BaseAdapter.OnI
     protected void onResume() {
         super.onResume();
         mViewModel.onResume();
-    }
-
-    @Override
-    public void onItemClick(@NonNull View view, @NonNull Movie movie) {
-        ImageView imageView = (ImageView) view.findViewById(R.id.image);
-        mRouter.navigateToMovieScreen(imageView, movie);
     }
 }

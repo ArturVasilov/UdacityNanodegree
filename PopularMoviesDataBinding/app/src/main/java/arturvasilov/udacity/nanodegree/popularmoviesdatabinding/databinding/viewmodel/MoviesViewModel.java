@@ -8,6 +8,8 @@ import android.support.annotation.NonNull;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.TypedValue;
+import android.view.View;
+import android.widget.ImageView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +20,7 @@ import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.api.ApiFactory;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.app.Preferences;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.model.Movie;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.model.MoviesResponse;
+import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.router.MoviesRouter;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.rx.RxLoader;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.widget.MoviesAdapter;
 import rx.Observable;
@@ -31,15 +34,18 @@ public class MoviesViewModel extends BaseObservable {
 
     private final Context mContext;
     private final LoaderManager mLm;
+    private final MoviesRouter mRouter;
 
     private boolean mIsRefreshing;
     private final List<Movie> mMovies;
 
     private boolean mIsPopular;
 
-    public MoviesViewModel(@NonNull Context context, @NonNull LoaderManager lm) {
+    public MoviesViewModel(@NonNull Context context, @NonNull LoaderManager lm,
+                           @NonNull MoviesRouter router) {
         mContext = context;
         mLm = lm;
+        mRouter = router;
 
         mIsRefreshing = false;
         mMovies = new ArrayList<>();
@@ -91,6 +97,12 @@ public class MoviesViewModel extends BaseObservable {
     @Bindable
     public List<Movie> getMovies() {
         return mMovies;
+    }
+
+    public void onItemClick(@NonNull View view, @NonNull Object obj) {
+        ImageView imageView = (ImageView) view.findViewById(R.id.image);
+        Movie movie = (Movie) obj;
+        mRouter.navigateToMovieScreen(imageView, movie);
     }
 
     private void load(boolean restart) {

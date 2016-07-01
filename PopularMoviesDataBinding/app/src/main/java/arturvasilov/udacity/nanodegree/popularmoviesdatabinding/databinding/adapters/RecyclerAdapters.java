@@ -17,15 +17,18 @@ import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.widget.MoviesAda
  */
 public class RecyclerAdapters {
 
-    @BindingAdapter({"app:layoutManager", "app:adapter", "app:empty"})
+    @BindingAdapter(value = {"app:layoutManager", "app:adapter", "app:empty", "app:onItemClick"}, requireAll = true)
     public static void initRecycler(@NonNull EmptyRecyclerView recycler, @NonNull RecyclerView.LayoutManager layoutManager,
-                                    @NonNull BaseAdapter adapter, @NonNull View emptyView) {
+                                    @NonNull BaseAdapter adapter, @NonNull View emptyView,
+                                    @NonNull BaseAdapter.OnItemClickListener listener) {
         recycler.setLayoutManager(layoutManager);
         recycler.setEmptyView(emptyView);
         adapter.attachToRecyclerView(recycler);
+        //noinspection unchecked
+        adapter.setOnItemClickListener(listener);
     }
 
-    @BindingAdapter({"app:movies"})
+    @BindingAdapter("app:movies")
     public static void setMovies(@NonNull EmptyRecyclerView recycler, @NonNull List<Movie> movies) {
         MoviesAdapter adapter = (MoviesAdapter) recycler.getAdapter();
         if (adapter != null) {
