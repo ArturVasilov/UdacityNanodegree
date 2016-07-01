@@ -1,4 +1,4 @@
-package arturvasilov.udacity.nanodegree.popularmoviesdatabinding.viewmodel;
+package arturvasilov.udacity.nanodegree.popularmoviesdatabinding.databinding.viewmodel;
 
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;

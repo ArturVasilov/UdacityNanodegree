@@ -5,7 +5,7 @@
 
         <variable
             name="model"
-            type="arturvasilov.udacity.nanodegree.popularmoviesdatabinding.viewmodel.MovieDetailsViewModel"/>
+            type="arturvasilov.udacity.nanodegree.popularmoviesdatabinding.databinding.viewmodel.MovieDetailsViewModel"/>
 
         <variable
             name="movie"

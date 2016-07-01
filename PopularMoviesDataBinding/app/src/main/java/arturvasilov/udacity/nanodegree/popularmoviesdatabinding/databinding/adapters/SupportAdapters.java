@@ -1,4 +1,4 @@
-package arturvasilov.udacity.nanodegree.popularmoviesdatabinding.viewmodel.adapters;
+package arturvasilov.udacity.nanodegree.popularmoviesdatabinding.databinding.adapters;
 
 import android.databinding.BindingAdapter;
 import android.support.annotation.ColorRes;
