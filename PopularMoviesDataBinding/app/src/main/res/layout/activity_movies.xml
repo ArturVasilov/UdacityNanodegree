@@ -1,33 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context=".activity.MoviesActivity">
+<layout>
 
-    <include layout="@layout/toolbar"/>
+    <data>
 
-    <RelativeLayout
+        <variable
+            name="model"
+            type="arturvasilov.udacity.nanodegree.popularmoviesdatabinding.databinding.viewmodel.MoviesViewModel"/>
+    </data>
+
+    <android.support.design.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="?attr/actionBarSize">
+        android:fitsSystemWindows="true"
+        tools:context=".activity.MoviesActivity">
 
-        <arturvasilov.udacity.nanodegree.popularmoviesdatabinding.widget.EmptyRecyclerView
-            android:id="@+id/recyclerView"
+        <include layout="@layout/toolbar"/>
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:layout_marginTop="?attr/actionBarSize">
 
-        <TextView
-            android:id="@+id/empty"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="@string/empty_movies"
-            android:textColor="@color/error_text_color"
-            android:textSize="@dimen/middle_text"/>
+            <TextView
+                android:id="@+id/empty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/empty_movies"
+                android:textColor="@color/error_text_color"
+                android:textSize="@dimen/middle_text"/>
 
-    </RelativeLayout>
+            <arturvasilov.udacity.nanodegree.popularmoviesdatabinding.widget.EmptyRecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layoutManager="@{model.layoutManager}"
+                app:empty="@{empty}"
+                app:adapter="@{model.adapter}"
+                app:movies="@{model.movies}"/>
 
-</android.support.design.widget.CoordinatorLayout>
+            <arturvasilov.udacity.nanodegree.popularmoviesdatabinding.widget.RefreshingDialogView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:refreshing="@{model.refreshing}"
+                app:text="@string/movies_progress"/>
+
+        </RelativeLayout>
+
+    </android.support.design.widget.CoordinatorLayout>
+</layout>

@@ -9,7 +9,7 @@ import android.support.v4.content.ContextCompat;
 /**
  * @author Artur Vasilov
  */
-public final class SupportAdapters {
+public class SupportAdapters {
 
     @BindingAdapter("app:expandedTitleColor")
     public static void setExpandedTitleColor(@NonNull CollapsingToolbarLayout layout,

@@ -1,37 +1,25 @@
 package arturvasilov.udacity.nanodegree.popularmoviesdatabinding.activity;
 
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.R;
+import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.databinding.ActivityMoviesBinding;
+import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.databinding.viewmodel.MoviesViewModel;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.model.Movie;
-import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.presenter.MoviesPresenter;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.router.MoviesRouter;
-import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.utils.LoadingDialog;
-import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.view.MoviesView;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.widget.BaseAdapter;
-import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.widget.EmptyRecyclerView;
-import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.widget.MoviesAdapter;
 
-public class MoviesActivity extends AppCompatActivity implements MoviesView, BaseAdapter.OnItemClickListener<Movie> {
+public class MoviesActivity extends AppCompatActivity implements BaseAdapter.OnItemClickListener<Movie> {
 
-    private LoadingDialog mProgressDialog;
-
-    private MoviesAdapter mAdapter;
-
-    private MoviesPresenter mPresenter;
+    private MoviesViewModel mViewModel;
     private MoviesRouter mRouter;
 
     @Override
@@ -39,35 +27,16 @@ public class MoviesActivity extends AppCompatActivity implements MoviesView, Bas
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movies);
 
+        ActivityMoviesBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_movies);
+        mViewModel = new MoviesViewModel(this, getLoaderManager());
+        binding.setModel(mViewModel);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        mProgressDialog = LoadingDialog.create(R.string.movies_progress);
-
-        EmptyRecyclerView recyclerView = (EmptyRecyclerView) findViewById(R.id.recyclerView);
-        int columns = getResources().getInteger(R.integer.columns_count);
-        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getApplicationContext(), columns);
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setEmptyView(findViewById(R.id.empty));
-
-        int imageWidth = getResources().getDisplayMetrics().widthPixels / columns;
-
-        TypedValue typedValue = new TypedValue();
-        getResources().getValue(R.dimen.rows_count, typedValue, true);
-        float rowsCount = typedValue.getFloat();
-        int actionBarHeight = getTheme().resolveAttribute(R.attr.actionBarSize, typedValue, true)
-                ? TypedValue.complexToDimensionPixelSize(typedValue.data, getResources().getDisplayMetrics())
-                : 0;
-
-        int imageHeight = (int) ((getResources().getDisplayMetrics().heightPixels - actionBarHeight) / rowsCount);
-        mAdapter = new MoviesAdapter(new ArrayList<>(), imageWidth, imageHeight);
-        mAdapter.attachToRecyclerView(recyclerView);
-        mAdapter.setOnItemClickListener(this);
-
         mRouter = new MoviesRouter(this);
 
-        mPresenter = new MoviesPresenter(this, this, getLoaderManager());
-        mPresenter.init();
+        mViewModel.init();
     }
 
     @Override
@@ -88,32 +57,12 @@ public class MoviesActivity extends AppCompatActivity implements MoviesView, Bas
     @Override
     protected void onResume() {
         super.onResume();
-        mPresenter.onResume();
+        mViewModel.onResume();
     }
 
     @Override
     public void onItemClick(@NonNull View view, @NonNull Movie movie) {
         ImageView imageView = (ImageView) view.findViewById(R.id.image);
         mRouter.navigateToMovieScreen(imageView, movie);
-    }
-
-    @Override
-    public void showMovies(@NonNull List<Movie> movies) {
-        mAdapter.setNewValues(movies);
-    }
-
-    @Override
-    public void showLoading() {
-        mProgressDialog.show(getFragmentManager());
-    }
-
-    @Override
-    public void hideLoading() {
-        mProgressDialog.cancel();
-    }
-
-    @Override
-    public void showError() {
-        //Do nothing - recyclerview will handle it
     }
 }
