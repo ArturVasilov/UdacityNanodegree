@@ -18,12 +18,15 @@ import android.view.View;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.R;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.databinding.ActivityMovieDetailsBinding;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.model.Movie;
+import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.router.HomeButtonRouter;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.viewmodel.MovieDetailsViewModel;
 
 public class MovieDetailsActivity extends AppCompatActivity {
 
     public static final String IMAGE = "image";
     public static final String EXTRA_MOVIE = "extraMovie";
+
+    private HomeButtonRouter mRouter;
 
     public static void navigate(@NonNull AppCompatActivity activity, @NonNull View transitionImage,
                                 @NonNull Movie movie) {
@@ -40,6 +43,12 @@ public class MovieDetailsActivity extends AppCompatActivity {
         prepareTransition();
         setContentView(R.layout.activity_movie_details);
 
+        ActivityMovieDetailsBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_movie_details);
+        Movie movie = getIntent().getParcelableExtra(EXTRA_MOVIE);
+        MovieDetailsViewModel model = new MovieDetailsViewModel(movie);
+        binding.setModel(model);
+        binding.setMovie(movie);
+
         ViewCompat.setTransitionName(findViewById(R.id.app_bar), IMAGE);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -48,18 +57,14 @@ public class MovieDetailsActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
-        ActivityMovieDetailsBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_movie_details);
-        Movie movie = getIntent().getParcelableExtra(EXTRA_MOVIE);
-        MovieDetailsViewModel model = new MovieDetailsViewModel(movie);
-        binding.setModel(model);
-        binding.setMovie(movie);
+        mRouter = new HomeButtonRouter(this);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                //TODO
+                mRouter.onHomeButtonClicked();
                 return true;
         }
 
