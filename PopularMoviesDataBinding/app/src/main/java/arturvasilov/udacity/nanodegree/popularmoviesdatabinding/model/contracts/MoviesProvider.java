@@ -27,10 +27,6 @@ public final class MoviesProvider {
             .appendPath(MovieTable.getTable().getTableName())
             .build();
 
-    public static void save(@NonNull Movie movie, @NonNull Type type) {
-        AppDelegate.getDb().insert(URI, toContentValues(movie, type));
-    }
-
     public static void save(@NonNull List<Movie> movies, @NonNull Type type) {
         ContentValues[] values = new ContentValues[movies.size()];
         for (int i = 0; i < movies.size(); i++) {

@@ -19,7 +19,6 @@ public class Preferences {
 
     private static final String POPULAR_MOVIE_TYPE = "popular";
     private static final String TOP_RATED_MOVIE_TYPE = "top_rated";
-    private static final String FAVOURITE_TYPE = "favourite";
 
     @NonNull
     public static MoviesProvider.Type getMoviesType() {
