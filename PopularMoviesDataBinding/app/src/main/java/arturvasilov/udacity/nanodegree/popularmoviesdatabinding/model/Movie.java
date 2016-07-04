@@ -32,6 +32,16 @@ public class Movie implements Parcelable {
     public Movie() {
     }
 
+    public Movie(int id, @NonNull String posterPath, @NonNull String overview,
+                 @NonNull String title, @NonNull String releasedDate, double voteAverage) {
+        mId = id;
+        mPosterPath = posterPath;
+        mOverview = overview;
+        mTitle = title;
+        mReleasedDate = releasedDate;
+        mVoteAverage = voteAverage;
+    }
+
     public Movie(Parcel in) {
         mId = in.readInt();
         mPosterPath = in.readString();

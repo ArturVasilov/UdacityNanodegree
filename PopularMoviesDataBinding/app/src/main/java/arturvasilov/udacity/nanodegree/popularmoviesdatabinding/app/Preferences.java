@@ -5,6 +5,9 @@ import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
 
+import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.AppDelegate;
+import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.model.contracts.MoviesProvider;
+
 /**
  * @author Artur Vasilov
  */
@@ -16,19 +19,30 @@ public class Preferences {
 
     private static final String POPULAR_MOVIE_TYPE = "popular";
     private static final String TOP_RATED_MOVIE_TYPE = "top_rated";
+    private static final String FAVOURITE_TYPE = "favourite";
 
-    public static boolean isPopularMovies(@NonNull Context context) {
-        SharedPreferences prefs = getPrefs(context);
+    @NonNull
+    public static MoviesProvider.Type getMoviesType() {
+        SharedPreferences prefs = getPrefs();
         if (!prefs.contains(TYPE_KEY)) {
             prefs.edit().putString(TYPE_KEY, POPULAR_MOVIE_TYPE).apply();
-            return true;
+            return MoviesProvider.Type.POPULAR;
         }
-        return TextUtils.equals(POPULAR_MOVIE_TYPE, prefs.getString(TYPE_KEY, ""));
+
+        String type = prefs.getString(TYPE_KEY, "");
+        if (TextUtils.equals(type, POPULAR_MOVIE_TYPE)) {
+            return MoviesProvider.Type.POPULAR;
+        }
+        if (TextUtils.equals(type, TOP_RATED_MOVIE_TYPE)) {
+            return MoviesProvider.Type.TOP_RATED;
+        }
+        return MoviesProvider.Type.FAVOURITE;
     }
 
     @NonNull
-    public static SharedPreferences getPrefs(@NonNull Context context) {
-        return context.getSharedPreferences(SETTINGS_NAME, Context.MODE_PRIVATE);
+    public static SharedPreferences getPrefs() {
+        return AppDelegate.getAppContext()
+                .getSharedPreferences(SETTINGS_NAME, Context.MODE_PRIVATE);
     }
 
 }

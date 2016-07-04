@@ -16,16 +16,14 @@ import java.util.List;
 
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.BR;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.R;
-import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.api.ApiFactory;
+import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.api.RepositoryProvider;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.app.Preferences;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.model.Movie;
-import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.model.MoviesResponse;
+import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.model.contracts.MoviesProvider;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.router.MoviesRouter;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.rx.RxLoader;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.widget.MoviesAdapter;
 import rx.Observable;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.schedulers.Schedulers;
 
 /**
  * @author Artur Vasilov
@@ -40,7 +38,7 @@ public class MoviesViewModel extends BaseObservable {
 
     private boolean mIsRefreshing;
 
-    private boolean mIsPopular;
+    private MoviesProvider.Type mType;
 
     public MoviesViewModel(@NonNull Context context, @NonNull LoaderManager lm,
                            @NonNull MoviesRouter router) {
@@ -53,14 +51,14 @@ public class MoviesViewModel extends BaseObservable {
     }
 
     public void init() {
-        mIsPopular = Preferences.isPopularMovies(mContext);
+        mType = Preferences.getMoviesType();
         load(false);
     }
 
     public void onResume() {
-        boolean isPopular = Preferences.isPopularMovies(mContext);
-        if (isPopular != mIsPopular) {
-            mIsPopular = isPopular;
+        MoviesProvider.Type type = Preferences.getMoviesType();
+        if (mType != type) {
+            mType = type;
             load(true);
         }
     }
@@ -107,15 +105,9 @@ public class MoviesViewModel extends BaseObservable {
     }
 
     private void load(boolean restart) {
-        Observable<MoviesResponse> observable = mIsPopular
-                ? ApiFactory.getMoviesService().popularMovies()
-                : ApiFactory.getMoviesService().topRatedMovies();
-        Observable<List<Movie>> movies = Observable.defer(() -> observable
+        Observable<List<Movie>> movies = RepositoryProvider.getRepository().loadMovies(mType)
                 .doOnSubscribe(() -> setRefreshing(true))
-                .doAfterTerminate(() -> setRefreshing(false))
-                .map(MoviesResponse::getMovies)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread()));
+                .doAfterTerminate(() -> setRefreshing(false));
 
         RxLoader<List<Movie>> loader = RxLoader.create(mContext, mLm, R.id.movies_loader_id, movies);
         if (restart) {

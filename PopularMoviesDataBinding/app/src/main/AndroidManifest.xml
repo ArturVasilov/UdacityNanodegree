@@ -28,6 +28,13 @@
             android:label="@string/title_activity_movie_details"
             android:theme="@style/AppTheme">
         </activity>
+
+        <provider
+            android:authorities="arturvasilov.udacity.nanodegree.popularmoviesdatabinding"
+            android:exported="false"
+            android:name=".sqlite.DatabaseProvider"
+            android:label="MoviesDatabaseProvider"/>
+
     </application>
 
 </manifest>
