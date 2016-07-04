@@ -42,7 +42,7 @@ public class MoviesAdapter extends BaseAdapter<MoviesAdapter.ViewHolder, Movie> 
         super.onBindViewHolder(holder, position);
         Movie movie = getItem(position);
         Images.loadMovie(holder.mImageView, movie, Images.WIDTH_185);
-        Images.fetch(holder.mImageView.getContext(), movie.getPosterPath(), Images.WIDTH_780);
+        Images.fetch(movie.getPosterPath(), Images.WIDTH_780);
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {

@@ -6,6 +6,7 @@ import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
 
+import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.AppDelegate;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.BuildConfig;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.model.Movie;
 
@@ -34,9 +35,9 @@ public final class Images {
                 .into(imageView);
     }
 
-    public static void fetch(@NonNull Context context, @NonNull String posterPath, @NonNull String size) {
+    public static void fetch(@NonNull String posterPath, @NonNull String size) {
         String url = BuildConfig.IMAGES_BASE_URL + size + posterPath;
-        Picasso.with(context)
+        Picasso.with(AppDelegate.getAppContext())
                 .load(url)
                 .fetch();
     }

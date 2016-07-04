@@ -27,6 +27,8 @@ public class MoviesActivity extends AppCompatActivity {
         ActivityMoviesBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_movies);
         mViewModel = new MoviesViewModel(this, getLoaderManager(), mRouter);
         binding.setModel(mViewModel);
+        //loader handles activity restart and returns values to fast, so we need our binding (adapter) to be ready for it
+        binding.executePendingBindings();
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
