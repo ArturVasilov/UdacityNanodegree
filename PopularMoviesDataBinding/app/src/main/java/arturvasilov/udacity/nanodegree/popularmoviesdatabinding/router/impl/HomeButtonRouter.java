@@ -1,4 +1,4 @@
-package arturvasilov.udacity.nanodegree.popularmoviesdatabinding.router;
+package arturvasilov.udacity.nanodegree.popularmoviesdatabinding.router.impl;
 
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;

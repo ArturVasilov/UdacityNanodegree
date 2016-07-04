@@ -11,6 +11,7 @@ import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.R;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.databinding.ActivityMoviesBinding;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.databinding.viewmodel.MoviesViewModel;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.router.MoviesRouter;
+import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.router.impl.MoviesRouterImpl;
 
 public class MoviesActivity extends AppCompatActivity {
 
@@ -22,7 +23,7 @@ public class MoviesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movies);
 
-        mRouter = new MoviesRouter(this);
+        mRouter = new MoviesRouterImpl(this);
         ActivityMoviesBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_movies);
         mViewModel = new MoviesViewModel(this, getLoaderManager(), mRouter);
         binding.setModel(mViewModel);

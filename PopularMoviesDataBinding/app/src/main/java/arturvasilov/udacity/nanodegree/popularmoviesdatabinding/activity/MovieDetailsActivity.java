@@ -19,7 +19,7 @@ import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.R;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.databinding.ActivityMovieDetailsBinding;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.databinding.viewmodel.MovieDetailsViewModel;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.model.Movie;
-import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.router.HomeButtonRouter;
+import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.router.impl.HomeButtonRouter;
 
 public class MovieDetailsActivity extends AppCompatActivity {
 

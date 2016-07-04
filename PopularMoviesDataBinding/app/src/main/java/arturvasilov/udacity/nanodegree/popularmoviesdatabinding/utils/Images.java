@@ -1,5 +1,6 @@
 package arturvasilov.udacity.nanodegree.popularmoviesdatabinding.utils;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.widget.ImageView;
 
@@ -31,5 +32,12 @@ public final class Images {
                 .load(url)
                 .noFade()
                 .into(imageView);
+    }
+
+    public static void fetch(@NonNull Context context, @NonNull String posterPath, @NonNull String size) {
+        String url = BuildConfig.IMAGES_BASE_URL + size + posterPath;
+        Picasso.with(context)
+                .load(url)
+                .fetch();
     }
 }

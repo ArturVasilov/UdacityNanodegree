@@ -36,8 +36,9 @@ public class MoviesViewModel extends BaseObservable {
     private final LoaderManager mLm;
     private final MoviesRouter mRouter;
 
-    private boolean mIsRefreshing;
     private final List<Movie> mMovies;
+
+    private boolean mIsRefreshing;
 
     private boolean mIsPopular;
 
