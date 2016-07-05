@@ -5,6 +5,7 @@ import android.content.Context;
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
 import android.support.annotation.NonNull;
+import android.support.annotation.VisibleForTesting;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.TypedValue;
@@ -122,13 +123,15 @@ public class MoviesViewModel extends BaseObservable {
         notifyPropertyChanged(BR.refreshing);
     }
 
-    private void handleMovies(@NonNull List<Movie> movies) {
+    @VisibleForTesting
+    void handleMovies(@NonNull List<Movie> movies) {
         mMovies.clear();
         mMovies.addAll(movies);
         notifyPropertyChanged(BR.movies);
     }
 
-    private void handleError(@NonNull Throwable throwable) {
+    @VisibleForTesting
+    void handleError(@NonNull Throwable throwable) {
         mMovies.clear();
         notifyPropertyChanged(BR.movies);
     }
