@@ -18,7 +18,7 @@ import android.view.View;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.R;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.databinding.ActivityMovieDetailsBinding;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.databinding.viewmodel.MovieDetailsViewModel;
-import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.model.Movie;
+import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.model.content.Movie;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.router.impl.HomeButtonRouter;
 
 public class MovieDetailsActivity extends AppCompatActivity {
@@ -45,7 +45,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
 
         ActivityMovieDetailsBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_movie_details);
         Movie movie = getIntent().getParcelableExtra(EXTRA_MOVIE);
-        MovieDetailsViewModel model = new MovieDetailsViewModel(movie);
+        MovieDetailsViewModel model = new MovieDetailsViewModel(this, getLoaderManager(), movie);
         binding.setModel(model);
         binding.setMovie(movie);
 
@@ -58,6 +58,8 @@ public class MovieDetailsActivity extends AppCompatActivity {
         }
 
         mRouter = new HomeButtonRouter(this);
+
+        model.init();
     }
 
     @Override

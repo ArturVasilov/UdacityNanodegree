@@ -1,4 +1,4 @@
-package arturvasilov.udacity.nanodegree.popularmoviesdatabinding.model;
+package arturvasilov.udacity.nanodegree.popularmoviesdatabinding.model.content;
 
 import android.os.Parcel;
 import android.os.Parcelable;

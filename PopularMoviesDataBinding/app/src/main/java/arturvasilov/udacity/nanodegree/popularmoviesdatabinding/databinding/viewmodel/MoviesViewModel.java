@@ -19,7 +19,7 @@ import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.BR;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.R;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.api.RepositoryProvider;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.app.Preferences;
-import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.model.Movie;
+import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.model.content.Movie;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.model.contracts.MoviesProvider;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.router.MoviesRouter;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.rx.RxLoader;

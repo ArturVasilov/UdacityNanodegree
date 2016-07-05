@@ -4,9 +4,13 @@ import android.support.annotation.NonNull;
 
 import java.util.List;
 
-import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.model.Movie;
-import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.model.MoviesResponse;
+import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.model.content.Movie;
+import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.model.content.Review;
+import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.model.content.Video;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.model.contracts.MoviesProvider;
+import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.model.response.MoviesResponse;
+import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.model.response.ReviewsResponse;
+import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.model.response.VideosResponse;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.rx.utils.CursorListMapper;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.rx.utils.CursorObservable;
 import rx.Observable;
@@ -44,5 +48,19 @@ public class MoviesRepositoryImpl implements MoviesRepository {
                 .doOnNext(movies -> MoviesProvider.save(movies, type))
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
+    }
+
+    @NonNull
+    @Override
+    public Observable<List<Review>> reviews(@NonNull Movie movie) {
+        return mService.reviews(String.valueOf(movie.getId()))
+                .map(ReviewsResponse::getReviews);
+    }
+
+    @NonNull
+    @Override
+    public Observable<List<Video>> videos(@NonNull Movie movie) {
+        return mService.video(String.valueOf(movie.getId()))
+                .map(VideosResponse::getVideos);
     }
 }

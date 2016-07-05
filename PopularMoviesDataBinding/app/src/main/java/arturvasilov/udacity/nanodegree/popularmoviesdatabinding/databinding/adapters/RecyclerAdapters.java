@@ -7,7 +7,7 @@ import android.view.View;
 
 import java.util.List;
 
-import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.model.Movie;
+import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.model.content.Movie;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.widget.BaseAdapter;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.widget.EmptyRecyclerView;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.widget.MoviesAdapter;

@@ -6,8 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.api.MoviesRepository;
-import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.api.MoviesRepositoryImpl;
-import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.model.Movie;
+import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.model.content.Movie;
+import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.model.content.Review;
+import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.model.content.Video;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.model.contracts.MoviesProvider;
 import rx.Observable;
 
@@ -31,5 +32,17 @@ public class TestMoviesRepository implements MoviesRepository {
     @Override
     public Observable<List<Movie>> loadMovies(@NonNull MoviesProvider.Type type) {
         return Observable.just(mMovies);
+    }
+
+    @NonNull
+    @Override
+    public Observable<List<Review>> reviews(@NonNull Movie movie) {
+        return Observable.empty();
+    }
+
+    @NonNull
+    @Override
+    public Observable<List<Video>> videos(@NonNull Movie movie) {
+        return Observable.empty();
     }
 }
