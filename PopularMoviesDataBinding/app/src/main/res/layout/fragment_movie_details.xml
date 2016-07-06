@@ -129,22 +129,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="@dimen/text_margin"
-                            android:text="@string/reviews_title"
-                            android:textSize="@dimen/info_textsize"
-                            android:visibility="@{model.reviewsEnabled ? View.VISIBLE : View.GONE}"/>
-
-                        <arturvasilov.udacity.nanodegree.popularmoviesdatabinding.widget.EmptyRecyclerView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:visibility="@{model.reviewsEnabled ? View.VISIBLE : View.GONE}"
-                            app:adapter="@{model.reviewsAdapter}"
-                            app:items="@{model.reviews}"
-                            app:layoutManager="@{model.reviewsLayoutManager}"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="@dimen/text_margin"
                             android:text="@string/trailers_title"
                             android:textSize="@dimen/info_textsize"
                             android:visibility="@{model.trailersEnabled ? View.VISIBLE : View.GONE}"/>
@@ -157,6 +141,22 @@
                             app:items="@{model.trailers}"
                             app:layoutManager="@{model.trailersLayoutManager}"
                             app:onItemClick="@{model::onTrailerClick}"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/text_margin"
+                            android:text="@string/reviews_title"
+                            android:textSize="@dimen/info_textsize"
+                            android:visibility="@{model.reviewsEnabled ? View.VISIBLE : View.GONE}"/>
+
+                        <arturvasilov.udacity.nanodegree.popularmoviesdatabinding.widget.EmptyRecyclerView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:visibility="@{model.reviewsEnabled ? View.VISIBLE : View.GONE}"
+                            app:adapter="@{model.reviewsAdapter}"
+                            app:items="@{model.reviews}"
+                            app:layoutManager="@{model.reviewsLayoutManager}"/>
 
                     </LinearLayout>
 

@@ -184,6 +184,7 @@ public class MovieDetailsViewModel extends BaseObservable {
         return mTrailers;
     }
 
+    @SuppressWarnings("unused")
     public void onFavouriteButtonClick(@NonNull View view) {
         Observable<Boolean> observable;
         if (mMovie.isFavourite()) {
@@ -198,6 +199,7 @@ public class MovieDetailsViewModel extends BaseObservable {
         });
     }
 
+    @SuppressWarnings("unused")
     public void onTrailerClick(@NonNull View view, @NonNull Object obj) {
         Video video = (Video) obj;
         Videos.browseVideo(mContext, video);

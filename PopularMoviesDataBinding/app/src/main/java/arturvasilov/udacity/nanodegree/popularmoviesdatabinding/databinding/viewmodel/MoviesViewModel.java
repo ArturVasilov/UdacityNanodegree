@@ -2,6 +2,7 @@ package arturvasilov.udacity.nanodegree.popularmoviesdatabinding.databinding.vie
 
 import android.app.LoaderManager;
 import android.content.Context;
+import android.content.res.Configuration;
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
 import android.support.annotation.NonNull;
@@ -41,6 +42,8 @@ public class MoviesViewModel extends BaseObservable {
 
     private MoviesProvider.Type mType;
 
+    private final boolean mIsTabletLandscape;
+
     public MoviesViewModel(@NonNull Context context, @NonNull LoaderManager lm,
                            @NonNull MoviesRouter router) {
         mContext = context;
@@ -49,6 +52,9 @@ public class MoviesViewModel extends BaseObservable {
 
         mIsRefreshing = false;
         mMovies = new ArrayList<>();
+
+        mIsTabletLandscape = context.getResources().getBoolean(R.bool.is_tablet)
+                && context.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
     }
 
     public void init() {
@@ -82,6 +88,9 @@ public class MoviesViewModel extends BaseObservable {
     public MoviesAdapter getAdapter() {
         int columns = mContext.getResources().getInteger(R.integer.columns_count);
         int imageWidth = mContext.getResources().getDisplayMetrics().widthPixels / columns;
+        if (mIsTabletLandscape) {
+            imageWidth /= 2;
+        }
 
         TypedValue typedValue = new TypedValue();
         mContext.getResources().getValue(R.dimen.rows_count, typedValue, true);
@@ -109,7 +118,13 @@ public class MoviesViewModel extends BaseObservable {
     private void load(boolean restart) {
         Observable<List<Movie>> movies = RepositoryProvider.getRepository().loadMovies(mType)
                 .doOnSubscribe(() -> setRefreshing(true))
-                .doAfterTerminate(() -> setRefreshing(false));
+                .doAfterTerminate(() -> {
+                    setRefreshing(false);
+                    if (mIsTabletLandscape && !mMovies.isEmpty()) {
+                        //noinspection ConstantConditions
+                        mRouter.navigateToMovieScreen(null, mMovies.get(0));
+                    }
+                });
 
         RxLoader<List<Movie>> loader = RxLoader.create(mContext, mLm, R.id.movies_loader_id, movies);
         if (restart) {

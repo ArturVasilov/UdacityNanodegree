@@ -11,7 +11,6 @@ import java.lang.ref.WeakReference;
 
 import rx.Observable;
 import rx.Observer;
-import rx.functions.Action0;
 import rx.functions.Action1;
 import rx.observers.Observers;
 
@@ -42,20 +41,8 @@ public class RxLoader<T> {
         return new RxLoader<>(context.getApplicationContext(), lm, loaderId, observable);
     }
 
-    public void init() {
-        init(Observers.<T>empty());
-    }
-
-    public void init(@NonNull Action1<T> onNext) {
-        init(Observers.create(onNext));
-    }
-
     public void init(@NonNull Action1<T> onNext, @NonNull Action1<Throwable> onError) {
         init(Observers.create(onNext, onError));
-    }
-
-    public void init(@NonNull Action1<T> onNext, @NonNull Action1<Throwable> onError, @NonNull Action0 onComplete) {
-        init(Observers.create(onNext, onError, onComplete));
     }
 
     public void init(@NonNull Observer<T> observer) {
@@ -67,20 +54,8 @@ public class RxLoader<T> {
         }
     }
 
-    public void restart() {
-        restart(Observers.<T>empty());
-    }
-
-    public void restart(@NonNull Action1<T> onNext) {
-        restart(Observers.create(onNext));
-    }
-
     public void restart(@NonNull Action1<T> onNext, @NonNull Action1<Throwable> onError) {
         restart(Observers.create(onNext, onError));
-    }
-
-    public void restart(@NonNull Action1<T> onNext, @NonNull Action1<Throwable> onError, @NonNull Action0 onComplete) {
-        restart(Observers.create(onNext, onError, onComplete));
     }
 
     public void restart(@NonNull Observer<T> observer) {

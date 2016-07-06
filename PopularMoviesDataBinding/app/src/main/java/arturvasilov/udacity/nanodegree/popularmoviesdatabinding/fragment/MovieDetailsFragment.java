@@ -50,6 +50,11 @@ public class MovieDetailsFragment extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        ((MovieDetailsActivity) getActivity()).showTransition();
+        if (getActivity() instanceof MovieDetailsActivity) {
+            ((MovieDetailsActivity) getActivity()).showTransition();
+        } else {
+            //noinspection ConstantConditions
+            getView().findViewById(R.id.toolbar).setVisibility(View.GONE);
+        }
     }
 }

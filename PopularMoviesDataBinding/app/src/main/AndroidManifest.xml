@@ -20,19 +20,19 @@
         </activity>
         <activity
             android:name=".activity.MovieDetailsActivity"
-            android:label="@string/title_activity_movie_details"
+            android:label="@string/movie_details"
             android:theme="@style/AppTheme">
         </activity>
         <activity
             android:name=".activity.SettingsActivity"
-            android:label="@string/title_activity_movie_details"
+            android:label="@string/settings_title"
             android:theme="@style/AppTheme">
         </activity>
 
         <provider
+            android:name=".sqlite.DatabaseProvider"
             android:authorities="arturvasilov.udacity.nanodegree.popularmoviesdatabinding"
             android:exported="false"
-            android:name=".sqlite.DatabaseProvider"
             android:label="MoviesDatabaseProvider"/>
 
     </application>

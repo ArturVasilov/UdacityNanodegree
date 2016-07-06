@@ -12,27 +12,19 @@ class RxResult<T> {
 
     private final Throwable mError;
 
-    private final boolean mIsComplete;
-
-    private RxResult(@Nullable T result, @Nullable Throwable error, boolean isComplete) {
+    private RxResult(@Nullable T result, @Nullable Throwable error) {
         mResult = result;
         mError = error;
-        mIsComplete = isComplete;
     }
 
     @NonNull
     public static <T> RxResult<T> onNext(@Nullable T result) {
-        return new RxResult<>(result, null, false);
+        return new RxResult<>(result, null);
     }
 
     @NonNull
     public static <T> RxResult<T> onError(@Nullable Throwable error) {
-        return new RxResult<>(null, error, false);
-    }
-
-    @NonNull
-    public static <T> RxResult<T> onComplete() {
-        return new RxResult<>(null, null, true);
+        return new RxResult<>(null, error);
     }
 
     @Nullable
@@ -43,10 +35,6 @@ class RxResult<T> {
     @Nullable
     public Throwable getError() {
         return mError;
-    }
-
-    public boolean isOnComplete() {
-        return mIsComplete;
     }
 
 }
