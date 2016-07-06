@@ -31,6 +31,11 @@ public final class MoviesProvider {
         AppDelegate.getDb().insert(URI, toContentValues(movie, type));
     }
 
+    public static void delete(@NonNull Movie movie) {
+        String where = MovieTable.Columns._ID + "=?";
+        AppDelegate.getDb().delete(URI, where, new String[]{String.valueOf(movie.getId())});
+    }
+
     public static void save(@NonNull List<Movie> movies, @NonNull Type type) {
         String where = MovieTable.Columns.TYPE + "=?";
         AppDelegate.getDb().delete(URI, where, new String[]{type.name()});

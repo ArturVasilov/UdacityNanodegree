@@ -5,6 +5,7 @@ import android.content.Context;
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
 import android.support.annotation.ColorRes;
+import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.annotation.VisibleForTesting;
@@ -132,6 +133,17 @@ public class MovieDetailsViewModel extends BaseObservable {
         return mIsLoading;
     }
 
+    @Bindable
+    public boolean isFavourite() {
+        return mMovie.isFavourite();
+    }
+
+    @DrawableRes
+    @Bindable
+    public int getFavouriteImage() {
+        return mMovie.isFavourite() ? android.R.drawable.btn_star_big_on : android.R.drawable.btn_star_big_off;
+    }
+
     @NonNull
     @Bindable
     public RecyclerView.LayoutManager getReviewsLayoutManager() {
@@ -170,6 +182,20 @@ public class MovieDetailsViewModel extends BaseObservable {
     @Bindable
     public List<Video> getTrailers() {
         return mTrailers;
+    }
+
+    public void onFavouriteButtonClick(@NonNull View view) {
+        Observable<Boolean> observable;
+        if (mMovie.isFavourite()) {
+            observable = RepositoryProvider.getRepository().removeFromFavourite(mMovie);
+        } else {
+            observable = RepositoryProvider.getRepository().addToFavourite(mMovie);
+        }
+
+        observable.subscribe(isFavourite -> {
+            mMovie.setFavourite(isFavourite);
+            notifyPropertyChanged(BR.favouriteImage);
+        });
     }
 
     public void onTrailerClick(@NonNull View view, @NonNull Object obj) {

@@ -58,7 +58,8 @@ public class MoviesViewModel extends BaseObservable {
 
     public void onResume() {
         MoviesProvider.Type type = Preferences.getMoviesType();
-        if (mType != type) {
+        //reload if changed or may be favourite movie was deleted
+        if (mType != type || mType == MoviesProvider.Type.FAVOURITE) {
             mType = type;
             load(true);
         }

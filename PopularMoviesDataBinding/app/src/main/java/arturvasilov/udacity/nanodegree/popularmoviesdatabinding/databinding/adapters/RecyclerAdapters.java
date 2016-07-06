@@ -30,6 +30,7 @@ public class RecyclerAdapters {
         if (listener != null) {
             adapter.setOnItemClickListener(listener);
         }
+        recycler.setNestedScrollingEnabled(false);
     }
 
 }

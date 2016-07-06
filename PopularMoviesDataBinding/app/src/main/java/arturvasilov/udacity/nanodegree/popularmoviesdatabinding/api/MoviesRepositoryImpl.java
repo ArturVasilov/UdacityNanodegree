@@ -46,6 +46,8 @@ public class MoviesRepositoryImpl implements MoviesRepository {
                             .map(new CursorListMapper<>(MoviesProvider::fromCursor));
                 })
                 .doOnNext(movies -> MoviesProvider.save(movies, type))
+                .zipWith(CursorObservable.create(MoviesProvider.movies(MoviesProvider.Type.FAVOURITE))
+                        .map(new CursorListMapper<>(MoviesProvider::fromCursor)), this::markFavourites)
                 .compose(new AsyncOperator<>());
     }
 
@@ -83,11 +85,24 @@ public class MoviesRepositoryImpl implements MoviesRepository {
         return Observable.create(new Observable.OnSubscribe<Boolean>() {
             @Override
             public void call(Subscriber<? super Boolean> subscriber) {
-                MoviesProvider.save(movie, MoviesProvider.Type.FAVOURITE);
-                subscriber.onNext(true);
+                MoviesProvider.delete(movie);
+                subscriber.onNext(false);
                 subscriber.onCompleted();
             }
         })
                 .compose(new AsyncOperator<>());
+    }
+
+    @NonNull
+    private List<Movie> markFavourites(@NonNull List<Movie> movies, @NonNull List<Movie> favouriteMovies) {
+        for (Movie movie : movies) {
+            for (Movie favouriteMovie : favouriteMovies) {
+                if (movie.getId() == favouriteMovie.getId()) {
+                    movie.setFavourite(true);
+                    break;
+                }
+            }
+        }
+        return movies;
     }
 }
