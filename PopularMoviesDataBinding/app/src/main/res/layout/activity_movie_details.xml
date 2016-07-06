@@ -10,6 +10,8 @@
         <variable
             name="movie"
             type="arturvasilov.udacity.nanodegree.popularmoviesdatabinding.model.content.Movie"/>
+
+        <import type="android.view.View"/>
     </data>
 
     <android.support.design.widget.CoordinatorLayout
@@ -33,19 +35,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:fitsSystemWindows="true"
-                app:expandedTitleColor="@{model.expandedTitleColor}"
-                app:title="@string/movie_details"
                 app:contentScrim="?attr/colorPrimary"
-                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+                app:expandedTitleColor="@{model.expandedTitleColor}"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                app:title="@string/movie_details">
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/app_bar_height"
                     android:fitsSystemWindows="true"
                     android:scaleType="centerCrop"
+                    app:imageWidth="@{model.imageWidth}"
                     app:layout_collapseMode="parallax"
                     app:posterPath="@{movie.posterPath}"
-                    app:imageWidth="@{model.imageWidth}"
                     tools:ignore="ContentDescription"/>
 
                 <android.support.v7.widget.Toolbar
@@ -91,6 +93,58 @@
                     android:layout_margin="@dimen/text_margin"
                     android:text="@{@string/rating(model.voteAverage, model.voteMax)}"
                     android:textSize="@dimen/info_textsize"/>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="@{model.loading ? View.GONE : View.VISIBLE}">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/text_margin"
+                            android:text="@string/reviews_title"
+                            android:textSize="@dimen/info_textsize"
+                            android:visibility="@{model.reviewsEnabled ? View.VISIBLE : View.GONE}"/>
+
+                        <arturvasilov.udacity.nanodegree.popularmoviesdatabinding.widget.EmptyRecyclerView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:layoutManager="@{model.reviewsLayoutManager}"
+                            app:adapter="@{model.reviewsAdapter}"
+                            app:items="@{model.reviews}"
+                            android:visibility="@{model.reviewsEnabled ? View.VISIBLE : View.GONE}"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/text_margin"
+                            android:text="@string/trailers_title"
+                            android:textSize="@dimen/info_textsize"
+                            android:visibility="@{model.trailersEnabled ? View.VISIBLE : View.GONE}"/>
+
+                        <arturvasilov.udacity.nanodegree.popularmoviesdatabinding.widget.EmptyRecyclerView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:layoutManager="@{model.trailersLayoutManager}"
+                            app:adapter="@{model.trailersAdapter}"
+                            app:onItemClick="@{model::onTrailerClick}"
+                            app:items="@{model.trailers}"
+                            android:visibility="@{model.trailersEnabled ? View.VISIBLE : View.GONE}"/>
+
+                    </LinearLayout>
+
+                    <ProgressBar
+                        android:layout_width="@dimen/progress_bar_size"
+                        android:layout_height="@dimen/progress_bar_size"
+                        android:layout_gravity="center"
+                        android:visibility="@{model.loading ? View.VISIBLE : View.GONE}"/>
+                </FrameLayout>
 
             </LinearLayout>
 

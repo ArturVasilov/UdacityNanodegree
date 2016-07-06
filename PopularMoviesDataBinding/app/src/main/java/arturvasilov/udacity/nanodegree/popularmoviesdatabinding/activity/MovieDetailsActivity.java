@@ -48,6 +48,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
         MovieDetailsViewModel model = new MovieDetailsViewModel(this, getLoaderManager(), movie);
         binding.setModel(model);
         binding.setMovie(movie);
+        binding.executePendingBindings();
 
         ViewCompat.setTransitionName(findViewById(R.id.app_bar), IMAGE);
 

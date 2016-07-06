@@ -1,10 +1,10 @@
 package arturvasilov.udacity.nanodegree.popularmoviesdatabinding.utils;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 
-import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.AppDelegate;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.model.content.Video;
 
 /**
@@ -17,11 +17,10 @@ public final class Videos {
     private Videos() {
     }
 
-    public static void browseVideo(@NonNull Video video) {
+    public static void browseVideo(@NonNull Context context, @NonNull Video video) {
         String videoUrl = YOUTUBE + video.getKey();
-        Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setDataAndType(Uri.parse(videoUrl), "video/*");
-        AppDelegate.getAppContext().startActivity(intent);
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(videoUrl));
+        context.startActivity(intent);
     }
 
 }
