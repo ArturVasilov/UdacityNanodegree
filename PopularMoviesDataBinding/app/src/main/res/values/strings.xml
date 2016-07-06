@@ -28,4 +28,8 @@
         <item>top_rated</item>
         <item>favourite</item>
     </string-array>
+
+
+    <string name="movies_fragment">movies_fragment</string>
+    <string name="details_fragment">details_fragment</string>
 </resources>

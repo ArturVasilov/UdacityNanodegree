@@ -1,7 +1,6 @@
 package arturvasilov.udacity.nanodegree.popularmoviesdatabinding.activity;
 
 import android.content.Intent;
-import android.databinding.DataBindingUtil;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -16,8 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.R;
-import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.databinding.ActivityMovieDetailsBinding;
-import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.databinding.viewmodel.MovieDetailsViewModel;
+import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.fragment.MovieDetailsFragment;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.model.content.Movie;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.router.impl.HomeButtonRouter;
 
@@ -42,25 +40,15 @@ public class MovieDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         prepareTransition();
         setContentView(R.layout.activity_movie_details);
-
-        ActivityMovieDetailsBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_movie_details);
         Movie movie = getIntent().getParcelableExtra(EXTRA_MOVIE);
-        MovieDetailsViewModel model = new MovieDetailsViewModel(this, getLoaderManager(), movie);
-        binding.setModel(model);
-        binding.setMovie(movie);
-        binding.executePendingBindings();
-
-        ViewCompat.setTransitionName(findViewById(R.id.app_bar), IMAGE);
-
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        MovieDetailsFragment fragment = MovieDetailsFragment.create(movie);
+        if (savedInstanceState == null) {
+            getFragmentManager().beginTransaction()
+                    .replace(R.id.container, fragment)
+                    .commit();
         }
 
         mRouter = new HomeButtonRouter(this);
-
-        model.init();
     }
 
     @Override
@@ -72,6 +60,16 @@ public class MovieDetailsActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void showTransition() {
+        ViewCompat.setTransitionName(findViewById(R.id.app_bar), IMAGE);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
     }
 
     private void prepareTransition() {
