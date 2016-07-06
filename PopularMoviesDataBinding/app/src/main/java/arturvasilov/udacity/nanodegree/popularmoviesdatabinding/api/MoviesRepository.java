@@ -24,4 +24,9 @@ public interface MoviesRepository {
     @NonNull
     Observable<List<Video>> videos(@NonNull Movie movie);
 
+    @NonNull
+    Observable<Boolean> addToFavourite(@NonNull Movie movie);
+
+    @NonNull
+    Observable<Boolean> removeFromFavourite(@NonNull Movie movie);
 }

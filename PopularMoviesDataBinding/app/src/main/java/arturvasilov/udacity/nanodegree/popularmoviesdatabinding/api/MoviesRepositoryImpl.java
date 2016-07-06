@@ -11,11 +11,11 @@ import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.model.contracts.
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.model.response.MoviesResponse;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.model.response.ReviewsResponse;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.model.response.VideosResponse;
+import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.rx.utils.AsyncOperator;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.rx.utils.CursorListMapper;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.rx.utils.CursorObservable;
 import rx.Observable;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.schedulers.Schedulers;
+import rx.Subscriber;
 
 /**
  * @author Artur Vasilov
@@ -46,8 +46,7 @@ public class MoviesRepositoryImpl implements MoviesRepository {
                             .map(new CursorListMapper<>(MoviesProvider::fromCursor));
                 })
                 .doOnNext(movies -> MoviesProvider.save(movies, type))
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread());
+                .compose(new AsyncOperator<>());
     }
 
     @NonNull
@@ -62,5 +61,33 @@ public class MoviesRepositoryImpl implements MoviesRepository {
     public Observable<List<Video>> videos(@NonNull Movie movie) {
         return mService.video(String.valueOf(movie.getId()))
                 .map(VideosResponse::getVideos);
+    }
+
+    @NonNull
+    @Override
+    public Observable<Boolean> addToFavourite(@NonNull Movie movie) {
+        return Observable.create(new Observable.OnSubscribe<Boolean>() {
+            @Override
+            public void call(Subscriber<? super Boolean> subscriber) {
+                MoviesProvider.save(movie, MoviesProvider.Type.FAVOURITE);
+                subscriber.onNext(true);
+                subscriber.onCompleted();
+            }
+        })
+                .compose(new AsyncOperator<>());
+    }
+
+    @NonNull
+    @Override
+    public Observable<Boolean> removeFromFavourite(@NonNull Movie movie) {
+        return Observable.create(new Observable.OnSubscribe<Boolean>() {
+            @Override
+            public void call(Subscriber<? super Boolean> subscriber) {
+                MoviesProvider.save(movie, MoviesProvider.Type.FAVOURITE);
+                subscriber.onNext(true);
+                subscriber.onCompleted();
+            }
+        })
+                .compose(new AsyncOperator<>());
     }
 }

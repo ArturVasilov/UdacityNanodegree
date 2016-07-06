@@ -23,13 +23,12 @@ import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.model.content.Mo
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.model.content.Review;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.model.content.Video;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.rx.RxLoader;
+import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.rx.utils.AsyncOperator;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.utils.Images;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.utils.Videos;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.widget.ReviewsAdapter;
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.widget.TrailersAdapter;
 import rx.Observable;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.schedulers.Schedulers;
 
 /**
  * @author Artur Vasilov
@@ -78,8 +77,7 @@ public class MovieDetailsViewModel extends BaseObservable {
                 })
                 .doOnSubscribe(() -> setLoading(true))
                 .doOnTerminate(() -> setLoading(false))
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread());
+                .compose(new AsyncOperator<>());
 
         RxLoader.create(mContext, mLm, R.id.movie_details_loader_id, details)
                 .restart(value -> {

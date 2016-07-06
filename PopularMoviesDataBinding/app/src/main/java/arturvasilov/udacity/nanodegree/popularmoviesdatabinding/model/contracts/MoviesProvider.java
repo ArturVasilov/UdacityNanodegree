@@ -27,6 +27,10 @@ public final class MoviesProvider {
             .appendPath(MovieTable.getTable().getTableName())
             .build();
 
+    public static void save(@NonNull Movie movie, @NonNull Type type) {
+        AppDelegate.getDb().insert(URI, toContentValues(movie, type));
+    }
+
     public static void save(@NonNull List<Movie> movies, @NonNull Type type) {
         String where = MovieTable.Columns.TYPE + "=?";
         AppDelegate.getDb().delete(URI, where, new String[]{type.name()});

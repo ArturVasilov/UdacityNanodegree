@@ -45,4 +45,16 @@ public class TestMoviesRepository implements MoviesRepository {
     public Observable<List<Video>> videos(@NonNull Movie movie) {
         return Observable.empty();
     }
+
+    @NonNull
+    @Override
+    public Observable<Boolean> addToFavourite(@NonNull Movie movie) {
+        return Observable.just(true);
+    }
+
+    @NonNull
+    @Override
+    public Observable<Boolean> removeFromFavourite(@NonNull Movie movie) {
+        return Observable.just(false);
+    }
 }
