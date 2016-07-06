@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="app_bar_height">240dp</dimen>
+    <item format="float" name="rows_count" type="dimen">2</item>
+    <integer name="columns_count">2</integer>
+</resources>

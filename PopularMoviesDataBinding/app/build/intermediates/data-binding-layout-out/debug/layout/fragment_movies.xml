@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+        
+
+    
+
+                 
+                        
+                                                                                                                   
+
+           
+
+    <android.support.design.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:context=".activity.MoviesActivity" android:tag="layout/fragment_movies_0">
+
+        <include layout="@layout/toolbar"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="?attr/actionBarSize">
+
+            <TextView
+                android:id="@+id/empty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/empty_movies"
+                android:textColor="@color/error_text_color"
+                android:textSize="@dimen/middle_text"/>
+
+            <arturvasilov.udacity.nanodegree.popularmoviesdatabinding.widget.EmptyRecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:tag="binding_1"                   
+                                    
+                                              
+                                                       
+                                           />
+
+            <arturvasilov.udacity.nanodegree.popularmoviesdatabinding.widget.RefreshingDialogView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:tag="binding_2"             
+                app:text="@string/movies_progress"/>
+
+        </RelativeLayout>
+
+    </android.support.design.widget.CoordinatorLayout>
+         
