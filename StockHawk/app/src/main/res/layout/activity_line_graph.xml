@@ -6,6 +6,8 @@
 
     <include layout="@layout/toolbar"/>
 
+    <include layout="@layout/empty"/>
+
     <com.db.chart.view.LineChartView
         android:id="@+id/linechart"
         android:layout_width="match_parent"

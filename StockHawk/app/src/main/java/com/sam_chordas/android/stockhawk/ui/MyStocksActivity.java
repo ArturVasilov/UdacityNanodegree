@@ -84,6 +84,7 @@ public class MyStocksActivity extends AppCompatActivity implements LoaderManager
         mRecyclerView.setAdapter(mCursorAdapter);
 
         mEmptyView = findViewById(R.id.empty);
+        mEmptyView.setVisibility(View.GONE);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.attachToRecyclerView(mRecyclerView);
@@ -190,8 +191,7 @@ public class MyStocksActivity extends AppCompatActivity implements LoaderManager
 
     private void updateStocks(@Nullable Cursor cursor) {
         mCursorAdapter.swapCursor(cursor);
-        Cursor adapterCursor = mCursorAdapter.getCursor();
-        if (adapterCursor == null || adapterCursor.isClosed() || adapterCursor.getCount() == 0) {
+        if (cursor == null || cursor.isClosed() || cursor.getCount() == 0) {
             showEmptyView();
         } else {
             showStocksVisible();

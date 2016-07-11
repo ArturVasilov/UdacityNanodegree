@@ -6,24 +6,22 @@ import android.content.CursorLoader;
 import android.content.Intent;
 import android.content.Loader;
 import android.database.Cursor;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
-import com.db.chart.Tools;
 import com.db.chart.model.LineSet;
 import com.db.chart.view.AxisController;
 import com.db.chart.view.LineChartView;
-import com.db.chart.view.animation.Animation;
 import com.sam_chordas.android.stockhawk.R;
 import com.sam_chordas.android.stockhawk.data.QuoteColumns;
 import com.sam_chordas.android.stockhawk.data.QuoteProvider;
-
-;
 
 /**
  * @author Artur Vasilov
@@ -35,6 +33,7 @@ public class StockDetailsActivity extends AppCompatActivity implements LoaderMan
     private String mSymbol;
 
     private LineChartView mChartView;
+    private TextView mEmptyChartTextView;
 
     public static void start(@NonNull Activity activity, @NonNull String symbol) {
         Intent intent = new Intent(activity, StockDetailsActivity.class);
@@ -53,6 +52,14 @@ public class StockDetailsActivity extends AppCompatActivity implements LoaderMan
         }
 
         mChartView = (LineChartView) findViewById(R.id.linechart);
+        mChartView.setLabelsColor(ContextCompat.getColor(this, R.color.material_blue_500))
+                .setBorderSpacing(16)
+                .setXAxis(false)
+                .setYAxis(false)
+                .setXLabels(AxisController.LabelPosition.NONE);
+
+        mEmptyChartTextView = (TextView) findViewById(R.id.empty);
+        mEmptyChartTextView.setText(R.string.empty_chart);
 
         mSymbol = getIntent().getStringExtra(SYMBOL);
         getLoaderManager().initLoader(R.id.stock_details_loader, Bundle.EMPTY, this);
@@ -79,52 +86,68 @@ public class StockDetailsActivity extends AppCompatActivity implements LoaderMan
 
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor cursor) {
-        if (cursor != null && !cursor.isClosed()) {
+        if (cursor != null && !cursor.isClosed() && cursor.moveToFirst()) {
             renderChart(cursor);
+        } else {
+            showEmptyView();
         }
+        getLoaderManager().destroyLoader(R.id.stock_details_loader);
     }
 
-    public void renderChart(Cursor data) {
+    public void renderChart(@NonNull Cursor cursor) {
+        float minBidPrice = Float.MAX_VALUE;
+        float maxBidPrice = Float.MIN_VALUE;
+
         LineSet lineSet = new LineSet();
-        float minimumPrice = Float.MAX_VALUE;
-        float maximumPrice = Float.MIN_VALUE;
+        do {
+            String label = cursor.getString(cursor.getColumnIndex(QuoteColumns.BIDPRICE));
+            float value = Float.parseFloat(label.replace(',', '.'));
+            lineSet.addPoint(label, value);
 
-        for (data.moveToFirst(); !data.isAfterLast(); data.moveToNext()) {
-            String label = data.getString(data.getColumnIndex(QuoteColumns.BIDPRICE));
-            float price = Float.parseFloat(label.replace(',', '.'));
+            if (minBidPrice > value) {
+                minBidPrice = value;
+            }
+            if (maxBidPrice < value) {
+                maxBidPrice = value;
+            }
+        } while (cursor.moveToNext());
 
-            lineSet.addPoint(label, price);
-            minimumPrice = Math.min(minimumPrice, price);
-            maximumPrice = Math.max(maximumPrice, price);
-        }
+        float minMargin = 2;
+        float maxMargin = 5;
+        float margin = (maxBidPrice - minBidPrice) / 2;
+        margin = Math.min(margin, maxMargin);
+        margin = Math.max(margin, minMargin);
 
-        lineSet.setColor(Color.parseColor("#758cbb"))
-                .setFill(Color.parseColor("#2d374c"))
-                .setDotsColor(Color.parseColor("#758cbb"))
-                .setThickness(4)
-                .setDashed(new float[]{10f, 10f});
+        lineSet.setColor(ContextCompat.getColor(this, R.color.chart_line_color))
+                .setFill(ContextCompat.getColor(this, R.color.chart_fill_color))
+                .setDotsColor(ContextCompat.getColor(this, R.color.chart_dots_color))
+                .setThickness(5)
+                .setDashed(new float[]{8f, 8f});
 
-
-        mChartView.setBorderSpacing(Tools.fromDpToPx(15))
-                .setYLabels(AxisController.LabelPosition.OUTSIDE)
-                .setXLabels(AxisController.LabelPosition.NONE)
-                .setLabelsColor(Color.parseColor("#6a84c3"))
-                .setXAxis(false)
-                .setYAxis(false)
-                .setAxisBorderValues(Math.round(Math.max(0f, minimumPrice - 5f)), Math.round(maximumPrice + 5f))
+        mChartView
+                .setAxisBorderValues(Math.round(Math.max(0f, minBidPrice - margin)), Math.round(maxBidPrice + margin))
                 .addData(lineSet);
 
-        Animation anim = new Animation();
-
         if (lineSet.size() > 1) {
-            mChartView.show(anim);
+            showChart();
+            mChartView.show();
         } else {
-            //TODO : show empty view
+            showEmptyView();
         }
     }
 
     @Override
     public void onLoaderReset(Loader<Cursor> loader) {
         // Do nothing
+    }
+
+    public void showChart() {
+        mEmptyChartTextView.setVisibility(View.GONE);
+        mChartView.setVisibility(View.VISIBLE);
+    }
+
+    private void showEmptyView() {
+        mEmptyChartTextView.setVisibility(View.VISIBLE);
+        mChartView.setVisibility(View.GONE);
     }
 }
