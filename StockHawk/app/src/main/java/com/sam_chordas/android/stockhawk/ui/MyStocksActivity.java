@@ -22,19 +22,21 @@ import com.google.android.gms.gcm.PeriodicTask;
 import com.google.android.gms.gcm.Task;
 import com.melnykov.fab.FloatingActionButton;
 import com.sam_chordas.android.stockhawk.R;
-import com.sam_chordas.android.stockhawk.data.QuoteColumns;
-import com.sam_chordas.android.stockhawk.data.QuoteProvider;
 import com.sam_chordas.android.stockhawk.adapter.QuoteCursorAdapter;
 import com.sam_chordas.android.stockhawk.adapter.RecyclerViewItemClickListener;
-import com.sam_chordas.android.stockhawk.utils.JsonParserUtils;
+import com.sam_chordas.android.stockhawk.data.QuoteColumns;
+import com.sam_chordas.android.stockhawk.data.QuoteProvider;
 import com.sam_chordas.android.stockhawk.service.StockIntentService;
 import com.sam_chordas.android.stockhawk.service.StockTaskService;
 import com.sam_chordas.android.stockhawk.touch_helper.SimpleItemTouchHelperCallback;
+import com.sam_chordas.android.stockhawk.utils.JsonParserUtils;
 import com.sam_chordas.android.stockhawk.utils.Network;
 
 public class MyStocksActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
     private static final int CURSOR_LOADER_ID = 0;
+
+    public static final String SELECTED_STOCK_ID = "selected_weather_id";
 
     /**
      * Used to store the last screen title. For use in {@link #setupActionBar()}.
@@ -72,8 +74,11 @@ public class MyStocksActivity extends AppCompatActivity implements LoaderManager
                 new RecyclerViewItemClickListener.OnItemClickListener() {
                     @Override
                     public void onItemClick(View v, int position) {
-                        //TODO:
-                        // do something on item click
+                        Cursor cursor = mCursorAdapter.getCursor();
+                        if (cursor != null && !cursor.isClosed() && cursor.moveToPosition(position)) {
+                            String stockId = cursor.getString(cursor.getColumnIndex(QuoteColumns._ID));
+                            StockDetailsActivity.start(MyStocksActivity.this, stockId);
+                        }
                     }
                 }));
         mRecyclerView.setAdapter(mCursorAdapter);
@@ -119,8 +124,12 @@ public class MyStocksActivity extends AppCompatActivity implements LoaderManager
             // are updated.
             GcmNetworkManager.getInstance(this).schedule(periodicTask);
         }
-    }
 
+        if (getIntent() != null && getIntent().hasExtra(SELECTED_STOCK_ID)) {
+            String stockId = getIntent().getStringExtra(SELECTED_STOCK_ID);
+            StockDetailsActivity.start(this, stockId);
+        }
+    }
 
     @Override
     public void onResume() {

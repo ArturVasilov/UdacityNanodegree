@@ -58,7 +58,7 @@ public class AddStockDialogFragment extends DialogFragment {
                 toast.setGravity(Gravity.CENTER, Gravity.CENTER, 0);
                 toast.show();
             } else {
-                StockIntentService.start(getContext(), StockIntentService.ADD, input.toString());
+                StockIntentService.start(getActivity(), StockIntentService.ADD, input.toString());
             }
             cursor.close();
         }

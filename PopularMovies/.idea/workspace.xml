@@ -34,7 +34,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -44,7 +46,13 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="28" column="94" selection-start-line="28" selection-start-column="94" selection-end-line="28" selection-end-column="94" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#4403#4404#0" expanded="false" />
+                <element signature="e#4454#4455#0" expanded="false" />
+                <element signature="e#4679#4680#0" expanded="false" />
+                <element signature="e#4710#4711#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -54,7 +62,13 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#779#780#0" expanded="false" />
+                <element signature="e#828#829#0" expanded="false" />
+                <element signature="e#1523#1524#0" expanded="false" />
+                <element signature="e#1558#1559#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -64,7 +78,15 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#547#548#0" expanded="false" />
+                <element signature="e#577#578#0" expanded="false" />
+                <element signature="e#646#647#0" expanded="false" />
+                <element signature="e#683#684#0" expanded="false" />
+                <element signature="e#1052#1053#0" expanded="false" />
+                <element signature="e#1085#1086#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -74,7 +96,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -117,7 +141,15 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#979#980#0" expanded="false" />
+                <element signature="e#1015#1016#0" expanded="false" />
+                <element signature="e#2125#2126#0" expanded="false" />
+                <element signature="e#2168#2169#0" expanded="false" />
+                <element signature="e#2215#2216#0" expanded="false" />
+                <element signature="e#2251#2252#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -2221,7 +2253,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2229,7 +2263,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="28" column="94" selection-start-line="28" selection-start-column="94" selection-end-line="28" selection-end-column="94" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#4403#4404#0" expanded="false" />
+            <element signature="e#4454#4455#0" expanded="false" />
+            <element signature="e#4679#4680#0" expanded="false" />
+            <element signature="e#4710#4711#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2237,7 +2277,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#779#780#0" expanded="false" />
+            <element signature="e#828#829#0" expanded="false" />
+            <element signature="e#1523#1524#0" expanded="false" />
+            <element signature="e#1558#1559#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2245,7 +2291,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#547#548#0" expanded="false" />
+            <element signature="e#577#578#0" expanded="false" />
+            <element signature="e#646#647#0" expanded="false" />
+            <element signature="e#683#684#0" expanded="false" />
+            <element signature="e#1052#1053#0" expanded="false" />
+            <element signature="e#1085#1086#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2253,7 +2307,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2269,7 +2325,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#979#980#0" expanded="false" />
+            <element signature="e#1015#1016#0" expanded="false" />
+            <element signature="e#2125#2126#0" expanded="false" />
+            <element signature="e#2168#2169#0" expanded="false" />
+            <element signature="e#2215#2216#0" expanded="false" />
+            <element signature="e#2251#2252#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2277,7 +2341,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2285,7 +2351,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="28" column="94" selection-start-line="28" selection-start-column="94" selection-end-line="28" selection-end-column="94" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#4403#4404#0" expanded="false" />
+            <element signature="e#4454#4455#0" expanded="false" />
+            <element signature="e#4679#4680#0" expanded="false" />
+            <element signature="e#4710#4711#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2293,7 +2365,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#779#780#0" expanded="false" />
+            <element signature="e#828#829#0" expanded="false" />
+            <element signature="e#1523#1524#0" expanded="false" />
+            <element signature="e#1558#1559#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2301,7 +2379,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#547#548#0" expanded="false" />
+            <element signature="e#577#578#0" expanded="false" />
+            <element signature="e#646#647#0" expanded="false" />
+            <element signature="e#683#684#0" expanded="false" />
+            <element signature="e#1052#1053#0" expanded="false" />
+            <element signature="e#1085#1086#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2309,7 +2395,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2325,7 +2413,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#979#980#0" expanded="false" />
+            <element signature="e#1015#1016#0" expanded="false" />
+            <element signature="e#2125#2126#0" expanded="false" />
+            <element signature="e#2168#2169#0" expanded="false" />
+            <element signature="e#2215#2216#0" expanded="false" />
+            <element signature="e#2251#2252#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2333,7 +2429,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2341,7 +2439,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="28" column="94" selection-start-line="28" selection-start-column="94" selection-end-line="28" selection-end-column="94" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#4403#4404#0" expanded="false" />
+            <element signature="e#4454#4455#0" expanded="false" />
+            <element signature="e#4679#4680#0" expanded="false" />
+            <element signature="e#4710#4711#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2349,7 +2453,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#779#780#0" expanded="false" />
+            <element signature="e#828#829#0" expanded="false" />
+            <element signature="e#1523#1524#0" expanded="false" />
+            <element signature="e#1558#1559#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2357,7 +2467,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#547#548#0" expanded="false" />
+            <element signature="e#577#578#0" expanded="false" />
+            <element signature="e#646#647#0" expanded="false" />
+            <element signature="e#683#684#0" expanded="false" />
+            <element signature="e#1052#1053#0" expanded="false" />
+            <element signature="e#1085#1086#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2365,7 +2483,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2381,7 +2501,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#979#980#0" expanded="false" />
+            <element signature="e#1015#1016#0" expanded="false" />
+            <element signature="e#2125#2126#0" expanded="false" />
+            <element signature="e#2168#2169#0" expanded="false" />
+            <element signature="e#2215#2216#0" expanded="false" />
+            <element signature="e#2251#2252#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2389,7 +2517,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2397,7 +2527,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="28" column="94" selection-start-line="28" selection-start-column="94" selection-end-line="28" selection-end-column="94" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#4403#4404#0" expanded="false" />
+            <element signature="e#4454#4455#0" expanded="false" />
+            <element signature="e#4679#4680#0" expanded="false" />
+            <element signature="e#4710#4711#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2405,7 +2541,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#779#780#0" expanded="false" />
+            <element signature="e#828#829#0" expanded="false" />
+            <element signature="e#1523#1524#0" expanded="false" />
+            <element signature="e#1558#1559#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2413,7 +2555,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#547#548#0" expanded="false" />
+            <element signature="e#577#578#0" expanded="false" />
+            <element signature="e#646#647#0" expanded="false" />
+            <element signature="e#683#684#0" expanded="false" />
+            <element signature="e#1052#1053#0" expanded="false" />
+            <element signature="e#1085#1086#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2421,7 +2571,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2429,7 +2581,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#979#980#0" expanded="false" />
+            <element signature="e#1015#1016#0" expanded="false" />
+            <element signature="e#2125#2126#0" expanded="false" />
+            <element signature="e#2168#2169#0" expanded="false" />
+            <element signature="e#2215#2216#0" expanded="false" />
+            <element signature="e#2251#2252#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2437,7 +2597,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2445,7 +2607,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="28" column="94" selection-start-line="28" selection-start-column="94" selection-end-line="28" selection-end-column="94" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#4403#4404#0" expanded="false" />
+            <element signature="e#4454#4455#0" expanded="false" />
+            <element signature="e#4679#4680#0" expanded="false" />
+            <element signature="e#4710#4711#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2453,7 +2621,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#779#780#0" expanded="false" />
+            <element signature="e#828#829#0" expanded="false" />
+            <element signature="e#1523#1524#0" expanded="false" />
+            <element signature="e#1558#1559#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2461,7 +2635,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#547#548#0" expanded="false" />
+            <element signature="e#577#578#0" expanded="false" />
+            <element signature="e#646#647#0" expanded="false" />
+            <element signature="e#683#684#0" expanded="false" />
+            <element signature="e#1052#1053#0" expanded="false" />
+            <element signature="e#1085#1086#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2469,7 +2651,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2477,7 +2661,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#979#980#0" expanded="false" />
+            <element signature="e#1015#1016#0" expanded="false" />
+            <element signature="e#2125#2126#0" expanded="false" />
+            <element signature="e#2168#2169#0" expanded="false" />
+            <element signature="e#2215#2216#0" expanded="false" />
+            <element signature="e#2251#2252#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2485,7 +2677,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2493,7 +2687,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="28" column="94" selection-start-line="28" selection-start-column="94" selection-end-line="28" selection-end-column="94" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#4403#4404#0" expanded="false" />
+            <element signature="e#4454#4455#0" expanded="false" />
+            <element signature="e#4679#4680#0" expanded="false" />
+            <element signature="e#4710#4711#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2501,7 +2701,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#779#780#0" expanded="false" />
+            <element signature="e#828#829#0" expanded="false" />
+            <element signature="e#1523#1524#0" expanded="false" />
+            <element signature="e#1558#1559#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2509,7 +2715,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2517,7 +2725,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="28" column="94" selection-start-line="28" selection-start-column="94" selection-end-line="28" selection-end-column="94" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#4403#4404#0" expanded="false" />
+            <element signature="e#4454#4455#0" expanded="false" />
+            <element signature="e#4679#4680#0" expanded="false" />
+            <element signature="e#4710#4711#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2525,7 +2739,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#779#780#0" expanded="false" />
+            <element signature="e#828#829#0" expanded="false" />
+            <element signature="e#1523#1524#0" expanded="false" />
+            <element signature="e#1558#1559#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2533,7 +2753,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2541,7 +2763,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="28" column="94" selection-start-line="28" selection-start-column="94" selection-end-line="28" selection-end-column="94" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#4403#4404#0" expanded="false" />
+            <element signature="e#4454#4455#0" expanded="false" />
+            <element signature="e#4679#4680#0" expanded="false" />
+            <element signature="e#4710#4711#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2549,7 +2777,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#779#780#0" expanded="false" />
+            <element signature="e#828#829#0" expanded="false" />
+            <element signature="e#1523#1524#0" expanded="false" />
+            <element signature="e#1558#1559#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2557,7 +2791,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2565,7 +2801,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="28" column="94" selection-start-line="28" selection-start-column="94" selection-end-line="28" selection-end-column="94" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#4403#4404#0" expanded="false" />
+            <element signature="e#4454#4455#0" expanded="false" />
+            <element signature="e#4679#4680#0" expanded="false" />
+            <element signature="e#4710#4711#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2573,7 +2815,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#779#780#0" expanded="false" />
+            <element signature="e#828#829#0" expanded="false" />
+            <element signature="e#1523#1524#0" expanded="false" />
+            <element signature="e#1558#1559#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2581,7 +2829,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#979#980#0" expanded="false" />
+            <element signature="e#1015#1016#0" expanded="false" />
+            <element signature="e#2125#2126#0" expanded="false" />
+            <element signature="e#2168#2169#0" expanded="false" />
+            <element signature="e#2215#2216#0" expanded="false" />
+            <element signature="e#2251#2252#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2589,7 +2845,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#547#548#0" expanded="false" />
+            <element signature="e#577#578#0" expanded="false" />
+            <element signature="e#646#647#0" expanded="false" />
+            <element signature="e#683#684#0" expanded="false" />
+            <element signature="e#1052#1053#0" expanded="false" />
+            <element signature="e#1085#1086#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2597,7 +2861,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
