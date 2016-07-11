@@ -94,7 +94,12 @@ public class StockDetailsActivity extends AppCompatActivity implements LoaderMan
         getLoaderManager().destroyLoader(R.id.stock_details_loader);
     }
 
-    public void renderChart(@NonNull Cursor cursor) {
+    @Override
+    public void onLoaderReset(Loader<Cursor> loader) {
+        // Do nothing
+    }
+
+    private void renderChart(@NonNull Cursor cursor) {
         float minBidPrice = Float.MAX_VALUE;
         float maxBidPrice = Float.MIN_VALUE;
 
@@ -136,12 +141,7 @@ public class StockDetailsActivity extends AppCompatActivity implements LoaderMan
         }
     }
 
-    @Override
-    public void onLoaderReset(Loader<Cursor> loader) {
-        // Do nothing
-    }
-
-    public void showChart() {
+    private void showChart() {
         mEmptyChartTextView.setVisibility(View.GONE);
         mChartView.setVisibility(View.VISIBLE);
     }

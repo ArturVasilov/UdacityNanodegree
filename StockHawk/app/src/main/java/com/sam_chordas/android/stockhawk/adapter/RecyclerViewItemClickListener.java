@@ -11,8 +11,8 @@ import android.view.View;
  */
 public class RecyclerViewItemClickListener implements RecyclerView.OnItemTouchListener {
 
-    private GestureDetector mGestureDetector;
-    private OnItemClickListener mListener;
+    private final GestureDetector mGestureDetector;
+    private final OnItemClickListener mListener;
 
     public interface OnItemClickListener {
         void onItemClick(View v, int position);

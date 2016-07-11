@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Build;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,8 +32,8 @@ public class QuoteCursorAdapter extends CursorRecyclerViewAdapter<QuoteCursorAda
     private final Context mContext;
     private static Typeface mRobotoLightTypeface;
 
-    public QuoteCursorAdapter(Context context, Cursor cursor) {
-        super(cursor);
+    public QuoteCursorAdapter(@NonNull Context context) {
+        super(null);
         mContext = context;
         mRobotoLightTypeface = Typeface.createFromAsset(mContext.getAssets(), "fonts/Roboto-Light.ttf");
     }
@@ -86,11 +87,6 @@ public class QuoteCursorAdapter extends CursorRecyclerViewAdapter<QuoteCursorAda
         String symbol = c.getString(c.getColumnIndex(QuoteColumns.SYMBOL));
         mContext.getContentResolver().delete(QuoteProvider.Quotes.withSymbol(symbol), null, null);
         notifyItemRemoved(position);
-    }
-
-    @Override
-    public int getItemCount() {
-        return super.getItemCount();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder

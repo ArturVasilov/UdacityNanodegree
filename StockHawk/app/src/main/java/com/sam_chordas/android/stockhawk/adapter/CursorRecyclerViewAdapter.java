@@ -17,9 +17,9 @@ public abstract class CursorRecyclerViewAdapter<VH extends RecyclerView.ViewHold
     private Cursor mCursor;
     private boolean mIsDataValid;
     private int mRowIdColumn;
-    private DataSetObserver mDataSetObserver;
+    private final DataSetObserver mDataSetObserver;
 
-    public CursorRecyclerViewAdapter(Cursor cursor) {
+    public CursorRecyclerViewAdapter(@Nullable Cursor cursor) {
         mCursor = cursor;
         mIsDataValid = cursor != null;
         mRowIdColumn = mIsDataValid ? mCursor.getColumnIndex(BaseColumns._ID) : -1;
@@ -55,7 +55,7 @@ public abstract class CursorRecyclerViewAdapter<VH extends RecyclerView.ViewHold
         super.setHasStableIds(true);
     }
 
-    public abstract void onBindViewHolder(VH viewHolder, Cursor cursor);
+    protected abstract void onBindViewHolder(VH viewHolder, Cursor cursor);
 
     @Override
     public void onBindViewHolder(VH viewHolder, int position) {
@@ -69,10 +69,9 @@ public abstract class CursorRecyclerViewAdapter<VH extends RecyclerView.ViewHold
         onBindViewHolder(viewHolder, mCursor);
     }
 
-    @Nullable
-    public Cursor swapCursor(@Nullable Cursor newCursor) {
+    public void swapCursor(@Nullable Cursor newCursor) {
         if (newCursor == mCursor) {
-            return null;
+            return;
         }
         final Cursor oldCursor = mCursor;
         if (oldCursor != null && mDataSetObserver != null) {
@@ -91,7 +90,6 @@ public abstract class CursorRecyclerViewAdapter<VH extends RecyclerView.ViewHold
             mIsDataValid = false;
             notifyDataSetChanged();
         }
-        return oldCursor;
     }
 
     private class NotifyingDataSetObserver extends DataSetObserver {

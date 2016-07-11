@@ -13,4 +13,6 @@
     <string name="input_prefill" translatable="false"/>
     <string name="input_hint" translatable="false">FB</string>
     <string name="empty_chart">We haven\'t enough data to draw a graph yet</string>
+    <string name="cd_chart">Chart for displaying the stock over the time</string>
+    <string name="cd_add_new_symbol">Add new stock button</string>
 </resources>

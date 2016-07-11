@@ -40,7 +40,7 @@ import okhttp3.Response;
 public class StockTaskService extends GcmTaskService {
 
     private final OkHttpClient mClient = new OkHttpClient();
-    private StringBuilder mStoredSymbols = new StringBuilder();
+    private final StringBuilder mStoredSymbols = new StringBuilder();
     private boolean mIsUpdate;
     private Context mContext;
 

@@ -15,8 +15,8 @@ import com.google.android.gms.gcm.TaskParams;
  */
 public class StockIntentService extends IntentService {
 
-    static final String ACTION = "tag";
-    static final String SYMBOL = "symbol";
+    private static final String ACTION = "tag";
+    private static final String SYMBOL = "symbol";
 
     public static final String INIT = "init";
     public static final String ADD = "add";

@@ -54,14 +54,14 @@ public class JsonParserUtils {
 
     @NonNull
     @SuppressLint("DefaultLocale")
-    public static String truncateBidPrice(String bidPrice) {
+    private static String truncateBidPrice(String bidPrice) {
         bidPrice = String.format("%.2f", Float.parseFloat(bidPrice));
         return bidPrice;
     }
 
     @SuppressLint("DefaultLocale")
     @NonNull
-    public static String truncateChange(String change, boolean isPercentChange) {
+    private static String truncateChange(String change, boolean isPercentChange) {
         String weight = change.substring(0, 1);
         String ampersand = "";
         if (isPercentChange) {
@@ -78,8 +78,8 @@ public class JsonParserUtils {
         return change;
     }
 
-    public static void buildBatchOperation(@NonNull ArrayList<ContentProviderOperation> operations,
-                                                               @NonNull JSONObject jsonObject) {
+    private static void buildBatchOperation(@NonNull ArrayList<ContentProviderOperation> operations,
+                                            @NonNull JSONObject jsonObject) {
         ContentProviderOperation.Builder builder = ContentProviderOperation.newInsert(
                 QuoteProvider.Quotes.CONTENT_URI);
         try {
