@@ -15,11 +15,12 @@ import com.google.android.gms.gcm.TaskParams;
  */
 public class StockIntentService extends IntentService {
 
-    private static final String ACTION = "tag";
-    private static final String SYMBOL = "symbol";
+    static final String ACTION = "tag";
+    static final String SYMBOL = "symbol";
 
     public static final String INIT = "init";
     public static final String ADD = "add";
+    public static final String PERIODIC = "periodic";
 
     public StockIntentService() {
         super(StockIntentService.class.getName());

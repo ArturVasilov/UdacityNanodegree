@@ -11,4 +11,7 @@
   <string name="input_prefill"></string>
   <string name="network_toast">Uh-oh! This app requires an internet connection</string>
   <string name="stock_exists">This stock is already saved!</string>
+  <string name="input_error">Check your input please</string>
+  <string name="system_error">Something bad happened, pleasy try later or check your Internet connection</string>
+  <string name="no_internet_error">Check your internet connection</string>
 </resources>
