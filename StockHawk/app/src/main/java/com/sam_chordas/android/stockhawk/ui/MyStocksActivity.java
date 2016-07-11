@@ -76,8 +76,8 @@ public class MyStocksActivity extends AppCompatActivity implements LoaderManager
                     public void onItemClick(View v, int position) {
                         Cursor cursor = mCursorAdapter.getCursor();
                         if (cursor != null && !cursor.isClosed() && cursor.moveToPosition(position)) {
-                            String stockId = cursor.getString(cursor.getColumnIndex(QuoteColumns._ID));
-                            StockDetailsActivity.start(MyStocksActivity.this, stockId);
+                            String symbol = cursor.getString(cursor.getColumnIndex(QuoteColumns.SYMBOL));
+                            StockDetailsActivity.start(MyStocksActivity.this, symbol);
                         }
                     }
                 }));
