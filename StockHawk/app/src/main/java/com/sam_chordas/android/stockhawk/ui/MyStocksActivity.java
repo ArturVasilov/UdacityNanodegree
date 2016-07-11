@@ -5,10 +5,12 @@ import android.content.CursorLoader;
 import android.content.Loader;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -35,10 +37,13 @@ public class MyStocksActivity extends AppCompatActivity implements LoaderManager
     private static final int CURSOR_LOADER_ID = 0;
 
     /**
-     * Used to store the last screen title. For use in {@link #restoreActionBar()}.
+     * Used to store the last screen title. For use in {@link #setupActionBar()}.
      */
     private CharSequence mTitle;
     private QuoteCursorAdapter mCursorAdapter;
+
+    private RecyclerView mRecyclerView;
+    private View mEmptyView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,12 +60,15 @@ public class MyStocksActivity extends AppCompatActivity implements LoaderManager
                 networkToast();
             }
         }
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
+
+        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         getLoaderManager().initLoader(CURSOR_LOADER_ID, null, this);
 
         mCursorAdapter = new QuoteCursorAdapter(this, null);
-        recyclerView.addOnItemTouchListener(new RecyclerViewItemClickListener(this,
+        mRecyclerView.addOnItemTouchListener(new RecyclerViewItemClickListener(this,
                 new RecyclerViewItemClickListener.OnItemClickListener() {
                     @Override
                     public void onItemClick(View v, int position) {
@@ -68,11 +76,12 @@ public class MyStocksActivity extends AppCompatActivity implements LoaderManager
                         // do something on item click
                     }
                 }));
-        recyclerView.setAdapter(mCursorAdapter);
+        mRecyclerView.setAdapter(mCursorAdapter);
 
+        mEmptyView = findViewById(R.id.empty);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.attachToRecyclerView(recyclerView);
+        fab.attachToRecyclerView(mRecyclerView);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -88,12 +97,12 @@ public class MyStocksActivity extends AppCompatActivity implements LoaderManager
 
         ItemTouchHelper.Callback callback = new SimpleItemTouchHelperCallback(mCursorAdapter);
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(callback);
-        itemTouchHelper.attachToRecyclerView(recyclerView);
+        itemTouchHelper.attachToRecyclerView(mRecyclerView);
 
         mTitle = getTitle();
         if (isConnected) {
-            long period = 3600L;
-            long flex = 10L;
+            long period = 3600;
+            long flex = 10;
             String periodicTag = "periodic";
 
             // create a periodic task to pull stocks once every hour after the app has been opened. This
@@ -123,17 +132,18 @@ public class MyStocksActivity extends AppCompatActivity implements LoaderManager
         Toast.makeText(this, getString(R.string.network_toast), Toast.LENGTH_SHORT).show();
     }
 
-    public void restoreActionBar() {
+    public void setupActionBar() {
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
-        actionBar.setDisplayShowTitleEnabled(true);
-        actionBar.setTitle(mTitle);
+        if (actionBar != null) {
+            actionBar.setDisplayShowTitleEnabled(true);
+            actionBar.setTitle(mTitle);
+        }
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.my_stocks, menu);
-        restoreActionBar();
+        setupActionBar();
         return true;
     }
 
@@ -161,12 +171,32 @@ public class MyStocksActivity extends AppCompatActivity implements LoaderManager
 
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
-        mCursorAdapter.swapCursor(data);
+        updateStocks(data);
     }
 
     @Override
     public void onLoaderReset(Loader<Cursor> loader) {
-        mCursorAdapter.swapCursor(null);
+        updateStocks(null);
+    }
+
+    private void updateStocks(@Nullable Cursor cursor) {
+        mCursorAdapter.swapCursor(cursor);
+        Cursor adapterCursor = mCursorAdapter.getCursor();
+        if (adapterCursor == null || adapterCursor.isClosed() || adapterCursor.getCount() == 0) {
+            showEmptyView();
+        } else {
+            showStocksVisible();
+        }
+    }
+
+    private void showStocksVisible() {
+        mRecyclerView.setVisibility(View.VISIBLE);
+        mEmptyView.setVisibility(View.GONE);
+    }
+
+    private void showEmptyView() {
+        mRecyclerView.setVisibility(View.GONE);
+        mEmptyView.setVisibility(View.VISIBLE);
     }
 
 }

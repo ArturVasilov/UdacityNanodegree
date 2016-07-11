@@ -3,7 +3,6 @@ package com.sam_chordas.android.stockhawk.adapter;
 import android.database.Cursor;
 import android.database.DataSetObserver;
 import android.provider.BaseColumns;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 
@@ -30,7 +29,7 @@ public abstract class CursorRecyclerViewAdapter<VH extends RecyclerView.ViewHold
         }
     }
 
-    @NonNull
+    @Nullable
     public Cursor getCursor() {
         return mCursor;
     }

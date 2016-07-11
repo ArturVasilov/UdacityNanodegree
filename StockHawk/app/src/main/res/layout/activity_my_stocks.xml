@@ -1,27 +1,45 @@
-<FrameLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:fab="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-  <android.support.v7.widget.RecyclerView
-      android:id="@+id/recycler_view"
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"/>
+    <include layout="@layout/toolbar"/>
 
-  <com.melnykov.fab.FloatingActionButton
-      android:id="@+id/fab"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_gravity="bottom|end"
-      android:layout_margin="16dp"
-      android:src="@drawable/ic_add_white_24dp"
-      fab:fab_colorNormal="@color/material_blue_500"
-      fab:fab_colorPressed="@color/material_blue_600"
-      fab:fab_colorRipple="@color/ripple"
-      fab:fab_shadow="true"
-      fab:fab_type="normal"
-      fab:layout_anchor="recycler_view"
-      fab:layout_anchorGravity="bottom | end"
-      />
-</FrameLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/empty"
+            style="@style/InformationTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/no_internet_error"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <com.melnykov.fab.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="16dp"
+            android:src="@drawable/ic_add_white_24dp"
+            fab:fab_colorNormal="@color/material_blue_500"
+            fab:fab_colorPressed="@color/material_blue_600"
+            fab:fab_colorRipple="@color/ripple"
+            fab:fab_shadow="true"
+            fab:fab_type="normal"
+            fab:layout_anchor="recycler_view"
+            fab:layout_anchorGravity="bottom|end"/>
+
+    </FrameLayout>
+
+</LinearLayout>

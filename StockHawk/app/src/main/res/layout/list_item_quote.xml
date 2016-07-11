@@ -39,4 +39,5 @@
             android:paddingLeft="3dp"
             android:paddingRight="3dp"/>
     </LinearLayout>
+
 </LinearLayout>
