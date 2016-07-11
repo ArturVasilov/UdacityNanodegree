@@ -6,6 +6,7 @@ import android.content.OperationApplicationException;
 import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.os.RemoteException;
+import android.support.annotation.NonNull;
 import android.util.Log;
 
 import com.google.android.gms.gcm.GcmNetworkManager;
@@ -13,7 +14,7 @@ import com.google.android.gms.gcm.GcmTaskService;
 import com.google.android.gms.gcm.TaskParams;
 import com.sam_chordas.android.stockhawk.data.QuoteColumns;
 import com.sam_chordas.android.stockhawk.data.QuoteProvider;
-import com.sam_chordas.android.stockhawk.rest.Utils;
+import com.sam_chordas.android.stockhawk.utils.JsonParserUtils;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -32,25 +33,16 @@ public class StockTaskService extends GcmTaskService {
 
     private String LOG_TAG = StockTaskService.class.getSimpleName();
 
-    private OkHttpClient client = new OkHttpClient();
+    private final OkHttpClient mClient = new OkHttpClient();
     private Context mContext;
     private StringBuilder mStoredSymbols = new StringBuilder();
-    private boolean isUpdate;
+    private boolean mIsUpdate;
 
     public StockTaskService() {
     }
 
     public StockTaskService(Context context) {
         mContext = context;
-    }
-
-    String fetchData(String url) throws IOException {
-        Request request = new Request.Builder()
-                .url(url)
-                .build();
-
-        Response response = client.newCall(request).execute();
-        return response.body().string();
     }
 
     @Override
@@ -69,7 +61,7 @@ public class StockTaskService extends GcmTaskService {
             e.printStackTrace();
         }
         if (params.getTag().equals("init") || params.getTag().equals("periodic")) {
-            isUpdate = true;
+            mIsUpdate = true;
             initQueryCursor = mContext.getContentResolver().query(QuoteProvider.Quotes.CONTENT_URI,
                     new String[]{"Distinct " + QuoteColumns.SYMBOL}, null,
                     null, null);
@@ -97,7 +89,7 @@ public class StockTaskService extends GcmTaskService {
                 }
             }
         } else if (params.getTag().equals("add")) {
-            isUpdate = false;
+            mIsUpdate = false;
             // get symbol from params.getExtra and build query
             String stockInput = params.getExtras().getString("symbol");
             try {
@@ -122,13 +114,13 @@ public class StockTaskService extends GcmTaskService {
                 try {
                     ContentValues contentValues = new ContentValues();
                     // update ISCURRENT to 0 (false) so new data is current
-                    if (isUpdate) {
+                    if (mIsUpdate) {
                         contentValues.put(QuoteColumns.ISCURRENT, 0);
                         mContext.getContentResolver().update(QuoteProvider.Quotes.CONTENT_URI, contentValues,
                                 null, null);
                     }
                     mContext.getContentResolver().applyBatch(QuoteProvider.AUTHORITY,
-                            Utils.quoteJsonToContentVals(getResponse));
+                            JsonParserUtils.quoteJsonToContentVals(getResponse));
                 } catch (RemoteException | OperationApplicationException e) {
                     Log.e(LOG_TAG, "Error applying batch insert", e);
                 }
@@ -138,6 +130,16 @@ public class StockTaskService extends GcmTaskService {
         }
 
         return result;
+    }
+
+    @NonNull
+    private String fetchData(@NonNull String url) throws IOException {
+        Request request = new Request.Builder()
+                .url(url)
+                .build();
+
+        Response response = mClient.newCall(request).execute();
+        return response.body().string();
     }
 
 }

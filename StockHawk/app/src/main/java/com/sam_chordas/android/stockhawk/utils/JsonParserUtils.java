@@ -1,4 +1,4 @@
-package com.sam_chordas.android.stockhawk.rest;
+package com.sam_chordas.android.stockhawk.utils;
 
 import android.content.ContentProviderOperation;
 import android.util.Log;
@@ -13,11 +13,11 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 /**
- * Created by sam_chordas on 10/8/15.
+ * @author sam_chordas on 10/8/15.
  */
-public class Utils {
+public class JsonParserUtils {
 
-    private static String LOG_TAG = Utils.class.getSimpleName();
+    private static String LOG_TAG = JsonParserUtils.class.getSimpleName();
 
     public static boolean showPercent = true;
 

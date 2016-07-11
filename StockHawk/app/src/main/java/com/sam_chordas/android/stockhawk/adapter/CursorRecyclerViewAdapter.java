@@ -1,8 +1,10 @@
-package com.sam_chordas.android.stockhawk.rest;
+package com.sam_chordas.android.stockhawk.adapter;
 
-import android.content.Context;
 import android.database.Cursor;
 import android.database.DataSetObserver;
+import android.provider.BaseColumns;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 
 /**
@@ -12,29 +14,30 @@ import android.support.v7.widget.RecyclerView;
  * for the CursorRecyclerViewApater.java code and idea.
  */
 public abstract class CursorRecyclerViewAdapter<VH extends RecyclerView.ViewHolder> extends RecyclerView.Adapter<VH> {
-    private static final String LOG_TAG = CursorRecyclerViewAdapter.class.getSimpleName();
+
     private Cursor mCursor;
-    private boolean dataIsValid;
-    private int rowIdColumn;
+    private boolean mIsDataValid;
+    private int mRowIdColumn;
     private DataSetObserver mDataSetObserver;
 
-    public CursorRecyclerViewAdapter(Context context, Cursor cursor) {
+    public CursorRecyclerViewAdapter(Cursor cursor) {
         mCursor = cursor;
-        dataIsValid = cursor != null;
-        rowIdColumn = dataIsValid ? mCursor.getColumnIndex("_id") : -1;
+        mIsDataValid = cursor != null;
+        mRowIdColumn = mIsDataValid ? mCursor.getColumnIndex(BaseColumns._ID) : -1;
         mDataSetObserver = new NotifyingDataSetObserver();
-        if (dataIsValid) {
+        if (mIsDataValid) {
             mCursor.registerDataSetObserver(mDataSetObserver);
         }
     }
 
+    @NonNull
     public Cursor getCursor() {
         return mCursor;
     }
 
     @Override
     public int getItemCount() {
-        if (dataIsValid && mCursor != null) {
+        if (mIsDataValid && mCursor != null) {
             return mCursor.getCount();
         }
         return 0;
@@ -42,8 +45,8 @@ public abstract class CursorRecyclerViewAdapter<VH extends RecyclerView.ViewHold
 
     @Override
     public long getItemId(int position) {
-        if (dataIsValid && mCursor != null && mCursor.moveToPosition(position)) {
-            return mCursor.getLong(rowIdColumn);
+        if (mIsDataValid && mCursor != null && mCursor.moveToPosition(position)) {
+            return mCursor.getLong(mRowIdColumn);
         }
         return 0;
     }
@@ -57,7 +60,7 @@ public abstract class CursorRecyclerViewAdapter<VH extends RecyclerView.ViewHold
 
     @Override
     public void onBindViewHolder(VH viewHolder, int position) {
-        if (!dataIsValid) {
+        if (!mIsDataValid) {
             throw new IllegalStateException("This should only be called when Cursor is valid");
         }
         if (!mCursor.moveToPosition(position)) {
@@ -67,7 +70,8 @@ public abstract class CursorRecyclerViewAdapter<VH extends RecyclerView.ViewHold
         onBindViewHolder(viewHolder, mCursor);
     }
 
-    public Cursor swapCursor(Cursor newCursor) {
+    @Nullable
+    public Cursor swapCursor(@Nullable Cursor newCursor) {
         if (newCursor == mCursor) {
             return null;
         }
@@ -80,12 +84,12 @@ public abstract class CursorRecyclerViewAdapter<VH extends RecyclerView.ViewHold
             if (mDataSetObserver != null) {
                 mCursor.registerDataSetObserver(mDataSetObserver);
             }
-            rowIdColumn = newCursor.getColumnIndexOrThrow("_id");
-            dataIsValid = true;
+            mRowIdColumn = newCursor.getColumnIndexOrThrow("_id");
+            mIsDataValid = true;
             notifyDataSetChanged();
         } else {
-            rowIdColumn = -1;
-            dataIsValid = false;
+            mRowIdColumn = -1;
+            mIsDataValid = false;
             notifyDataSetChanged();
         }
         return oldCursor;
@@ -95,14 +99,14 @@ public abstract class CursorRecyclerViewAdapter<VH extends RecyclerView.ViewHold
         @Override
         public void onChanged() {
             super.onChanged();
-            dataIsValid = true;
+            mIsDataValid = true;
             notifyDataSetChanged();
         }
 
         @Override
         public void onInvalidated() {
             super.onInvalidated();
-            dataIsValid = false;
+            mIsDataValid = false;
             notifyDataSetChanged();
         }
     }
