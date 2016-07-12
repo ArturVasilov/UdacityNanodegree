@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="joke_activity_padding">64dp</dimen>
+    <dimen name="joke_text_size">16sp</dimen>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+    <style name="JokeTextStyle">
+        <item name="android:textSize">@dimen/joke_text_size</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+</resources>

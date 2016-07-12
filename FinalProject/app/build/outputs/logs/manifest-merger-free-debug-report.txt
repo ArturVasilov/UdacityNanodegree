@@ -1,0 +1,169 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\Git\Github\UdacityNanodegree\FinalProject\app\src\main\AndroidManifest.xml:2:1-16:12
+	package
+		ADDED from D:\Git\Github\UdacityNanodegree\FinalProject\app\src\main\AndroidManifest.xml:3:5-47
+		INJECTED from D:\Git\Github\UdacityNanodegree\FinalProject\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Git\Github\UdacityNanodegree\FinalProject\app\src\free\AndroidManifest.xml
+	android:versionName
+		INJECTED from D:\Git\Github\UdacityNanodegree\FinalProject\app\src\main\AndroidManifest.xml
+		ADDED from D:\Git\Github\UdacityNanodegree\FinalProject\app\src\main\AndroidManifest.xml:2:1-16:12
+		INJECTED from D:\Git\Github\UdacityNanodegree\FinalProject\app\src\free\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\Git\Github\UdacityNanodegree\FinalProject\app\src\main\AndroidManifest.xml:2:11-69
+	android:versionCode
+		INJECTED from D:\Git\Github\UdacityNanodegree\FinalProject\app\src\main\AndroidManifest.xml
+		ADDED from D:\Git\Github\UdacityNanodegree\FinalProject\app\src\main\AndroidManifest.xml:2:1-16:12
+		INJECTED from D:\Git\Github\UdacityNanodegree\FinalProject\app\src\free\AndroidManifest.xml
+uses-permission#android.permission.INTERNET
+ADDED from D:\Git\Github\UdacityNanodegree\FinalProject\app\src\main\AndroidManifest.xml:5:5-67
+MERGED from D:\Git\Github\UdacityNanodegree\FinalProject\app\src\main\AndroidManifest.xml:5:5-67
+MERGED from [com.google.android.gms:play-services-ads-lite:9.2.1] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads-lite\9.2.1\AndroidManifest.xml:20:5-66
+	android:name
+		ADDED from D:\Git\Github\UdacityNanodegree\FinalProject\app\src\main\AndroidManifest.xml:5:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from D:\Git\Github\UdacityNanodegree\FinalProject\app\src\main\AndroidManifest.xml:6:5-79
+MERGED from D:\Git\Github\UdacityNanodegree\FinalProject\app\src\main\AndroidManifest.xml:6:5-79
+MERGED from [com.google.android.gms:play-services-ads-lite:9.2.1] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads-lite\9.2.1\AndroidManifest.xml:21:5-78
+	android:name
+		ADDED from D:\Git\Github\UdacityNanodegree\FinalProject\app\src\main\AndroidManifest.xml:6:22-76
+application
+ADDED from D:\Git\Github\UdacityNanodegree\FinalProject\app\src\main\AndroidManifest.xml:8:5-14:19
+MERGED from D:\Git\Github\UdacityNanodegree\FinalProject\app\src\main\AndroidManifest.xml:8:5-14:19
+MERGED from [FinalProject:joketellingandroid:unspecified] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\FinalProject\joketellingandroid\unspecified\AndroidManifest.xml:11:5-16:19
+MERGED from [com.android.support:appcompat-v7:24.0.0] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.0.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-v4:24.0.0] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-vector-drawable:24.0.0] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.0.0\AndroidManifest.xml:23:5-20
+MERGED from [com.android.support:support-v4:24.0.0] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:animated-vector-drawable:24.0.0] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.0.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-vector-drawable:24.0.0] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.0.0\AndroidManifest.xml:23:5-20
+MERGED from [com.android.support:support-v4:24.0.0] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:appcompat-v7:24.0.0] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.0.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-v4:24.0.0] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-vector-drawable:24.0.0] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.0.0\AndroidManifest.xml:23:5-20
+MERGED from [com.android.support:support-v4:24.0.0] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:animated-vector-drawable:24.0.0] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.0.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-vector-drawable:24.0.0] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.0.0\AndroidManifest.xml:23:5-20
+MERGED from [com.android.support:support-v4:24.0.0] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\AndroidManifest.xml:25:5-20
+MERGED from [com.google.android.gms:play-services-ads-lite:9.2.1] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads-lite\9.2.1\AndroidManifest.xml:24:5-32:19
+MERGED from [com.google.android.gms:play-services-basement:9.2.1] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.2.1\AndroidManifest.xml:20:5-24:19
+MERGED from [com.android.support:support-v4:24.0.0] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\AndroidManifest.xml:25:5-20
+MERGED from [com.google.android.gms:play-services-base:9.2.1] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.2.1\AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.android.gms:play-services-basement:9.2.1] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.2.1\AndroidManifest.xml:20:5-24:19
+MERGED from [com.android.support:support-v4:24.0.0] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\AndroidManifest.xml:25:5-20
+MERGED from [com.google.android.gms:play-services-tasks:9.2.1] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\9.2.1\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-basement:9.2.1] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.2.1\AndroidManifest.xml:20:5-24:19
+MERGED from [com.android.support:support-v4:24.0.0] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\AndroidManifest.xml:25:5-20
+MERGED from [com.google.android.gms:play-services-clearcut:9.2.1] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-clearcut\9.2.1\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-base:9.2.1] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.2.1\AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.android.gms:play-services-basement:9.2.1] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.2.1\AndroidManifest.xml:20:5-24:19
+MERGED from [com.android.support:support-v4:24.0.0] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\AndroidManifest.xml:25:5-20
+MERGED from [com.google.android.gms:play-services-tasks:9.2.1] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\9.2.1\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-basement:9.2.1] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.2.1\AndroidManifest.xml:20:5-24:19
+MERGED from [com.android.support:support-v4:24.0.0] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\AndroidManifest.xml:25:5-20
+MERGED from [com.google.android.gms:play-services-basement:9.2.1] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.2.1\AndroidManifest.xml:20:5-24:19
+MERGED from [com.android.support:support-v4:24.0.0] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\AndroidManifest.xml:25:5-20
+MERGED from [com.google.android.gms:play-services-basement:9.2.1] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.2.1\AndroidManifest.xml:20:5-24:19
+MERGED from [com.android.support:support-v4:24.0.0] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\AndroidManifest.xml:25:5-20
+MERGED from [com.google.android.gms:play-services-gass:9.2.1] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gass\9.2.1\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-basement:9.2.1] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.2.1\AndroidManifest.xml:20:5-24:19
+MERGED from [com.android.support:support-v4:24.0.0] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\AndroidManifest.xml:25:5-20
+	android:label
+		ADDED from D:\Git\Github\UdacityNanodegree\FinalProject\app\src\main\AndroidManifest.xml:11:9-41
+	android:supportsRtl
+		ADDED from [FinalProject:joketellingandroid:unspecified] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\FinalProject\joketellingandroid\unspecified\AndroidManifest.xml:13:9-35
+	android:allowBackup
+		ADDED from D:\Git\Github\UdacityNanodegree\FinalProject\app\src\main\AndroidManifest.xml:9:9-35
+	android:icon
+		ADDED from D:\Git\Github\UdacityNanodegree\FinalProject\app\src\main\AndroidManifest.xml:10:9-43
+	android:theme
+		ADDED from D:\Git\Github\UdacityNanodegree\FinalProject\app\src\main\AndroidManifest.xml:12:9-40
+uses-sdk
+INJECTED from D:\Git\Github\UdacityNanodegree\FinalProject\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [FinalProject:joketellingandroid:unspecified] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\FinalProject\joketellingandroid\unspecified\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:appcompat-v7:24.0.0] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.0.0\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:support-v4:24.0.0] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-vector-drawable:24.0.0] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.0.0\AndroidManifest.xml:21:5-43
+MERGED from [com.android.support:support-v4:24.0.0] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:animated-vector-drawable:24.0.0] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:24.0.0] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.0.0\AndroidManifest.xml:21:5-43
+MERGED from [com.android.support:support-v4:24.0.0] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:appcompat-v7:24.0.0] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.0.0\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:support-v4:24.0.0] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-vector-drawable:24.0.0] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.0.0\AndroidManifest.xml:21:5-43
+MERGED from [com.android.support:support-v4:24.0.0] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:animated-vector-drawable:24.0.0] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:24.0.0] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.0.0\AndroidManifest.xml:21:5-43
+MERGED from [com.android.support:support-v4:24.0.0] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\AndroidManifest.xml:21:5-23:54
+MERGED from [com.google.android.gms:play-services-ads:9.2.1] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\9.2.1\AndroidManifest.xml:19:5-42
+MERGED from [com.google.android.gms:play-services-ads-lite:9.2.1] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads-lite\9.2.1\AndroidManifest.xml:23:5-42
+MERGED from [com.google.android.gms:play-services-basement:9.2.1] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.2.1\AndroidManifest.xml:18:5-42
+MERGED from [com.android.support:support-v4:24.0.0] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\AndroidManifest.xml:21:5-23:54
+MERGED from [com.google.android.gms:play-services-base:9.2.1] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.2.1\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-basement:9.2.1] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.2.1\AndroidManifest.xml:18:5-42
+MERGED from [com.android.support:support-v4:24.0.0] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\AndroidManifest.xml:21:5-23:54
+MERGED from [com.google.android.gms:play-services-tasks:9.2.1] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\9.2.1\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-basement:9.2.1] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.2.1\AndroidManifest.xml:18:5-42
+MERGED from [com.android.support:support-v4:24.0.0] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\AndroidManifest.xml:21:5-23:54
+MERGED from [com.google.android.gms:play-services-clearcut:9.2.1] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-clearcut\9.2.1\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-base:9.2.1] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.2.1\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-basement:9.2.1] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.2.1\AndroidManifest.xml:18:5-42
+MERGED from [com.android.support:support-v4:24.0.0] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\AndroidManifest.xml:21:5-23:54
+MERGED from [com.google.android.gms:play-services-tasks:9.2.1] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\9.2.1\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-basement:9.2.1] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.2.1\AndroidManifest.xml:18:5-42
+MERGED from [com.android.support:support-v4:24.0.0] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\AndroidManifest.xml:21:5-23:54
+MERGED from [com.google.android.gms:play-services-basement:9.2.1] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.2.1\AndroidManifest.xml:18:5-42
+MERGED from [com.android.support:support-v4:24.0.0] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\AndroidManifest.xml:21:5-23:54
+MERGED from [com.google.android.gms:play-services-basement:9.2.1] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.2.1\AndroidManifest.xml:18:5-42
+MERGED from [com.android.support:support-v4:24.0.0] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\AndroidManifest.xml:21:5-23:54
+MERGED from [com.google.android.gms:play-services-gass:9.2.1] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gass\9.2.1\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-basement:9.2.1] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.2.1\AndroidManifest.xml:18:5-42
+MERGED from [com.android.support:support-v4:24.0.0] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\AndroidManifest.xml:21:5-23:54
+	tools:overrideLibrary
+		ADDED from [com.android.support:appcompat-v7:24.0.0] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.0.0\AndroidManifest.xml:23:9-75
+	android:targetSdkVersion
+		INJECTED from D:\Git\Github\UdacityNanodegree\FinalProject\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Git\Github\UdacityNanodegree\FinalProject\app\src\free\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\Git\Github\UdacityNanodegree\FinalProject\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Git\Github\UdacityNanodegree\FinalProject\app\src\free\AndroidManifest.xml
+activity#com.udacity.gradle.androidlib.JokesActivity
+ADDED from [FinalProject:joketellingandroid:unspecified] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\FinalProject\joketellingandroid\unspecified\AndroidManifest.xml:15:9-80
+	android:name
+		ADDED from [FinalProject:joketellingandroid:unspecified] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\FinalProject\joketellingandroid\unspecified\AndroidManifest.xml:15:19-77
+activity#com.google.android.gms.ads.AdActivity
+ADDED from [com.google.android.gms:play-services-ads-lite:9.2.1] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads-lite\9.2.1\AndroidManifest.xml:26:9-29:64
+	android:configChanges
+		ADDED from [com.google.android.gms:play-services-ads-lite:9.2.1] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads-lite\9.2.1\AndroidManifest.xml:28:13-122
+	android:theme
+		ADDED from [com.google.android.gms:play-services-ads-lite:9.2.1] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads-lite\9.2.1\AndroidManifest.xml:29:13-61
+	android:name
+		ADDED from [com.google.android.gms:play-services-ads-lite:9.2.1] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads-lite\9.2.1\AndroidManifest.xml:27:13-65
+activity#com.google.android.gms.ads.purchase.InAppPurchaseActivity
+ADDED from [com.google.android.gms:play-services-ads-lite:9.2.1] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads-lite\9.2.1\AndroidManifest.xml:30:9-31:52
+	android:theme
+		ADDED from [com.google.android.gms:play-services-ads-lite:9.2.1] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads-lite\9.2.1\AndroidManifest.xml:31:13-50
+	android:name
+		ADDED from [com.google.android.gms:play-services-ads-lite:9.2.1] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads-lite\9.2.1\AndroidManifest.xml:30:19-91
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:9.2.1] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.2.1\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:9.2.1] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.2.1\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:9.2.1] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.2.1\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:9.2.1] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.2.1\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:9.2.1] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.2.1\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:9.2.1] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.2.1\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:9.2.1] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.2.1\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:9.2.1] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.2.1\AndroidManifest.xml:21:9-23:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:9.2.1] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.2.1\AndroidManifest.xml:23:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:9.2.1] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.2.1\AndroidManifest.xml:22:13-58
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:9.2.1] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.2.1\AndroidManifest.xml:20:9-22:45
+MERGED from [com.google.android.gms:play-services-base:9.2.1] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.2.1\AndroidManifest.xml:20:9-22:45
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:9.2.1] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.2.1\AndroidManifest.xml:22:19-43
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:9.2.1] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.2.1\AndroidManifest.xml:21:19-78
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:9.2.1] D:\Git\Github\UdacityNanodegree\FinalProject\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.2.1\AndroidManifest.xml:20:19-85

@@ -1,0 +1,710 @@
+[
+    {
+        "outputFile": "D:\\Git\\Github\\UdacityNanodegree\\FinalProject\\app\\build\\intermediates\\res\\merged\\free\\debug\\values-km\\values-km.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 105,
+                    "endColumn": 69,
+                    "endOffset": 170
+                },
+                "from": {
+                    "file": "D:\\Git\\Github\\UdacityNanodegree\\FinalProject\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-ads-lite\\9.2.1\\res\\values-km\\values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 280,
+                        "endColumn": 69,
+                        "endOffset": 345
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 175,
+                    "endColumn": 264,
+                    "endOffset": 435
+                },
+                "from": {
+                    "file": "D:\\Git\\Github\\UdacityNanodegree\\FinalProject\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.2.1\\res\\values-km\\values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 329,
+                        "endColumn": 264,
+                        "endOffset": 589
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 440,
+                    "endColumn": 128,
+                    "endOffset": 564
+                },
+                "from": {
+                    "file": "D:\\Git\\Github\\UdacityNanodegree\\FinalProject\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.2.1\\res\\values-km\\values.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 594,
+                        "endColumn": 128,
+                        "endOffset": 718
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 569,
+                    "endColumn": 186,
+                    "endOffset": 751
+                },
+                "from": {
+                    "file": "D:\\Git\\Github\\UdacityNanodegree\\FinalProject\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.2.1\\res\\values-km\\values.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 723,
+                        "endColumn": 186,
+                        "endOffset": 905
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 756,
+                    "endColumn": 122,
+                    "endOffset": 874
+                },
+                "from": {
+                    "file": "D:\\Git\\Github\\UdacityNanodegree\\FinalProject\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.2.1\\res\\values-km\\values.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 910,
+                        "endColumn": 122,
+                        "endOffset": 1028
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 879,
+                    "endColumn": 126,
+                    "endOffset": 1001
+                },
+                "from": {
+                    "file": "D:\\Git\\Github\\UdacityNanodegree\\FinalProject\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.2.1\\res\\values-km\\values.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 1033,
+                        "endColumn": 126,
+                        "endOffset": 1155
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 1006,
+                    "endColumn": 201,
+                    "endOffset": 1203
+                },
+                "from": {
+                    "file": "D:\\Git\\Github\\UdacityNanodegree\\FinalProject\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.2.1\\res\\values-km\\values.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 1160,
+                        "endColumn": 201,
+                        "endOffset": 1357
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 1208,
+                    "endColumn": 201,
+                    "endOffset": 1405
+                },
+                "from": {
+                    "file": "D:\\Git\\Github\\UdacityNanodegree\\FinalProject\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.2.1\\res\\values-km\\values.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 1362,
+                        "endColumn": 201,
+                        "endOffset": 1559
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 1410,
+                    "endColumn": 125,
+                    "endOffset": 1531
+                },
+                "from": {
+                    "file": "D:\\Git\\Github\\UdacityNanodegree\\FinalProject\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.2.1\\res\\values-km\\values.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 1564,
+                        "endColumn": 125,
+                        "endOffset": 1685
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 1536,
+                    "endColumn": 178,
+                    "endOffset": 1710
+                },
+                "from": {
+                    "file": "D:\\Git\\Github\\UdacityNanodegree\\FinalProject\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.2.1\\res\\values-km\\values.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 1690,
+                        "endColumn": 178,
+                        "endOffset": 1864
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 1715,
+                    "endColumn": 127,
+                    "endOffset": 1838
+                },
+                "from": {
+                    "file": "D:\\Git\\Github\\UdacityNanodegree\\FinalProject\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.2.1\\res\\values-km\\values.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 1869,
+                        "endColumn": 127,
+                        "endOffset": 1992
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 1843,
+                    "endColumn": 167,
+                    "endOffset": 2006
+                },
+                "from": {
+                    "file": "D:\\Git\\Github\\UdacityNanodegree\\FinalProject\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.2.1\\res\\values-km\\values.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 1997,
+                        "endColumn": 167,
+                        "endOffset": 2160
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 2011,
+                    "endColumn": 119,
+                    "endOffset": 2126
+                },
+                "from": {
+                    "file": "D:\\Git\\Github\\UdacityNanodegree\\FinalProject\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.2.1\\res\\values-km\\values.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 2165,
+                        "endColumn": 119,
+                        "endOffset": 2280
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 2131,
+                    "endColumn": 137,
+                    "endOffset": 2264
+                },
+                "from": {
+                    "file": "D:\\Git\\Github\\UdacityNanodegree\\FinalProject\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.2.1\\res\\values-km\\values.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 2285,
+                        "endColumn": 137,
+                        "endOffset": 2418
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 2269,
+                    "endColumn": 173,
+                    "endOffset": 2438
+                },
+                "from": {
+                    "file": "D:\\Git\\Github\\UdacityNanodegree\\FinalProject\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.2.1\\res\\values-km\\values.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 2423,
+                        "endColumn": 173,
+                        "endOffset": 2592
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 2443,
+                    "endColumn": 158,
+                    "endOffset": 2597
+                },
+                "from": {
+                    "file": "D:\\Git\\Github\\UdacityNanodegree\\FinalProject\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.2.1\\res\\values-km\\values.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 2597,
+                        "endColumn": 158,
+                        "endOffset": 2751
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 2602,
+                    "endColumn": 178,
+                    "endOffset": 2776
+                },
+                "from": {
+                    "file": "D:\\Git\\Github\\UdacityNanodegree\\FinalProject\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.2.1\\res\\values-km\\values.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 2756,
+                        "endColumn": 178,
+                        "endOffset": 2930
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 19,
+                    "startColumn": 4,
+                    "startOffset": 2781,
+                    "endColumn": 137,
+                    "endOffset": 2914
+                },
+                "from": {
+                    "file": "D:\\Git\\Github\\UdacityNanodegree\\FinalProject\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.2.1\\res\\values-km\\values.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 2935,
+                        "endColumn": 137,
+                        "endOffset": 3068
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 20,
+                    "startColumn": 4,
+                    "startOffset": 2919,
+                    "endColumn": 160,
+                    "endOffset": 3075
+                },
+                "from": {
+                    "file": "D:\\Git\\Github\\UdacityNanodegree\\FinalProject\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.2.1\\res\\values-km\\values.xml",
+                    "position": {
+                        "startLine": 21,
+                        "startColumn": 4,
+                        "startOffset": 3073,
+                        "endColumn": 160,
+                        "endOffset": 3229
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 21,
+                    "startColumn": 4,
+                    "startOffset": 3080,
+                    "endColumn": 127,
+                    "endOffset": 3203
+                },
+                "from": {
+                    "file": "D:\\Git\\Github\\UdacityNanodegree\\FinalProject\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.2.1\\res\\values-km\\values.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 4,
+                        "startOffset": 3234,
+                        "endColumn": 127,
+                        "endOffset": 3357
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 22,
+                    "startColumn": 4,
+                    "startOffset": 3208,
+                    "endColumn": 246,
+                    "endOffset": 3450
+                },
+                "from": {
+                    "file": "D:\\Git\\Github\\UdacityNanodegree\\FinalProject\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\9.2.1\\res\\values-km\\values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 330,
+                        "endColumn": 246,
+                        "endOffset": 572
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 23,
+                    "startColumn": 4,
+                    "startOffset": 3455,
+                    "endColumn": 246,
+                    "endOffset": 3697
+                },
+                "from": {
+                    "file": "D:\\Git\\Github\\UdacityNanodegree\\FinalProject\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.2.1\\res\\values-km\\values.xml",
+                    "position": {
+                        "startLine": 23,
+                        "startColumn": 4,
+                        "startOffset": 3362,
+                        "endColumn": 246,
+                        "endOffset": 3604
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 24,
+                    "startColumn": 4,
+                    "startOffset": 3702,
+                    "endColumn": 128,
+                    "endOffset": 3826
+                },
+                "from": {
+                    "file": "D:\\Git\\Github\\UdacityNanodegree\\FinalProject\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.2.1\\res\\values-km\\values.xml",
+                    "position": {
+                        "startLine": 24,
+                        "startColumn": 4,
+                        "startOffset": 3609,
+                        "endColumn": 128,
+                        "endOffset": 3733
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 25,
+                    "startColumn": 4,
+                    "startOffset": 3831,
+                    "endColumn": 107,
+                    "endOffset": 3934
+                },
+                "from": {
+                    "file": "D:\\Git\\Github\\UdacityNanodegree\\FinalProject\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.2.1\\res\\values-km\\values.xml",
+                    "position": {
+                        "startLine": 25,
+                        "startColumn": 4,
+                        "startOffset": 3738,
+                        "endColumn": 107,
+                        "endOffset": 3841
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 26,
+                    "startColumn": 4,
+                    "startOffset": 3939,
+                    "endColumn": 201,
+                    "endOffset": 4136
+                },
+                "from": {
+                    "file": "D:\\Git\\Github\\UdacityNanodegree\\FinalProject\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.2.1\\res\\values-km\\values.xml",
+                    "position": {
+                        "startLine": 26,
+                        "startColumn": 4,
+                        "startOffset": 3846,
+                        "endColumn": 201,
+                        "endOffset": 4043
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 27,
+                    "startColumn": 4,
+                    "startOffset": 4141,
+                    "endColumn": 126,
+                    "endOffset": 4263
+                },
+                "from": {
+                    "file": "D:\\Git\\Github\\UdacityNanodegree\\FinalProject\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.2.1\\res\\values-km\\values.xml",
+                    "position": {
+                        "startLine": 27,
+                        "startColumn": 4,
+                        "startOffset": 4048,
+                        "endColumn": 126,
+                        "endOffset": 4170
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 28,
+                    "startColumn": 4,
+                    "startOffset": 4268,
+                    "endColumn": 203,
+                    "endOffset": 4467
+                },
+                "from": {
+                    "file": "D:\\Git\\Github\\UdacityNanodegree\\FinalProject\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.2.1\\res\\values-km\\values.xml",
+                    "position": {
+                        "startLine": 28,
+                        "startColumn": 4,
+                        "startOffset": 4175,
+                        "endColumn": 203,
+                        "endOffset": 4374
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 29,
+                    "startColumn": 4,
+                    "startOffset": 4472,
+                    "endColumn": 134,
+                    "endOffset": 4602
+                },
+                "from": {
+                    "file": "D:\\Git\\Github\\UdacityNanodegree\\FinalProject\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.2.1\\res\\values-km\\values.xml",
+                    "position": {
+                        "startLine": 29,
+                        "startColumn": 4,
+                        "startOffset": 4379,
+                        "endColumn": 134,
+                        "endOffset": 4509
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 30,
+                    "startColumn": 4,
+                    "startOffset": 4607,
+                    "endColumn": 187,
+                    "endOffset": 4790
+                },
+                "from": {
+                    "file": "D:\\Git\\Github\\UdacityNanodegree\\FinalProject\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.2.1\\res\\values-km\\values.xml",
+                    "position": {
+                        "startLine": 30,
+                        "startColumn": 4,
+                        "startOffset": 4514,
+                        "endColumn": 187,
+                        "endOffset": 4697
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 31,
+                    "startColumn": 4,
+                    "startOffset": 4795,
+                    "endColumn": 93,
+                    "endOffset": 4884
+                },
+                "from": {
+                    "file": "D:\\Git\\Github\\UdacityNanodegree\\FinalProject\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.2.1\\res\\values-km\\values.xml",
+                    "position": {
+                        "startLine": 31,
+                        "startColumn": 4,
+                        "startOffset": 4702,
+                        "endColumn": 93,
+                        "endOffset": 4791
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 32,
+                    "startColumn": 4,
+                    "startOffset": 4889,
+                    "endColumn": 87,
+                    "endOffset": 4972
+                },
+                "from": {
+                    "file": "D:\\Git\\Github\\UdacityNanodegree\\FinalProject\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.2.1\\res\\values-km\\values.xml",
+                    "position": {
+                        "startLine": 32,
+                        "startColumn": 4,
+                        "startOffset": 4796,
+                        "endColumn": 87,
+                        "endOffset": 4879
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 33,
+                    "startColumn": 4,
+                    "startOffset": 4977,
+                    "endColumn": 105,
+                    "endOffset": 5078
+                },
+                "from": {
+                    "file": "D:\\Git\\Github\\UdacityNanodegree\\FinalProject\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.2.1\\res\\values-km\\values.xml",
+                    "position": {
+                        "startLine": 33,
+                        "startColumn": 4,
+                        "startOffset": 4884,
+                        "endColumn": 105,
+                        "endOffset": 4985
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 34,
+                    "startColumn": 4,
+                    "startOffset": 5083,
+                    "endColumn": 138,
+                    "endOffset": 5217
+                },
+                "from": {
+                    "file": "D:\\Git\\Github\\UdacityNanodegree\\FinalProject\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-ads-lite\\9.2.1\\res\\values-km\\values.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 350,
+                        "endColumn": 138,
+                        "endOffset": 484
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 35,
+                    "startColumn": 4,
+                    "startOffset": 5222,
+                    "endColumn": 112,
+                    "endOffset": 5330
+                },
+                "from": {
+                    "file": "D:\\Git\\Github\\UdacityNanodegree\\FinalProject\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-ads-lite\\9.2.1\\res\\values-km\\values.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 489,
+                        "endColumn": 112,
+                        "endOffset": 597
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 36,
+                    "startColumn": 4,
+                    "startOffset": 5335,
+                    "endColumn": 72,
+                    "endOffset": 5403
+                },
+                "from": {
+                    "file": "D:\\Git\\Github\\UdacityNanodegree\\FinalProject\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-ads-lite\\9.2.1\\res\\values-km\\values.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 602,
+                        "endColumn": 72,
+                        "endOffset": 670
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 37,
+                    "startColumn": 4,
+                    "startOffset": 5408,
+                    "endColumn": 138,
+                    "endOffset": 5542
+                },
+                "from": {
+                    "file": "D:\\Git\\Github\\UdacityNanodegree\\FinalProject\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-ads-lite\\9.2.1\\res\\values-km\\values.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 675,
+                        "endColumn": 138,
+                        "endOffset": 809
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 38,
+                    "startColumn": 4,
+                    "startOffset": 5547,
+                    "endColumn": 92,
+                    "endOffset": 5635
+                },
+                "from": {
+                    "file": "D:\\Git\\Github\\UdacityNanodegree\\FinalProject\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-ads-lite\\9.2.1\\res\\values-km\\values.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 814,
+                        "endColumn": 92,
+                        "endOffset": 902
+                    }
+                }
+            }
+        ]
+    }
+]

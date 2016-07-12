@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "D:\\Git\\Github\\UdacityNanodegree\\StockHawk\\app\\build\\intermediates\\res\\merged\\debug\\layout-ldrtl-v17\\md_listitem_multichoice.xml",
+        "source": "D:\\Git\\Github\\UdacityNanodegree\\StockHawk\\app\\build\\intermediates\\exploded-aar\\com.github.afollestad.material-dialogs\\core\\0.8.6.1\\res\\layout-ldrtl-v17\\md_listitem_multichoice.xml"
+    },
+    {
+        "merged": "D:\\Git\\Github\\UdacityNanodegree\\StockHawk\\app\\build\\intermediates\\res\\merged\\debug\\layout-ldrtl-v17\\md_listitem_singlechoice.xml",
+        "source": "D:\\Git\\Github\\UdacityNanodegree\\StockHawk\\app\\build\\intermediates\\exploded-aar\\com.github.afollestad.material-dialogs\\core\\0.8.6.1\\res\\layout-ldrtl-v17\\md_listitem_singlechoice.xml"
+    }
+]

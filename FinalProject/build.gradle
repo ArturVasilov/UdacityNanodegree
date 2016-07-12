@@ -17,3 +17,13 @@ allprojects {
         jcenter()
     }
 }
+
+task runTests(dependsOn: [":jokesbackend:appengineRun",
+                          ":app:connectedAndroidTest",
+                          ':jokesbackend:appengineStop']) {
+    doLast {
+        println "Server started"
+        println "Tests executed"
+        println "Server stopped"
+    }
+}
