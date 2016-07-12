@@ -29,7 +29,6 @@ android {
 }
 
 dependencies {
-    compile project(':jokesteller')
     compile project(':joketellingandroid')
     compile 'com.android.support:appcompat-v7:24.0.0'
     compile 'com.google.android.gms:play-services-ads:9.2.0'
