@@ -9,6 +9,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/jokesbackend" />
             <option value="$PROJECT_DIR$/jokesteller" />
             <option value="$PROJECT_DIR$/joketellingandroid" />
           </set>
@@ -17,6 +18,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/jokesbackend" />
             <option value="$PROJECT_DIR$/jokesteller" />
             <option value="$PROJECT_DIR$/joketellingandroid" />
           </set>
