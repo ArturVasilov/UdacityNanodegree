@@ -1,19 +1,28 @@
 package com.udacity.gradle.builditbigger;
 
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.udacity.gradle.androidlib.JokingAndroid;
 
 /**
  * @author Artur Vasilov
  */
 public class MainActivityFragment extends Fragment implements View.OnClickListener {
+
+    private JokesTeller mJokesTeller;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mJokesTeller = JokesTeller.getInstance();
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -37,7 +46,8 @@ public class MainActivityFragment extends Fragment implements View.OnClickListen
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.tellJokeButton) {
-            Toast.makeText(getActivity(), "TODO", Toast.LENGTH_SHORT).show();
+            String joke = mJokesTeller.getJoke();
+            JokingAndroid.tellJoke(getActivity(), joke);
         }
     }
 }

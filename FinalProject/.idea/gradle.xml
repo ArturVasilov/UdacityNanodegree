@@ -9,12 +9,16 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/jokesteller" />
+            <option value="$PROJECT_DIR$/joketellingandroid" />
           </set>
         </option>
         <option name="myModules">
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/jokesteller" />
+            <option value="$PROJECT_DIR$/joketellingandroid" />
           </set>
         </option>
       </GradleProjectSettings>
