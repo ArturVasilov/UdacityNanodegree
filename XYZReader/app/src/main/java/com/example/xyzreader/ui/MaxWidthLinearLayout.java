@@ -16,8 +16,10 @@
 
 package com.example.xyzreader.ui;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.os.Build;
 import android.util.AttributeSet;
 import android.widget.LinearLayout;
 
@@ -25,6 +27,7 @@ import android.widget.LinearLayout;
  * A simple {@link LinearLayout} subclass that has a maxWidth
  */
 public class MaxWidthLinearLayout extends LinearLayout {
+
     private static final int[] ATTRS = {
             android.R.attr.maxWidth
     };
@@ -33,25 +36,26 @@ public class MaxWidthLinearLayout extends LinearLayout {
 
     public MaxWidthLinearLayout(Context context) {
         super(context);
-        init(context, null, 0, 0);
+        init(context, null);
     }
 
     public MaxWidthLinearLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
-        init(context, attrs, 0, 0);
+        init(context, attrs);
     }
 
     public MaxWidthLinearLayout(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        init(context, attrs, defStyle, 0);
+        init(context, attrs);
     }
 
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     public MaxWidthLinearLayout(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
-        init(context, attrs, defStyleAttr, defStyleRes);
+        init(context, attrs);
     }
 
-    public void init(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public void init(Context context, AttributeSet attrs) {
         TypedArray a = context.obtainStyledAttributes(attrs, ATTRS);
         mMaxWidth = a.getLayoutDimension(0, Integer.MAX_VALUE);
         a.recycle();
