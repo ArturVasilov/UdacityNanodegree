@@ -1,24 +1,35 @@
 package com.example.xyzreader.ui;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.util.AttributeSet;
+import android.widget.ImageView;
 
-import com.android.volley.toolbox.NetworkImageView;
+import com.squareup.picasso.Picasso;
 
-public class DynamicHeightNetworkImageView extends NetworkImageView {
+/**
+ * @author Artur Vasilov
+ */
+public class UrlImageView extends ImageView {
 
     private float mAspectRatio = 1.5f;
 
-    public DynamicHeightNetworkImageView(Context context) {
+    public UrlImageView(Context context) {
         super(context);
     }
 
-    public DynamicHeightNetworkImageView(Context context, AttributeSet attrs) {
+    public UrlImageView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public DynamicHeightNetworkImageView(Context context, AttributeSet attrs, int defStyle) {
+    public UrlImageView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
+    }
+
+    public void setImageUrl(@NonNull String imageUrl) {
+        Picasso.with(getContext())
+                .load(imageUrl)
+                .into(this);
     }
 
     public void setAspectRatio(float aspectRatio) {
