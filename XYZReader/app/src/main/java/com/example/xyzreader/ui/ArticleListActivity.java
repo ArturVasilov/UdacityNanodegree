@@ -121,9 +121,9 @@ public class ArticleListActivity extends AppCompatActivity implements
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
-        public UrlImageView thumbnailView;
-        public TextView titleView;
-        public TextView subtitleView;
+        public final UrlImageView thumbnailView;
+        public final TextView titleView;
+        public final TextView subtitleView;
 
         public ViewHolder(View view) {
             super(view);

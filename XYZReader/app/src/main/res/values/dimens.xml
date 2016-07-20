@@ -4,13 +4,12 @@
     <dimen name="detail_body_text_size">22sp</dimen>
     <item name="detail_body_line_spacing_multiplier" format="float" type="fraction">1.25</item>
 
-    <dimen name="fab_elevation">2dp</dimen>
-    <dimen name="fab_press_translation_z">6dp</dimen>
     <dimen name="fab_margin">24dp</dimen>
     <dimen name="margin_xsmall">4dp</dimen>
     <dimen name="recycler_bottom_padding">16dp</dimen>
     <dimen name="padding_xsmall">4dp</dimen>
     <dimen name="padding_medium">16dp</dimen>
+    <dimen name="cardview_picked_up_elevation">8dp</dimen>
 
 
 </resources>

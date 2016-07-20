@@ -157,7 +157,7 @@ public class SelectionBuilder {
     /**
      * Execute query using the current internal state as {@code WHERE} clause.
      */
-    @NonNull
+    @Nullable
     public Cursor query(@NonNull SQLiteDatabase db, @Nullable String[] columns, @Nullable String orderBy) {
         return query(db, columns, null, null, orderBy, null);
     }
@@ -165,7 +165,7 @@ public class SelectionBuilder {
     /**
      * Execute query using the current internal state as {@code WHERE} clause.
      */
-    @NonNull
+    @Nullable
     public Cursor query(@NonNull SQLiteDatabase db, @Nullable String[] columns, @Nullable String groupBy,
                         @Nullable String having, @Nullable String orderBy, @Nullable String limit) {
         assertTable();
