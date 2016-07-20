@@ -19,10 +19,10 @@
     <color name="photo_placeholder">#ccc</color>
     <color name="ltgray">#ffe0e0e0</color>
 
-    <color name="primary">#03A9F4</color>
-    <color name="primary_dark">#0288D1</color>
-    <color name="primary_light">#B3E5FC</color>
-    <color name="accent">#8BC34A</color>
+    <color name="primary">#2196F3</color>
+    <color name="primary_dark">#1976D2</color>
+    <color name="primary_light">#BBDEFB</color>
+    <color name="accent">#4CAF50</color>
     <color name="primary_text">#212121</color>
     <color name="secondary_text">#727272</color>
 </resources>

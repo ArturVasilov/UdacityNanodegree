@@ -2,13 +2,16 @@ package com.example.xyzreader.ui;
 
 import android.app.Fragment;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.ShareCompat;
 import android.support.v7.graphics.Palette;
 import android.text.format.DateUtils;
@@ -32,8 +35,6 @@ import com.squareup.picasso.Picasso;
  * tablets) or a {@link ArticleDetailActivity} on handsets.
  */
 public class ArticleDetailFragment extends Fragment {
-
-    private static final String TAG = "ArticleDetailFragment";
 
     public static final String ARG_ITEM_ID = "item_id";
 
@@ -71,7 +72,8 @@ public class ArticleDetailFragment extends Fragment {
 
         mPhotoView = (ImageView) mRootView.findViewById(R.id.photo);
 
-        mRootView.findViewById(R.id.share_fab).setOnClickListener(new View.OnClickListener() {
+        View fab = mRootView.findViewById(R.id.share_fab);
+        fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(Intent.createChooser(ShareCompat.IntentBuilder.from(getActivity())
@@ -80,6 +82,15 @@ public class ArticleDetailFragment extends Fragment {
                         .getIntent(), getString(R.string.action_share)));
             }
         });
+
+        if (getResources().getConfiguration().orientation == ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+                || getResources().getConfiguration().orientation == ActivityInfo.SCREEN_ORIENTATION_REVERSE_PORTRAIT) {
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+                CollapsingToolbarLayout.LayoutParams params = (CollapsingToolbarLayout.LayoutParams) fab.getLayoutParams();
+                params.topMargin -= getResources().getDimensionPixelSize(R.dimen.status_bar_size);
+                fab.setLayoutParams(params);
+            }
+        }
 
         return mRootView;
     }

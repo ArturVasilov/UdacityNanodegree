@@ -10,17 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8be3afbe-52a4-4de9-9db6-e52dba726c56" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../XYZReader/app/src/main/java/com/example/xyzreader/ui/CustomCardView.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../XYZReader/app/src/main/java/com/example/xyzreader/ui/ObservableScrollView.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../XYZReader/app/src/main/java/com/example/xyzreader/ui/ArticleDetailActivity.java" afterPath="$PROJECT_DIR$/../XYZReader/app/src/main/java/com/example/xyzreader/ui/ArticleDetailActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../XYZReader/app/src/main/java/com/example/xyzreader/ui/ArticleDetailFragment.java" afterPath="$PROJECT_DIR$/../XYZReader/app/src/main/java/com/example/xyzreader/ui/ArticleDetailFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../XYZReader/app/src/main/java/com/example/xyzreader/ui/UrlImageView.java" afterPath="$PROJECT_DIR$/../XYZReader/app/src/main/java/com/example/xyzreader/ui/UrlImageView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../XYZReader/app/src/main/res/layout-land/fragment_article_detail.xml" afterPath="$PROJECT_DIR$/../XYZReader/app/src/main/res/layout-land/fragment_article_detail.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../XYZReader/app/src/main/res/layout/activity_article_detail.xml" afterPath="$PROJECT_DIR$/../XYZReader/app/src/main/res/layout/activity_article_detail.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../XYZReader/app/src/main/res/layout/fragment_article_detail.xml" afterPath="$PROJECT_DIR$/../XYZReader/app/src/main/res/layout/fragment_article_detail.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../XYZReader/app/src/main/res/values/colors.xml" afterPath="$PROJECT_DIR$/../XYZReader/app/src/main/res/values/colors.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../XYZReader/app/src/main/res/values/dimens.xml" afterPath="$PROJECT_DIR$/../XYZReader/app/src/main/res/values/dimens.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../XYZReader/app/src/main/res/values/styles.xml" afterPath="$PROJECT_DIR$/../XYZReader/app/src/main/res/values/styles.xml" />
     </list>
     <ignored path="PopularMoviesDataBinding.iws" />
     <ignored path=".idea/workspace.xml" />
