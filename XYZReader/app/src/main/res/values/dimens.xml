@@ -17,6 +17,7 @@
     <dimen name="fab_details_margin">228dp</dimen>
     <dimen name="title_padding_fab">16dp</dimen>
     <dimen name="title_padding_start">16dp</dimen>
+    <dimen name="back_button_size">56dp</dimen>
 
 
 </resources>

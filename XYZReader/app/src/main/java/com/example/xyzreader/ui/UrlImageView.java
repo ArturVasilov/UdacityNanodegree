@@ -32,6 +32,10 @@ public class UrlImageView extends ImageView {
                 .fit()
                 .centerCrop()
                 .into(this);
+
+        Picasso.with(getContext())
+                .load(imageUrl)
+                .fetch();
     }
 
     public void setAspectRatio(float aspectRatio) {
