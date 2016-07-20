@@ -1,15 +1,13 @@
 package com.example.xyzreader.ui;
 
 import android.app.LoaderManager;
-import android.content.BroadcastReceiver;
-import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.content.Loader;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.text.format.DateUtils;
@@ -31,27 +29,12 @@ import com.example.xyzreader.data.UpdaterService;
 public class ArticleListActivity extends AppCompatActivity implements
         LoaderManager.LoaderCallbacks<Cursor> {
 
-    private SwipeRefreshLayout mSwipeRefreshLayout;
     private RecyclerView mRecyclerView;
-
-    private boolean mIsRefreshing = false;
-
-    private BroadcastReceiver mRefreshingReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            if (UpdaterService.BROADCAST_ACTION_STATE_CHANGE.equals(intent.getAction())) {
-                mIsRefreshing = intent.getBooleanExtra(UpdaterService.EXTRA_REFRESHING, false);
-                updateRefreshingUI();
-            }
-        }
-    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_article_list);
-
-        mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh_layout);
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         getLoaderManager().initLoader(0, null, this);
@@ -59,19 +42,6 @@ public class ArticleListActivity extends AppCompatActivity implements
         if (savedInstanceState == null) {
             refresh();
         }
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        registerReceiver(mRefreshingReceiver,
-                new IntentFilter(UpdaterService.BROADCAST_ACTION_STATE_CHANGE));
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        unregisterReceiver(mRefreshingReceiver);
     }
 
     @Override
@@ -87,6 +57,7 @@ public class ArticleListActivity extends AppCompatActivity implements
         int columnCount = getResources().getInteger(R.integer.list_column_count);
         StaggeredGridLayoutManager sglm =
                 new StaggeredGridLayoutManager(columnCount, StaggeredGridLayoutManager.VERTICAL);
+        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mRecyclerView.setLayoutManager(sglm);
     }
 
@@ -99,15 +70,11 @@ public class ArticleListActivity extends AppCompatActivity implements
         startService(new Intent(this, UpdaterService.class));
     }
 
-    private void updateRefreshingUI() {
-        mSwipeRefreshLayout.setRefreshing(mIsRefreshing);
-    }
-
     private class Adapter extends RecyclerView.Adapter<ViewHolder> {
 
-        private Cursor mCursor;
+        private final Cursor mCursor;
 
-        public Adapter(Cursor cursor) {
+        public Adapter(@NonNull Cursor cursor) {
             mCursor = cursor;
         }
 
@@ -141,6 +108,7 @@ public class ArticleListActivity extends AppCompatActivity implements
                             System.currentTimeMillis(), DateUtils.HOUR_IN_MILLIS,
                             DateUtils.FORMAT_ABBREV_ALL).toString(),
                     mCursor.getString(ArticleLoader.Query.AUTHOR)));
+            holder.thumbnailView.setContentDescription(mCursor.getString(ArticleLoader.Query.TITLE));
             holder.thumbnailView.setImageUrl(mCursor.getString(ArticleLoader.Query.THUMB_URL));
             holder.thumbnailView.setAspectRatio(mCursor.getFloat(ArticleLoader.Query.ASPECT_RATIO));
         }

@@ -29,6 +29,8 @@ public class UrlImageView extends ImageView {
     public void setImageUrl(@NonNull String imageUrl) {
         Picasso.with(getContext())
                 .load(imageUrl)
+                .fit()
+                .centerCrop()
                 .into(this);
     }
 
