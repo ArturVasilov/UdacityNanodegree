@@ -5,25 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8be3afbe-52a4-4de9-9db6-e52dba726c56" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../XYZReader/app/src/main/java/com/example/xyzreader/ui/DrawInsetsFrameLayout.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../XYZReader/app/src/main/java/com/example/xyzreader/ui/MaxWidthLinearLayout.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../XYZReader/app/src/main/res/values/attrs.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/cache.properties.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_annotations_24_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_annotations_24_0_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../XYZReader/.idea/misc.xml" afterPath="$PROJECT_DIR$/../XYZReader/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../XYZReader/app/src/main/java/com/example/xyzreader/AppDelegate.java" afterPath="$PROJECT_DIR$/../XYZReader/app/src/main/java/com/example/xyzreader/AppDelegate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../XYZReader/app/src/main/java/com/example/xyzreader/ui/ArticleDetailActivity.java" afterPath="$PROJECT_DIR$/../XYZReader/app/src/main/java/com/example/xyzreader/ui/ArticleDetailActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../XYZReader/app/src/main/java/com/example/xyzreader/ui/ArticleDetailFragment.java" afterPath="$PROJECT_DIR$/../XYZReader/app/src/main/java/com/example/xyzreader/ui/ArticleDetailFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../XYZReader/app/src/main/res/layout/activity_article_detail.xml" afterPath="$PROJECT_DIR$/../XYZReader/app/src/main/res/layout/activity_article_detail.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../XYZReader/app/src/main/res/layout-land/fragment_article_detail.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../XYZReader/app/src/main/res/layout/fragment_article_detail.xml" afterPath="$PROJECT_DIR$/../XYZReader/app/src/main/res/layout/fragment_article_detail.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../XYZReader/app/src/main/res/values-sw600dp/dimens.xml" afterPath="$PROJECT_DIR$/../XYZReader/app/src/main/res/values-sw600dp/dimens.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../XYZReader/app/src/main/res/values-sw600dp/macro_layout.xml" afterPath="$PROJECT_DIR$/../XYZReader/app/src/main/res/values-sw600dp/macro_layout.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../XYZReader/app/src/main/res/values-land/macro_layout.xml" afterPath="$PROJECT_DIR$/../XYZReader/app/src/main/res/values-land/macro_layout.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../XYZReader/app/src/main/res/values/dimens.xml" afterPath="$PROJECT_DIR$/../XYZReader/app/src/main/res/values/dimens.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../XYZReader/app/src/main/res/values/macro_layout.xml" afterPath="$PROJECT_DIR$/../XYZReader/app/src/main/res/values/macro_layout.xml" />
     </list>
     <ignored path="PopularMoviesDataBinding.iws" />
     <ignored path=".idea/workspace.xml" />

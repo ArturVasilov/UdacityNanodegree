@@ -15,7 +15,7 @@
     <dimen name="app_bar_title_height">120dp</dimen>
     <dimen name="margin_medium">16dp</dimen>
     <dimen name="fab_details_margin">228dp</dimen>
-    <dimen name="title_padding_fab">64dp</dimen>
+    <dimen name="title_padding_fab">16dp</dimen>
     <dimen name="title_padding_start">16dp</dimen>
 
 
