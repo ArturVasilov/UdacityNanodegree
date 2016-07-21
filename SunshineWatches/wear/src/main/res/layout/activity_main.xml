@@ -1,65 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <android.support.wearable.view.BoxInsetLayout
     android:id="@+id/container"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/primary_dark"
-    android:padding="@dimen/content_padding"
     tools:context="ru.arturvasilov.udacity.sunshinewatches.MainActivity"
     tools:deviceIds="wear">
+    <!--
+        <LinearLayout
+            android:id="@+id/text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_box="all">
 
-    <LinearLayout
-        android:id="@+id/text"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_box="all">
+            <TextView
+                android:id="@+id/timeTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text.28"/>
 
-        <TextView
-            android:id="@+id/timeTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:fontFamily="sans-serif-light"
-            android:gravity="center"
-            android:textColor="@color/white"
-            android:textSize="@dimen/text.28"/>
+            <TextView
+                android:id="@+id/dateTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/margin_xsmall"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center"
+                android:textAllCaps="true"
+                android:textColor="@color/white_50"
+                android:textSize="@dimen/text.16"/>
 
-        <TextView
-            android:id="@+id/dateTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/margin_xsmall"
-            android:fontFamily="sans-serif-light"
-            android:gravity="center"
-            android:textAllCaps="true"
-            android:textColor="@color/white_50"
-            android:textSize="@dimen/text.16"/>
+            <View
+                android:layout_width="@dimen/divider_width"
+                android:layout_height="@dimen/divider_height"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:background="@color/primary_light"/>
 
-        <View
-            android:layout_width="@dimen/divider_width"
-            android:layout_height="@dimen/divider_height"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/margin_medium"
-            android:background="@color/primary_light"/>
+            <TextView
+                android:id="@+id/forecastTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:drawablePadding="@dimen/margin_small"
+                android:drawableStart="@mipmap/ic_launcher"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text.22"/>
 
-        <TextView
-            android:id="@+id/forecastTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/margin_medium"
-            android:drawablePadding="@dimen/margin_small"
-            android:drawableStart="@mipmap/ic_launcher"
-            android:fontFamily="sans-serif"
-            android:gravity="center"
-            android:textColor="@color/white"
-            android:textSize="@dimen/text.22"/>
-
-    </LinearLayout>
+        </LinearLayout>
+    -->
 
 </android.support.wearable.view.BoxInsetLayout>

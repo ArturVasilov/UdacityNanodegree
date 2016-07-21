@@ -21,9 +21,9 @@ public class MainActivity extends WearableActivity {
         setContentView(R.layout.activity_main);
         setAmbientEnabled();
 
-        mTimeTextView = (TextView) findViewById(R.id.timeTextView);
-        mDateTextView = (TextView) findViewById(R.id.dateTextView);
-        mForecastTextView = (TextView) findViewById(R.id.forecastTextView);
+        //mTimeTextView = (TextView) findViewById(R.id.timeTextView);
+        //mDateTextView = (TextView) findViewById(R.id.dateTextView);
+        //mForecastTextView = (TextView) findViewById(R.id.forecastTextView);
         updateDisplay();
     }
 
