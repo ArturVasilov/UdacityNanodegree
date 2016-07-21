@@ -1,23 +1,19 @@
 package ru.arturvasilov.udacity.sunshinewatches;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.wearable.activity.WearableActivity;
-import android.support.wearable.view.BoxInsetLayout;
-import android.view.View;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
+import android.text.style.StyleSpan;
 import android.widget.TextView;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
 
 public class MainActivity extends WearableActivity {
 
-    private static final SimpleDateFormat AMBIENT_DATE_FORMAT =
-            new SimpleDateFormat("HH:mm", Locale.US);
-
-    private BoxInsetLayout mContainerView;
-    private TextView mTextView;
-    private TextView mClockView;
+    private TextView mTimeTextView;
+    private TextView mDateTextView;
+    private TextView mForecastTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,9 +21,10 @@ public class MainActivity extends WearableActivity {
         setContentView(R.layout.activity_main);
         setAmbientEnabled();
 
-        mContainerView = (BoxInsetLayout) findViewById(R.id.container);
-        mTextView = (TextView) findViewById(R.id.text);
-        mClockView = (TextView) findViewById(R.id.clock);
+        mTimeTextView = (TextView) findViewById(R.id.timeTextView);
+        mDateTextView = (TextView) findViewById(R.id.dateTextView);
+        mForecastTextView = (TextView) findViewById(R.id.forecastTextView);
+        updateDisplay();
     }
 
     @Override
@@ -49,16 +46,19 @@ public class MainActivity extends WearableActivity {
     }
 
     private void updateDisplay() {
-        if (isAmbient()) {
-            mContainerView.setBackgroundColor(getResources().getColor(android.R.color.black));
-            mTextView.setTextColor(getResources().getColor(android.R.color.white));
-            mClockView.setVisibility(View.VISIBLE);
+        SpannableString time = new SpannableString("15:50");
+        time.setSpan(new StyleSpan(Typeface.BOLD), 0, 3, 0);
+        mTimeTextView.setText(time);
 
-            mClockView.setText(AMBIENT_DATE_FORMAT.format(new Date()));
-        } else {
-            mContainerView.setBackground(null);
-            mTextView.setTextColor(getResources().getColor(android.R.color.black));
-            mClockView.setVisibility(View.GONE);
-        }
+        String date = "FRI, JUL 14 2015";
+        mDateTextView.setText(date);
+
+        int max = 25;
+        int min = 16;
+        String temperature = getString(R.string.temperature_format, max, min);
+        SpannableString temperatureSpan = new SpannableString(temperature);
+        temperatureSpan.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this, R.color.white_50)),
+                temperature.indexOf(" ") + 1, temperature.length(), 0);
+        mForecastTextView.setText(temperatureSpan);
     }
 }

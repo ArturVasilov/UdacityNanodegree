@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="text.16">16sp</dimen>
+    <dimen name="text.22">22sp</dimen>
+    <dimen name="text.28">28sp</dimen>
+
+    <dimen name="margin_xsmall">4dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_medium">16dp</dimen>
+
+    <dimen name="content_padding">24dp</dimen>
+
+    <dimen name="divider_width">48dp</dimen>
+    <dimen name="divider_height">1px</dimen>
+</resources>

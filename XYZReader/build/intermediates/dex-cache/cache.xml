@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="D:\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\24.1.0\support-annotations-24.1.0.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="8a23146e1a8c7cb4758e3d3f62449213f1e51f67">
+        <dex dex="D:\Git\Github\UdacityNanodegree\XYZReader\app\build\intermediates\pre-dexed\debug\support-annotations-24.1.0_e41333da875e2d9ec5a75ae0d5ed4b81419ed8fb.jar" />
+    </item>
+    <item
+        jar="D:\Git\Github\UdacityNanodegree\XYZReader\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.0\jars\libs\internal_impl-24.1.0.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="8c7087216946c546f85a1242a2794c0f271e092c">
+        <dex dex="D:\Git\Github\UdacityNanodegree\XYZReader\app\build\intermediates\pre-dexed\debug\internal_impl-24.1.0_5be01f2c9ca7337290a69e5830f784e8a2b1ad89.jar" />
+    </item>
+    <item
+        jar="D:\Git\Github\UdacityNanodegree\XYZReader\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="ba8e8860f7e033c3a503b682337a4bafdf56e6ee">
+        <dex dex="D:\Git\Github\UdacityNanodegree\XYZReader\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-24.1.0_9565e284bd71119259423828a99cfca69f2254db.jar" />
+    </item>
+    <item
+        jar="C:\Users\User\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="D:\Git\Github\UdacityNanodegree\XYZReader\app\build\intermediates\pre-dexed\debug\picasso-2.5.2_badcc59626c8bf60fbd570ba883ac0f8d5c9be7a.jar" />
+    </item>
+    <item
+        jar="D:\Git\Github\UdacityNanodegree\XYZReader\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="9340c4f95a4e3916c9ad70296e24576743743712">
+        <dex dex="D:\Git\Github\UdacityNanodegree\XYZReader\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-24.1.0_134f4657497fdf65aa0bdc13617309cb9f497f69.jar" />
+    </item>
+    <item
+        jar="D:\Git\Github\UdacityNanodegree\XYZReader\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="8c854b30eca6c442fe842e66cd3b58c5dd08996f">
+        <dex dex="D:\Git\Github\UdacityNanodegree\XYZReader\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-24.1.0_a479336ef1b5669e56458ef4d84d8990f7e7f61f.jar" />
+    </item>
+    <item
+        jar="D:\Git\Github\UdacityNanodegree\XYZReader\app\build\intermediates\exploded-aar\com.android.support\support-v13\24.1.0\jars\libs\internal_impl-24.1.0.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="8308a1302a74d133aa5fc9f2138cabcefc8ae5d7">
+        <dex dex="D:\Git\Github\UdacityNanodegree\XYZReader\app\build\intermediates\pre-dexed\debug\internal_impl-24.1.0_c510cce2ccafdbe6286579ebe608dcd7dc9f47ad.jar" />
+    </item>
+    <item
+        jar="D:\Git\Github\UdacityNanodegree\XYZReader\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="4157816e81f0820983957687e9a6f4c1cea0f1e5">
+        <dex dex="D:\Git\Github\UdacityNanodegree\XYZReader\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-24.1.0_f4dd7c3912e14a1bc630001f9b4548919a5aca8f.jar" />
+    </item>
+    <item
+        jar="D:\Git\Github\UdacityNanodegree\XYZReader\app\build\intermediates\exploded-aar\com.android.support\palette-v7\24.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="7b6aebfe347153b327056a3a0171734629c90dfd">
+        <dex dex="D:\Git\Github\UdacityNanodegree\XYZReader\app\build\intermediates\pre-dexed\debug\com.android.support-palette-v7-24.1.0_64d23b0e3417d2c3b68f748cacb9f544ef2cdc2a.jar" />
+    </item>
+    <item
+        jar="D:\Git\Github\UdacityNanodegree\XYZReader\app\build\intermediates\exploded-aar\com.android.support\support-v13\24.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="88a866e6093ab06714f7f79439a9a703c5b1fd71">
+        <dex dex="D:\Git\Github\UdacityNanodegree\XYZReader\app\build\intermediates\pre-dexed\debug\com.android.support-support-v13-24.1.0_f86fd23d110e4f1d65b9cf18285d12c547624ac7.jar" />
+    </item>
+    <item
+        jar="C:\Users\User\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.9.0\f824591a0016efbaeddb8300bee54832a1398cfa\okio-1.9.0.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="f824591a0016efbaeddb8300bee54832a1398cfa">
+        <dex dex="D:\Git\Github\UdacityNanodegree\XYZReader\app\build\intermediates\pre-dexed\debug\okio-1.9.0_87ec70002713aedce86d9826b500923c9d9dddcc.jar" />
+    </item>
+    <item
+        jar="C:\Users\User\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.4.1\c7c4f9e35c2fd5900da24f9872e3971801f08ce0\okhttp-3.4.1.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="c7c4f9e35c2fd5900da24f9872e3971801f08ce0">
+        <dex dex="D:\Git\Github\UdacityNanodegree\XYZReader\app\build\intermediates\pre-dexed\debug\okhttp-3.4.1_8ace88c03f5ecdf8e2974baab6cf011759917046.jar" />
+    </item>
+    <item
+        jar="D:\Git\Github\UdacityNanodegree\XYZReader\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\24.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="83b9d1fd6dd3791184d6b60d3a130a993e2987e3">
+        <dex dex="D:\Git\Github\UdacityNanodegree\XYZReader\app\build\intermediates\pre-dexed\debug\com.android.support-cardview-v7-24.1.0_8fff9063ed2865cf05a07e89c13e9e48e843d0dd.jar" />
+    </item>
+    <item
+        jar="C:\Users\User\.gradle\caches\modules-2\files-2.1\com.jakewharton.picasso\picasso2-okhttp3-downloader\1.0.2\74a586d03a233d356290983d1ef23a64c1d122b2\picasso2-okhttp3-downloader-1.0.2.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="74a586d03a233d356290983d1ef23a64c1d122b2">
+        <dex dex="D:\Git\Github\UdacityNanodegree\XYZReader\app\build\intermediates\pre-dexed\debug\picasso2-okhttp3-downloader-1.0.2_496276d6c7f479dbf0d2635876b1cfed9d3f57e6.jar" />
+    </item>
+    <item
+        jar="D:\Git\Github\UdacityNanodegree\XYZReader\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="e096a5d8343cc9c5a9f6eded36bd0f4c82f8c83e">
+        <dex dex="D:\Git\Github\UdacityNanodegree\XYZReader\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-24.1.0_5b289d1547d5dc168430735a581e16075ea23ffc.jar" />
+    </item>
+    <item
+        jar="D:\Git\Github\UdacityNanodegree\XYZReader\app\build\intermediates\exploded-aar\com.android.support\design\24.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="8620c018c108eed501bbdb85324b79136373ea44">
+        <dex dex="D:\Git\Github\UdacityNanodegree\XYZReader\app\build\intermediates\pre-dexed\debug\com.android.support-design-24.1.0_c0ee415aa5b06b9e5a5e4954f2029e1b9cb4a66a.jar" />
+    </item>
+
+</items>

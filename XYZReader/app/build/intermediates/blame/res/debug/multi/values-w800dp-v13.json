@@ -1,0 +1,64 @@
+[
+    {
+        "outputFile": "D:\\Git\\Github\\UdacityNanodegree\\XYZReader\\app\\build\\intermediates\\res\\merged\\debug\\values-w800dp-v13\\values-w800dp-v13.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 53,
+                    "endOffset": 104
+                },
+                "from": {
+                    "file": "D:\\Git\\Github\\UdacityNanodegree\\XYZReader\\app\\src\\main\\res\\values-w800dp\\macro_layout.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 159,
+                        "endColumn": 53,
+                        "endOffset": 208
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 109,
+                    "endColumn": 47,
+                    "endOffset": 152
+                },
+                "from": {
+                    "file": "D:\\Git\\Github\\UdacityNanodegree\\XYZReader\\app\\src\\main\\res\\values-w800dp\\macro_layout.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 36,
+                        "endColumn": 47,
+                        "endOffset": 79
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 157,
+                    "endColumn": 49,
+                    "endOffset": 202
+                },
+                "from": {
+                    "file": "D:\\Git\\Github\\UdacityNanodegree\\XYZReader\\app\\src\\main\\res\\values-w800dp\\macro_layout.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 85,
+                        "endColumn": 49,
+                        "endOffset": 130
+                    }
+                }
+            }
+        ]
+    }
+]
