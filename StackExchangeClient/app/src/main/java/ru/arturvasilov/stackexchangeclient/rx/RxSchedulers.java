@@ -1,4 +1,4 @@
-package ru.arturvasilov.stackexchangeclient;
+package ru.arturvasilov.stackexchangeclient.rx;
 
 import android.support.annotation.NonNull;
 
@@ -8,7 +8,7 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
 /**
- * @author Daniel Serdyukov
+ * @author Artur Vasilov
  */
 public final class RxSchedulers {
 

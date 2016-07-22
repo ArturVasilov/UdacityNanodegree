@@ -1,4 +1,4 @@
-package ru.arturvasilov.stackexchangeclient;
+package ru.arturvasilov.stackexchangeclient.utils;
 
 import android.support.annotation.NonNull;
 

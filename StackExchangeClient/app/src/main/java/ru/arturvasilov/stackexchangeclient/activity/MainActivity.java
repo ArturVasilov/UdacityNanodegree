@@ -1,4 +1,4 @@
-package ru.arturvasilov.stackexchangeclient;
+package ru.arturvasilov.stackexchangeclient.activity;
 
 import android.app.Activity;
 import android.content.Intent;
