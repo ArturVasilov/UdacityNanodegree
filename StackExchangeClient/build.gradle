@@ -6,16 +6,30 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.1.2'
+        classpath 'me.tatarka:gradle-retrolambda:3.3.0-beta4'
+        classpath 'me.tatarka.retrolambda.projectlombok:lombok.ast:0.2.3.a2'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
+
+    // Exclude the version that the android plugin depends on.
+    configurations.classpath.exclude group: 'com.android.tools.external.lombok'
 }
 
 allprojects {
     repositories {
         jcenter()
+        maven { url "https://jitpack.io" }
     }
+}
+
+ext {
+    projectName = 'AlfaDirect'
+    key = '"IS3mVlId0Hki3H1o2QTBLw(("'
+    clientId = '"7533"'
+    versionName = '1.0.0'
+    versionCode = 1
 }
 
 task clean(type: Delete) {
