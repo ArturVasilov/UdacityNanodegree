@@ -8,6 +8,10 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
 import ru.arturvasilov.stackexchangeclient.BuildConfig;
+import ru.arturvasilov.stackexchangeclient.api.ApiFactory;
+import ru.arturvasilov.stackexchangeclient.api.RepositoryProvider;
+import ru.arturvasilov.stackexchangeclient.api.StackRepository;
+import ru.arturvasilov.stackexchangeclient.api.StackRepositoryImpl;
 import ru.arturvasilov.stackexchangeclient.utils.PreferencesUtils;
 import ru.arturvasilov.stackexchangeclient.utils.TextUtils;
 
@@ -36,6 +40,7 @@ public class AuthActivity extends AppCompatActivity {
                 .map(value -> !value)
                 .subscribe(value -> {
                     if (value) {
+                        initApi();
                         MainActivity.start(AuthActivity.this);
                     } else {
                         startActivity(new Intent(Intent.ACTION_VIEW, buildOAuthUri()));
@@ -53,6 +58,7 @@ public class AuthActivity extends AppCompatActivity {
             String accessToken = data.toString().split("#")[1].split("=")[1];
             PreferencesUtils.saveAccessToken(accessToken)
                     .subscribe(aBoolean -> {
+                        initApi();
                         MainActivity.start(AuthActivity.this);
                         finish();
                     });
@@ -63,5 +69,10 @@ public class AuthActivity extends AppCompatActivity {
     private Uri buildOAuthUri() {
         String url = String.format(OUATH_URL, BuildConfig.CLIENT_ID, SCOPE, REDIRECT_URI);
         return Uri.parse(url);
+    }
+
+    private void initApi() {
+        StackRepository repository = new StackRepositoryImpl(ApiFactory.getUserInfoService());
+        RepositoryProvider.setRepository(repository);
     }
 }

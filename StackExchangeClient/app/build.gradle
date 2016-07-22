@@ -13,6 +13,8 @@ android {
         versionName rootProject.versionName
 
         buildConfigField "String", "CLIENT_ID", rootProject.ext.clientId
+        buildConfigField "String", "KEY_SECRET", rootProject.ext.keySecret
+        buildConfigField "String", "API_ENDPOINT", '"https://api.stackexchange.com/2.2/"'
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }

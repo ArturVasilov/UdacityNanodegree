@@ -10,28 +10,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8be3afbe-52a4-4de9-9db6-e52dba726c56" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../XYZReader/.idea/libraries/animated_vector_drawable_24_1_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../XYZReader/.idea/libraries/appcompat_v7_24_1_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../XYZReader/.idea/libraries/cardview_v7_24_1_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../XYZReader/.idea/libraries/design_24_1_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../XYZReader/.idea/libraries/okhttp_3_4_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../XYZReader/.idea/libraries/okio_1_9_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../XYZReader/.idea/libraries/palette_v7_24_1_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../XYZReader/.idea/libraries/picasso2_okhttp3_downloader_1_0_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../XYZReader/.idea/libraries/picasso_2_5_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../XYZReader/.idea/libraries/recyclerview_v7_24_1_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../XYZReader/.idea/libraries/support_annotations_24_1_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../XYZReader/.idea/libraries/support_v13_24_1_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../XYZReader/.idea/libraries/support_v4_24_1_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../XYZReader/.idea/libraries/support_vector_drawable_24_1_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../XYZReader/.idea/workspace.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../XYZReader/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../XYZReader/.idea/vcs.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../XYZReader/app/.gitignore" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/java/ru/arturvasilov/stackexchangeclient/api/ApiFactory.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/java/ru/arturvasilov/stackexchangeclient/api/ApiKeyInterceptor.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/java/ru/arturvasilov/stackexchangeclient/api/ErrorsHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/java/ru/arturvasilov/stackexchangeclient/api/RepositoryProvider.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/java/ru/arturvasilov/stackexchangeclient/api/StackRepository.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/java/ru/arturvasilov/stackexchangeclient/api/StackRepositoryImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/java/ru/arturvasilov/stackexchangeclient/api/UserInfoService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/java/ru/arturvasilov/stackexchangeclient/model/User.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../XYZReader/.idea/misc.xml" afterPath="$PROJECT_DIR$/../XYZReader/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../XYZReader/gradle/wrapper/gradle-wrapper.properties" afterPath="$PROJECT_DIR$/../XYZReader/gradle/wrapper/gradle-wrapper.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../XYZReader/gradlew" afterPath="$PROJECT_DIR$/../XYZReader/gradlew" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../StackExchangeClient/app/build.gradle" afterPath="$PROJECT_DIR$/../StackExchangeClient/app/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/java/ru/arturvasilov/stackexchangeclient/AppDelegate.java" afterPath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/java/ru/arturvasilov/stackexchangeclient/AppDelegate.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/java/ru/arturvasilov/stackexchangeclient/activity/AuthActivity.java" afterPath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/java/ru/arturvasilov/stackexchangeclient/activity/AuthActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/java/ru/arturvasilov/stackexchangeclient/activity/MainActivity.java" afterPath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/java/ru/arturvasilov/stackexchangeclient/activity/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/java/ru/arturvasilov/stackexchangeclient/utils/PreferencesUtils.java" afterPath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/java/ru/arturvasilov/stackexchangeclient/utils/PreferencesUtils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../StackExchangeClient/build.gradle" afterPath="$PROJECT_DIR$/../StackExchangeClient/build.gradle" />
     </list>
     <ignored path="PopularMoviesDataBinding.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -114,11 +107,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="styles.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="styles.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.26923078">
-              <caret line="7" column="58" selection-start-line="7" selection-start-column="58" selection-end-line="8" selection-end-column="52" />
+            <state vertical-scroll-proportion="-5.090909">
+              <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RepositoryProvider.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/arturvasilov/udacity/nanodegree/popularmoviesdatabinding/api/RepositoryProvider.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AppDelegate.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/arturvasilov/udacity/nanodegree/popularmoviesdatabinding/AppDelegate.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.4076655">
+              <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="23" selection-end-column="53" />
               <folding />
             </state>
           </provider>
@@ -1932,8 +1945,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="1912" />
+    <option name="y" value="66" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
@@ -1962,7 +1975,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane" />
+      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -1971,11 +1986,73 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PopularMoviesDataBinding" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PopularMoviesDataBinding" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PopularMoviesDataBinding" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="popularmoviesdatabinding" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PopularMoviesDataBinding" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="popularmoviesdatabinding" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="api" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2158,8 +2235,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <frame x="1912" y="66" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -2167,7 +2244,7 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32925472" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850778" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925472" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
@@ -2175,7 +2252,8 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2563966" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2563966" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32962137" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -2192,7 +2270,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -2360,6 +2437,66 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/arturvasilov/udacity/nanodegree/popularmoviesdatabinding/activity/MovieDetailsActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+          <caret line="39" column="43" selection-start-line="39" selection-start-column="43" selection-end-line="40" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values-v21/styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/arturvasilov/udacity/nanodegree/popularmoviesdatabinding/router/impl/MoviesRouterImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1011#1012#0" expanded="false" />
+            <element signature="e#1047#1048#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/arturvasilov/udacity/nanodegree/popularmoviesdatabinding/router/impl/HomeButtonRouter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#351#352#0" expanded="false" />
+            <element signature="e#387#388#0" expanded="false" />
+            <element signature="e#428#429#0" expanded="false" />
+            <element signature="e#469#470#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/arturvasilov/udacity/nanodegree/popularmoviesdatabinding/activity/MovieDetailsActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="false" />
@@ -2447,8 +2584,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26923078">
-          <caret line="7" column="58" selection-start-line="7" selection-start-column="58" selection-end-line="8" selection-end-column="52" />
+        <state vertical-scroll-proportion="-5.090909">
+          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/arturvasilov/udacity/nanodegree/popularmoviesdatabinding/api/RepositoryProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/arturvasilov/udacity/nanodegree/popularmoviesdatabinding/AppDelegate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4076655">
+          <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="23" selection-end-column="53" />
           <folding />
         </state>
       </provider>

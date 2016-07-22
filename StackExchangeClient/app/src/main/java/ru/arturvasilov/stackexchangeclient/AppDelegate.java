@@ -7,6 +7,10 @@ import com.orhanobut.hawk.Hawk;
 import com.orhanobut.hawk.HawkBuilder;
 import com.orhanobut.hawk.LogLevel;
 
+import ru.arturvasilov.stackexchangeclient.api.ApiFactory;
+import ru.arturvasilov.stackexchangeclient.api.RepositoryProvider;
+import ru.arturvasilov.stackexchangeclient.api.StackRepository;
+
 /**
  * @author Artur Vasilov
  */

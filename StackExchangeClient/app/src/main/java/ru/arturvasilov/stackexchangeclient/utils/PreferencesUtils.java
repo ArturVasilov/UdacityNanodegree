@@ -26,4 +26,9 @@ public final class PreferencesUtils {
         return Hawk.getObservable(KEY_ACCESS_TOKEN);
     }
 
+    @NonNull
+    public static String obtainAccessToken() {
+        return Hawk.get(KEY_ACCESS_TOKEN);
+    }
+
 }
