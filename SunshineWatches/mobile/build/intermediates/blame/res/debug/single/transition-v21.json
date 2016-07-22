@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "D:\\Git\\Github\\UdacityNanodegree\\SunshineWatches\\mobile\\build\\intermediates\\res\\merged\\debug\\transition-v21\\details_window_enter_transition.xml",
+        "source": "D:\\Git\\Github\\UdacityNanodegree\\SunshineWatches\\mobile\\src\\main\\res\\transition-v21\\details_window_enter_transition.xml"
+    },
+    {
+        "merged": "D:\\Git\\Github\\UdacityNanodegree\\SunshineWatches\\mobile\\build\\intermediates\\res\\merged\\debug\\transition-v21\\details_window_return_transition.xml",
+        "source": "D:\\Git\\Github\\UdacityNanodegree\\SunshineWatches\\mobile\\src\\main\\res\\transition-v21\\details_window_return_transition.xml"
+    }
+]

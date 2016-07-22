@@ -1,31 +1,32 @@
 package ru.arturvasilov.udacity.sunshinewatches;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Locale;
 
 /**
  * @author Artur Vasilov
  */
 public final class DateUtils {
 
-    public static final String HH_MM = "HH:mm";
-    public static final String DD_MM_YY = "dd.MM.yy";
-    public static final String HH_MM_DD_MM_YY = "HH:mm dd.MM.yy";
-
-    private static final long DAY_IN_MS = android.text.format.DateUtils.DAY_IN_MILLIS;
-
     private DateUtils() {
     }
 
     @NonNull
-    public static String format(@NonNull String format, long time) {
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTimeInMillis(time);
-        SimpleDateFormat dateFormat = new SimpleDateFormat(format, Locale.getDefault());
-        return dateFormat.format(calendar.getTime());
+    public static String getDayOfWeek(@NonNull Context context, int day) {
+        if (day >= Calendar.SUNDAY && day <= Calendar.SATURDAY) {
+            return context.getResources().getStringArray(R.array.days)[day - 1];
+        }
+        return "";
+    }
+
+    @NonNull
+    public static String getMonthOfYear(@NonNull Context context, int month) {
+        if (month >= Calendar.JANUARY && month <= Calendar.DECEMBER) {
+            return context.getResources().getStringArray(R.array.months)[month];
+        }
+        return "";
     }
 
 }

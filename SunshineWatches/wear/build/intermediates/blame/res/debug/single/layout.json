@@ -1,0 +1,34 @@
+[
+    {
+        "merged": "D:\\Git\\Github\\UdacityNanodegree\\SunshineWatches\\wear\\build\\intermediates\\res\\merged\\debug\\layout\\wearable_drawer_view.xml",
+        "source": "D:\\Git\\Github\\UdacityNanodegree\\SunshineWatches\\wear\\build\\intermediates\\exploded-aar\\com.google.android.support\\wearable\\2.0.0-alpha2\\res\\layout\\wearable_drawer_view.xml"
+    },
+    {
+        "merged": "D:\\Git\\Github\\UdacityNanodegree\\SunshineWatches\\wear\\build\\intermediates\\res\\merged\\debug\\layout\\overlay_confirmation.xml",
+        "source": "D:\\Git\\Github\\UdacityNanodegree\\SunshineWatches\\wear\\build\\intermediates\\exploded-aar\\com.google.android.support\\wearable\\2.0.0-alpha2\\res\\layout\\overlay_confirmation.xml"
+    },
+    {
+        "merged": "D:\\Git\\Github\\UdacityNanodegree\\SunshineWatches\\wear\\build\\intermediates\\res\\merged\\debug\\layout\\navigation_drawer_view.xml",
+        "source": "D:\\Git\\Github\\UdacityNanodegree\\SunshineWatches\\wear\\build\\intermediates\\exploded-aar\\com.google.android.support\\wearable\\2.0.0-alpha2\\res\\layout\\navigation_drawer_view.xml"
+    },
+    {
+        "merged": "D:\\Git\\Github\\UdacityNanodegree\\SunshineWatches\\wear\\build\\intermediates\\res\\merged\\debug\\layout\\alert_dialog_wearable.xml",
+        "source": "D:\\Git\\Github\\UdacityNanodegree\\SunshineWatches\\wear\\build\\intermediates\\exploded-aar\\com.google.android.support\\wearable\\2.0.0-alpha2\\res\\layout\\alert_dialog_wearable.xml"
+    },
+    {
+        "merged": "D:\\Git\\Github\\UdacityNanodegree\\SunshineWatches\\wear\\build\\intermediates\\res\\merged\\debug\\layout\\error_layout.xml",
+        "source": "D:\\Git\\Github\\UdacityNanodegree\\SunshineWatches\\wear\\build\\intermediates\\exploded-aar\\com.google.android.support\\wearable\\2.0.0-alpha2\\res\\layout\\error_layout.xml"
+    },
+    {
+        "merged": "D:\\Git\\Github\\UdacityNanodegree\\SunshineWatches\\wear\\build\\intermediates\\res\\merged\\debug\\layout\\action_drawer_item_view.xml",
+        "source": "D:\\Git\\Github\\UdacityNanodegree\\SunshineWatches\\wear\\build\\intermediates\\exploded-aar\\com.google.android.support\\wearable\\2.0.0-alpha2\\res\\layout\\action_drawer_item_view.xml"
+    },
+    {
+        "merged": "D:\\Git\\Github\\UdacityNanodegree\\SunshineWatches\\wear\\build\\intermediates\\res\\merged\\debug\\layout\\action_drawer_peek_view.xml",
+        "source": "D:\\Git\\Github\\UdacityNanodegree\\SunshineWatches\\wear\\build\\intermediates\\exploded-aar\\com.google.android.support\\wearable\\2.0.0-alpha2\\res\\layout\\action_drawer_peek_view.xml"
+    },
+    {
+        "merged": "D:\\Git\\Github\\UdacityNanodegree\\SunshineWatches\\wear\\build\\intermediates\\res\\merged\\debug\\layout\\navigation_drawer_item_view.xml",
+        "source": "D:\\Git\\Github\\UdacityNanodegree\\SunshineWatches\\wear\\build\\intermediates\\exploded-aar\\com.google.android.support\\wearable\\2.0.0-alpha2\\res\\layout\\navigation_drawer_item_view.xml"
+    }
+]

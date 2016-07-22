@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "D:\\Git\\Github\\UdacityNanodegree\\SunshineWatches\\mobile\\build\\intermediates\\res\\merged\\debug\\xml\\pref_general.xml",
+        "source": "D:\\Git\\Github\\UdacityNanodegree\\SunshineWatches\\mobile\\src\\main\\res\\xml\\pref_general.xml"
+    },
+    {
+        "merged": "D:\\Git\\Github\\UdacityNanodegree\\SunshineWatches\\mobile\\build\\intermediates\\res\\merged\\debug\\xml\\syncadapter.xml",
+        "source": "D:\\Git\\Github\\UdacityNanodegree\\SunshineWatches\\mobile\\src\\main\\res\\xml\\syncadapter.xml"
+    },
+    {
+        "merged": "D:\\Git\\Github\\UdacityNanodegree\\SunshineWatches\\mobile\\build\\intermediates\\res\\merged\\debug\\xml\\authenticator.xml",
+        "source": "D:\\Git\\Github\\UdacityNanodegree\\SunshineWatches\\mobile\\src\\main\\res\\xml\\authenticator.xml"
+    },
+    {
+        "merged": "D:\\Git\\Github\\UdacityNanodegree\\SunshineWatches\\mobile\\build\\intermediates\\res\\merged\\debug\\xml\\widget_info_detail.xml",
+        "source": "D:\\Git\\Github\\UdacityNanodegree\\SunshineWatches\\mobile\\src\\main\\res\\xml\\widget_info_detail.xml"
+    },
+    {
+        "merged": "D:\\Git\\Github\\UdacityNanodegree\\SunshineWatches\\mobile\\build\\intermediates\\res\\merged\\debug\\xml\\widget_info_today.xml",
+        "source": "D:\\Git\\Github\\UdacityNanodegree\\SunshineWatches\\mobile\\src\\main\\res\\xml\\widget_info_today.xml"
+    }
+]

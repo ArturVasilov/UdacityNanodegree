@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="detail_view_padding_vertical">@dimen/abc_list_item_padding_horizontal_material</dimen>
+    <dimen name="forecast_temperature_space">@dimen/abc_list_item_padding_horizontal_material</dimen>
+    <dimen name="list_item_extra_padding">80dp</dimen>
+</resources>

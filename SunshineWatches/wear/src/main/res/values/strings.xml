@@ -1,7 +1,32 @@
 <resources>
     <string name="app_name">SunshineWatches</string>
-    <string name="hello_world">Hello World!</string>
 
-    <string name="temperature_format">%1$d\u00B0 %2$d\u00B0</string>
     <string name="sunshine_watch_face_name">Sunshine watchface</string>
+
+    <string name="date_format">%1$s, %2$s %3$d %4$d</string>
+
+    <string-array name="days">
+        <item>SUN</item>
+        <item>MON</item>
+        <item>TUE</item>
+        <item>WED</item>
+        <item>THU</item>
+        <item>FRI</item>
+        <item>SAT</item>
+    </string-array>
+
+    <string-array name="months">
+        <item>JAN</item>
+        <item>FEB</item>
+        <item>MAR</item>
+        <item>APR</item>
+        <item>MAY</item>
+        <item>JUN</item>
+        <item>JULY</item>
+        <item>AUG</item>
+        <item>SEP</item>
+        <item>OCT</item>
+        <item>NOV</item>
+        <item>DEC</item>
+    </string-array>
 </resources>

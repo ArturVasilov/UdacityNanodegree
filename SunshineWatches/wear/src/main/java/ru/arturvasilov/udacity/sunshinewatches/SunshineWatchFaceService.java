@@ -7,8 +7,6 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.Typeface;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -25,15 +23,9 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.wearable.DataApi;
 import com.google.android.gms.wearable.DataEvent;
 import com.google.android.gms.wearable.DataEventBuffer;
-import com.google.android.gms.wearable.DataMap;
-import com.google.android.gms.wearable.DataMapItem;
-import com.google.android.gms.wearable.PutDataMapRequest;
-import com.google.android.gms.wearable.PutDataRequest;
 import com.google.android.gms.wearable.Wearable;
 
-import java.lang.ref.WeakReference;
 import java.util.Calendar;
-import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -42,12 +34,9 @@ import java.util.concurrent.TimeUnit;
 public class SunshineWatchFaceService extends CanvasWatchFaceService {
 
     private static final long UPDATE_RATE = TimeUnit.MINUTES.toMillis(1);
+    private static final int MESSAGE_UPDATE_TIME = 0;
 
-    /**
-     * Handler message id for updating the time periodically in interactive mode.
-     */
-    private static final int MSG_UPDATE_TIME = 0;
-
+    @NonNull
     @Override
     public SunshineEngine onCreateEngine() {
         return new SunshineEngine();
@@ -55,14 +44,6 @@ public class SunshineWatchFaceService extends CanvasWatchFaceService {
 
     private class SunshineEngine extends CanvasWatchFaceService.Engine implements DataApi.DataListener,
             GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
-
-        private static final String WEATHER_PATH = "/weather";
-        private static final String WEATHER_INFO_PATH = "/weather-info";
-
-        private static final String KEY_UUID = "uuid";
-        private static final String KEY_HIGH = "high";
-        private static final String KEY_LOW = "low";
-        private static final String KEY_WEATHER_ID = "weatherId";
 
         private final Context mContext;
 
@@ -79,22 +60,22 @@ public class SunshineWatchFaceService extends CanvasWatchFaceService {
         private final Paint mTemperatureLowPaint;
         private final Paint mIconPaint;
 
-        private final float mTimeYOffset;
-        private final float mDateYOffset;
-        private final float mDividerYOffset;
+        private float mTimeYOffset;
+        private float mDateYOffset;
+        private float mDividerYOffset;
         private final float mDividerWidth;
-        private final float mForecastYOffset;
+        private float mForecastYOffset;
         private final float mSmallPadding;
 
         private Bitmap mWeatherIcon;
-        private String mWeatherHigh;
-        private String mWeatherLow;
+        private int mWeatherHigh;
+        private int mWeatherLow;
 
         public SunshineEngine() {
             mContext = SunshineWatchFaceService.this;
 
-            mUpdateTimeHandler = new EngineHandler(this);
             mGoogleApiClient = buildClient();
+            mUpdateTimeHandler = new EngineHandler(this);
 
             mBackgroundPaint = new Paint();
             mBackgroundPaint.setColor(ContextCompat.getColor(mContext, R.color.primary_dark));
@@ -117,11 +98,7 @@ public class SunshineWatchFaceService extends CanvasWatchFaceService {
             mIconPaint = new Paint();
             mIconPaint.setAntiAlias(true);
 
-            mTimeYOffset = mContext.getResources().getDimension(R.dimen.time_margin_top);
-            mDateYOffset = mContext.getResources().getDimension(R.dimen.date_margin_top);
-            mDividerYOffset = mContext.getResources().getDimension(R.dimen.divider_margin_top);
             mDividerWidth = mContext.getResources().getDimension(R.dimen.divider_width);
-            mForecastYOffset = mContext.getResources().getDimension(R.dimen.forecast_margin_top);
             mSmallPadding = mContext.getResources().getDimension(R.dimen.margin_small);
         }
 
@@ -134,12 +111,6 @@ public class SunshineWatchFaceService extends CanvasWatchFaceService {
                     .setBackgroundVisibility(WatchFaceStyle.BACKGROUND_VISIBILITY_INTERRUPTIVE)
                     .setShowSystemUiTime(false)
                     .build());
-        }
-
-        @Override
-        public void onDestroy() {
-            mUpdateTimeHandler.removeMessages(MSG_UPDATE_TIME);
-            super.onDestroy();
         }
 
         @Override
@@ -159,6 +130,12 @@ public class SunshineWatchFaceService extends CanvasWatchFaceService {
         @Override
         public void onApplyWindowInsets(WindowInsets insets) {
             super.onApplyWindowInsets(insets);
+
+            boolean isRound = insets.isRound();
+            mTimeYOffset = mContext.getResources().getDimension(isRound ? R.dimen.time_margin_top_circular : R.dimen.time_margin_top);
+            mDateYOffset = mContext.getResources().getDimension(isRound ? R.dimen.date_margin_top_circular : R.dimen.date_margin_top);
+            mDividerYOffset = mContext.getResources().getDimension(isRound ? R.dimen.divider_margin_top_circular : R.dimen.divider_margin_top);
+            mForecastYOffset = mContext.getResources().getDimension(isRound ? R.dimen.forecast_margin_top_circular : R.dimen.forecast_margin_top);
 
             float timeTextSize = mContext.getResources().getDimension(R.dimen.text_32);
             float dateTextSize = mContext.getResources().getDimension(R.dimen.text_16);
@@ -195,23 +172,23 @@ public class SunshineWatchFaceService extends CanvasWatchFaceService {
             canvas.drawText(hoursText, offsetX, mTimeYOffset, mTextHoursPaint);
             canvas.drawText(minutesText, bounds.centerX() + (colonSize / 2), mTimeYOffset, mTextMinutePaint);
 
-            String dateText = "FRI, JUL 14 2015";
+            String dayText = DateUtils.getDayOfWeek(mContext, calendar.get(Calendar.DAY_OF_WEEK));
+            String month = DateUtils.getMonthOfYear(mContext, calendar.get(Calendar.MONTH));
+            int day = calendar.get(Calendar.DAY_OF_MONTH);
+            int year = calendar.get(Calendar.YEAR);
+            String dateText = mContext.getString(R.string.date_format, dayText, month, day, year);
             float dateTextLength = mTextDatePaint.measureText(dateText);
             canvas.drawText(dateText, bounds.centerX() - dateTextLength / 2, mDateYOffset, mTextDatePaint);
 
+            if (mWeatherIcon == null) {
+                //I leave it here to give ability to watchface without installing mobile app and connecting it
+                mWeatherIcon = BitmapFactory.decodeResource(getResources(), R.drawable.ic_clear);
+                mWeatherHigh = 26;
+                mWeatherLow = 15;
+            }
+
             canvas.drawLine(bounds.centerX() - (mDividerWidth / 2), mDividerYOffset,
                     bounds.centerX() + (mDividerWidth / 2), mDividerYOffset, mDividerPaint);
-
-            //TODO : remove
-            if (mWeatherHigh == null) {
-                mWeatherHigh = "26";
-            }
-            if (mWeatherLow == null) {
-                mWeatherLow = "15";
-            }
-            if (mWeatherIcon == null) {
-                mWeatherIcon = BitmapFactory.decodeResource(getResources(), R.drawable.ic_clear);
-            }
 
             String highTemp = mWeatherHigh + "\u00B0 ";
             String lowTemp = mWeatherLow + "\u00B0";
@@ -227,9 +204,17 @@ public class SunshineWatchFaceService extends CanvasWatchFaceService {
         }
 
         @Override
+        public void onDestroy() {
+            mUpdateTimeHandler.removeMessages(MESSAGE_UPDATE_TIME);
+            if (mGoogleApiClient.isConnected()) {
+                mGoogleApiClient.disconnect();
+            }
+            super.onDestroy();
+        }
+
+        @Override
         public void onConnected(Bundle bundle) {
             Wearable.DataApi.addListener(mGoogleApiClient, SunshineEngine.this);
-            requestWeatherInfo();
         }
 
         @Override
@@ -240,23 +225,14 @@ public class SunshineWatchFaceService extends CanvasWatchFaceService {
         @Override
         public void onDataChanged(DataEventBuffer dataEvents) {
             for (DataEvent dataEvent : dataEvents) {
-                if (dataEvent.getType() == DataEvent.TYPE_CHANGED) {
-                    DataMap dataMap = DataMapItem.fromDataItem(dataEvent.getDataItem()).getDataMap();
-                    String path = dataEvent.getDataItem().getUri().getPath();
-                    if (path.equals(WEATHER_INFO_PATH)) {
-                        mWeatherHigh = dataMap.getString(KEY_HIGH);
-                        mWeatherLow = dataMap.getString(KEY_LOW);
+                WearableSync wearableSync = new WearableSync();
+                if (wearableSync.shouldHandleEvent(dataEvent)) {
+                    mWeatherHigh = wearableSync.getHighTemperature();
+                    mWeatherLow = wearableSync.getLowTemperature();
 
-                        if (dataMap.containsKey(KEY_WEATHER_ID)) {
-                            int weatherId = dataMap.getInt(KEY_WEATHER_ID);
-                            Drawable b = ContextCompat.getDrawable(mContext, Utility.getIconResourceForWeatherCondition(weatherId));
-                            Bitmap icon = ((BitmapDrawable) b).getBitmap();
-                            float scaledWidth = (mTemperatureHighPaint.getTextSize() / icon.getHeight()) * icon.getWidth();
-                            mWeatherIcon = Bitmap.createScaledBitmap(icon, (int) scaledWidth, (int) mTemperatureHighPaint.getTextSize(), true);
-                        }
-
-                        invalidate();
-                    }
+                    int weatherId = wearableSync.getCondition();
+                    mWeatherIcon = BitmapFactory.decodeResource(getResources(), Utility.getIconResourceForWeatherCondition(weatherId));
+                    invalidate();
                 }
             }
         }
@@ -285,9 +261,9 @@ public class SunshineWatchFaceService extends CanvasWatchFaceService {
         }
 
         private void updateTimer() {
-            mUpdateTimeHandler.removeMessages(MSG_UPDATE_TIME);
+            mUpdateTimeHandler.removeMessages(MESSAGE_UPDATE_TIME);
             if (isVisible()) {
-                mUpdateTimeHandler.sendEmptyMessage(MSG_UPDATE_TIME);
+                mUpdateTimeHandler.sendEmptyMessage(MESSAGE_UPDATE_TIME);
             }
         }
 
@@ -296,36 +272,26 @@ public class SunshineWatchFaceService extends CanvasWatchFaceService {
             if (isVisible()) {
                 long timeMs = System.currentTimeMillis();
                 long delayMs = UPDATE_RATE - (timeMs % UPDATE_RATE);
-                mUpdateTimeHandler.sendEmptyMessageDelayed(MSG_UPDATE_TIME, delayMs);
+                mUpdateTimeHandler.sendEmptyMessageDelayed(MESSAGE_UPDATE_TIME, delayMs);
             }
         }
 
-        private void requestWeatherInfo() {
-            PutDataMapRequest putDataMapRequest = PutDataMapRequest.create(WEATHER_PATH);
-            putDataMapRequest.getDataMap().putString(KEY_UUID, UUID.randomUUID().toString());
-            PutDataRequest request = putDataMapRequest.asPutDataRequest();
-
-            Wearable.DataApi.putDataItem(mGoogleApiClient, request);
-        }
     }
 
     private static class EngineHandler extends Handler {
 
-        private final WeakReference<SunshineEngine> mWeakReference;
+        private final SunshineEngine mEngine;
 
-        public EngineHandler(@NonNull SunshineEngine reference) {
-            mWeakReference = new WeakReference<>(reference);
+        public EngineHandler(@NonNull SunshineEngine engine) {
+            mEngine = engine;
         }
 
         @Override
         public void handleMessage(Message msg) {
-            SunshineEngine engine = mWeakReference.get();
-            if (engine != null) {
-                switch (msg.what) {
-                    case MSG_UPDATE_TIME:
-                        engine.handleUpdateTimeMessage();
-                        break;
-                }
+            switch (msg.what) {
+                case MESSAGE_UPDATE_TIME:
+                    mEngine.handleUpdateTimeMessage();
+                    break;
             }
         }
     }

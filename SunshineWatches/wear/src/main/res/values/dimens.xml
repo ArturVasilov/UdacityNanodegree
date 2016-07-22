@@ -5,15 +5,18 @@
     <dimen name="text.22">22sp</dimen>
     <dimen name="text.32">32sp</dimen>
 
-    <dimen name="margin_xsmall">4dp</dimen>
     <dimen name="margin_small">8dp</dimen>
-    <dimen name="margin_medium">16dp</dimen>
 
     <dimen name="divider_width">32dp</dimen>
-    <dimen name="divider_height">1px</dimen>
+
+    <dimen name="time_margin_top_circular">84dp</dimen>
+    <dimen name="date_margin_top_circular">108dp</dimen>
+    <dimen name="divider_margin_top_circular">124dp</dimen>
+    <dimen name="forecast_margin_top_circular">156dp</dimen>
 
     <dimen name="time_margin_top">64dp</dimen>
     <dimen name="date_margin_top">88dp</dimen>
     <dimen name="divider_margin_top">104dp</dimen>
     <dimen name="forecast_margin_top">136dp</dimen>
+
 </resources>

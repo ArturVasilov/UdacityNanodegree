@@ -51,6 +51,7 @@ import ru.arturvasilov.udacity.sunshinewatches.BuildConfig;
 import ru.arturvasilov.udacity.sunshinewatches.MainActivity;
 import ru.arturvasilov.udacity.sunshinewatches.R;
 import ru.arturvasilov.udacity.sunshinewatches.Utility;
+import ru.arturvasilov.udacity.sunshinewatches.WearableSync;
 import ru.arturvasilov.udacity.sunshinewatches.data.WeatherContract;
 import ru.arturvasilov.udacity.sunshinewatches.muzei.WeatherMuzeiSource;
 
@@ -92,8 +93,11 @@ public class SunshineSyncAdapter extends AbstractThreadedSyncAdapter {
     public static final int LOCATION_STATUS_UNKNOWN = 3;
     public static final int LOCATION_STATUS_INVALID = 4;
 
+    private final WearableSync mWearableSync;
+
     public SunshineSyncAdapter(Context context, boolean autoInitialize) {
         super(context, autoInitialize);
+        mWearableSync = new WearableSync(context);
     }
 
     @Override
@@ -281,7 +285,7 @@ public class SunshineSyncAdapter extends AbstractThreadedSyncAdapter {
             // now we work exclusively in UTC
             dayTime = new Time();
 
-            for (int i = 0; i < weatherArray.length(); i++) {
+            for (int dayIndex = 0; dayIndex < weatherArray.length(); dayIndex++) {
                 // These are the values that will be collected.
                 long dateTime;
                 double pressure;
@@ -296,10 +300,10 @@ public class SunshineSyncAdapter extends AbstractThreadedSyncAdapter {
                 int weatherId;
 
                 // Get the JSON object representing the day
-                JSONObject dayForecast = weatherArray.getJSONObject(i);
+                JSONObject dayForecast = weatherArray.getJSONObject(dayIndex);
 
                 // Cheating to convert this to UTC time, which is what we want anyhow
-                dateTime = dayTime.setJulianDay(julianStartDay + i);
+                dateTime = dayTime.setJulianDay(julianStartDay + dayIndex);
 
                 pressure = dayForecast.getDouble(OWM_PRESSURE);
                 humidity = dayForecast.getInt(OWM_HUMIDITY);
@@ -333,6 +337,10 @@ public class SunshineSyncAdapter extends AbstractThreadedSyncAdapter {
                 weatherValues.put(WeatherContract.WeatherEntry.COLUMN_WEATHER_ID, weatherId);
 
                 cVVector.add(weatherValues);
+
+                if (dayIndex == 0) {
+                    mWearableSync.sendMessageToWear((int) high, (int) low, weatherId);
+                }
             }
 
             // add to database

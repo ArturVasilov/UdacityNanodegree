@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "D:\\Git\\Github\\UdacityNanodegree\\SunshineWatches\\mobile\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4\\widget_preview_today.png",
+        "source": "D:\\Git\\Github\\UdacityNanodegree\\SunshineWatches\\mobile\\src\\main\\res\\drawable-nodpi\\widget_preview_today.png"
+    },
+    {
+        "merged": "D:\\Git\\Github\\UdacityNanodegree\\SunshineWatches\\mobile\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4\\widget_preview_detail.png",
+        "source": "D:\\Git\\Github\\UdacityNanodegree\\SunshineWatches\\mobile\\src\\main\\res\\drawable-nodpi\\widget_preview_detail.png"
+    },
+    {
+        "merged": "D:\\Git\\Github\\UdacityNanodegree\\SunshineWatches\\mobile\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi-v4\\ic_muzei.png",
+        "source": "D:\\Git\\Github\\UdacityNanodegree\\SunshineWatches\\mobile\\src\\main\\res\\drawable-nodpi\\ic_muzei.png"
+    }
+]
