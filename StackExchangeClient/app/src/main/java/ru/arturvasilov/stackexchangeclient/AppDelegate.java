@@ -9,6 +9,8 @@ import com.orhanobut.hawk.HawkBuilder;
 import com.orhanobut.hawk.LogLevel;
 
 import io.fabric.sdk.android.Fabric;
+import ru.arturvasilov.stackexchangeclient.app.analytics.Analytics;
+import ru.arturvasilov.stackexchangeclient.app.analytics.EventTags;
 import ru.arturvasilov.stackexchangeclient.images.PicassoTools;
 
 /**
@@ -25,8 +27,11 @@ public class AppDelegate extends Application {
         sInstance = this;
 
         Fabric.with(this, new Crashlytics());
+        Analytics.init(this);
 
         PicassoTools.setup(this);
+
+        Analytics.buildEvent().log(EventTags.APP_STARTED);
 
         Hawk.init(this)
                 .setEncryptionMethod(HawkBuilder.EncryptionMethod.MEDIUM)
