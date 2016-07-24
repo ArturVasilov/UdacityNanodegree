@@ -27,7 +27,7 @@ allprojects {
     }
 }
 
-// I want to be sure that build will be possible only on my machine,
+// I want to be sure that build will be possible only on my machine (or later on CI server),
 // so I don't put keys here
 
 File file = new File("D:\\Android\\projects\\Stackdroid\\build.txt")
