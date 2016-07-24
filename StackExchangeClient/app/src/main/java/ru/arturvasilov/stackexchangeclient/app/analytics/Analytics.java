@@ -52,11 +52,6 @@ public class Analytics {
         }
 
         @NonNull
-        private static EventBuilder create() {
-            return new EventBuilder();
-        }
-
-        @NonNull
         public EventBuilder putString(@NonNull @EventKey String key, @NonNull String value) {
             mBundle.putString(key, value);
             return this;
