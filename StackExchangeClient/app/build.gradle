@@ -32,8 +32,16 @@ android {
 
     signingConfigs {
         debug {
+            keyAlias 'androiddebugkey'
+            keyPassword 'android'
+            storeFile file('debug.keystore')
+            storePassword 'android'
         }
         release {
+            keyAlias rootProject.ext.keyAlias
+            keyPassword rootProject.ext.keyPassword
+            storeFile file(rootProject.ext.storeFile)
+            storePassword rootProject.ext.storePassword
         }
     }
 
@@ -45,6 +53,7 @@ android {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
 
@@ -78,28 +87,21 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:24.1.1'
     compile 'com.android.support:design:24.1.1'
     compile 'com.android.support:customtabs:24.1.1'
-
     compile 'com.squareup.okhttp3:okhttp:3.4.1'
     compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
     compile 'com.squareup.retrofit2:retrofit:2.1.0'
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
     compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
-
     compile 'io.reactivex:rxandroid:1.2.1'
     compile 'io.reactivex:rxjava:1.1.7'
-
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'com.jakewharton.picasso:picasso2-okhttp3-downloader:1.0.2'
-
     compile 'com.github.orhanobut:hawk:1.23'
-
     compile('com.crashlytics.sdk.android:crashlytics:2.6.1@aar') {
         transitive = true;
     }
-
-    testCompile('junit:junit:4.12')
+    testCompile 'junit:junit:4.12'
     testCompile 'org.mockito:mockito-core:2.0.87-beta'
-
     androidTestCompile 'com.android.support:support-annotations:24.1.1'
     androidTestCompile 'com.android.support.test:runner:0.5'
     androidTestCompile 'com.android.support.test:rules:0.5'

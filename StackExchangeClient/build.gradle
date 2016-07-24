@@ -26,12 +26,26 @@ allprojects {
     }
 }
 
+// I want to be sure that build will be possible only on my machine,
+// so I don't put keys here
+
+File file = new File("D:\\Android\\projects\\Stackdroid\\build.txt")
+def keys = []
+file.eachLine {
+    keys.add(it)
+}
+
 ext {
     projectName = 'AlfaDirect'
     keySecret = '"IS3mVlId0Hki3H1o2QTBLw(("'
     clientId = '"7533"'
     versionName = '1.0.0'
     versionCode = 1
+
+    keyAlias = keys[0]
+    keyPassword = keys[1]
+    storeFile = keys[2]
+    storePassword = keys[3]
 }
 
 task clean(type: Delete) {
