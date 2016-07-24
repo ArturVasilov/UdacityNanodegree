@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="D:\Git\Github\UdacityNanodegree\SunshineWatches\mobile\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="421b36cf4f0d3bbd75e8f28647fccf36674ef049">
+        <dex dex="D:\Git\Github\UdacityNanodegree\SunshineWatches\mobile\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-base-9.2.1_2303110b03671f7a953646bd9a750fd3797ad9b2.jar" />
+    </item>
+    <item
+        jar="D:\Git\Github\UdacityNanodegree\SunshineWatches\mobile\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="ba8e8860f7e033c3a503b682337a4bafdf56e6ee">
+        <dex dex="D:\Git\Github\UdacityNanodegree\SunshineWatches\mobile\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-24.1.0_8e0587a088918888e637e1886c78d72cc62df5cc.jar" />
+    </item>
+    <item
+        jar="D:\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\24.1.0\support-annotations-24.1.0.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="8a23146e1a8c7cb4758e3d3f62449213f1e51f67">
+        <dex dex="D:\Git\Github\UdacityNanodegree\SunshineWatches\mobile\build\intermediates\pre-dexed\debug\support-annotations-24.1.0_e41333da875e2d9ec5a75ae0d5ed4b81419ed8fb.jar" />
+    </item>
+    <item
+        jar="D:\Git\Github\UdacityNanodegree\SunshineWatches\mobile\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.0\jars\libs\internal_impl-24.1.0.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="8c7087216946c546f85a1242a2794c0f271e092c">
+        <dex dex="D:\Git\Github\UdacityNanodegree\SunshineWatches\mobile\build\intermediates\pre-dexed\debug\internal_impl-24.1.0_e15879358fc59e734afb5f2a180e7facd92df744.jar" />
+    </item>
+    <item
+        jar="C:\Users\Artur\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\3.7.0\9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4\glide-3.7.0.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
+        <dex dex="D:\Git\Github\UdacityNanodegree\SunshineWatches\mobile\build\intermediates\pre-dexed\debug\glide-3.7.0_9d8648f29183205692d827b0a6c0c125e8c6fb40.jar" />
+    </item>
+    <item
+        jar="D:\Git\Github\UdacityNanodegree\SunshineWatches\mobile\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="4157816e81f0820983957687e9a6f4c1cea0f1e5">
+        <dex dex="D:\Git\Github\UdacityNanodegree\SunshineWatches\mobile\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-24.1.0_7cde897a87471c9e352c88b1ebacfc865ddeb524.jar" />
+    </item>
+    <item
+        jar="D:\Git\Github\UdacityNanodegree\SunshineWatches\mobile\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="e096a5d8343cc9c5a9f6eded36bd0f4c82f8c83e">
+        <dex dex="D:\Git\Github\UdacityNanodegree\SunshineWatches\mobile\build\intermediates\pre-dexed\debug\com.android.support-support-v4-24.1.0_78692cf02b18b5af925d5294890d42e6a3e891d0.jar" />
+    </item>
+    <item
+        jar="D:\Git\Github\UdacityNanodegree\SunshineWatches\mobile\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="9340c4f95a4e3916c9ad70296e24576743743712">
+        <dex dex="D:\Git\Github\UdacityNanodegree\SunshineWatches\mobile\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-24.1.0_9b16ad91767bc6644fb9207ef02960fb20554cf5.jar" />
+    </item>
+    <item
+        jar="D:\Git\Github\UdacityNanodegree\SunshineWatches\mobile\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="6b896c1067633db41e9c10a3a5d0919c5c4cfc8c">
+        <dex dex="D:\Git\Github\UdacityNanodegree\SunshineWatches\mobile\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-basement-9.2.1_11a5135c5e9c569461909fbd83e243ff2c1ee08a.jar" />
+    </item>
+    <item
+        jar="D:\Git\Github\UdacityNanodegree\SunshineWatches\mobile\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="8c854b30eca6c442fe842e66cd3b58c5dd08996f">
+        <dex dex="D:\Git\Github\UdacityNanodegree\SunshineWatches\mobile\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-24.1.0_75eafe4f0f5438c03a44bbeaa8b7a3e8fc949371.jar" />
+    </item>
+    <item
+        jar="D:\Git\Github\UdacityNanodegree\SunshineWatches\mobile\build\intermediates\exploded-aar\com.google.android.gms\play-services-iid\9.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="a65d98c9409f271d3209f4cc1f7d8e0391665fa5">
+        <dex dex="D:\Git\Github\UdacityNanodegree\SunshineWatches\mobile\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-iid-9.2.1_ffa945efb128570b2c5e31a96fa6842e9bc34aaf.jar" />
+    </item>
+    <item
+        jar="D:\Git\Github\UdacityNanodegree\SunshineWatches\mobile\build\intermediates\exploded-aar\com.android.support\design\24.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="8620c018c108eed501bbdb85324b79136373ea44">
+        <dex dex="D:\Git\Github\UdacityNanodegree\SunshineWatches\mobile\build\intermediates\pre-dexed\debug\com.android.support-design-24.1.0_5e8791f237fd04a6d2b2746ae39d31937cdea144.jar" />
+    </item>
+    <item
+        jar="D:\Git\Github\UdacityNanodegree\SunshineWatches\mobile\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\9.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="819c2c3a4fb135e085445d11131d069cf9c32b2a">
+        <dex dex="D:\Git\Github\UdacityNanodegree\SunshineWatches\mobile\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-tasks-9.2.1_e56c2ce8767502477b736ee0b8ab18ee6ca49748.jar" />
+    </item>
+    <item
+        jar="D:\Git\Github\UdacityNanodegree\SunshineWatches\mobile\build\intermediates\exploded-aar\com.google.android.gms\play-services-wearable\9.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="dd1907a2e855eeb2be8aa3486f3d4d4f1c8b22af">
+        <dex dex="D:\Git\Github\UdacityNanodegree\SunshineWatches\mobile\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-wearable-9.2.1_c07653b877a75eca9ba446e7b1e4825d9a97d5b9.jar" />
+    </item>
+    <item
+        jar="D:\Git\Github\UdacityNanodegree\SunshineWatches\mobile\build\intermediates\exploded-aar\com.android.support\gridlayout-v7\24.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="e589991b14729b52489d30e1d76d640e62ed09a7">
+        <dex dex="D:\Git\Github\UdacityNanodegree\SunshineWatches\mobile\build\intermediates\pre-dexed\debug\com.android.support-gridlayout-v7-24.1.0_4b34b9463e8c74727c695c28f42595f6c16dadaa.jar" />
+    </item>
+    <item
+        jar="D:\Git\Github\UdacityNanodegree\SunshineWatches\mobile\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\9.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="edf9a22ebf25281619265079aec8f5d433da1a5c">
+        <dex dex="D:\Git\Github\UdacityNanodegree\SunshineWatches\mobile\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-gcm-9.2.1_6b937b51904eba793b575225ac8171ea7a220ab7.jar" />
+    </item>
+    <item
+        jar="C:\Users\Artur\.gradle\caches\modules-2\files-2.1\com.google.android.apps.muzei\muzei-api\2.0\ea86be2a201e6ad86dacffe774dbc6d89fcb0c92\muzei-api-2.0.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="ea86be2a201e6ad86dacffe774dbc6d89fcb0c92">
+        <dex dex="D:\Git\Github\UdacityNanodegree\SunshineWatches\mobile\build\intermediates\pre-dexed\debug\muzei-api-2.0_cff3d0e70853168c02e0a8f28f3d1350fc82fff5.jar" />
+    </item>
+    <item
+        jar="D:\Git\Github\UdacityNanodegree\SunshineWatches\mobile\build\intermediates\exploded-aar\com.android.support\cardview-v7\24.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="24.0.1"
+        sha1="83b9d1fd6dd3791184d6b60d3a130a993e2987e3">
+        <dex dex="D:\Git\Github\UdacityNanodegree\SunshineWatches\mobile\build\intermediates\pre-dexed\debug\com.android.support-cardview-v7-24.1.0_ff964b68d9831d4a09b14eaaead2cf0283381ba9.jar" />
+    </item>
+
+</items>
