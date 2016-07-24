@@ -31,9 +31,7 @@ public class PreferencesUtilsTest {
         MockUtils.PREFERENCES.edit().putString("key_access_token", "token").apply();
 
         PreferencesUtils.getAccessToken()
-                .subscribe(s -> {
-                            assertEquals("token", "s");
-                        }, new StubAction<>(),
+                .subscribe(s -> assertEquals("token", "s"), new StubAction<>(),
                         () -> MockUtils.PREFERENCES.edit().remove("key_access_token").apply());
     }
 }

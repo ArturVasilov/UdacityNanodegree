@@ -8,12 +8,7 @@ import com.orhanobut.hawk.Hawk;
 import com.orhanobut.hawk.HawkBuilder;
 import com.orhanobut.hawk.LogLevel;
 
-import java.util.ArrayList;
-
 import io.fabric.sdk.android.Fabric;
-import ru.arturvasilov.stackexchangeclient.api.ApiFactory;
-import ru.arturvasilov.stackexchangeclient.api.RepositoryProvider;
-import ru.arturvasilov.stackexchangeclient.api.StackRepository;
 import ru.arturvasilov.stackexchangeclient.images.PicassoTools;
 
 /**

@@ -12,7 +12,7 @@ import ru.arturvasilov.stackexchangeclient.utils.PreferencesUtils;
 /**
  * @author Artur Vasilov
  */
-public class ApiKeyInterceptor implements Interceptor {
+class ApiKeyInterceptor implements Interceptor {
 
     private final String mAccessToken;
 

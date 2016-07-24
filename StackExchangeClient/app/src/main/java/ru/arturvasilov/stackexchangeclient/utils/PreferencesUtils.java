@@ -11,7 +11,7 @@ import rx.Observable;
  */
 public final class PreferencesUtils {
 
-    public static final String KEY_ACCESS_TOKEN = "key_access_token";
+    private static final String KEY_ACCESS_TOKEN = "key_access_token";
 
     private PreferencesUtils() {
     }

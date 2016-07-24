@@ -7,8 +7,6 @@ import org.mockito.Mockito;
 
 import java.net.SocketTimeoutException;
 
-import retrofit2.Response;
-import retrofit2.adapter.rxjava.HttpException;
 import ru.arturvasilov.stackexchangeclient.testutils.MockUtils;
 import ru.arturvasilov.stackexchangeclient.view.ErrorView;
 import ru.arturvasilov.stackexchangeclient.view.LoadingView;

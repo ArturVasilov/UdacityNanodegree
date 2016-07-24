@@ -7,7 +7,7 @@ import rx.Observable;
 /**
  * @author Artur Vasilov
  */
-public final class ErrorsHandler {
+final class ErrorsHandler {
 
     private ErrorsHandler() {
     }
