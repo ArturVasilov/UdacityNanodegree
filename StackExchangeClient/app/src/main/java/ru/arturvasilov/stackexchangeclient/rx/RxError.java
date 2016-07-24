@@ -71,7 +71,7 @@ public final class RxError {
 
         @Override
         public void hideErrorMessage() {
-
+            // Do nothing
         }
     }
 

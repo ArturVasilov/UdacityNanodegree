@@ -3,8 +3,13 @@ package ru.arturvasilov.stackexchangeclient.testutils;
 import android.app.LoaderManager;
 import android.content.Context;
 import android.content.Loader;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+
+import com.orhanobut.hawk.Hawk;
+import com.orhanobut.hawk.HawkBuilder;
+import com.orhanobut.hawk.LogLevel;
 
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
@@ -30,6 +35,8 @@ import static org.mockito.Mockito.when;
  */
 public final class MockUtils {
 
+    public static final SharedPreferences PREFERENCES = new SharedPreferencesMapImpl();
+
     private MockUtils() {
     }
 
@@ -49,9 +56,23 @@ public final class MockUtils {
         }
     }
 
+    public static void setupHawkForTests() {
+        Context context = MockUtils.mockContext();
+        when(context.getSharedPreferences("HAWK", 0)).thenReturn(PREFERENCES);
+
+        Hawk.init(context)
+                .setEncryptionMethod(HawkBuilder.EncryptionMethod.NO_ENCRYPTION)
+                .setStorage(HawkBuilder.newSharedPrefStorage(context))
+                .setLogLevel(LogLevel.NONE)
+                .build();
+    }
+
     @NonNull
-    public static Context rxContext() {
-        return mock(Context.class);
+    public static Context mockContext() {
+        Context context = mock(Context.class);
+        Context appContext = mock(Context.class);
+        when(context.getApplicationContext()).thenReturn(appContext);
+        return context;
     }
 
     @NonNull

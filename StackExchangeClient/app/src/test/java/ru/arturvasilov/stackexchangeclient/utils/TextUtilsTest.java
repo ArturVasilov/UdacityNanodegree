@@ -45,4 +45,85 @@ public class TextUtilsTest {
                 "zax.axa/[xxa]");
         assertFalse(empty);
     }
+
+    @Test
+    public void testNullStringsEquals() throws Exception {
+        boolean equals = TextUtils.equals(null, null);
+        assertTrue(equals);
+    }
+
+    @Test
+    public void testSameStringEquals() throws Exception {
+        String s = "aaa";
+        boolean equals = TextUtils.equals(s, s);
+        assertTrue(equals);
+    }
+
+    @Test
+    public void testEmptyStringsEquals() throws Exception {
+        boolean equals = TextUtils.equals("", "");
+        assertTrue(equals);
+    }
+
+    @Test
+    public void testFirstStringNull() throws Exception {
+        String s = "xyz";
+        boolean equals = TextUtils.equals(null, s);
+        assertFalse(equals);
+    }
+
+    @Test
+    public void testSecondStringNull() throws Exception {
+        String s = "zyx";
+        boolean equals = TextUtils.equals(s, null);
+        assertFalse(equals);
+    }
+
+    @Test
+    public void testDifferentLengths() throws Exception {
+        String first = "9pda";
+        String second = "0ca";
+        boolean equals = TextUtils.equals(first, second);
+        assertFalse(equals);
+    }
+
+    @Test
+    public void testDifferentSymbols() throws Exception {
+        String first = "arozaupalanalapuazora";
+        String second = "urozaupalanalapuazoru";
+        boolean equals = TextUtils.equals(first, second);
+        assertFalse(equals);
+    }
+
+    @Test
+    public void testEqualsStrings() throws Exception {
+        String first = "Ab0ocam";
+        String second = "Ab0ocam";
+        boolean equals = TextUtils.equals(first, second);
+        assertTrue(equals);
+    }
+
+    @Test
+    public void testStringBuilderDifferentLengths() throws Exception {
+        StringBuilder first = new StringBuilder("9pda");
+        StringBuilder second = new StringBuilder("0ca");
+        boolean equals = TextUtils.equals(first, second);
+        assertFalse(equals);
+    }
+
+    @Test
+    public void testStringBuilderDifferentSymbols() throws Exception {
+        StringBuilder first = new StringBuilder("arozaupalanalapuazora");
+        StringBuilder second = new StringBuilder("urozaupalanalapuazoru");
+        boolean equals = TextUtils.equals(first, second);
+        assertFalse(equals);
+    }
+
+    @Test
+    public void testStringBuilderEqualsStrings() throws Exception {
+        StringBuilder first = new StringBuilder("Ab0ocam");
+        StringBuilder second = new StringBuilder("Ab0ocam");
+        boolean equals = TextUtils.equals(first, second);
+        assertTrue(equals);
+    }
 }
