@@ -3,10 +3,14 @@ package ru.arturvasilov.stackexchangeclient;
 import android.app.Application;
 import android.support.annotation.NonNull;
 
+import com.crashlytics.android.Crashlytics;
 import com.orhanobut.hawk.Hawk;
 import com.orhanobut.hawk.HawkBuilder;
 import com.orhanobut.hawk.LogLevel;
 
+import java.util.ArrayList;
+
+import io.fabric.sdk.android.Fabric;
 import ru.arturvasilov.stackexchangeclient.api.ApiFactory;
 import ru.arturvasilov.stackexchangeclient.api.RepositoryProvider;
 import ru.arturvasilov.stackexchangeclient.api.StackRepository;
@@ -24,6 +28,8 @@ public class AppDelegate extends Application {
         super.onCreate();
 
         sInstance = this;
+
+        Fabric.with(this, new Crashlytics());
 
         PicassoTools.setup(this);
 

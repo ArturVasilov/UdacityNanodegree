@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
-apply plugin: "me.tatarka.retrolambda"
+apply plugin: 'me.tatarka.retrolambda'
+apply plugin: 'io.fabric'
 
 android {
     compileSdkVersion 24
@@ -91,6 +92,10 @@ dependencies {
     compile 'com.jakewharton.picasso:picasso2-okhttp3-downloader:1.0.2'
 
     compile 'com.github.orhanobut:hawk:1.23'
+
+    compile('com.crashlytics.sdk.android:crashlytics:2.6.1@aar') {
+        transitive = true;
+    }
 
     testCompile('junit:junit:4.12')
     testCompile 'org.mockito:mockito-core:2.0.87-beta'
