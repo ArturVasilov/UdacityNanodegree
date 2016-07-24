@@ -3,6 +3,7 @@ package ru.arturvasilov.stackexchangeclient.api;
 import android.support.annotation.NonNull;
 
 import okhttp3.OkHttpClient;
+import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -60,6 +61,7 @@ public final class ApiFactory {
     private static OkHttpClient buildClient() {
         return new OkHttpClient.Builder()
                 .addInterceptor(new ApiKeyInterceptor())
+                .addInterceptor(new HttpLoggingInterceptor())
                 .build();
     }
 }

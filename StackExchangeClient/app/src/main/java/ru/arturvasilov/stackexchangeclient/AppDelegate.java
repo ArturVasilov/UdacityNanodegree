@@ -10,6 +10,7 @@ import com.orhanobut.hawk.LogLevel;
 import ru.arturvasilov.stackexchangeclient.api.ApiFactory;
 import ru.arturvasilov.stackexchangeclient.api.RepositoryProvider;
 import ru.arturvasilov.stackexchangeclient.api.StackRepository;
+import ru.arturvasilov.stackexchangeclient.images.PicassoTools;
 
 /**
  * @author Artur Vasilov
@@ -23,6 +24,8 @@ public class AppDelegate extends Application {
         super.onCreate();
 
         sInstance = this;
+
+        PicassoTools.setup(this);
 
         Hawk.init(this)
                 .setEncryptionMethod(HawkBuilder.EncryptionMethod.MEDIUM)

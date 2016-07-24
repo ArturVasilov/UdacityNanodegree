@@ -23,10 +23,10 @@ public class StackRepositoryImpl implements StackRepository {
     @Override
     public Observable<User> getCurrentUser(@Site String site) {
         return mService.getCurrentUser(site)
-                .compose(RxSchedulers.async())
                 .compose(ErrorsHandler.handleErrors())
                 .map(UserResponse::getUsers)
-                .map(users -> users.get(0));
+                .map(users -> users.get(0))
+                .compose(RxSchedulers.async());
     }
 }
 

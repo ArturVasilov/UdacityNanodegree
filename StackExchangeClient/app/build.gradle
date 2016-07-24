@@ -46,12 +46,6 @@ android {
     productFlavors {
         dev {
             dimension 'buildType'
-            signingConfig signingConfigs.release
-        }
-
-        mock {
-            dimension 'buildType'
-            versionName rootProject.ext.versionName + '-mock'
             signingConfig signingConfigs.debug
         }
 
@@ -86,6 +80,9 @@ dependencies {
 
     compile 'io.reactivex:rxandroid:1.2.1'
     compile 'io.reactivex:rxjava:1.1.7'
+
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.jakewharton.picasso:picasso2-okhttp3-downloader:1.0.2'
 
     compile 'com.github.orhanobut:hawk:1.23'
 
