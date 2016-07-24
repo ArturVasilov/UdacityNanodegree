@@ -1,8 +1,10 @@
 <resources>
     <string name="app_name">StackDroid</string>
 
-    <string name="error.network">Проверьте подключение к интернету.</string>
-    <string name="error.unexpected">Опаньки! Попробуйте выполнить действие позднее.</string>
+    <string name="error.network">Check your network connection</string>
+    <string name="error.unexpected">Оoops! Try again later.</string>
     <string name="button.ok">@android:string/ok</string>
-    <string name="loading">Загрузка…</string>
+    <string name="loading">Loading…</string>
+
+    <string name="sign_in_uppercase">SIGN IN</string>
 </resources>

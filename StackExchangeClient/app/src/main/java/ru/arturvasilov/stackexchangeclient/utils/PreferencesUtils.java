@@ -12,6 +12,7 @@ import rx.Observable;
 public final class PreferencesUtils {
 
     private static final String KEY_ACCESS_TOKEN = "key_access_token";
+    private static final String KEY_WALKTHROUGH_PASSED = "key_walkthrough_passed";
 
     private PreferencesUtils() {
     }
@@ -29,6 +30,14 @@ public final class PreferencesUtils {
     @NonNull
     public static String obtainAccessToken() {
         return Hawk.get(KEY_ACCESS_TOKEN);
+    }
+
+    public static void saveWalkthroughPassed() {
+        Hawk.put(KEY_WALKTHROUGH_PASSED, true);
+    }
+
+    public static boolean isWalkthroughPassed() {
+        return Hawk.get(KEY_WALKTHROUGH_PASSED, false);
     }
 
 }

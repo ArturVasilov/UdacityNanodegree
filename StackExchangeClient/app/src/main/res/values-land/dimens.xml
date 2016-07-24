@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="centered_content_padding">88dp</dimen>
+    <dimen name="auth_button_margin">64dp</dimen>
+
+</resources>

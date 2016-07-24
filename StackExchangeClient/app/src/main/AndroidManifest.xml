@@ -12,7 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".activity.AuthActivity">
+        <activity
+            android:name=".activity.AuthActivity"
+            android:launchMode="singleInstance">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -32,10 +34,11 @@
         </activity>
 
         <activity android:name=".activity.MainActivity"/>
+        <activity android:name=".activity.WalkthroughActivity"/>
 
         <meta-data
             android:name="io.fabric.ApiKey"
-            android:value="3e5b15c1d3401d21a14a9501572e17feeccc86bf" />
+            android:value="3e5b15c1d3401d21a14a9501572e17feeccc86bf"/>
     </application>
 
 </manifest>

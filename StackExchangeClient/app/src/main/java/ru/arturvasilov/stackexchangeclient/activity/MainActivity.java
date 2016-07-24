@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.ac_main);
         setSupportActionBar(Views.findById(this, R.id.toolbar));
 
         RepositoryProvider.getRepository()
