@@ -34,7 +34,9 @@
         </activity>
 
         <activity android:name=".activity.MainActivity"/>
-        <activity android:name=".activity.WalkthroughActivity"/>
+        <activity
+            android:name=".activity.WalkthroughActivity"
+            android:theme="@style/AppTheme.Fullscreen"/>
 
         <meta-data
             android:name="io.fabric.ApiKey"

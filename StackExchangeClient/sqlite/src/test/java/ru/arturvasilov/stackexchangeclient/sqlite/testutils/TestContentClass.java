@@ -39,8 +39,7 @@ public class TestContentClass {
 
         TestContentClass that = (TestContentClass) o;
 
-        if (getId() != that.getId()) return false;
-        return getText().equals(that.getText());
+        return getId() == that.getId() && getText().equals(that.getText());
 
     }
 

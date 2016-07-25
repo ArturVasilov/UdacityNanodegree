@@ -7,4 +7,11 @@
     <string name="loading">Loading…</string>
 
     <string name="sign_in_uppercase">SIGN IN</string>
+
+    <string name="next_uppercase">NEXT</string>
+    <string name="finish_uppercase">FINISH</string>
+
+    <string name="page_1_text">Stackoveflow1</string>
+    <string name="page_2_text">Stackoveflow2</string>
+    <string name="page_3_text">Stackoveflow3</string>
 </resources>
