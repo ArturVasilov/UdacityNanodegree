@@ -4,6 +4,7 @@ import android.support.annotation.NonNull;
 
 import com.orhanobut.hawk.Hawk;
 
+import ru.arturvasilov.stackexchangeclient.model.content.User;
 import rx.Observable;
 
 /**
@@ -13,6 +14,7 @@ public final class PreferencesUtils {
 
     private static final String KEY_ACCESS_TOKEN = "key_access_token";
     private static final String KEY_WALKTHROUGH_PASSED = "key_walkthrough_passed";
+    private static final String KEY_USER_ID = "key_user_id";
 
     private PreferencesUtils() {
     }
@@ -38,6 +40,15 @@ public final class PreferencesUtils {
 
     public static boolean isWalkthroughPassed() {
         return Hawk.get(KEY_WALKTHROUGH_PASSED, false);
+    }
+
+    public static void saveUserId(int userId) {
+        Hawk.put(KEY_USER_ID, userId);
+    }
+
+    @NonNull
+    public static Observable<Integer> getCurrentUserId() {
+        return Hawk.getObservable(KEY_USER_ID, -1);
     }
 
 }

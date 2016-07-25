@@ -4,7 +4,7 @@ import android.support.annotation.NonNull;
 
 import ru.arturvasilov.stackexchangeclient.api.StackRepository;
 import ru.arturvasilov.stackexchangeclient.api.constants.Site;
-import ru.arturvasilov.stackexchangeclient.model.User;
+import ru.arturvasilov.stackexchangeclient.model.content.User;
 import rx.Observable;
 
 /**

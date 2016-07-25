@@ -38,6 +38,11 @@
             android:name=".activity.WalkthroughActivity"
             android:theme="@style/AppTheme.Fullscreen"/>
 
+        <provider
+            android:name=".model.database.SQLiteProvider"
+            android:authorities="ru.arturvasilov.stackexchangeclient"
+            android:exported="false"/>
+
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="3e5b15c1d3401d21a14a9501572e17feeccc86bf"/>

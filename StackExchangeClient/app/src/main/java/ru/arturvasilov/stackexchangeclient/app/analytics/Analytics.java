@@ -9,7 +9,7 @@ import android.support.annotation.StringDef;
 import com.google.firebase.analytics.FirebaseAnalytics;
 
 import ru.arturvasilov.stackexchangeclient.BuildConfig;
-import ru.arturvasilov.stackexchangeclient.model.User;
+import ru.arturvasilov.stackexchangeclient.model.content.User;
 
 /**
  * @author Artur Vasilov

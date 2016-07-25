@@ -4,17 +4,14 @@ import android.app.LoaderManager;
 import android.content.Context;
 import android.support.annotation.NonNull;
 
-import java.io.IOException;
-import java.util.concurrent.TimeUnit;
-
 import ru.arturvasilov.stackexchangeclient.R;
-import ru.arturvasilov.stackexchangeclient.rx.RxSchedulers;
+import ru.arturvasilov.stackexchangeclient.api.RepositoryProvider;
+import ru.arturvasilov.stackexchangeclient.api.constants.ApiConstants;
+import ru.arturvasilov.stackexchangeclient.model.content.User;
 import ru.arturvasilov.stackexchangeclient.rx.rxloader.RxLoader;
+import ru.arturvasilov.stackexchangeclient.utils.PreferencesUtils;
 import ru.arturvasilov.stackexchangeclient.view.WalkthroughView;
-import rx.Observable;
-import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
-import rx.schedulers.Schedulers;
 
 /**
  * @author Artur Vasilov
@@ -86,14 +83,11 @@ public class WalkthroughPresenter {
         mIsInformationLoaded = false;
         mIsError = false;
 
-        Observable<Object> observable = Observable.just(5)
-                .delay(6, TimeUnit.SECONDS)
-                .flatMap(integer -> Observable.error(new IOException()))
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread());
-        RxLoader<Object> loader = RxLoader.create(mContext, mLoaderManager, R.id.walkthrough_loader_id, observable);
 
-        Action1<Object> onNext = obj -> {
+        RxLoader<User> loader = RxLoader.create(mContext, mLoaderManager, R.id.walkthrough_loader_id,
+                RepositoryProvider.getRepository().getCurrentUser(ApiConstants.STACKOVERFLOW));
+
+        Action1<User> onNext = obj -> {
             mIsInformationLoaded = true;
             checkForSuccess();
         };
@@ -114,7 +108,7 @@ public class WalkthroughPresenter {
     private void checkForSuccess() {
         if (mIsWalkthroughPassed) {
             if (mIsInformationLoaded) {
-                //PreferencesUtils.saveWalkthroughPassed();
+                PreferencesUtils.saveWalkthroughPassed();
                 mView.finishWalkthrough();
             } else if (mIsError) {
                 mView.showError();

@@ -7,7 +7,7 @@ import org.junit.runners.JUnit4;
 import java.util.ArrayList;
 import java.util.List;
 
-import ru.arturvasilov.stackexchangeclient.model.User;
+import ru.arturvasilov.stackexchangeclient.model.content.User;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;

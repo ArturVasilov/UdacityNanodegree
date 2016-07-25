@@ -12,6 +12,7 @@ import io.fabric.sdk.android.Fabric;
 import ru.arturvasilov.stackexchangeclient.app.analytics.Analytics;
 import ru.arturvasilov.stackexchangeclient.app.analytics.EventTags;
 import ru.arturvasilov.stackexchangeclient.images.PicassoTools;
+import ru.arturvasilov.stackexchangeclient.sqlite.SQLite;
 
 /**
  * @author Artur Vasilov
@@ -28,10 +29,11 @@ public class AppDelegate extends Application {
 
         Fabric.with(this, new Crashlytics());
         Analytics.init(this);
+        Analytics.buildEvent().log(EventTags.APP_STARTED);
+
+        SQLite.initialize(this);
 
         PicassoTools.setup(this);
-
-        Analytics.buildEvent().log(EventTags.APP_STARTED);
 
         Hawk.init(this)
                 .setEncryptionMethod(HawkBuilder.EncryptionMethod.MEDIUM)

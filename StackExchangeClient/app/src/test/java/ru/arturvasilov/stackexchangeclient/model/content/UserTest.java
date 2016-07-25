@@ -1,8 +1,10 @@
-package ru.arturvasilov.stackexchangeclient.model;
+package ru.arturvasilov.stackexchangeclient.model.content;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+
+import ru.arturvasilov.stackexchangeclient.model.content.User;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;

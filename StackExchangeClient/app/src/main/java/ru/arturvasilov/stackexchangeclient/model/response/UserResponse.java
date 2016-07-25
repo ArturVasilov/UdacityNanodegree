@@ -7,7 +7,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.ArrayList;
 import java.util.List;
 
-import ru.arturvasilov.stackexchangeclient.model.User;
+import ru.arturvasilov.stackexchangeclient.model.content.User;
 
 /**
  * @author Artur Vasilov
