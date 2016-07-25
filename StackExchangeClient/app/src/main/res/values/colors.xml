@@ -9,4 +9,5 @@
     <color name="white">@android:color/white</color>
 
     <color name="highlight_color">#ddeeeeee</color>
+    <color name="white_50">#88ffffff</color>
 </resources>

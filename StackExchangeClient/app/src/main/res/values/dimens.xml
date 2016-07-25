@@ -9,4 +9,7 @@
     <dimen name="middle_circle_size">300dp</dimen>
     <dimen name="inner_circle_size">350dp</dimen>
 
+    <dimen name="header_height">220dp</dimen>
+    <dimen name="header_image_size">108dp</dimen>
+
 </resources>

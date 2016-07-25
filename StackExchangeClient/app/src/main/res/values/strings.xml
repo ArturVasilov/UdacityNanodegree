@@ -16,4 +16,11 @@
     <string name="page_3_text">Stackoveflow3</string>
     <string name="retry">Retry</string>
     <string name="refresh">Refresh</string>
+    <string name="profile">Profile</string>
+    <string name="my_answers">My answers</string>
+    <string name="tags">Tags</string>
+    <string name="exit">Exit</string>
+    <string name="search">Search</string>
+    <string name="all">All</string>
+    <string name="my">My</string>
 </resources>
