@@ -2,9 +2,12 @@ package ru.arturvasilov.stackexchangeclient.api;
 
 import android.support.annotation.NonNull;
 
+import java.util.List;
+
 import ru.arturvasilov.stackexchangeclient.AppDelegate;
-import ru.arturvasilov.stackexchangeclient.api.constants.Site;
+import ru.arturvasilov.stackexchangeclient.model.content.Question;
 import ru.arturvasilov.stackexchangeclient.model.content.User;
+import ru.arturvasilov.stackexchangeclient.model.database.QuestionTable;
 import ru.arturvasilov.stackexchangeclient.model.database.UserTable;
 import ru.arturvasilov.stackexchangeclient.rx.RxSchedulers;
 import ru.arturvasilov.stackexchangeclient.sqlite.SQLite;
@@ -14,7 +17,7 @@ import rx.Observable;
 /**
  * @author Artur Vasilov
  */
-public class LocalRepository implements StackRepository {
+public class LocalRepository {
 
     private final SQLite mDb;
 
@@ -23,8 +26,7 @@ public class LocalRepository implements StackRepository {
     }
 
     @NonNull
-    @Override
-    public Observable<User> getCurrentUser(@Site String site) {
+    public Observable<User> getCurrentUser() {
         return PreferencesUtils.getCurrentUserId()
                 .take(1)
                 .filter(id -> id > 0)
@@ -34,6 +36,16 @@ public class LocalRepository implements StackRepository {
                         .where(UserTable.USER_ID + "=?")
                         .whereArgs(new String[]{id})
                         .asObservable())
+                .compose(RxSchedulers.async());
+    }
+
+    @NonNull
+    public Observable<List<Question>> questions(@NonNull String tag) {
+        return mDb.query(QuestionTable.TABLE)
+                .all()
+                .where(QuestionTable.TAG + "=?")
+                .whereArgs(new String[]{tag})
+                .asObservable()
                 .compose(RxSchedulers.async());
     }
 }

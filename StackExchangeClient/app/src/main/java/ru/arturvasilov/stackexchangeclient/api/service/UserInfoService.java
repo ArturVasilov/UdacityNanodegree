@@ -1,4 +1,4 @@
-package ru.arturvasilov.stackexchangeclient.api;
+package ru.arturvasilov.stackexchangeclient.api.service;
 
 import android.support.annotation.NonNull;
 
@@ -13,7 +13,7 @@ import rx.Observable;
 public interface UserInfoService {
 
     @NonNull
-    @GET("/me")
-    Observable<UserResponse> getCurrentUser(@NonNull @Query("site") String site);
+    @GET("/me?site=stackoverflow")
+    Observable<UserResponse> getCurrentUser();
 
 }

@@ -4,12 +4,15 @@ import android.app.LoaderManager;
 import android.content.Context;
 import android.support.annotation.NonNull;
 
+import java.io.IOException;
+
 import ru.arturvasilov.stackexchangeclient.R;
+import ru.arturvasilov.stackexchangeclient.api.RemoteRepository;
 import ru.arturvasilov.stackexchangeclient.api.RepositoryProvider;
-import ru.arturvasilov.stackexchangeclient.api.constants.ApiConstants;
-import ru.arturvasilov.stackexchangeclient.model.content.User;
+import ru.arturvasilov.stackexchangeclient.rx.RxSchedulers;
 import ru.arturvasilov.stackexchangeclient.rx.rxloader.RxLoader;
 import ru.arturvasilov.stackexchangeclient.view.WalkthroughView;
+import rx.Observable;
 import rx.functions.Action1;
 
 /**
@@ -82,11 +85,14 @@ public class WalkthroughPresenter {
         mIsInformationLoaded = false;
         mIsError = false;
 
+        RemoteRepository repository = RepositoryProvider.provideRemoteRepository();
+        Observable<Object> observable = Observable.zip(repository.getCurrentUser(), repository.questions(),
+                (user, questions) -> user != null && !questions.isEmpty())
+                .flatMap(success -> success ? Observable.just(true) : Observable.error(new IOException()))
+                .compose(RxSchedulers.async());
+        RxLoader<Object> loader = RxLoader.create(mContext, mLoaderManager, R.id.walkthrough_loader_id, observable);
 
-        RxLoader<User> loader = RxLoader.create(mContext, mLoaderManager, R.id.walkthrough_loader_id,
-                RepositoryProvider.provideRemoteRepository().getCurrentUser(ApiConstants.STACKOVERFLOW));
-
-        Action1<User> onNext = obj -> {
+        Action1<Object> onNext = obj -> {
             mIsInformationLoaded = true;
             checkForSuccess();
         };
