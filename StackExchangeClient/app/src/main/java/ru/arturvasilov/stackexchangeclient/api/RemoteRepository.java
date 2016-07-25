@@ -16,11 +16,11 @@ import rx.functions.Func1;
 /**
  * @author Artur Vasilov
  */
-public class StackRepositoryImpl implements StackRepository {
+public class RemoteRepository implements StackRepository {
 
     private final UserInfoService mService;
 
-    public StackRepositoryImpl(@NonNull UserInfoService service) {
+    public RemoteRepository(@NonNull UserInfoService service) {
         mService = service;
     }
 

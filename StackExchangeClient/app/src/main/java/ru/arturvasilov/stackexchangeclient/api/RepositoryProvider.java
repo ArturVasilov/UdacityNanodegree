@@ -7,17 +7,27 @@ import android.support.annotation.NonNull;
  */
 public final class RepositoryProvider {
 
-    private static StackRepository sRepository;
+    private static StackRepository sRemoteRepository;
+    private static StackRepository sLocalRepository;
 
     private RepositoryProvider() {
     }
 
     @NonNull
-    public static StackRepository getRepository() {
-        return sRepository;
+    public static StackRepository provideRemoteRepository() {
+        return sRemoteRepository;
     }
 
-    public static void setRepository(@NonNull StackRepository repository) {
-        sRepository = repository;
+    @NonNull
+    public static StackRepository provideLocalRepository() {
+        return sLocalRepository;
+    }
+
+    public static void setRemoteRepository(@NonNull StackRepository remoteRepository) {
+        sRemoteRepository = remoteRepository;
+    }
+
+    public static void setLocalRepository(@NonNull StackRepository localRepository) {
+        sLocalRepository = localRepository;
     }
 }

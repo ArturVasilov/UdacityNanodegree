@@ -6,13 +6,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.support.annotation.NonNull;
 
 import ru.arturvasilov.stackexchangeclient.model.content.User;
-import ru.arturvasilov.stackexchangeclient.rx.RxSchedulers;
-import ru.arturvasilov.stackexchangeclient.sqlite.SQLite;
 import ru.arturvasilov.stackexchangeclient.sqlite.table.BaseTable;
 import ru.arturvasilov.stackexchangeclient.sqlite.table.Table;
 import ru.arturvasilov.stackexchangeclient.sqlite.table.TableBuilder;
-import ru.arturvasilov.stackexchangeclient.utils.PreferencesUtils;
-import rx.Observable;
 
 /**
  * @author Artur Vasilov
@@ -27,20 +23,6 @@ public class UserTable extends BaseTable<User> {
     public static final String REPUTATION = "reputation";
     public static final String LINK = "link";
     public static final String PROFILE_IMAGE = "profile_image";
-
-    @NonNull
-    public static Observable<User> getCurrentUser() {
-        return PreferencesUtils.getCurrentUserId()
-                .take(1)
-                .filter(id -> id > 0)
-                .map(String::valueOf)
-                .flatMap(id -> SQLite.get().query(TABLE)
-                        .object()
-                        .where(USER_ID + "=?")
-                        .whereArgs(new String[]{id})
-                        .asObservable())
-                .compose(RxSchedulers.async());
-    }
 
     @Override
     public void onCreate(@NonNull SQLiteDatabase database) {

@@ -17,14 +17,14 @@ public class RepositoryProviderTest {
 
     @Test
     public void testNotInited() throws Exception {
-        assertNull(RepositoryProvider.getRepository());
+        assertNull(RepositoryProvider.provideRemoteRepository());
     }
 
     @Test
     public void testSetter() throws Exception {
         StackRepository repository = new TestRepository();
-        RepositoryProvider.setRepository(repository);
+        RepositoryProvider.setRemoteRepository(repository);
 
-        assertTrue(repository == RepositoryProvider.getRepository());
+        assertTrue(repository == RepositoryProvider.provideRemoteRepository());
     }
 }

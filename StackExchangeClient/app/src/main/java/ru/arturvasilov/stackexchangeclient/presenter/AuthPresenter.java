@@ -4,9 +4,10 @@ import android.support.annotation.NonNull;
 
 import ru.arturvasilov.stackexchangeclient.BuildConfig;
 import ru.arturvasilov.stackexchangeclient.api.ApiFactory;
+import ru.arturvasilov.stackexchangeclient.api.LocalRepository;
 import ru.arturvasilov.stackexchangeclient.api.RepositoryProvider;
 import ru.arturvasilov.stackexchangeclient.api.StackRepository;
-import ru.arturvasilov.stackexchangeclient.api.StackRepositoryImpl;
+import ru.arturvasilov.stackexchangeclient.api.RemoteRepository;
 import ru.arturvasilov.stackexchangeclient.utils.PreferencesUtils;
 import ru.arturvasilov.stackexchangeclient.utils.TextUtils;
 import ru.arturvasilov.stackexchangeclient.view.AuthView;
@@ -62,7 +63,8 @@ public class AuthPresenter {
     }
 
     private void initApi() {
-        StackRepository repository = new StackRepositoryImpl(ApiFactory.getUserInfoService());
-        RepositoryProvider.setRepository(repository);
+        StackRepository repository = new RemoteRepository(ApiFactory.getUserInfoService());
+        RepositoryProvider.setRemoteRepository(repository);
+        RepositoryProvider.setLocalRepository(new LocalRepository());
     }
 }

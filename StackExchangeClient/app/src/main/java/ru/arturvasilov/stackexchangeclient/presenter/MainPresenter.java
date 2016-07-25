@@ -3,7 +3,8 @@ package ru.arturvasilov.stackexchangeclient.presenter;
 import android.support.annotation.NonNull;
 
 import ru.arturvasilov.stackexchangeclient.R;
-import ru.arturvasilov.stackexchangeclient.model.database.UserTable;
+import ru.arturvasilov.stackexchangeclient.api.RepositoryProvider;
+import ru.arturvasilov.stackexchangeclient.api.constants.ApiConstants;
 import ru.arturvasilov.stackexchangeclient.rx.StubAction;
 import ru.arturvasilov.stackexchangeclient.view.MainView;
 
@@ -19,7 +20,7 @@ public class MainPresenter {
     }
 
     public void init() {
-        UserTable.getCurrentUser()
+        RepositoryProvider.provideLocalRepository().getCurrentUser(ApiConstants.STACKOVERFLOW)
                 .subscribe(user -> {
                     mView.showUserImage(user.getProfileImage());
                     mView.showUserName(user.getName());
