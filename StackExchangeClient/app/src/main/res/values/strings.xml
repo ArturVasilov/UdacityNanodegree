@@ -3,6 +3,7 @@
 
     <string name="error.network">Check your network connection</string>
     <string name="error.unexpected">Оoops! Try again later.</string>
+    <string name="error.later">Failed to get required information :(\nPlease, try later</string>
     <string name="button.ok">@android:string/ok</string>
     <string name="loading">Loading…</string>
 
@@ -10,8 +11,9 @@
 
     <string name="next_uppercase">NEXT</string>
     <string name="finish_uppercase">FINISH</string>
-
     <string name="page_1_text">Stackoveflow1</string>
     <string name="page_2_text">Stackoveflow2</string>
     <string name="page_3_text">Stackoveflow3</string>
+    <string name="retry">Retry</string>
+    <string name="refresh">Refresh</string>
 </resources>

@@ -5,5 +5,8 @@
     <dimen name="walkthrough_content_padding_bottom">168dp</dimen>
     <dimen name="walkthrough_indicator_margin_bottom">104dp</dimen>
     <dimen name="walkthrough_text_margin">56dp</dimen>
+    <dimen name="outer_circle_size">250dp</dimen>
+    <dimen name="middle_circle_size">300dp</dimen>
+    <dimen name="inner_circle_size">350dp</dimen>
 
 </resources>

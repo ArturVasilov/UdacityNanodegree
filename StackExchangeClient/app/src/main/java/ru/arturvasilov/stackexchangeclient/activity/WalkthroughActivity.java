@@ -18,6 +18,7 @@ import ru.arturvasilov.stackexchangeclient.utils.PreferencesUtils;
 import ru.arturvasilov.stackexchangeclient.utils.Views;
 import ru.arturvasilov.stackexchangeclient.view.WalkthroughView;
 import ru.arturvasilov.stackexchangeclient.widget.CustomViewPager;
+import ru.arturvasilov.stackexchangeclient.widget.SplashLoadingAnimationView;
 
 /**
  * @author Artur Vasilov
@@ -25,8 +26,14 @@ import ru.arturvasilov.stackexchangeclient.widget.CustomViewPager;
 public class WalkthroughActivity extends AppCompatActivity implements WalkthroughView, View.OnClickListener,
         CustomViewPager.PagerStateListener {
 
+    private View mMainLayout;
     private TextView mActionButton;
     private CustomViewPager mPager;
+
+    private View mLoadingLayout;
+    private SplashLoadingAnimationView mAnimationView;
+
+    private View mRetryLayout;
 
     private WalkthroughPresenter mPresenter;
 
@@ -40,6 +47,8 @@ public class WalkthroughActivity extends AppCompatActivity implements Walkthroug
         }
 
         setContentView(R.layout.ac_walkthrough);
+
+        mMainLayout = Views.findById(this, R.id.mainLayout);
         mActionButton = Views.findById(this, R.id.walkthroughActionButton);
         mActionButton.setOnClickListener(this);
 
@@ -51,13 +60,23 @@ public class WalkthroughActivity extends AppCompatActivity implements Walkthroug
         CircleIndicator indicator = Views.findById(this, R.id.pager_indicator);
         indicator.setViewPager(mPager);
 
+        mLoadingLayout = Views.findById(this, R.id.loadingLayout);
+        mAnimationView = Views.findById(this, R.id.animation_view);
+
+        mRetryLayout = Views.findById(this, R.id.retryLayout);
+        Views.findById(this, R.id.retryButton).setOnClickListener(this);
+
         mPresenter = new WalkthroughPresenter(this, this, getLoaderManager());
         mPresenter.init();
     }
 
     @Override
     public void onClick(View view) {
-        mPresenter.onActionButtonClick();
+        if (view.getId() == R.id.walkthroughActionButton) {
+            mPresenter.onActionButtonClick();
+        } else if (view.getId() == R.id.retryButton) {
+            mPresenter.onRetryButtonClick();
+        }
     }
 
     @Override
@@ -86,12 +105,22 @@ public class WalkthroughActivity extends AppCompatActivity implements Walkthroug
 
     @Override
     public void showLoadingSplash() {
-        //TODO
+        mMainLayout.setVisibility(View.GONE);
+        mLoadingLayout.setVisibility(View.VISIBLE);
+        mAnimationView.startAnimation();
+        mRetryLayout.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void showError() {
+        mMainLayout.setVisibility(View.GONE);
+        mLoadingLayout.setVisibility(View.INVISIBLE);
+        mAnimationView.stopAnimation();
+        mRetryLayout.setVisibility(View.VISIBLE);
     }
 
     @Override
     public void finishWalkthrough() {
-        PreferencesUtils.saveWalkthroughPassed();
         startActivity(new Intent(this, MainActivity.class));
         finish();
     }

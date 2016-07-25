@@ -13,6 +13,8 @@ public interface WalkthroughView {
 
     void showLoadingSplash();
 
+    void showError();
+
     void finishWalkthrough();
 
 }
