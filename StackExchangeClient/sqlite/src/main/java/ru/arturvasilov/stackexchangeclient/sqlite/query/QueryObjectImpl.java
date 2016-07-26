@@ -5,6 +5,8 @@ import android.database.Cursor;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
+import java.util.concurrent.Callable;
+
 import ru.arturvasilov.stackexchangeclient.sqlite.core.SQLiteUtils;
 import ru.arturvasilov.stackexchangeclient.sqlite.table.Table;
 import rx.Observable;
@@ -58,7 +60,12 @@ public class QueryObjectImpl<T> implements QueryObject<T> {
     @NonNull
     @Override
     public Observable<T> asObservable() {
-        return Observable.just(execute())
+        return Observable.fromCallable(new Callable<T>() {
+            @Override
+            public T call() throws Exception {
+                return execute();
+            }
+        })
                 .filter(new Func1<T, Boolean>() {
                     @Override
                     public Boolean call(T t) {

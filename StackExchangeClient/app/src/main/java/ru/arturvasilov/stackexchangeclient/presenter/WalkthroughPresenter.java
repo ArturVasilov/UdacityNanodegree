@@ -3,12 +3,17 @@ package ru.arturvasilov.stackexchangeclient.presenter;
 import android.app.LoaderManager;
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 
 import java.io.IOException;
+import java.util.List;
 
 import ru.arturvasilov.stackexchangeclient.R;
+import ru.arturvasilov.stackexchangeclient.api.ApiConstants;
 import ru.arturvasilov.stackexchangeclient.api.RemoteRepository;
 import ru.arturvasilov.stackexchangeclient.api.RepositoryProvider;
+import ru.arturvasilov.stackexchangeclient.model.content.Question;
+import ru.arturvasilov.stackexchangeclient.model.content.User;
 import ru.arturvasilov.stackexchangeclient.rx.RxSchedulers;
 import ru.arturvasilov.stackexchangeclient.rx.rxloader.RxLoader;
 import ru.arturvasilov.stackexchangeclient.view.WalkthroughView;
@@ -86,8 +91,8 @@ public class WalkthroughPresenter {
         mIsError = false;
 
         RemoteRepository repository = RepositoryProvider.provideRemoteRepository();
-        Observable<Object> observable = Observable.zip(repository.getCurrentUser(), repository.questions(),
-                (user, questions) -> user != null && !questions.isEmpty())
+        Observable<Object> observable = Observable.zip(repository.getCurrentUser(), repository.questions(ApiConstants.TAG_ALL),
+                repository.questions(ApiConstants.TAG_MY_QUESTIONS), this::isSuccessLoad)
                 .flatMap(success -> success ? Observable.just(true) : Observable.error(new IOException()))
                 .compose(RxSchedulers.async());
         RxLoader<Object> loader = RxLoader.create(mContext, mLoaderManager, R.id.walkthrough_loader_id, observable);
@@ -121,5 +126,12 @@ public class WalkthroughPresenter {
                 mView.showLoadingSplash();
             }
         }
+    }
+
+    private boolean isSuccessLoad(@Nullable User currentUser, @Nullable List<Question> allQuestions,
+                                  @Nullable List<Question> myQuestions) {
+        return currentUser != null
+                && allQuestions != null && !allQuestions.isEmpty()
+                && myQuestions != null && !myQuestions.isEmpty();
     }
 }

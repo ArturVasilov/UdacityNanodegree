@@ -10,7 +10,7 @@ import android.widget.FrameLayout;
 import ru.arturvasilov.stackexchangeclient.R;
 
 /**
- * @author Nikita Simonov
+ * @author Artur Vasilov
  */
 public class SplashLoadingAnimationView extends FrameLayout {
 

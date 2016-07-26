@@ -5,10 +5,14 @@ import android.support.annotation.NonNull;
 import java.util.List;
 
 import ru.arturvasilov.stackexchangeclient.R;
+import ru.arturvasilov.stackexchangeclient.api.ApiConstants;
+import ru.arturvasilov.stackexchangeclient.api.LocalRepository;
 import ru.arturvasilov.stackexchangeclient.api.RepositoryProvider;
 import ru.arturvasilov.stackexchangeclient.model.content.Question;
+import ru.arturvasilov.stackexchangeclient.rx.RxSchedulers;
 import ru.arturvasilov.stackexchangeclient.rx.StubAction;
 import ru.arturvasilov.stackexchangeclient.view.MainView;
+import rx.Observable;
 import rx.functions.Action1;
 
 /**
@@ -31,7 +35,5 @@ public class MainPresenter {
 
         mView.addTab(R.string.all);
         mView.addTab(R.string.my);
-
-        //TODO : load tabs from favourite
     }
 }

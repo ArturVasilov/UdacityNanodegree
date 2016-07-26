@@ -16,6 +16,10 @@ public interface QuestionService {
     Observable<QuestionResponse> questions();
 
     @NonNull
+    @GET("/me/questions?order=desc&sort=activity&pagesize=50&site=stackoverflow")
+    Observable<QuestionResponse> myQuestions();
+
+    @NonNull
     @GET("/questions?order=desc&sort=activity&site=stackoverflow")
     Observable<QuestionResponse> questions(@NonNull String tag);
 

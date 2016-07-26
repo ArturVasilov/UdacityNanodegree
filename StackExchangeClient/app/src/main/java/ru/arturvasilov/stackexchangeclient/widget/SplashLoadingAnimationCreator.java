@@ -8,7 +8,7 @@ import android.view.animation.DecelerateInterpolator;
 import android.view.animation.LinearInterpolator;
 
 /**
- * @author Nikita Simonov
+ * @author Artur Vasilov
  */
 public final class SplashLoadingAnimationCreator {
 

@@ -16,6 +16,7 @@ import ru.arturvasilov.stackexchangeclient.model.response.UserResponse;
 import ru.arturvasilov.stackexchangeclient.rx.RxSchedulers;
 import ru.arturvasilov.stackexchangeclient.sqlite.SQLite;
 import ru.arturvasilov.stackexchangeclient.utils.PreferencesUtils;
+import ru.arturvasilov.stackexchangeclient.utils.TextUtils;
 import rx.Observable;
 
 /**
@@ -47,24 +48,16 @@ public class RemoteRepository {
     }
 
     @NonNull
-    public Observable<List<Question>> questions() {
-        return mQuestionService.questions()
-                .compose(ErrorsHandler.handleErrors())
-                .map(QuestionResponse::getQuestions)
-                .flatMap(questions -> {
-                    SQLite.get().delete(QuestionTable.TABLE)
-                            .where(QuestionTable.TAG + "=?")
-                            .whereArgs(new String[]{""})
-                            .execute();
-                    SQLite.get().insert(QuestionTable.TABLE).insert(questions);
-                    return Observable.just(questions);
-                })
-                .compose(RxSchedulers.async());
-    }
-
-    @NonNull
     public Observable<List<Question>> questions(@NonNull String tag) {
-        return mQuestionService.questions(tag)
+        Observable<QuestionResponse> questionsObservable;
+        if (TextUtils.equals(ApiConstants.TAG_ALL, tag)) {
+            questionsObservable = mQuestionService.questions();
+        } else if (TextUtils.equals(ApiConstants.TAG_MY_QUESTIONS, tag)) {
+            questionsObservable = mQuestionService.myQuestions();
+        } else {
+            questionsObservable = mQuestionService.questions(tag);
+        }
+        return questionsObservable
                 .compose(ErrorsHandler.handleErrors())
                 .map(QuestionResponse::getQuestions)
                 .flatMap(Observable::from)
@@ -76,7 +69,7 @@ public class RemoteRepository {
                 .flatMap(questions -> {
                     SQLite.get().delete(QuestionTable.TABLE)
                             .where(QuestionTable.TAG + "=?")
-                            .whereArgs(new String[]{tag})
+                            .whereArgs(new String[]{""})
                             .execute();
                     SQLite.get().insert(QuestionTable.TABLE).insert(questions);
                     return Observable.just(questions);
