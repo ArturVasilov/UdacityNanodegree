@@ -7,4 +7,6 @@
     <dimen name="walkthrough_indicator_margin_bottom">80dp</dimen>
     <dimen name="walkthrough_text_margin">32dp</dimen>
 
+    <dimen name="list_item_padding">64dp</dimen>
+
 </resources>

@@ -69,7 +69,7 @@ public class RemoteRepository {
                 .flatMap(questions -> {
                     SQLite.get().delete(QuestionTable.TABLE)
                             .where(QuestionTable.TAG + "=?")
-                            .whereArgs(new String[]{""})
+                            .whereArgs(new String[]{tag})
                             .execute();
                     SQLite.get().insert(QuestionTable.TABLE).insert(questions);
                     return Observable.just(questions);

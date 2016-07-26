@@ -40,7 +40,7 @@ public class QuestionsListPresenter {
                 .subscribe(new Action1<List<Question>>() {
                     @Override
                     public void call(List<Question> questions) {
-
+                        mView.showQuestions(questions);
                     }
                 }, new StubAction<>());
 
@@ -49,7 +49,7 @@ public class QuestionsListPresenter {
                 .init(new Action1<List<Question>>() {
                     @Override
                     public void call(List<Question> questions) {
-
+                        mView.showQuestions(questions);
                     }
                 }, new Action1<Throwable>() {
                     @Override

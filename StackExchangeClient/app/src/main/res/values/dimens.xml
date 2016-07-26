@@ -12,4 +12,7 @@
     <dimen name="header_height">220dp</dimen>
     <dimen name="header_image_size">108dp</dimen>
 
+    <dimen name="list_item_padding">16dp</dimen>
+    <dimen name="list_item_icon_size">48dp</dimen>
+    <dimen name="divider_height">0.5dp</dimen>
 </resources>

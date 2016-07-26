@@ -23,4 +23,6 @@
     <string name="search">Search</string>
     <string name="all">All</string>
     <string name="my">My</string>
+    <string name="cd_answered_question">Question is answered</string>
+    <string name="empty_questions">No questions available</string>
 </resources>

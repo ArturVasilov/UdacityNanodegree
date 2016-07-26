@@ -2,4 +2,5 @@
 <resources>
     <dimen name="centered_content_padding">120dp</dimen>
     <dimen name="auth_button_margin">104dp</dimen>
+    <dimen name="list_item_padding">64dp</dimen>
 </resources>
