@@ -1,21 +1,18 @@
 package ru.arturvasilov.stackexchangeclient.activity;
 
-import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.annotation.StringRes;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.view.ViewPager;
+import android.support.v4.view.PagerAdapter;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
@@ -25,7 +22,10 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
+import java.util.List;
+
 import ru.arturvasilov.stackexchangeclient.R;
+import ru.arturvasilov.stackexchangeclient.adapter.MainScreenAdapter;
 import ru.arturvasilov.stackexchangeclient.images.CircleTransform;
 import ru.arturvasilov.stackexchangeclient.presenter.MainPresenter;
 import ru.arturvasilov.stackexchangeclient.utils.Views;
@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity implements MainView,
         mPager = Views.findById(this, R.id.pager);
         mTabLayout.addOnTabSelectedListener(this);
 
-        mPresenter = new MainPresenter(this);
+        mPresenter = new MainPresenter(this, this);
         mPresenter.init();
     }
 
@@ -147,11 +147,6 @@ public class MainActivity extends AppCompatActivity implements MainView,
     }
 
     @Override
-    public void addTab(@StringRes int tabTitleResId) {
-        mTabLayout.addTab(mTabLayout.newTab().setText(tabTitleResId));
-    }
-
-    @Override
     public void showUserImage(@NonNull String imageUrl) {
         Picasso.with(this)
                 .load(imageUrl)
@@ -163,5 +158,21 @@ public class MainActivity extends AppCompatActivity implements MainView,
     @Override
     public void showUserName(@NonNull String name) {
         mHeaderText.setText(name);
+    }
+
+    @Override
+    public void addTab(@NonNull String tabTitle) {
+        mTabLayout.addTab(mTabLayout.newTab().setText(tabTitle));
+    }
+
+    @Override
+    public void showTags(@NonNull List<String> tags) {
+        PagerAdapter adapter = new MainScreenAdapter(getSupportFragmentManager(), tags);
+        mPager.setAdapter(adapter);
+    }
+
+    @Override
+    public void hideTabLayout() {
+        mTabLayout.setVisibility(View.GONE);
     }
 }

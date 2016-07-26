@@ -1,5 +1,6 @@
 package ru.arturvasilov.stackexchangeclient.api;
 
+import android.nfc.Tag;
 import android.support.annotation.NonNull;
 
 import java.util.List;
@@ -8,6 +9,7 @@ import ru.arturvasilov.stackexchangeclient.AppDelegate;
 import ru.arturvasilov.stackexchangeclient.model.content.Question;
 import ru.arturvasilov.stackexchangeclient.model.content.User;
 import ru.arturvasilov.stackexchangeclient.model.database.QuestionTable;
+import ru.arturvasilov.stackexchangeclient.model.database.TagTable;
 import ru.arturvasilov.stackexchangeclient.model.database.UserTable;
 import ru.arturvasilov.stackexchangeclient.rx.RxSchedulers;
 import ru.arturvasilov.stackexchangeclient.sqlite.SQLite;
@@ -45,6 +47,14 @@ public class LocalRepository {
                 .all()
                 .where(QuestionTable.TAG + "=?")
                 .whereArgs(new String[]{tag})
+                .asObservable()
+                .compose(RxSchedulers.async());
+    }
+
+    @NonNull
+    public Observable<List<String>> tags() {
+        return mDb.query(TagTable.TABLE)
+                .all()
                 .asObservable()
                 .compose(RxSchedulers.async());
     }
