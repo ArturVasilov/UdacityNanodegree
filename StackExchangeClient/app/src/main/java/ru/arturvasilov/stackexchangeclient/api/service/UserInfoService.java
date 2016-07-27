@@ -3,8 +3,12 @@ package ru.arturvasilov.stackexchangeclient.api.service;
 import android.support.annotation.NonNull;
 
 import retrofit2.http.GET;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
+import ru.arturvasilov.stackexchangeclient.model.response.BadgeResponse;
+import ru.arturvasilov.stackexchangeclient.model.response.TagResponse;
 import ru.arturvasilov.stackexchangeclient.model.response.UserResponse;
+import ru.arturvasilov.stackexchangeclient.model.response.UserTagResponse;
 import rx.Observable;
 
 /**
@@ -15,5 +19,13 @@ public interface UserInfoService {
     @NonNull
     @GET("/me?site=stackoverflow")
     Observable<UserResponse> getCurrentUser();
+
+    @NonNull
+    @GET("/users/{ids}/badges?pagesize=10&order=desc&sort=rank&site=stackoverflow")
+    Observable<BadgeResponse> badges(@Path("ids") int userId);
+
+    @NonNull
+    @GET("/users/{id}/top-tags?pagesize=10&site=stackoverflow")
+    Observable<UserTagResponse> topTags(@Path("id") int userId);
 
 }

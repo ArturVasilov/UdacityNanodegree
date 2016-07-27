@@ -38,11 +38,14 @@ public class QuestionItemViewHolder extends RecyclerView.ViewHolder {
         mDivider = Views.findById(itemView, R.id.divider);
     }
 
-    public void bind(@NonNull Question question, boolean isLast) {
+    public void bind(@NonNull Question question, int position, boolean isLast,
+                     @NonNull View.OnClickListener iconClickListener) {
         Picasso.with(mAuthorIcon.getContext())
                 .load(question.getOwner().getProfileImage())
                 .transform(new CircleTransform())
                 .into(mAuthorIcon);
+        mAuthorIcon.setOnClickListener(iconClickListener);
+        mAuthorIcon.setTag(position);
 
         mTitle.setText(question.getTitle());
         mAuthorName.setText(question.getOwner().getName());

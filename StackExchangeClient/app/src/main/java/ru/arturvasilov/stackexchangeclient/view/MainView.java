@@ -5,6 +5,8 @@ import android.support.annotation.StringRes;
 
 import java.util.List;
 
+import ru.arturvasilov.stackexchangeclient.model.content.User;
+
 /**
  * @author Artur Vasilov
  */
@@ -18,6 +20,7 @@ public interface MainView {
 
     void showTags(@NonNull List<String> tags);
 
-    void hideTabLayout();
+    void openProfile(@NonNull User currentUser);
 
+    void hideTabLayout();
 }

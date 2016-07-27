@@ -27,4 +27,10 @@
     <string name="empty_questions">No questions available</string>
     <string name="cd_favourite_tag">Favourite tag</string>
     <string name="no_tags_found">No tags found</string>
+    <string name="reputation">Reputation: %1$d</string>
+    <string name="profile_text">Profile</string>
+    <string name="badges">Badges</string>
+    <string name="top_tags">Top tags</string>
+    <string name="questions_count">Questions: %1$d</string>
+    <string name="answers_count">Answers: %1$d</string>
 </resources>

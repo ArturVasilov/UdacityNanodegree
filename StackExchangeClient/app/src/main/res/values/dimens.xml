@@ -15,4 +15,8 @@
     <dimen name="list_item_padding">16dp</dimen>
     <dimen name="list_item_icon_size">48dp</dimen>
     <dimen name="divider_height">0.5dp</dimen>
+
+    <dimen name="profile_app_bar_height">376dp</dimen>
+    <dimen name="profile_app_bar_width">280dp</dimen>
+    <dimen name="profile_padding">16dp</dimen>
 </resources>

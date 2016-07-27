@@ -57,7 +57,7 @@ public class QuestionsListAdapter extends RecyclerView.Adapter<QuestionItemViewH
         holder.itemView.setOnClickListener(mInternalListener);
         holder.itemView.setTag(position);
         Question question = mQuestions.get(position);
-        holder.bind(question, position == mQuestions.size() - 1);
+        holder.bind(question, position, position == mQuestions.size() - 1, mInternalListener);
     }
 
     @Override

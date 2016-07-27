@@ -28,6 +28,7 @@ import java.util.List;
 import ru.arturvasilov.stackexchangeclient.R;
 import ru.arturvasilov.stackexchangeclient.adapter.MainScreenAdapter;
 import ru.arturvasilov.stackexchangeclient.images.CircleTransform;
+import ru.arturvasilov.stackexchangeclient.model.content.User;
 import ru.arturvasilov.stackexchangeclient.presenter.MainPresenter;
 import ru.arturvasilov.stackexchangeclient.utils.Views;
 import ru.arturvasilov.stackexchangeclient.view.MainView;
@@ -119,7 +120,7 @@ public class MainActivity extends AppCompatActivity implements MainView,
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.profile) {
-            //TODO : show profile
+            mPresenter.onProfileSelected();
         } else if (item.getItemId() == R.id.my_answers) {
             //TODO : show my answers
         } else if (item.getItemId() == R.id.tags) {
@@ -170,6 +171,11 @@ public class MainActivity extends AppCompatActivity implements MainView,
     public void showTags(@NonNull List<String> tags) {
         PagerAdapter adapter = new MainScreenAdapter(getSupportFragmentManager(), tags);
         mPager.setAdapter(adapter);
+    }
+
+    @Override
+    public void openProfile(@NonNull User currentUser) {
+        ProfileActivity.start(this, currentUser);
     }
 
     @Override

@@ -30,6 +30,7 @@
     <dimen name="text.18">18sp</dimen>
     <dimen name="text.22">22sp</dimen>
     <dimen name="text.24">24sp</dimen>
+    <dimen name="text.28">28sp</dimen>
 
     <dimen name="size.3">3dp</dimen>
     <dimen name="size.4">4dp</dimen>

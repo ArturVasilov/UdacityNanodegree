@@ -4,4 +4,7 @@
     <dimen name="auth_button_margin">96dp</dimen>
     <dimen name="walkthrough_text_margin">72dp</dimen>
     <dimen name="list_item_padding">48dp</dimen>
+
+    <dimen name="profile_app_bar_height">560dp</dimen>
+    <dimen name="profile_app_bar_width">440dp</dimen>
 </resources>

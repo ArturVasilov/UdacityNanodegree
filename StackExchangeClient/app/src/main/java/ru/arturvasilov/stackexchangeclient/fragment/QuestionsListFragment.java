@@ -14,6 +14,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import ru.arturvasilov.stackexchangeclient.R;
+import ru.arturvasilov.stackexchangeclient.activity.ProfileActivity;
 import ru.arturvasilov.stackexchangeclient.adapter.QuestionsListAdapter;
 import ru.arturvasilov.stackexchangeclient.api.ApiConstants;
 import ru.arturvasilov.stackexchangeclient.model.content.Question;
@@ -73,7 +74,11 @@ public class QuestionsListFragment extends Fragment implements QuestionsListView
 
     @Override
     public void onItemClick(@NonNull Question question, @NonNull View view) {
-        //TODO
+        if (view.getId() == R.id.icon) {
+            ProfileActivity.start(getActivity(), question.getOwner());
+        } else {
+            //TODO : start question screen
+        }
     }
 
     @Override

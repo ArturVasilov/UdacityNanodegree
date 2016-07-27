@@ -4,10 +4,12 @@ import android.support.annotation.NonNull;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
+
 /**
  * @author Artur Vasilov
  */
-public class User {
+public class User implements Serializable {
 
     @SerializedName("user_id")
     private int mUserId;

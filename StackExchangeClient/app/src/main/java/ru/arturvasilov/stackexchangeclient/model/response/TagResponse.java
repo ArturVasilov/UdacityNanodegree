@@ -12,7 +12,7 @@ import ru.arturvasilov.stackexchangeclient.model.content.Tag;
 /**
  * @author Artur Vasilov
  */
-public class TagsResponse {
+public class TagResponse {
 
     @SerializedName("items")
     private List<Tag> mTags;

@@ -9,6 +9,7 @@ import ru.arturvasilov.stackexchangeclient.R;
 import ru.arturvasilov.stackexchangeclient.api.ApiConstants;
 import ru.arturvasilov.stackexchangeclient.api.LocalRepository;
 import ru.arturvasilov.stackexchangeclient.api.RepositoryProvider;
+import ru.arturvasilov.stackexchangeclient.model.content.User;
 import ru.arturvasilov.stackexchangeclient.rx.RxSchedulers;
 import ru.arturvasilov.stackexchangeclient.rx.StubAction;
 import ru.arturvasilov.stackexchangeclient.utils.TextUtils;
@@ -23,6 +24,8 @@ public class MainPresenter {
     private final Context mContext;
     private final MainView mView;
 
+    private User mCurrentUser;
+
     public MainPresenter(@NonNull Context context, @NonNull MainView view) {
         mContext = context;
         mView = view;
@@ -33,6 +36,7 @@ public class MainPresenter {
 
         repository.getCurrentUser()
                 .subscribe(user -> {
+                    mCurrentUser = user;
                     mView.showUserImage(user.getProfileImage());
                     mView.showUserName(user.getName());
                 }, new StubAction<>());
@@ -66,5 +70,9 @@ public class MainPresenter {
                 })
                 .toList()
                 .subscribe(mView::showTags, new StubAction<>());
+    }
+
+    public void onProfileSelected() {
+        mView.openProfile(mCurrentUser);
     }
 }

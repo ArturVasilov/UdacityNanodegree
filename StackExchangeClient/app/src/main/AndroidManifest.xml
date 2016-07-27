@@ -39,6 +39,8 @@
 
         <activity android:name=".activity.MainActivity"/>
 
+        <activity android:name=".activity.ProfileActivity"/>
+
         <activity
             android:name=".activity.TagsActivity"
             android:windowSoftInputMode="adjustResize|stateVisible"

@@ -5,19 +5,24 @@ import android.support.annotation.NonNull;
 import java.util.List;
 
 import retrofit2.http.GET;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 import ru.arturvasilov.stackexchangeclient.api.service.QuestionService;
 import ru.arturvasilov.stackexchangeclient.api.service.TagsService;
 import ru.arturvasilov.stackexchangeclient.api.service.UserInfoService;
 import ru.arturvasilov.stackexchangeclient.app.analytics.Analytics;
+import ru.arturvasilov.stackexchangeclient.model.content.Badge;
 import ru.arturvasilov.stackexchangeclient.model.content.Question;
 import ru.arturvasilov.stackexchangeclient.model.content.Tag;
 import ru.arturvasilov.stackexchangeclient.model.content.User;
+import ru.arturvasilov.stackexchangeclient.model.content.UserTag;
 import ru.arturvasilov.stackexchangeclient.model.database.QuestionTable;
 import ru.arturvasilov.stackexchangeclient.model.database.UserTable;
+import ru.arturvasilov.stackexchangeclient.model.response.BadgeResponse;
 import ru.arturvasilov.stackexchangeclient.model.response.QuestionResponse;
-import ru.arturvasilov.stackexchangeclient.model.response.TagsResponse;
+import ru.arturvasilov.stackexchangeclient.model.response.TagResponse;
 import ru.arturvasilov.stackexchangeclient.model.response.UserResponse;
+import ru.arturvasilov.stackexchangeclient.model.response.UserTagResponse;
 import ru.arturvasilov.stackexchangeclient.rx.RxSchedulers;
 import ru.arturvasilov.stackexchangeclient.sqlite.SQLite;
 import ru.arturvasilov.stackexchangeclient.utils.PreferencesUtils;
@@ -88,7 +93,21 @@ public class RemoteRepository {
     @NonNull
     public Observable<List<Tag>> searchTags(@NonNull @Query("inname") String search) {
         return mTagsService.searchTags(search)
-                .map(TagsResponse::getTags)
+                .map(TagResponse::getTags)
+                .compose(RxSchedulers.async());
+    }
+
+    @NonNull
+    public Observable<List<Badge>> badges(int userId) {
+        return mUserInfoService.badges(userId)
+                .map(BadgeResponse::getBadges)
+                .compose(RxSchedulers.async());
+    }
+
+    @NonNull
+    public Observable<List<UserTag>> topTags(int userId) {
+        return mUserInfoService.topTags(userId)
+                .map(UserTagResponse::getUserTags)
                 .compose(RxSchedulers.async());
     }
 }
