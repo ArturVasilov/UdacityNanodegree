@@ -1,6 +1,7 @@
 package ru.arturvasilov.stackexchangeclient.adapter.viewholder;
 
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
@@ -11,6 +12,8 @@ import com.squareup.picasso.Picasso;
 import ru.arturvasilov.stackexchangeclient.R;
 import ru.arturvasilov.stackexchangeclient.images.CircleTransform;
 import ru.arturvasilov.stackexchangeclient.model.content.Question;
+import ru.arturvasilov.stackexchangeclient.utils.HtmlCompat;
+import ru.arturvasilov.stackexchangeclient.utils.TextUtils;
 import ru.arturvasilov.stackexchangeclient.utils.Views;
 
 /**
@@ -21,6 +24,7 @@ public class QuestionItemViewHolder extends RecyclerView.ViewHolder {
     private final ImageView mAuthorIcon;
     private final TextView mTitle;
     private final TextView mAuthorName;
+    private final TextView mBody;
     private final TextView mViewsCount;
     private final TextView mAnswersCount;
     private final View mAnsweredIcon;
@@ -32,6 +36,7 @@ public class QuestionItemViewHolder extends RecyclerView.ViewHolder {
         mAuthorIcon = Views.findById(itemView, R.id.icon);
         mTitle = Views.findById(itemView, R.id.questionTitle);
         mAuthorName = Views.findById(itemView, R.id.questionAuthor);
+        mBody = Views.findById(itemView, R.id.questionBody);
         mViewsCount = Views.findById(itemView, R.id.viewsCount);
         mAnswersCount = Views.findById(itemView, R.id.answersCount);
         mAnsweredIcon = Views.findById(itemView, R.id.answeredQuestion);
@@ -39,7 +44,7 @@ public class QuestionItemViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void bind(@NonNull Question question, int position, boolean isLast,
-                     @NonNull View.OnClickListener iconClickListener) {
+                     @Nullable View.OnClickListener iconClickListener) {
         Picasso.with(mAuthorIcon.getContext())
                 .load(question.getOwner().getProfileImage())
                 .transform(new CircleTransform())
@@ -49,6 +54,10 @@ public class QuestionItemViewHolder extends RecyclerView.ViewHolder {
 
         mTitle.setText(question.getTitle());
         mAuthorName.setText(question.getOwner().getName());
+        if (!TextUtils.isEmpty(question.getBody())) {
+            mBody.setVisibility(View.VISIBLE);
+            mBody.setText(HtmlCompat.fromHtml(question.getBody()));
+        }
         mViewsCount.setText(String.valueOf(question.getViewCount()));
         mAnswersCount.setText(String.valueOf(question.getAnswerCount()));
         mAnsweredIcon.setVisibility(question.isAnswered() ? View.VISIBLE : View.INVISIBLE);

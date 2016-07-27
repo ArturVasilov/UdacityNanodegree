@@ -3,7 +3,9 @@ package ru.arturvasilov.stackexchangeclient.api.service;
 import android.support.annotation.NonNull;
 
 import retrofit2.http.GET;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
+import ru.arturvasilov.stackexchangeclient.model.content.Question;
 import ru.arturvasilov.stackexchangeclient.model.response.QuestionResponse;
 import rx.Observable;
 
@@ -24,4 +26,7 @@ public interface QuestionService {
     @GET("/questions?order=desc&sort=activity&pagesize=50&site=stackoverflow")
     Observable<QuestionResponse> questions(@NonNull @Query("tagged") String tag);
 
+    @NonNull
+    @GET("/questions/{ids}?order=desc&sort=activity&site=stackoverflow&filter=withbody")
+    Observable<QuestionResponse> questionWithBody(@Path("ids") int questionId);
 }

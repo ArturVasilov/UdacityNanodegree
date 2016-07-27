@@ -50,7 +50,8 @@ public class AnswersAdapter extends RecyclerView.Adapter<AnswerViewHolder> {
     public void onBindViewHolder(AnswerViewHolder holder, int position) {
         holder.itemView.setOnClickListener(mInternalListener);
         holder.itemView.setTag(position);
-        holder.bind(mAnswers.get(position), position == mAnswers.size() - 1);
+        int maxLength = holder.itemView.getResources().getInteger(R.integer.body_preview_length);
+        holder.bind(mAnswers.get(position), position == mAnswers.size() - 1, maxLength);
     }
 
     @Override

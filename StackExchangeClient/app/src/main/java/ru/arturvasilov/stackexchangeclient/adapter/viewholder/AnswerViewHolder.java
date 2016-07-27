@@ -36,7 +36,7 @@ public class AnswerViewHolder extends RecyclerView.ViewHolder {
         mDivider = Views.findById(itemView, R.id.divider);
     }
 
-    public void bind(@NonNull Answer answer, boolean isLast) {
+    public void bind(@NonNull Answer answer, boolean isLast, int maxBodyLength) {
         Picasso.with(mAuthorIcon.getContext())
                 .load(answer.getOwner().getProfileImage())
                 .transform(new CircleTransform())
@@ -44,9 +44,8 @@ public class AnswerViewHolder extends RecyclerView.ViewHolder {
 
         mAuthorName.setText(answer.getOwner().getName());
         CharSequence body = HtmlCompat.fromHtml(answer.getBody());
-        int maxLength = mAnswerBody.getResources().getInteger(R.integer.body_preview_length);
-        if (body.length() > maxLength) {
-            body = TextUtils.concat(body.subSequence(0, maxLength - 3), "...");
+        if (maxBodyLength > 0 && body.length() > maxBodyLength) {
+            body = TextUtils.concat(body.subSequence(0, maxBodyLength - 3), "...");
         }
         mAnswerBody.setText(body);
         mAnsweredIcon.setVisibility(answer.isAccepted() ? View.VISIBLE : View.INVISIBLE);

@@ -43,6 +43,8 @@
 
         <activity android:name=".activity.AnswersListActivity"/>
 
+        <activity android:name=".activity.QuestionActivity"/>
+
         <activity
             android:name=".activity.TagsActivity"
             android:theme="@style/AppTheme.LightGrey"

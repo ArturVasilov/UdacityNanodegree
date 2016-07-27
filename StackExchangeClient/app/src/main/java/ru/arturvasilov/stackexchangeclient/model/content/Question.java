@@ -4,6 +4,7 @@ import android.support.annotation.NonNull;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +13,7 @@ import ru.arturvasilov.stackexchangeclient.utils.TextUtils;
 /**
  * @author Artur Vasilov
  */
-public class Question {
+public class Question implements Serializable {
 
     @SerializedName("question_id")
     private int mQuestionId;
@@ -20,11 +21,11 @@ public class Question {
     @SerializedName("title")
     private String mTitle;
 
+    @SerializedName("body")
+    private String mBody;
+
     @SerializedName("link")
     private String mLink;
-
-    @SerializedName("tags")
-    private List<String> mTags;
 
     @SerializedName("owner")
     private User mOwner;
@@ -61,24 +62,21 @@ public class Question {
     }
 
     @NonNull
+    public String getBody() {
+        return mBody;
+    }
+
+    public void setBody(@NonNull String body) {
+        mBody = body;
+    }
+
+    @NonNull
     public String getLink() {
         return mLink;
     }
 
     public void setLink(@NonNull String link) {
         mLink = link;
-    }
-
-    @NonNull
-    public List<String> getTags() {
-        if (mTags == null) {
-            mTags = new ArrayList<>();
-        }
-        return mTags;
-    }
-
-    public void setTags(@NonNull List<String> tags) {
-        mTags = tags;
     }
 
     @NonNull

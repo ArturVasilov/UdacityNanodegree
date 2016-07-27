@@ -16,4 +16,8 @@ public interface AnswerService {
     @GET("/users/{ids}/answers?order=desc&sort=activity&site=stackoverflow&pagesize=100&filter=withbody")
     Observable<AnswerResponse> answers(@Path("ids") int userId);
 
+    @NonNull
+    @GET("/questions/{ids}/answers?order=desc&sort=activity&site=stackoverflow&filter=withbody")
+    Observable<AnswerResponse> questionAnswers(@Path("ids") int questionId);
+
 }

@@ -47,10 +47,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_xsmall"
             android:fontFamily="sans-serif-light"
-            android:maxLength="@integer/body_preview_length"
             android:textColor="@color/secondary_text"
             android:textColorLink="@color/blue"
-            android:textSize="@dimen/text.17"/>
+            android:textSize="@dimen/text.16"/>
 
     </LinearLayout>
 

@@ -4,7 +4,6 @@ import android.support.annotation.NonNull;
 
 import java.util.List;
 
-import retrofit2.http.GET;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 import ru.arturvasilov.stackexchangeclient.api.service.AnswerService;
@@ -119,6 +118,21 @@ public class RemoteRepository {
     @NonNull
     public Observable<List<Answer>> answers(int userId) {
         return mAnswerService.answers(userId)
+                .map(AnswerResponse::getAnswers)
+                .compose(RxSchedulers.async());
+    }
+
+    @NonNull
+    public Observable<Question> questionWithBody(@Path("ids") int questionId) {
+        return mQuestionService.questionWithBody(questionId)
+                .map(QuestionResponse::getQuestions)
+                .map(questions -> questions.get(0))
+                .compose(RxSchedulers.async());
+    }
+
+    @NonNull
+    public Observable<List<Answer>> questionAnswers(@Path("ids") int questionId) {
+        return mAnswerService.questionAnswers(questionId)
                 .map(AnswerResponse::getAnswers)
                 .compose(RxSchedulers.async());
     }
