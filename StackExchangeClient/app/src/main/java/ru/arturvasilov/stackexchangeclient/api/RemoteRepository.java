@@ -7,10 +7,12 @@ import java.util.List;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
+import ru.arturvasilov.stackexchangeclient.api.service.AnswerService;
 import ru.arturvasilov.stackexchangeclient.api.service.QuestionService;
 import ru.arturvasilov.stackexchangeclient.api.service.TagsService;
 import ru.arturvasilov.stackexchangeclient.api.service.UserInfoService;
 import ru.arturvasilov.stackexchangeclient.app.analytics.Analytics;
+import ru.arturvasilov.stackexchangeclient.model.content.Answer;
 import ru.arturvasilov.stackexchangeclient.model.content.Badge;
 import ru.arturvasilov.stackexchangeclient.model.content.Question;
 import ru.arturvasilov.stackexchangeclient.model.content.Tag;
@@ -18,6 +20,7 @@ import ru.arturvasilov.stackexchangeclient.model.content.User;
 import ru.arturvasilov.stackexchangeclient.model.content.UserTag;
 import ru.arturvasilov.stackexchangeclient.model.database.QuestionTable;
 import ru.arturvasilov.stackexchangeclient.model.database.UserTable;
+import ru.arturvasilov.stackexchangeclient.model.response.AnswerResponse;
 import ru.arturvasilov.stackexchangeclient.model.response.BadgeResponse;
 import ru.arturvasilov.stackexchangeclient.model.response.QuestionResponse;
 import ru.arturvasilov.stackexchangeclient.model.response.TagResponse;
@@ -36,12 +39,14 @@ public class RemoteRepository {
 
     private final UserInfoService mUserInfoService;
     private final QuestionService mQuestionService;
+    private final AnswerService mAnswerService;
     private final TagsService mTagsService;
 
     public RemoteRepository(@NonNull UserInfoService userInfoService, @NonNull QuestionService questionService,
-                            @NonNull TagsService tagsService) {
+                            @NonNull AnswerService answerService, @NonNull TagsService tagsService) {
         mUserInfoService = userInfoService;
         mQuestionService = questionService;
+        mAnswerService = answerService;
         mTagsService = tagsService;
     }
 
@@ -108,6 +113,13 @@ public class RemoteRepository {
     public Observable<List<UserTag>> topTags(int userId) {
         return mUserInfoService.topTags(userId)
                 .map(UserTagResponse::getUserTags)
+                .compose(RxSchedulers.async());
+    }
+
+    @NonNull
+    public Observable<List<Answer>> answers(int userId) {
+        return mAnswerService.answers(userId)
+                .map(AnswerResponse::getAnswers)
                 .compose(RxSchedulers.async());
     }
 }

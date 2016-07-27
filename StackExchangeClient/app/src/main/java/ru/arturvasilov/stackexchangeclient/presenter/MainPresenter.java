@@ -75,4 +75,8 @@ public class MainPresenter {
     public void onProfileSelected() {
         mView.openProfile(mCurrentUser);
     }
+
+    public void onMyAnswersSelected() {
+        mView.openAnswers(mCurrentUser);
+    }
 }

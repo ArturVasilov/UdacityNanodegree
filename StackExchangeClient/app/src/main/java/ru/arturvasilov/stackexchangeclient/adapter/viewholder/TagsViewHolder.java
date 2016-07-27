@@ -13,12 +13,12 @@ import ru.arturvasilov.stackexchangeclient.utils.Views;
 /**
  * @author Artur Vasilov
  */
-public class TagsHolder extends RecyclerView.ViewHolder {
+public class TagsViewHolder extends RecyclerView.ViewHolder {
 
     private final TextView mTagName;
     private final ImageView mFavouriteIcon;
 
-    public TagsHolder(View itemView) {
+    public TagsViewHolder(View itemView) {
         super(itemView);
         mTagName = Views.findById(itemView, R.id.tagText);
         mFavouriteIcon = Views.findById(itemView, R.id.tagImage);

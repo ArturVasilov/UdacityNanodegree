@@ -22,5 +22,7 @@ public interface MainView {
 
     void openProfile(@NonNull User currentUser);
 
+    void openAnswers(@NonNull User currentUser);
+
     void hideTabLayout();
 }

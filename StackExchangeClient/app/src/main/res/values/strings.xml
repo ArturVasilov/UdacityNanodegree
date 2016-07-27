@@ -33,4 +33,6 @@
     <string name="top_tags">Top tags</string>
     <string name="questions_count">Questions: %1$d</string>
     <string name="answers_count">Answers: %1$d</string>
+    <string name="answers">Answers</string>
+    <string name="no_answers">No answers found</string>
 </resources>

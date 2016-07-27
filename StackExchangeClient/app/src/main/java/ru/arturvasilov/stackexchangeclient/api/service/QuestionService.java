@@ -21,7 +21,7 @@ public interface QuestionService {
     Observable<QuestionResponse> myQuestions();
 
     @NonNull
-    @GET("/questions?order=desc&sort=activity&site=stackoverflow")
+    @GET("/questions?order=desc&sort=activity&pagesize=50&site=stackoverflow")
     Observable<QuestionResponse> questions(@NonNull @Query("tagged") String tag);
 
 }

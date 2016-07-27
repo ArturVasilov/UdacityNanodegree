@@ -8,6 +8,7 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 import ru.arturvasilov.stackexchangeclient.BuildConfig;
+import ru.arturvasilov.stackexchangeclient.api.service.AnswerService;
 import ru.arturvasilov.stackexchangeclient.api.service.QuestionService;
 import ru.arturvasilov.stackexchangeclient.api.service.TagsService;
 import ru.arturvasilov.stackexchangeclient.api.service.UserInfoService;
@@ -21,6 +22,7 @@ public final class ApiFactory {
 
     private static UserInfoService sUserInfoService;
     private static QuestionService sQuestionService;
+    private static AnswerService sAnswerService;
     private static TagsService sTagsService;
 
     @NonNull
@@ -45,6 +47,20 @@ public final class ApiFactory {
                 service = sQuestionService;
                 if (service == null) {
                     service = sQuestionService = buildRetrofit().create(QuestionService.class);
+                }
+            }
+        }
+        return service;
+    }
+
+    @NonNull
+    public static AnswerService getAnswerService() {
+        AnswerService service = sAnswerService;
+        if (service == null) {
+            synchronized (ApiFactory.class) {
+                service = sAnswerService;
+                if (service == null) {
+                    service = sAnswerService = buildRetrofit().create(AnswerService.class);
                 }
             }
         }

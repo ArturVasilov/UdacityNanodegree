@@ -10,13 +10,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ru.arturvasilov.stackexchangeclient.R;
-import ru.arturvasilov.stackexchangeclient.adapter.viewholder.TagsHolder;
+import ru.arturvasilov.stackexchangeclient.adapter.viewholder.TagsViewHolder;
 import ru.arturvasilov.stackexchangeclient.model.content.Tag;
 
 /**
  * @author Artur Vasilov
  */
-public class TagsAdapter extends RecyclerView.Adapter<TagsHolder> {
+public class TagsAdapter extends RecyclerView.Adapter<TagsViewHolder> {
 
     private final List<Tag> mTags;
 
@@ -42,13 +42,13 @@ public class TagsAdapter extends RecyclerView.Adapter<TagsHolder> {
     }
 
     @Override
-    public TagsHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public TagsViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        return new TagsHolder(inflater.inflate(R.layout.tag_item, parent, false));
+        return new TagsViewHolder(inflater.inflate(R.layout.tag_item, parent, false));
     }
 
     @Override
-    public void onBindViewHolder(TagsHolder holder, int position) {
+    public void onBindViewHolder(TagsViewHolder holder, int position) {
         Tag tag = mTags.get(position);
         holder.bind(tag, position, mInternalListener);
     }

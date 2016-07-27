@@ -63,7 +63,7 @@ public class AuthPresenter {
 
     private void initApi() {
         RemoteRepository repository = new RemoteRepository(ApiFactory.getUserInfoService(),
-                ApiFactory.getQuestionService(), ApiFactory.getTagsService());
+                ApiFactory.getQuestionService(), ApiFactory.getAnswerService(), ApiFactory.getTagsService());
         RepositoryProvider.setRemoteRepository(repository);
         RepositoryProvider.setLocalRepository(new LocalRepository());
     }

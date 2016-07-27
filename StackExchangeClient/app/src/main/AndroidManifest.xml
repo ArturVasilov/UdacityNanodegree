@@ -41,10 +41,12 @@
 
         <activity android:name=".activity.ProfileActivity"/>
 
+        <activity android:name=".activity.AnswersListActivity"/>
+
         <activity
             android:name=".activity.TagsActivity"
-            android:windowSoftInputMode="adjustResize|stateVisible"
-            android:theme="@style/AppTheme.LightGrey"/>
+            android:theme="@style/AppTheme.LightGrey"
+            android:windowSoftInputMode="adjustResize|stateVisible"/>
 
         <provider
             android:name=".model.database.SQLiteProvider"
