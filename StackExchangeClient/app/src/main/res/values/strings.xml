@@ -25,4 +25,6 @@
     <string name="my">My</string>
     <string name="cd_answered_question">Question is answered</string>
     <string name="empty_questions">No questions available</string>
+    <string name="cd_favourite_tag">Favourite tag</string>
+    <string name="no_tags_found">No tags found</string>
 </resources>

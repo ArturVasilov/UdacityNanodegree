@@ -33,13 +33,16 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity.MainActivity"/>
-
         <activity
             android:name=".activity.WalkthroughActivity"
             android:theme="@style/AppTheme.Fullscreen"/>
 
-        <activity android:name=".activity.SearchActivity"/>
+        <activity android:name=".activity.MainActivity"/>
+
+        <activity
+            android:name=".activity.TagsActivity"
+            android:windowSoftInputMode="adjustResize|stateVisible"
+            android:theme="@style/AppTheme.LightGrey"/>
 
         <provider
             android:name=".model.database.SQLiteProvider"

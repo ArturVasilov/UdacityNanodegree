@@ -1,5 +1,6 @@
 package ru.arturvasilov.stackexchangeclient.activity;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
@@ -122,7 +123,7 @@ public class MainActivity extends AppCompatActivity implements MainView,
         } else if (item.getItemId() == R.id.my_answers) {
             //TODO : show my answers
         } else if (item.getItemId() == R.id.tags) {
-            //TODO : show tags
+            startActivity(new Intent(this, TagsActivity.class));
         } else if (item.getItemId() == R.id.exit) {
             //TODO : show confirmation alert
         }
