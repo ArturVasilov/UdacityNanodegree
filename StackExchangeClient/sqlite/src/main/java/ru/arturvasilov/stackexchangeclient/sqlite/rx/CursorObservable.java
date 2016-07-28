@@ -8,9 +8,7 @@ import android.support.annotation.Nullable;
 
 import java.util.concurrent.Callable;
 
-import ru.arturvasilov.stackexchangeclient.sqlite.core.SQLiteUtils;
 import rx.Observable;
-import rx.Subscriber;
 
 /**
  * @author Artur Vasilov

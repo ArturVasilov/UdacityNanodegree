@@ -1,7 +1,6 @@
 package ru.arturvasilov.stackexchangeclient.sqlite.table;
 
 import android.database.sqlite.SQLiteDatabase;
-import android.provider.BaseColumns;
 import android.support.annotation.NonNull;
 
 import java.util.ArrayList;

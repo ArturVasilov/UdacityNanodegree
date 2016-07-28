@@ -21,6 +21,7 @@ public class TestTable extends BaseTable<TestContentClass> {
         TableBuilder.create(this)
                 .intColumn(Columns.ID)
                 .stringColumn(Columns.TEXT)
+                .primaryKey(Columns.ID)
                 .execute(database);
     }
 

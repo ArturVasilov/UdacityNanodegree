@@ -19,10 +19,6 @@ public class TestContentClass {
         return mId;
     }
 
-    public void setId(int id) {
-        mId = id;
-    }
-
     @NonNull
     public String getText() {
         return mText;

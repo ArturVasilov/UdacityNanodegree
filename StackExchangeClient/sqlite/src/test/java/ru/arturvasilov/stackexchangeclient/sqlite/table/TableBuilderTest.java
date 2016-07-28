@@ -1,7 +1,6 @@
 package ru.arturvasilov.stackexchangeclient.sqlite.table;
 
 import android.database.sqlite.SQLiteDatabase;
-import android.provider.BaseColumns;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -9,7 +8,6 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.Mockito;
 
-import ru.arturvasilov.stackexchangeclient.sqlite.table.TableBuilder;
 import ru.arturvasilov.stackexchangeclient.sqlite.testutils.TestTable;
 
 import static org.mockito.Matchers.anyString;
@@ -54,11 +52,11 @@ public class TableBuilderTest {
 
     @Test
     public void testPrimaryKeyWithIntColumn() throws Exception {
-        String sql = "CREATE TABLE IF NOT EXISTS TestTable(" + BaseColumns._ID + " INTEGER PRIMARY KEY, test INTEGER);";
+        String sql = "CREATE TABLE IF NOT EXISTS TestTable(test INTEGER, PRIMARY KEY (test));";
 
         TableBuilder.create(TestTable.TABLE)
-                .primaryKey()
                 .intColumn("test")
+                .primaryKey("test")
                 .execute(mDb);
 
         Mockito.verify(mDb).execSQL(sql);
@@ -80,11 +78,27 @@ public class TableBuilderTest {
 
     @Test
     public void testManyColumnsWithPrimaryKey() throws Exception {
-        String sql = "CREATE TABLE IF NOT EXISTS TestTable(" + BaseColumns._ID +
-                " INTEGER PRIMARY KEY, string1 TEXT, string2 TEXT, int1 INTEGER, int2 INTEGER);";
+        String sql = "CREATE TABLE IF NOT EXISTS TestTable(int1 INTEGER, string1 TEXT, string2 TEXT, int2 INTEGER" +
+                ", PRIMARY KEY (int1));";
 
         TableBuilder.create(TestTable.TABLE)
-                .primaryKey()
+                .primaryKey("int1")
+                .intColumn("int1")
+                .stringColumn("string1")
+                .intColumn("int2")
+                .stringColumn("string2")
+                .execute(mDb);
+
+        Mockito.verify(mDb).execSQL(sql);
+    }
+
+    @Test
+    public void testManyColumnsWithMultiplePrimaryKey() throws Exception {
+        String sql = "CREATE TABLE IF NOT EXISTS TestTable(int1 INTEGER, string1 TEXT, string2 TEXT, int2 INTEGER" +
+                ", PRIMARY KEY (int1, string2));";
+
+        TableBuilder.create(TestTable.TABLE)
+                .primaryKey("int1", "string2")
                 .intColumn("int1")
                 .stringColumn("string1")
                 .intColumn("int2")

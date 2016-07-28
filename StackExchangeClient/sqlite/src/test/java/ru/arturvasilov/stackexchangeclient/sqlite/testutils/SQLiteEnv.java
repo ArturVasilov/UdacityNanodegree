@@ -18,8 +18,8 @@ import ru.arturvasilov.stackexchangeclient.sqlite.table.Table;
  */
 public final class SQLiteEnv {
 
-    public static final String AUTHORITY = "ru.arturvasilov.database";
-    public static final String NAME = "test_db_name";
+    private static final String AUTHORITY = "ru.arturvasilov.database";
+    private static final String NAME = "test_db_name";
 
     private SQLiteEnv() {
     }
@@ -44,7 +44,7 @@ public final class SQLiteEnv {
         return provider;
     }
 
-    public static void registerProvider(@NonNull SQLiteContentProvider provider) {
+    private static void registerProvider(@NonNull SQLiteContentProvider provider) {
         final ProviderInfo providerInfo = new ProviderInfo();
         providerInfo.name = NAME;
         providerInfo.authority = AUTHORITY;

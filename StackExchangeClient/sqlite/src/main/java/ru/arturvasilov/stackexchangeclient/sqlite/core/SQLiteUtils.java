@@ -9,6 +9,9 @@ import android.support.annotation.Nullable;
  */
 public class SQLiteUtils {
 
+    private SQLiteUtils() {
+    }
+
     public static boolean isEmptyCursor(@Nullable Cursor cursor) {
         if (cursor == null) {
             return true;

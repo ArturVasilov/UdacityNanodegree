@@ -53,12 +53,12 @@ public class AuthActivity extends AppCompatActivity implements AuthView {
 
     @Override
     public void showWalkthrough() {
-        startActivity(new Intent(this, WalkthroughActivity.class));
+        startActivity(new Intent(this, WalkthroughActivity.class).addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION));
     }
 
     @Override
     public void showMainScreen() {
-        startActivity(new Intent(this, MainActivity.class));
+        startActivity(new Intent(this, MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION));
     }
 
     @Override
