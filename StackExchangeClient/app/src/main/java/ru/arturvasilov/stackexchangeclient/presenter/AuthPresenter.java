@@ -5,10 +5,9 @@ import android.support.annotation.NonNull;
 import ru.arturvasilov.stackexchangeclient.AppDelegate;
 import ru.arturvasilov.stackexchangeclient.BuildConfig;
 import ru.arturvasilov.stackexchangeclient.api.ApiFactory;
-import ru.arturvasilov.stackexchangeclient.api.LocalRepository;
 import ru.arturvasilov.stackexchangeclient.api.RemoteRepository;
 import ru.arturvasilov.stackexchangeclient.api.RepositoryProvider;
-import ru.arturvasilov.stackexchangeclient.utils.PreferencesUtils;
+import ru.arturvasilov.stackexchangeclient.data.database.LocalRepository;
 import ru.arturvasilov.stackexchangeclient.utils.TextUtils;
 import ru.arturvasilov.stackexchangeclient.view.AuthView;
 
@@ -30,7 +29,7 @@ public class AuthPresenter {
     }
 
     public void init() {
-        PreferencesUtils.getAccessToken()
+        RepositoryProvider.provideKeyValueStorage().getAccessToken()
                 .map(TextUtils::isEmpty)
                 .map(value -> !value)
                 .subscribe(this::onAuth);
@@ -38,7 +37,7 @@ public class AuthPresenter {
 
     public void onSuccessUrl(@NonNull String url) {
         String accessToken = url.split("#")[1].split("=")[1];
-        PreferencesUtils.saveAccessToken(accessToken).subscribe(this::onAuth);
+        RepositoryProvider.provideKeyValueStorage().saveAccessToken(accessToken).subscribe(this::onAuth);
     }
 
     public void onLoginButtonClick() {
@@ -48,7 +47,7 @@ public class AuthPresenter {
     private void onAuth(boolean success) {
         if (success) {
             initApi();
-            if (PreferencesUtils.isWalkthroughPassed()) {
+            if (RepositoryProvider.provideKeyValueStorage().isWalkthroughPassed()) {
                 mView.showMainScreen();
             } else {
                 mView.showWalkthrough();

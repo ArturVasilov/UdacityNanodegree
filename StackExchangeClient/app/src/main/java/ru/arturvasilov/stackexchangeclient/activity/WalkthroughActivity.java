@@ -14,7 +14,6 @@ import me.relex.circleindicator.CircleIndicator;
 import ru.arturvasilov.stackexchangeclient.R;
 import ru.arturvasilov.stackexchangeclient.adapter.WalkthroughAdapter;
 import ru.arturvasilov.stackexchangeclient.presenter.WalkthroughPresenter;
-import ru.arturvasilov.stackexchangeclient.utils.PreferencesUtils;
 import ru.arturvasilov.stackexchangeclient.utils.Views;
 import ru.arturvasilov.stackexchangeclient.view.WalkthroughView;
 import ru.arturvasilov.stackexchangeclient.widget.CustomViewPager;

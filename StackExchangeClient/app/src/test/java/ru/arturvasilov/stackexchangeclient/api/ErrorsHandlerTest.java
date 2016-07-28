@@ -11,11 +11,8 @@ import ru.arturvasilov.stackexchangeclient.model.content.User;
 import ru.arturvasilov.stackexchangeclient.model.response.ApiError;
 import ru.arturvasilov.stackexchangeclient.model.response.ServerError;
 import ru.arturvasilov.stackexchangeclient.model.response.UserResponse;
-import ru.arturvasilov.stackexchangeclient.testutils.MockUtils;
 import rx.Observable;
-import rx.functions.Action1;
 
-import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertTrue;
 import static junit.framework.Assert.fail;
 
@@ -24,10 +21,6 @@ import static junit.framework.Assert.fail;
  */
 @RunWith(JUnit4.class)
 public class ErrorsHandlerTest {
-
-    static {
-        MockUtils.setupHawkForTests();
-    }
 
     @Test
     public void testNoError() throws Exception {

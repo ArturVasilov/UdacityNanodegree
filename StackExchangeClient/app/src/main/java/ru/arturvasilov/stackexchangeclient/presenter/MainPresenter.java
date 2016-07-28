@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 import ru.arturvasilov.stackexchangeclient.R;
 import ru.arturvasilov.stackexchangeclient.api.ApiConstants;
-import ru.arturvasilov.stackexchangeclient.api.LocalRepository;
+import ru.arturvasilov.stackexchangeclient.data.database.LocalRepository;
 import ru.arturvasilov.stackexchangeclient.api.RepositoryProvider;
 import ru.arturvasilov.stackexchangeclient.model.content.User;
 import ru.arturvasilov.stackexchangeclient.rx.RxSchedulers;

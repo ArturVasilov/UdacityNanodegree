@@ -16,7 +16,6 @@ import ru.arturvasilov.stackexchangeclient.model.content.Question;
 import ru.arturvasilov.stackexchangeclient.model.content.User;
 import ru.arturvasilov.stackexchangeclient.rx.RxSchedulers;
 import ru.arturvasilov.stackexchangeclient.rx.rxloader.RxLoader;
-import ru.arturvasilov.stackexchangeclient.utils.PreferencesUtils;
 import ru.arturvasilov.stackexchangeclient.view.WalkthroughView;
 import rx.Observable;
 import rx.functions.Action1;
@@ -119,7 +118,7 @@ public class WalkthroughPresenter {
     private void checkForSuccess() {
         if (mIsWalkthroughPassed) {
             if (mIsInformationLoaded) {
-                PreferencesUtils.saveWalkthroughPassed();
+                RepositoryProvider.provideKeyValueStorage().saveWalkthroughPassed();
                 mView.finishWalkthrough();
             } else if (mIsError) {
                 mView.showError();

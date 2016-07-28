@@ -5,7 +5,7 @@ import android.support.annotation.NonNull;
 import java.util.ArrayList;
 import java.util.List;
 
-import ru.arturvasilov.stackexchangeclient.api.LocalRepository;
+import ru.arturvasilov.stackexchangeclient.data.database.LocalRepository;
 import ru.arturvasilov.stackexchangeclient.model.content.Question;
 import ru.arturvasilov.stackexchangeclient.model.content.User;
 import rx.Observable;

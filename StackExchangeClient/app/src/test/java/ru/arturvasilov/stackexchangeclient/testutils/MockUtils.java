@@ -35,8 +35,6 @@ import static org.mockito.Mockito.when;
  */
 public final class MockUtils {
 
-    public static final SharedPreferences PREFERENCES = new SharedPreferencesMapImpl();
-
     private MockUtils() {
     }
 
@@ -54,17 +52,6 @@ public final class MockUtils {
             });
         } catch (IllegalStateException ignored) {
         }
-    }
-
-    public static void setupHawkForTests() {
-        Context context = MockUtils.mockContext();
-        when(context.getSharedPreferences("HAWK", 0)).thenReturn(PREFERENCES);
-
-        Hawk.init(context)
-                .setEncryptionMethod(HawkBuilder.EncryptionMethod.NO_ENCRYPTION)
-                .setStorage(HawkBuilder.newSharedPrefStorage(context))
-                .setLogLevel(LogLevel.NONE)
-                .build();
     }
 
     @NonNull

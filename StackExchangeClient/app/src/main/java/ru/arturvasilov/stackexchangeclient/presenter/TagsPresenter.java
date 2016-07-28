@@ -10,13 +10,12 @@ import java.util.List;
 import ru.arturvasilov.stackexchangeclient.R;
 import ru.arturvasilov.stackexchangeclient.api.RepositoryProvider;
 import ru.arturvasilov.stackexchangeclient.model.content.Tag;
-import ru.arturvasilov.stackexchangeclient.model.database.TagTable;
+import ru.arturvasilov.stackexchangeclient.data.database.TagTable;
 import ru.arturvasilov.stackexchangeclient.rx.StubAction;
 import ru.arturvasilov.stackexchangeclient.sqlite.SQLite;
 import ru.arturvasilov.stackexchangeclient.utils.TextUtils;
 import ru.arturvasilov.stackexchangeclient.view.TagsView;
 import rx.Observable;
-import rx.functions.Func2;
 
 /**
  * @author Artur Vasilov

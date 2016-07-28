@@ -7,7 +7,6 @@ import okhttp3.Interceptor;
 import okhttp3.Request;
 import okhttp3.Response;
 import ru.arturvasilov.stackexchangeclient.BuildConfig;
-import ru.arturvasilov.stackexchangeclient.utils.PreferencesUtils;
 
 /**
  * @author Artur Vasilov
@@ -17,7 +16,7 @@ class ApiKeyInterceptor implements Interceptor {
     private final String mAccessToken;
 
     public ApiKeyInterceptor() {
-        mAccessToken = PreferencesUtils.obtainAccessToken();
+        mAccessToken = RepositoryProvider.provideKeyValueStorage().obtainAccessToken();
     }
 
     @Override

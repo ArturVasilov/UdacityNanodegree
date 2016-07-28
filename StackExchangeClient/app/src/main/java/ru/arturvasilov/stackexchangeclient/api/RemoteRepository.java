@@ -18,8 +18,8 @@ import ru.arturvasilov.stackexchangeclient.model.content.Question;
 import ru.arturvasilov.stackexchangeclient.model.content.Tag;
 import ru.arturvasilov.stackexchangeclient.model.content.User;
 import ru.arturvasilov.stackexchangeclient.model.content.UserTag;
-import ru.arturvasilov.stackexchangeclient.model.database.QuestionTable;
-import ru.arturvasilov.stackexchangeclient.model.database.UserTable;
+import ru.arturvasilov.stackexchangeclient.data.database.QuestionTable;
+import ru.arturvasilov.stackexchangeclient.data.database.UserTable;
 import ru.arturvasilov.stackexchangeclient.model.response.AnswerResponse;
 import ru.arturvasilov.stackexchangeclient.model.response.ApiError;
 import ru.arturvasilov.stackexchangeclient.model.response.BadgeResponse;
@@ -30,7 +30,6 @@ import ru.arturvasilov.stackexchangeclient.model.response.UserResponse;
 import ru.arturvasilov.stackexchangeclient.model.response.UserTagResponse;
 import ru.arturvasilov.stackexchangeclient.rx.RxSchedulers;
 import ru.arturvasilov.stackexchangeclient.sqlite.SQLite;
-import ru.arturvasilov.stackexchangeclient.utils.PreferencesUtils;
 import ru.arturvasilov.stackexchangeclient.utils.TextUtils;
 import rx.Observable;
 
@@ -65,7 +64,7 @@ public class RemoteRepository {
                 .map(users -> users.get(0))
                 .flatMap(user -> {
                     SQLite.get().insert(UserTable.TABLE).insert(user);
-                    PreferencesUtils.saveUserId(user.getUserId());
+                    RepositoryProvider.provideKeyValueStorage().saveUserId(user.getUserId());
                     Analytics.setCurrentUser(user);
                     return Observable.just(user);
                 })

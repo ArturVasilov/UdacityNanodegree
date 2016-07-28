@@ -29,6 +29,9 @@ public final class ApiFactory {
     private static NotificationService sNotificationService;
     private static ApplicationService sApplicationService;
 
+    private ApiFactory() {
+    }
+
     @NonNull
     public static UserInfoService getUserInfoService() {
         UserInfoService service = sUserInfoService;

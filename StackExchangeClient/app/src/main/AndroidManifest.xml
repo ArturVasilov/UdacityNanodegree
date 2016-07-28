@@ -51,7 +51,7 @@
             android:windowSoftInputMode="adjustResize|stateVisible"/>
 
         <provider
-            android:name=".model.database.SQLiteProvider"
+            android:name=".data.database.SQLiteProvider"
             android:authorities="ru.arturvasilov.stackexchangeclient"
             android:exported="false"/>
 

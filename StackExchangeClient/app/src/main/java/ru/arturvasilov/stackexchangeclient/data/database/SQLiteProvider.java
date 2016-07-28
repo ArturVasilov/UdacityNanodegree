@@ -1,4 +1,4 @@
-package ru.arturvasilov.stackexchangeclient.model.database;
+package ru.arturvasilov.stackexchangeclient.data.database;
 
 import android.support.annotation.NonNull;
 
