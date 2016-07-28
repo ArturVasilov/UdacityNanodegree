@@ -8,6 +8,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import ru.arturvasilov.stackexchangeclient.api.ApiConstants;
 import ru.arturvasilov.stackexchangeclient.utils.TextUtils;
 
 /**
@@ -112,18 +113,10 @@ public class Question implements Serializable {
         mAnswerCount = answerCount;
     }
 
-    public int getScore() {
-        return mScore;
-    }
-
-    public void setScore(int score) {
-        mScore = score;
-    }
-
     @NonNull
     public String getTag() {
         if (TextUtils.isEmpty(mTag)) {
-            mTag = "";
+            mTag = ApiConstants.TAG_ALL;
         }
         return mTag;
     }

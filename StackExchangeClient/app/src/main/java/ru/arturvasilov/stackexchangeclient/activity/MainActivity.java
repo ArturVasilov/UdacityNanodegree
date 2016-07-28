@@ -27,9 +27,9 @@ import java.util.List;
 
 import ru.arturvasilov.stackexchangeclient.R;
 import ru.arturvasilov.stackexchangeclient.adapter.MainScreenAdapter;
-import ru.arturvasilov.stackexchangeclient.images.CircleTransform;
 import ru.arturvasilov.stackexchangeclient.model.content.User;
 import ru.arturvasilov.stackexchangeclient.presenter.MainPresenter;
+import ru.arturvasilov.stackexchangeclient.utils.PicassoUtils;
 import ru.arturvasilov.stackexchangeclient.utils.Views;
 import ru.arturvasilov.stackexchangeclient.view.MainView;
 import ru.arturvasilov.stackexchangeclient.widget.CustomViewPager;
@@ -153,7 +153,7 @@ public class MainActivity extends AppCompatActivity implements MainView,
         Picasso.with(this)
                 .load(imageUrl)
                 .error(R.drawable.ic_person)
-                .transform(new CircleTransform())
+                .transform(PicassoUtils.circleTransform())
                 .into(mHeaderImage);
     }
 

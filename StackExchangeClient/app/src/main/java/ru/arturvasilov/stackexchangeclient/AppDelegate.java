@@ -11,7 +11,7 @@ import com.orhanobut.hawk.LogLevel;
 import io.fabric.sdk.android.Fabric;
 import ru.arturvasilov.stackexchangeclient.app.analytics.Analytics;
 import ru.arturvasilov.stackexchangeclient.app.analytics.EventTags;
-import ru.arturvasilov.stackexchangeclient.images.PicassoTools;
+import ru.arturvasilov.stackexchangeclient.utils.PicassoUtils;
 import ru.arturvasilov.stackexchangeclient.sqlite.SQLite;
 
 /**
@@ -33,7 +33,7 @@ public class AppDelegate extends Application {
 
         SQLite.initialize(this);
 
-        PicassoTools.setup(this);
+        PicassoUtils.setup(this);
 
         Hawk.init(this)
                 .setEncryptionMethod(HawkBuilder.EncryptionMethod.MEDIUM)

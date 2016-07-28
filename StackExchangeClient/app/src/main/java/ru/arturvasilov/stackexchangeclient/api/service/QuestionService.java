@@ -15,18 +15,18 @@ import rx.Observable;
 public interface QuestionService {
 
     @NonNull
-    @GET("/questions?order=desc&sort=activity&pagesize=50&site=stackoverflow")
+    @GET("/questions?order=desc&sort=activity&pagesize=50")
     Observable<QuestionResponse> questions();
 
     @NonNull
-    @GET("/me/questions?order=desc&sort=activity&pagesize=50&site=stackoverflow")
+    @GET("/me/questions?order=desc&sort=activity&pagesize=50")
     Observable<QuestionResponse> myQuestions();
 
     @NonNull
-    @GET("/questions?order=desc&sort=activity&pagesize=50&site=stackoverflow")
+    @GET("/questions?order=desc&sort=activity&pagesize=50")
     Observable<QuestionResponse> questions(@NonNull @Query("tagged") String tag);
 
     @NonNull
-    @GET("/questions/{ids}?order=desc&sort=activity&site=stackoverflow&filter=withbody")
+    @GET("/questions/{ids}?order=desc&sort=activity&filter=withbody")
     Observable<QuestionResponse> questionWithBody(@Path("ids") int questionId);
 }

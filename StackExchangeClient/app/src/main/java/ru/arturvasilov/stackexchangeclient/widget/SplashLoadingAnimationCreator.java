@@ -3,6 +3,7 @@ package ru.arturvasilov.stackexchangeclient.widget;
 import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.support.annotation.NonNull;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.LinearInterpolator;
@@ -25,19 +26,19 @@ public final class SplashLoadingAnimationCreator {
     private static final long SECOND_CIRCLE_TIME = 700;
     private static final long THIRD_CIRCLE_TIME = 900;
 
-    public static Animator createFullAnimator(final View view1, final View view2, final View view3) {
+    @NonNull
+    public static Animator createCirclesAnimator(@NonNull View outer, @NonNull View middle, @NonNull View inner) {
+        Animator fullExpansionAnimator = fullExpansionAnimator(outer, middle, inner);
+        Animator fullConstrictionAnimator = fullConstrictionAnimator(outer, middle, inner);
 
-        Animator fullExpansionAnimator = fullExpansionAnimator(view1, view2, view3);
-        Animator fullConstrictionAnimator = fullConstrictionAnimator(view1, view2, view3);
-
-        AnimatorSet fullAnimator = new AnimatorSet();
-        fullAnimator.playSequentially(fullExpansionAnimator, fullConstrictionAnimator);
-        fullAnimator.addListener(new Animator.AnimatorListener() {
+        AnimatorSet animator = new AnimatorSet();
+        animator.playSequentially(fullExpansionAnimator, fullConstrictionAnimator);
+        animator.addListener(new Animator.AnimatorListener() {
             @Override
             public void onAnimationStart(Animator animation) {
-                view1.setVisibility(View.VISIBLE);
-                view2.setVisibility(View.VISIBLE);
-                view3.setVisibility(View.VISIBLE);
+                outer.setVisibility(View.VISIBLE);
+                middle.setVisibility(View.VISIBLE);
+                inner.setVisibility(View.VISIBLE);
             }
 
             @Override
@@ -47,24 +48,25 @@ public final class SplashLoadingAnimationCreator {
 
             @Override
             public void onAnimationCancel(Animator animation) {
-                view1.setVisibility(View.GONE);
-                view2.setVisibility(View.GONE);
-                view3.setVisibility(View.GONE);
+                outer.setVisibility(View.GONE);
+                middle.setVisibility(View.GONE);
+                inner.setVisibility(View.GONE);
             }
 
             @Override
             public void onAnimationRepeat(Animator animation) {
-
+                // Do nothing
             }
         });
 
-        return fullAnimator;
+        return animator;
     }
 
-    private static Animator fullExpansionAnimator(View view1, View view2, View view3) {
-        Animator expansionAnimator1 = createExpansionAnimator(view1, FIRST_CIRCLE_TIME);
-        Animator expansionAnimator2 = createExpansionAnimator(view2, SECOND_CIRCLE_TIME);
-        Animator expansionAnimator3 = createExpansionAnimator(view3, THIRD_CIRCLE_TIME);
+    @NonNull
+    private static Animator fullExpansionAnimator(@NonNull View outer, @NonNull View middle, @NonNull View inner) {
+        Animator expansionAnimator1 = createExpansionAnimator(outer, FIRST_CIRCLE_TIME);
+        Animator expansionAnimator2 = createExpansionAnimator(middle, SECOND_CIRCLE_TIME);
+        Animator expansionAnimator3 = createExpansionAnimator(inner, THIRD_CIRCLE_TIME);
         Animator time = createTimeAnimator(FULL_EXPANSION_DURATION);
 
         AnimatorSet fullExpansionAnimator = new AnimatorSet();
@@ -73,19 +75,21 @@ public final class SplashLoadingAnimationCreator {
         return fullExpansionAnimator;
     }
 
-    private static Animator fullConstrictionAnimator(View view1, View view2, View view3) {
-        Animator anim1 = createConstrictionAnimator(view1, FIRST_CIRCLE_TIME);
-        Animator anim2 = createConstrictionAnimator(view2, SECOND_CIRCLE_TIME);
-        Animator anim3 = createConstrictionAnimator(view3, THIRD_CIRCLE_TIME);
+    @NonNull
+    private static Animator fullConstrictionAnimator(@NonNull View outer, @NonNull View middle, @NonNull View inner) {
+        Animator animOuter = createConstrictionAnimator(outer, FIRST_CIRCLE_TIME);
+        Animator animMiddle = createConstrictionAnimator(middle, SECOND_CIRCLE_TIME);
+        Animator animInner = createConstrictionAnimator(inner, THIRD_CIRCLE_TIME);
         Animator time = createTimeAnimator(FULL_CONSTRICTION_DURATION);
 
         AnimatorSet fullConstrictionAnimator = new AnimatorSet();
-        fullConstrictionAnimator.playTogether(anim1, anim2, anim3, time);
+        fullConstrictionAnimator.playTogether(animOuter, animMiddle, animInner, time);
 
         return fullConstrictionAnimator;
     }
 
-    private static Animator createExpansionAnimator(View view, long duration) {
+    @NonNull
+    private static Animator createExpansionAnimator(@NonNull View view, long duration) {
         Animator alphaAnimator = ObjectAnimator.ofFloat(view, View.ALPHA, START_ALPHA, END_ALPHA);
         alphaAnimator.setInterpolator(new LinearInterpolator());
 
@@ -102,7 +106,8 @@ public final class SplashLoadingAnimationCreator {
         return animatorSet;
     }
 
-    private static Animator createConstrictionAnimator(View view, long duration) {
+    @NonNull
+    private static Animator createConstrictionAnimator(@NonNull View view, long duration) {
         Animator alphaAnimator = ObjectAnimator.ofFloat(view, View.ALPHA, END_ALPHA, START_ALPHA);
         alphaAnimator.setInterpolator(new LinearInterpolator());
 
@@ -119,10 +124,10 @@ public final class SplashLoadingAnimationCreator {
         return animatorSet;
     }
 
+    @NonNull
     private static Animator createTimeAnimator(long duration) {
         Animator timeAnimator = ObjectAnimator.ofInt(1);
         timeAnimator.setDuration(duration);
-
         return timeAnimator;
     }
 }

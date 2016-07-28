@@ -21,18 +21,6 @@ public final class GsonHolder {
         return Holder.GSON;
     }
 
-    @NonNull
-    public static <T> String listToString(@NonNull List<T> list) {
-        Type type = new TypeToken<List<T>>(){}.getType();
-        return Holder.GSON.toJson(list, type);
-    }
-
-    @NonNull
-    public static <T> List<T> listFromString(@NonNull String json) {
-        Type type = new TypeToken<List<T>>(){}.getType();
-        return Holder.GSON.fromJson(json, type);
-    }
-
     public static final class Holder {
         private static final Gson GSON = new Gson();
     }

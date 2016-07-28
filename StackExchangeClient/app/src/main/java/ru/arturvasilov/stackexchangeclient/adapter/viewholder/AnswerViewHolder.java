@@ -10,9 +10,9 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 
 import ru.arturvasilov.stackexchangeclient.R;
-import ru.arturvasilov.stackexchangeclient.images.CircleTransform;
 import ru.arturvasilov.stackexchangeclient.model.content.Answer;
 import ru.arturvasilov.stackexchangeclient.utils.HtmlCompat;
+import ru.arturvasilov.stackexchangeclient.utils.PicassoUtils;
 import ru.arturvasilov.stackexchangeclient.utils.Views;
 
 /**
@@ -39,7 +39,7 @@ public class AnswerViewHolder extends RecyclerView.ViewHolder {
     public void bind(@NonNull Answer answer, boolean isLast, int maxBodyLength) {
         Picasso.with(mAuthorIcon.getContext())
                 .load(answer.getOwner().getProfileImage())
-                .transform(new CircleTransform())
+                .transform(PicassoUtils.circleTransform())
                 .into(mAuthorIcon);
 
         mAuthorName.setText(answer.getOwner().getName());

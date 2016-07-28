@@ -25,7 +25,7 @@ public class QuestionTable extends BaseTable<Question> {
     public static final String OWNER = "owner";
     public static final String IS_ANSWERED = "is_answered";
     public static final String VIEW_COUNT = "view_count";
-    public static final String SCORE = "score";
+    public static final String ANSWER_COUNT = "answer_count";
     public static final String TAG = "tag";
 
     @Override
@@ -37,7 +37,7 @@ public class QuestionTable extends BaseTable<Question> {
                 .stringColumn(OWNER)
                 .intColumn(IS_ANSWERED)
                 .intColumn(VIEW_COUNT)
-                .intColumn(SCORE)
+                .intColumn(ANSWER_COUNT)
                 .stringColumn(TAG)
                 .primaryKey(QUESTION_ID, TAG)
                 .execute(database);
@@ -58,7 +58,7 @@ public class QuestionTable extends BaseTable<Question> {
         values.put(OWNER, GsonHolder.getGson().toJson(question.getOwner()));
         values.put(IS_ANSWERED, question.isAnswered() ? 1 : 0);
         values.put(VIEW_COUNT, question.getViewCount());
-        values.put(SCORE, question.getScore());
+        values.put(ANSWER_COUNT, question.getAnswerCount());
         values.put(TAG, question.getTag());
         return values;
     }
@@ -75,7 +75,7 @@ public class QuestionTable extends BaseTable<Question> {
         question.setOwner(owner);
         question.setAnswered(cursor.getInt(cursor.getColumnIndex(IS_ANSWERED)) > 0);
         question.setViewCount(cursor.getInt(cursor.getColumnIndex(VIEW_COUNT)));
-        question.setScore(cursor.getInt(cursor.getColumnIndex(SCORE)));
+        question.setAnswerCount(cursor.getInt(cursor.getColumnIndex(ANSWER_COUNT)));
         question.setTag(cursor.getString(cursor.getColumnIndex(TAG)));
         return question;
     }

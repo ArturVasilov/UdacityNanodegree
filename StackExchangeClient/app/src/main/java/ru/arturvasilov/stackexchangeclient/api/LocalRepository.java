@@ -1,11 +1,10 @@
 package ru.arturvasilov.stackexchangeclient.api;
 
-import android.nfc.Tag;
+import android.content.Context;
 import android.support.annotation.NonNull;
 
 import java.util.List;
 
-import ru.arturvasilov.stackexchangeclient.AppDelegate;
 import ru.arturvasilov.stackexchangeclient.model.content.Question;
 import ru.arturvasilov.stackexchangeclient.model.content.User;
 import ru.arturvasilov.stackexchangeclient.model.database.QuestionTable;
@@ -23,8 +22,8 @@ public class LocalRepository {
 
     private final SQLite mDb;
 
-    public LocalRepository() {
-        mDb = SQLite.initialize(AppDelegate.getAppContext());
+    public LocalRepository(@NonNull Context context) {
+        mDb = SQLite.initialize(context);
     }
 
     @NonNull

@@ -10,9 +10,9 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 
 import ru.arturvasilov.stackexchangeclient.R;
-import ru.arturvasilov.stackexchangeclient.images.CircleTransform;
 import ru.arturvasilov.stackexchangeclient.model.content.Question;
 import ru.arturvasilov.stackexchangeclient.utils.HtmlCompat;
+import ru.arturvasilov.stackexchangeclient.utils.PicassoUtils;
 import ru.arturvasilov.stackexchangeclient.utils.TextUtils;
 import ru.arturvasilov.stackexchangeclient.utils.Views;
 
@@ -47,7 +47,7 @@ public class QuestionItemViewHolder extends RecyclerView.ViewHolder {
                      @Nullable View.OnClickListener iconClickListener) {
         Picasso.with(mAuthorIcon.getContext())
                 .load(question.getOwner().getProfileImage())
-                .transform(new CircleTransform())
+                .transform(PicassoUtils.circleTransform())
                 .into(mAuthorIcon);
         mAuthorIcon.setOnClickListener(iconClickListener);
         mAuthorIcon.setTag(position);

@@ -51,7 +51,7 @@ public class SplashLoadingAnimationView extends FrameLayout {
     }
 
     public void startAnimation() {
-        mAnimator = SplashLoadingAnimationCreator.createFullAnimator(mOuterCircle, mMiddleCircle, mInnerCircle);
+        mAnimator = SplashLoadingAnimationCreator.createCirclesAnimator(mOuterCircle, mMiddleCircle, mInnerCircle);
         mAnimator.start();
     }
 

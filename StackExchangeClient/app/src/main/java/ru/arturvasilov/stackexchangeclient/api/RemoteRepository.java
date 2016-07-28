@@ -4,8 +4,6 @@ import android.support.annotation.NonNull;
 
 import java.util.List;
 
-import retrofit2.http.Path;
-import retrofit2.http.Query;
 import ru.arturvasilov.stackexchangeclient.api.service.AnswerService;
 import ru.arturvasilov.stackexchangeclient.api.service.ApplicationService;
 import ru.arturvasilov.stackexchangeclient.api.service.NotificationService;
@@ -105,7 +103,7 @@ public class RemoteRepository {
     }
 
     @NonNull
-    public Observable<List<Tag>> searchTags(@NonNull @Query("inname") String search) {
+    public Observable<List<Tag>> searchTags(@NonNull String search) {
         return mTagsService.searchTags(search)
                 .compose(ErrorsHandler.handleErrors())
                 .map(TagResponse::getTags)
@@ -137,7 +135,7 @@ public class RemoteRepository {
     }
 
     @NonNull
-    public Observable<Question> questionWithBody(@Path("ids") int questionId) {
+    public Observable<Question> questionWithBody(int questionId) {
         return mQuestionService.questionWithBody(questionId)
                 .compose(ErrorsHandler.handleErrors())
                 .map(QuestionResponse::getQuestions)
@@ -146,7 +144,7 @@ public class RemoteRepository {
     }
 
     @NonNull
-    public Observable<List<Answer>> questionAnswers(@Path("ids") int questionId) {
+    public Observable<List<Answer>> questionAnswers(int questionId) {
         return mAnswerService.questionAnswers(questionId)
                 .compose(ErrorsHandler.handleErrors())
                 .map(AnswerResponse::getAnswers)

@@ -2,6 +2,7 @@ package ru.arturvasilov.stackexchangeclient.presenter;
 
 import android.support.annotation.NonNull;
 
+import ru.arturvasilov.stackexchangeclient.AppDelegate;
 import ru.arturvasilov.stackexchangeclient.BuildConfig;
 import ru.arturvasilov.stackexchangeclient.api.ApiFactory;
 import ru.arturvasilov.stackexchangeclient.api.LocalRepository;
@@ -66,6 +67,6 @@ public class AuthPresenter {
                 ApiFactory.getQuestionService(), ApiFactory.getAnswerService(), ApiFactory.getTagsService(),
                 ApiFactory.getNotificationService(), ApiFactory.getApplicationService());
         RepositoryProvider.setRemoteRepository(repository);
-        RepositoryProvider.setLocalRepository(new LocalRepository());
+        RepositoryProvider.setLocalRepository(new LocalRepository(AppDelegate.getAppContext()));
     }
 }

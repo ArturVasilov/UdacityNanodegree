@@ -12,7 +12,7 @@ import rx.Observable;
  */
 public interface TagsService {
 
-    @GET("tags?order=desc&sort=popular&site=stackoverflow&pagesize=50")
+    @GET("tags?order=desc&sort=popular&pagesize=50")
     Observable<TagResponse> searchTags(@NonNull @Query("inname") String search);
 
 }
