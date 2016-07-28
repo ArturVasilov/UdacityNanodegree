@@ -7,12 +7,15 @@ import java.util.List;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 import ru.arturvasilov.stackexchangeclient.api.service.AnswerService;
+import ru.arturvasilov.stackexchangeclient.api.service.ApplicationService;
+import ru.arturvasilov.stackexchangeclient.api.service.NotificationService;
 import ru.arturvasilov.stackexchangeclient.api.service.QuestionService;
 import ru.arturvasilov.stackexchangeclient.api.service.TagsService;
 import ru.arturvasilov.stackexchangeclient.api.service.UserInfoService;
 import ru.arturvasilov.stackexchangeclient.app.analytics.Analytics;
 import ru.arturvasilov.stackexchangeclient.model.content.Answer;
 import ru.arturvasilov.stackexchangeclient.model.content.Badge;
+import ru.arturvasilov.stackexchangeclient.model.content.Notification;
 import ru.arturvasilov.stackexchangeclient.model.content.Question;
 import ru.arturvasilov.stackexchangeclient.model.content.Tag;
 import ru.arturvasilov.stackexchangeclient.model.content.User;
@@ -20,7 +23,9 @@ import ru.arturvasilov.stackexchangeclient.model.content.UserTag;
 import ru.arturvasilov.stackexchangeclient.model.database.QuestionTable;
 import ru.arturvasilov.stackexchangeclient.model.database.UserTable;
 import ru.arturvasilov.stackexchangeclient.model.response.AnswerResponse;
+import ru.arturvasilov.stackexchangeclient.model.response.ApiError;
 import ru.arturvasilov.stackexchangeclient.model.response.BadgeResponse;
+import ru.arturvasilov.stackexchangeclient.model.response.NotificationResponse;
 import ru.arturvasilov.stackexchangeclient.model.response.QuestionResponse;
 import ru.arturvasilov.stackexchangeclient.model.response.TagResponse;
 import ru.arturvasilov.stackexchangeclient.model.response.UserResponse;
@@ -40,13 +45,18 @@ public class RemoteRepository {
     private final QuestionService mQuestionService;
     private final AnswerService mAnswerService;
     private final TagsService mTagsService;
+    private final NotificationService mNotificationService;
+    private final ApplicationService mApplicationService;
 
     public RemoteRepository(@NonNull UserInfoService userInfoService, @NonNull QuestionService questionService,
-                            @NonNull AnswerService answerService, @NonNull TagsService tagsService) {
+                            @NonNull AnswerService answerService, @NonNull TagsService tagsService,
+                            @NonNull NotificationService notificationService, @NonNull ApplicationService applicationService) {
         mUserInfoService = userInfoService;
         mQuestionService = questionService;
         mAnswerService = answerService;
         mTagsService = tagsService;
+        mNotificationService = notificationService;
+        mApplicationService = applicationService;
     }
 
     @NonNull
@@ -97,6 +107,7 @@ public class RemoteRepository {
     @NonNull
     public Observable<List<Tag>> searchTags(@NonNull @Query("inname") String search) {
         return mTagsService.searchTags(search)
+                .compose(ErrorsHandler.handleErrors())
                 .map(TagResponse::getTags)
                 .compose(RxSchedulers.async());
     }
@@ -104,6 +115,7 @@ public class RemoteRepository {
     @NonNull
     public Observable<List<Badge>> badges(int userId) {
         return mUserInfoService.badges(userId)
+                .compose(ErrorsHandler.handleErrors())
                 .map(BadgeResponse::getBadges)
                 .compose(RxSchedulers.async());
     }
@@ -111,6 +123,7 @@ public class RemoteRepository {
     @NonNull
     public Observable<List<UserTag>> topTags(int userId) {
         return mUserInfoService.topTags(userId)
+                .compose(ErrorsHandler.handleErrors())
                 .map(UserTagResponse::getUserTags)
                 .compose(RxSchedulers.async());
     }
@@ -118,6 +131,7 @@ public class RemoteRepository {
     @NonNull
     public Observable<List<Answer>> answers(int userId) {
         return mAnswerService.answers(userId)
+                .compose(ErrorsHandler.handleErrors())
                 .map(AnswerResponse::getAnswers)
                 .compose(RxSchedulers.async());
     }
@@ -125,6 +139,7 @@ public class RemoteRepository {
     @NonNull
     public Observable<Question> questionWithBody(@Path("ids") int questionId) {
         return mQuestionService.questionWithBody(questionId)
+                .compose(ErrorsHandler.handleErrors())
                 .map(QuestionResponse::getQuestions)
                 .map(questions -> questions.get(0))
                 .compose(RxSchedulers.async());
@@ -133,7 +148,23 @@ public class RemoteRepository {
     @NonNull
     public Observable<List<Answer>> questionAnswers(@Path("ids") int questionId) {
         return mAnswerService.questionAnswers(questionId)
+                .compose(ErrorsHandler.handleErrors())
                 .map(AnswerResponse::getAnswers)
+                .compose(RxSchedulers.async());
+    }
+
+    @NonNull
+    public Observable<List<Notification>> notifications() {
+        return mNotificationService.notifications()
+                .compose(ErrorsHandler.handleErrors())
+                .map(NotificationResponse::getNotifications)
+                .compose(RxSchedulers.async());
+    }
+
+    @NonNull
+    public Observable<ApiError> logout(@NonNull String path) {
+        return mApplicationService.logout(path)
+                .compose(ErrorsHandler.handleErrors())
                 .compose(RxSchedulers.async());
     }
 }

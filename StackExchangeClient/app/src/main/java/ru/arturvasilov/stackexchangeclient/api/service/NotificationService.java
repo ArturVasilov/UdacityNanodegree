@@ -1,10 +1,18 @@
 package ru.arturvasilov.stackexchangeclient.api.service;
 
+import android.support.annotation.NonNull;
+
+import retrofit2.http.GET;
+import ru.arturvasilov.stackexchangeclient.model.response.NotificationResponse;
+import rx.Observable;
+
 /**
  * @author Artur Vasilov
  */
 public interface NotificationService {
 
-    //TODO : filter !9X8frFZkZ
+    @NonNull
+    @GET("/me/notifications?site=stackoverflow&pagesize=100&filter=!9X8frFZkZ")
+    Observable<NotificationResponse> notifications();
 
 }

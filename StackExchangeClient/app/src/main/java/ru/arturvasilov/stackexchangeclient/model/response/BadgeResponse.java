@@ -12,7 +12,7 @@ import ru.arturvasilov.stackexchangeclient.model.content.Badge;
 /**
  * @author Artur Vasilov
  */
-public class BadgeResponse {
+public class BadgeResponse extends ApiError {
 
     @SerializedName("items")
     private List<Badge> mBadges;

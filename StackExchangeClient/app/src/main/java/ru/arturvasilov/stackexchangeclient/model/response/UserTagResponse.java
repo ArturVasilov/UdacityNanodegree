@@ -12,7 +12,7 @@ import ru.arturvasilov.stackexchangeclient.model.content.UserTag;
 /**
  * @author Artur Vasilov
  */
-public class UserTagResponse {
+public class UserTagResponse extends ApiError {
 
     @SerializedName("items")
     private List<UserTag> mUserTags;

@@ -9,6 +9,8 @@ import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 import ru.arturvasilov.stackexchangeclient.BuildConfig;
 import ru.arturvasilov.stackexchangeclient.api.service.AnswerService;
+import ru.arturvasilov.stackexchangeclient.api.service.ApplicationService;
+import ru.arturvasilov.stackexchangeclient.api.service.NotificationService;
 import ru.arturvasilov.stackexchangeclient.api.service.QuestionService;
 import ru.arturvasilov.stackexchangeclient.api.service.TagsService;
 import ru.arturvasilov.stackexchangeclient.api.service.UserInfoService;
@@ -24,6 +26,8 @@ public final class ApiFactory {
     private static QuestionService sQuestionService;
     private static AnswerService sAnswerService;
     private static TagsService sTagsService;
+    private static NotificationService sNotificationService;
+    private static ApplicationService sApplicationService;
 
     @NonNull
     public static UserInfoService getUserInfoService() {
@@ -75,6 +79,34 @@ public final class ApiFactory {
                 service = sTagsService;
                 if (service == null) {
                     service = sTagsService = buildRetrofit().create(TagsService.class);
+                }
+            }
+        }
+        return service;
+    }
+
+    @NonNull
+    public static NotificationService getNotificationService() {
+        NotificationService service = sNotificationService;
+        if (service == null) {
+            synchronized (ApiFactory.class) {
+                service = sNotificationService;
+                if (service == null) {
+                    service = sNotificationService = buildRetrofit().create(NotificationService.class);
+                }
+            }
+        }
+        return service;
+    }
+
+    @NonNull
+    public static ApplicationService getApplicationService() {
+        ApplicationService service = sApplicationService;
+        if (service == null) {
+            synchronized (ApiFactory.class) {
+                service = sApplicationService;
+                if (service == null) {
+                    service = sApplicationService = buildRetrofit().create(ApplicationService.class);
                 }
             }
         }

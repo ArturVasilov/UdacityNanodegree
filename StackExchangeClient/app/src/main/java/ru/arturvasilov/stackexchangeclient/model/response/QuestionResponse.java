@@ -12,7 +12,7 @@ import ru.arturvasilov.stackexchangeclient.model.content.Question;
 /**
  * @author Artur Vasilov
  */
-public class QuestionResponse {
+public class QuestionResponse extends ApiError {
 
     @SerializedName("items")
     private List<Question> mQuestions;
