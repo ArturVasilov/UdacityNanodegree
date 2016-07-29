@@ -76,7 +76,7 @@ public class QuestionsListFragment extends Fragment implements QuestionsListView
     @Override
     public void onItemClick(@NonNull Question question, @NonNull View view) {
         if (view.getId() == R.id.icon) {
-            ProfileActivity.start(getActivity(), question.getOwner());
+            ProfileActivity.start(getActivity(), view, question.getOwner());
         } else {
             QuestionActivity.start(getActivity(), question);
         }

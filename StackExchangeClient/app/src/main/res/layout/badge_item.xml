@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ru.arturvasilov.stackexchangeclient.widget.BadgeTextView
+<ru.arturvasilov.stackexchangeclient.widget.BadgeButton
     android:id="@+id/badgeView"
     style="@style/SelectableItemTheme"
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -18,7 +18,7 @@
     android:paddingRight="@dimen/padding_medium"
     android:paddingTop="@dimen/padding_small"
     android:textColor="@color/white"
-    android:textSize="@dimen/text.18"
+    android:textSize="@dimen/text.16"
     grid:layout_columnWeight="1"
     grid:layout_gravity="fill_horizontal"
     tools:ignore="UnusedAttribute"/>

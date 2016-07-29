@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
 
     <style name="AppTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/primary</item>
@@ -10,10 +10,7 @@
         <item name="android:background">@null</item>
     </style>
 
-    <style name="AppTheme.Fullscreen">
-        <item name="android:statusBarColor" tools:ignore="NewApi">@android:color/transparent</item>
-        <item name="android:windowDrawsSystemBarBackgrounds" tools:ignore="NewApi">true</item>
-    </style>
+    <style name="AppTheme.Fullscreen"/>
 
     <style name="AppTheme.LightGrey">
         <item name="colorPrimaryDark">@color/black_20</item>

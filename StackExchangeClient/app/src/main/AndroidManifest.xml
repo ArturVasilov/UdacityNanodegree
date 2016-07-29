@@ -39,7 +39,9 @@
 
         <activity android:name=".activity.MainActivity"/>
 
-        <activity android:name=".activity.ProfileActivity"/>
+        <activity
+            android:name=".activity.ProfileActivity"
+            android:label=""/>
 
         <activity android:name=".activity.AnswersListActivity"/>
 

@@ -32,6 +32,14 @@
             android:textSize="@dimen/text.28"
             android:textStyle="bold"/>
 
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
     </FrameLayout>
 
     <android.support.v4.widget.NestedScrollView

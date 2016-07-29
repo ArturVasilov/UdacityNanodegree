@@ -8,10 +8,14 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.ActivityOptionsCompat;
+import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayout;
 import android.text.method.LinkMovementMethod;
-import android.transition.Slide;
+import android.transition.Transition;
+import android.transition.TransitionInflater;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -33,13 +37,15 @@ import ru.arturvasilov.stackexchangeclient.rx.RxError;
 import ru.arturvasilov.stackexchangeclient.utils.HtmlCompat;
 import ru.arturvasilov.stackexchangeclient.utils.Views;
 import ru.arturvasilov.stackexchangeclient.view.ProfileView;
-import ru.arturvasilov.stackexchangeclient.widget.BadgeTextView;
+import ru.arturvasilov.stackexchangeclient.widget.BadgeButton;
 import ru.arturvasilov.stackexchangeclient.widget.UserTagView;
 
 /**
  * @author Artur Vasilov
  */
 public class ProfileActivity extends AppCompatActivity implements ProfileView {
+
+    public static final String IMAGE = "image";
 
     private static final String USER_KEY = "user";
 
@@ -57,10 +63,13 @@ public class ProfileActivity extends AppCompatActivity implements ProfileView {
     private View mTagsTitle;
     private ViewGroup mTagsLayout;
 
-    public static void start(@NonNull Activity activity, @NonNull User user) {
+    private ProfilePresenter mPresenter;
+
+    public static void start(@NonNull Activity activity, @NonNull View transitionImage, @NonNull User user) {
         Intent intent = new Intent(activity, ProfileActivity.class);
         intent.putExtra(USER_KEY, user);
-        activity.startActivity(intent);
+        ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(activity, transitionImage, IMAGE);
+        ActivityCompat.startActivity(activity, intent, options.toBundle());
     }
 
     @Override
@@ -75,6 +84,7 @@ public class ProfileActivity extends AppCompatActivity implements ProfileView {
         mReputation = Views.findById(this, R.id.reputationText);
         mProfileLink = Views.findById(this, R.id.linkText);
         mProfileLink.setMovementMethod(LinkMovementMethod.getInstance());
+        ViewCompat.setTransitionName(mPersonImage, IMAGE);
 
         mBadgesDivider = Views.findById(this, R.id.badgesDivider);
         mBadgesTitle = Views.findById(this, R.id.badgesTitle);
@@ -85,11 +95,11 @@ public class ProfileActivity extends AppCompatActivity implements ProfileView {
         mTagsLayout = Views.findById(this, R.id.tagsLayout);
 
         User user = (User) getIntent().getSerializableExtra(USER_KEY);
-        ProfilePresenter presenter = new ProfilePresenter(this, getLoaderManager(), this,
+        mPresenter = new ProfilePresenter(this, getLoaderManager(), this,
                 LoadingDialog.view(getSupportFragmentManager()),
                 RxError.view(this, getSupportFragmentManager()),
                 user);
-        presenter.init();
+        mPresenter.init(savedInstanceState);
     }
 
     @Override
@@ -104,11 +114,17 @@ public class ProfileActivity extends AppCompatActivity implements ProfileView {
     }
 
     @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        mPresenter.onSaveInstanceState(outState);
+    }
+
+    @Override
     public void showUserName(@NonNull String name) {
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setTitle(name);
-        } else if (mPersonName != null) {
+        if (mPersonName != null) {
             mPersonName.setText(name);
+        } else if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle(name);
         }
     }
 
@@ -134,7 +150,7 @@ public class ProfileActivity extends AppCompatActivity implements ProfileView {
         mBadgesGrid.removeAllViews();
         LayoutInflater inflater = LayoutInflater.from(this);
         for (Badge badge : badges) {
-            BadgeTextView view = (BadgeTextView) inflater.inflate(R.layout.badge_item, mBadgesGrid, false);
+            BadgeButton view = (BadgeButton) inflater.inflate(R.layout.badge_item, mBadgesGrid, false);
             view.setBadge(badge);
             mBadgesGrid.addView(view);
         }
@@ -157,26 +173,28 @@ public class ProfileActivity extends AppCompatActivity implements ProfileView {
     }
 
     private void prepareWindow() {
-        if (getResources().getConfiguration().orientation != Configuration.ORIENTATION_PORTRAIT) {
-            return;
-        }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            Slide transition = new Slide();
-            transition.excludeTarget(android.R.id.statusBarBackground, true);
-            getWindow().setStatusBarColor(Color.TRANSPARENT);
-            getWindow().setEnterTransition(transition);
-            getWindow().setReturnTransition(transition);
+            if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
+                getWindow().setStatusBarColor(Color.TRANSPARENT);
+            }
+            Transition enter = TransitionInflater.from(this).inflateTransition(R.transition.profile_transition_enter);
+            enter.excludeTarget(android.R.id.statusBarBackground, true);
+            getWindow().setEnterTransition(enter);
+
+            Transition exit = TransitionInflater.from(this).inflateTransition(R.transition.profile_transition_exit);
+            exit.excludeTarget(android.R.id.statusBarBackground, true);
+            getWindow().setReturnTransition(exit);
         }
     }
 
     private void setupActionBar() {
-        if (getResources().getConfiguration().orientation != Configuration.ORIENTATION_PORTRAIT) {
-            return;
-        }
         setSupportActionBar(Views.findById(this, R.id.toolbar));
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
+        if (getResources().getConfiguration().orientation != Configuration.ORIENTATION_PORTRAIT) {
+            getSupportActionBar().setDisplayShowTitleEnabled(false);
         }
     }
 }

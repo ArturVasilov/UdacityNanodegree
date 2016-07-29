@@ -68,6 +68,7 @@ public class MainActivity extends AppCompatActivity implements MainView,
         mNavigationView.setNavigationItemSelectedListener(this);
         View headerView = mNavigationView.getHeaderView(0);
         mHeaderImage = Views.findById(headerView, R.id.headerImage);
+        mHeaderImage.setOnClickListener(view -> mPresenter.onProfileSelected());
         mHeaderText = Views.findById(headerView, R.id.headerText);
 
         mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar, 0, 0);
@@ -176,7 +177,7 @@ public class MainActivity extends AppCompatActivity implements MainView,
 
     @Override
     public void openProfile(@NonNull User currentUser) {
-        ProfileActivity.start(this, currentUser);
+        ProfileActivity.start(this, mHeaderImage, currentUser);
     }
 
     @Override
