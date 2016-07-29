@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ru.arturvasilov.stackexchangeclient.widget.BadgeButton
     android:id="@+id/badgeView"
-    style="@style/SelectableItemTheme"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:grid="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="wrap_content"
+    android:layout_width="0dp"
     android:layout_gravity="fill"
     android:layout_margin="@dimen/size.3"
     android:background="@color/primary"

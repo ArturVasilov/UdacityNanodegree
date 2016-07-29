@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout style="@style/SelectableItemTheme"
-             xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:tools="http://schemas.android.com/tools"
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-             android:clickable="true"
-             android:paddingBottom="@dimen/padding_small"
-             android:paddingTop="@dimen/padding_small">
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:paddingBottom="@dimen/padding_small"
+    android:paddingTop="@dimen/padding_small">
 
     <TextView
         android:id="@+id/tagName"

@@ -24,6 +24,7 @@ public class SQLiteProvider extends SQLiteContentProvider {
     protected void prepareSchema(@NonNull Schema schema) {
         schema.register(UserTable.TABLE);
         schema.register(QuestionTable.TABLE);
+        schema.register(AnswerTable.TABLE);
         schema.register(TagTable.TABLE);
     }
 }

@@ -16,6 +16,6 @@ public interface AnswersListView extends EmptyListView {
 
     void setEmptyText(@StringRes int textResId);
 
-    void showUrl(@NonNull String url);
+    void browseUrl(@NonNull String url);
 
 }

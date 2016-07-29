@@ -4,6 +4,7 @@
     <item name="questions_loader_id" type="id"/>
     <item name="user_info_loader_id" type="id"/>
     <item name="user_full_info_loader_id" type="id"/>
+    <item name="answers_loader_id" type="id"/>
 
     <item name="test_loader_id" type="id"/>
 </resources>

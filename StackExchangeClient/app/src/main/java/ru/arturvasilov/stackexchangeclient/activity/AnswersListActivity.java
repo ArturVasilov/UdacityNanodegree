@@ -68,7 +68,7 @@ public class AnswersListActivity extends AppCompatActivity implements AnswersLis
                 LoadingDialog.view(getSupportFragmentManager()),
                 RxError.view(this, getSupportFragmentManager()),
                 user);
-        mPresenter.init();
+        mPresenter.init(savedInstanceState);
     }
 
     @Override
@@ -83,6 +83,12 @@ public class AnswersListActivity extends AppCompatActivity implements AnswersLis
     }
 
     @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        mPresenter.onSaveInstanceState(outState);
+    }
+
+    @Override
     public void showAnswers(@NonNull List<Answer> answers) {
         mAdapter.changeDataSet(answers);
     }
@@ -93,7 +99,7 @@ public class AnswersListActivity extends AppCompatActivity implements AnswersLis
     }
 
     @Override
-    public void showUrl(@NonNull String url) {
+    public void browseUrl(@NonNull String url) {
         Env.browseUrl(this, url);
     }
 

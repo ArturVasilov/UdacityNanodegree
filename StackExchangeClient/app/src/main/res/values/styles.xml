@@ -23,9 +23,20 @@
 
     <style name="AppTheme.Dialog" parent="Theme.AppCompat.Light.Dialog.Alert"/>
 
+    <style name="SelectableItemBackgroundLight">
+        <item name="android:theme">@style/SelectableItemThemeLight</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="SelectableItemThemeLight">
+        <item name="colorControlHighlight">@color/highlight_color_light</item>
+    </style>
+
     <style name="SelectableItemBackground">
         <item name="android:theme">@style/SelectableItemTheme</item>
         <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:clickable">true</item>
     </style>
 
     <style name="SelectableItemTheme">

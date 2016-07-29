@@ -11,6 +11,9 @@ import ru.arturvasilov.stackexchangeclient.api.service.QuestionService;
 import ru.arturvasilov.stackexchangeclient.api.service.TagsService;
 import ru.arturvasilov.stackexchangeclient.api.service.UserInfoService;
 import ru.arturvasilov.stackexchangeclient.app.analytics.Analytics;
+import ru.arturvasilov.stackexchangeclient.data.database.AnswerTable;
+import ru.arturvasilov.stackexchangeclient.data.database.QuestionTable;
+import ru.arturvasilov.stackexchangeclient.data.database.UserTable;
 import ru.arturvasilov.stackexchangeclient.model.content.Answer;
 import ru.arturvasilov.stackexchangeclient.model.content.Badge;
 import ru.arturvasilov.stackexchangeclient.model.content.Notification;
@@ -18,8 +21,6 @@ import ru.arturvasilov.stackexchangeclient.model.content.Question;
 import ru.arturvasilov.stackexchangeclient.model.content.Tag;
 import ru.arturvasilov.stackexchangeclient.model.content.User;
 import ru.arturvasilov.stackexchangeclient.model.content.UserTag;
-import ru.arturvasilov.stackexchangeclient.data.database.QuestionTable;
-import ru.arturvasilov.stackexchangeclient.data.database.UserTable;
 import ru.arturvasilov.stackexchangeclient.model.response.AnswerResponse;
 import ru.arturvasilov.stackexchangeclient.model.response.ApiError;
 import ru.arturvasilov.stackexchangeclient.model.response.BadgeResponse;
@@ -130,6 +131,18 @@ public class RemoteRepository {
         return mAnswerService.answers(userId)
                 .compose(ErrorsHandler.handleErrors())
                 .map(AnswerResponse::getAnswers)
+                .flatMap(answers -> {
+                    SQLite.get().delete(AnswerTable.TABLE).execute();
+                    SQLite.get().insert(AnswerTable.TABLE).insert(answers);
+                    return Observable.just(answers);
+                })
+                .onErrorResumeNext(throwable -> {
+                    List<Answer> answers = SQLite.get().query(AnswerTable.TABLE).all().execute();
+                    if (answers.isEmpty()) {
+                        return Observable.error(throwable);
+                    }
+                    return Observable.just(answers);
+                })
                 .compose(RxSchedulers.async());
     }
 
