@@ -90,7 +90,7 @@ public class ProfilePresenter {
 
     private void showUserInfo() {
         mView.showUserName(mUser.getName());
-        String imageLink = mUser.getProfileImage().replace("sz=128", "sz=1024").replace("s=128", "s=1024");
+        String imageLink = mUser.getProfileImage().replace("s=128", "s=800").replace("sz=128", "sz=800");
         mView.showUserImage(imageLink);
         mView.showReputation(mContext.getString(R.string.reputation, mUser.getReputation()));
         mView.showProfileLink(String.format(LINK_FORMAT, mUser.getLink(), mContext.getString(R.string.profile_text)));

@@ -175,7 +175,7 @@ public class ProfilePresenterTest {
     }
 
     private void verifyUserInfoShown() {
-        Mockito.verify(mView).showUserImage("https://i.stack.imgur.com/EJNBv.jpg?sz=1024&g=1");
+        Mockito.verify(mView).showUserImage("https://i.stack.imgur.com/EJNBv.jpg?sz=800&g=1");
         Mockito.verify(mView).showUserName("Artur Vasilov");
         Mockito.verify(mView).showReputation("Reputation: 2985");
         Mockito.verify(mView).showProfileLink("<a href=\"http://stackoverflow.com/users/3637200/vasilov-artur\">Profile</a>");
