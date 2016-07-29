@@ -85,8 +85,9 @@ public class MainActivity extends AppCompatActivity implements MainView,
         mTabLayout = Views.findById(this, R.id.tabs);
         mPager = Views.findById(this, R.id.pager);
         mTabLayout.addOnTabSelectedListener(this);
+        mPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(mTabLayout));
 
-        mPresenter = new MainPresenter(this, this);
+        mPresenter = new MainPresenter(this, getLoaderManager(), this);
         mPresenter.init();
     }
 

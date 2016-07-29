@@ -25,7 +25,7 @@ public class TestLocalRepository extends LocalRepository {
         User user = new User();
         user.setUserId(932123);
         user.setAge(19);
-        user.setName("John");
+        user.setName("Artur Vasilov");
         user.setReputation(2985);
         user.setLink("http://stackoverflow.com/users/3637200/vasilov-artur");
         user.setProfileImage("https://i.stack.imgur.com/EJNBv.jpg?s=512&g=1");
