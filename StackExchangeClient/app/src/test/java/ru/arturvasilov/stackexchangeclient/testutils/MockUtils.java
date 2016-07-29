@@ -3,13 +3,8 @@ package ru.arturvasilov.stackexchangeclient.testutils;
 import android.app.LoaderManager;
 import android.content.Context;
 import android.content.Loader;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-
-import com.orhanobut.hawk.Hawk;
-import com.orhanobut.hawk.HawkBuilder;
-import com.orhanobut.hawk.LogLevel;
 
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
@@ -40,9 +35,8 @@ public final class MockUtils {
 
     public static void setupTestSchedulers() {
         try {
-            RxJavaHooks.onIOScheduler(Schedulers.immediate());
-            RxJavaHooks.onNewThreadScheduler(Schedulers.immediate());
-            RxJavaHooks.onComputationScheduler(Schedulers.immediate());
+            RxJavaHooks.setOnIOScheduler(current -> Schedulers.immediate());
+            RxJavaHooks.setOnComputationScheduler(current -> Schedulers.immediate());
 
             RxAndroidPlugins.getInstance().registerSchedulersHook(new RxAndroidSchedulersHook() {
                 @Override
@@ -82,7 +76,7 @@ public final class MockUtils {
 
     @SuppressWarnings("unchecked")
     @NonNull
-    public static LoaderManager rxLoaderManager() {
+    public static LoaderManager mockLoaderManager() {
         LoaderManager lm = mock(LoaderManager.class);
         when(lm.initLoader(anyInt(), any(Bundle.class), any(LoaderManager.LoaderCallbacks.class)))
                 .then(new MockedRxLoaderAnswer());

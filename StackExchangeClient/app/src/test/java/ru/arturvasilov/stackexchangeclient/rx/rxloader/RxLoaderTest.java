@@ -32,7 +32,7 @@ public class RxLoaderTest {
     @Before
     public void setUp() throws Exception {
         Context context = MockUtils.mockContext();
-        LoaderManager lm = MockUtils.rxLoaderManager();
+        LoaderManager lm = MockUtils.mockLoaderManager();
         mRxLoader = RxLoader.create(context, lm, R.id.test_loader_id, Observable.just(1));
     }
 
@@ -44,7 +44,7 @@ public class RxLoaderTest {
     @Test
     public void testInitEmpty() throws Exception {
         Context context = MockUtils.mockContext();
-        LoaderManager lm = MockUtils.rxLoaderManager();
+        LoaderManager lm = MockUtils.mockLoaderManager();
 
         Action0 onComplete = Mockito.mock(Action0.class);
         mRxLoader = RxLoader.create(context, lm, R.id.test_loader_id,
@@ -64,7 +64,7 @@ public class RxLoaderTest {
     @Test
     public void testInitError() throws Exception {
         Context context = MockUtils.mockContext();
-        LoaderManager lm = MockUtils.rxLoaderManager();
+        LoaderManager lm = MockUtils.mockLoaderManager();
         Exception exception = new IOException();
         mRxLoader = RxLoader.create(context, lm, R.id.test_loader_id, Observable.error(exception));
 
@@ -81,7 +81,7 @@ public class RxLoaderTest {
     @Test
     public void testRestartEmpty() throws Exception {
         Context context = MockUtils.mockContext();
-        LoaderManager lm = MockUtils.rxLoaderManager();
+        LoaderManager lm = MockUtils.mockLoaderManager();
 
         Action0 onComplete = Mockito.mock(Action0.class);
         mRxLoader = RxLoader.create(context, lm, R.id.test_loader_id,
@@ -101,7 +101,7 @@ public class RxLoaderTest {
     @Test
     public void testRestartError() throws Exception {
         Context context = MockUtils.mockContext();
-        LoaderManager lm = MockUtils.rxLoaderManager();
+        LoaderManager lm = MockUtils.mockLoaderManager();
         Exception exception = new IOException();
         mRxLoader = RxLoader.create(context, lm, R.id.test_loader_id, Observable.error(exception));
 

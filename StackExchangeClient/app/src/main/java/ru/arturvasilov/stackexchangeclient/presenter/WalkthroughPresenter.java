@@ -2,6 +2,7 @@ package ru.arturvasilov.stackexchangeclient.presenter;
 
 import android.app.LoaderManager;
 import android.content.Context;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
@@ -27,10 +28,15 @@ public class WalkthroughPresenter {
 
     public static final int PAGE_COUNT = 3;
 
-    private final WalkthroughView mView;
+    private static final String CURRENT_ITEM_KEY = "current_item";
+    private static final String WALKTHROUGH_PASSED_KEY = "walkthrough_passed";
+    private static final String INFORMATION_LOADED_KEY = "information_loaded";
+    private static final String ERROR_KEY = "error";
 
     private final Context mContext;
     private final LoaderManager mLoaderManager;
+
+    private final WalkthroughView mView;
 
     private int mCurrentItem = 0;
 
@@ -38,16 +44,29 @@ public class WalkthroughPresenter {
     private boolean mIsInformationLoaded = false;
     private boolean mIsError;
 
-    public WalkthroughPresenter(@NonNull WalkthroughView view, @NonNull Context context,
-                                @NonNull LoaderManager loaderManager) {
-        mView = view;
+    public WalkthroughPresenter(@NonNull Context context, @NonNull LoaderManager loaderManager,
+                                @NonNull WalkthroughView view) {
         mContext = context;
         mLoaderManager = loaderManager;
+        mView = view;
     }
 
-    public void init() {
-        mView.showBenefit(0);
-        mView.setActionButtonText(R.string.next_uppercase);
+    public void init(@Nullable Bundle savedInstanceState) {
+        if (savedInstanceState == null) {
+            mCurrentItem = 0;
+            showCurrentBenefit();
+        } else {
+            mCurrentItem = savedInstanceState.getInt(CURRENT_ITEM_KEY);
+            mIsWalkthroughPassed = savedInstanceState.getBoolean(WALKTHROUGH_PASSED_KEY);
+            mIsInformationLoaded = savedInstanceState.getBoolean(INFORMATION_LOADED_KEY);
+            mIsError = savedInstanceState.getBoolean(ERROR_KEY);
+
+            if (mIsWalkthroughPassed) {
+                checkForSuccess();
+            } else {
+                showCurrentBenefit();
+            }
+        }
 
         startLoading(true);
     }
@@ -71,6 +90,13 @@ public class WalkthroughPresenter {
             mCurrentItem = index;
             showCurrentBenefit();
         }
+    }
+
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        outState.putInt(CURRENT_ITEM_KEY, mCurrentItem);
+        outState.putBoolean(WALKTHROUGH_PASSED_KEY, mIsWalkthroughPassed);
+        outState.putBoolean(INFORMATION_LOADED_KEY, mIsInformationLoaded);
+        outState.putBoolean(ERROR_KEY, mIsError);
     }
 
     private void showCurrentBenefit() {
@@ -118,7 +144,7 @@ public class WalkthroughPresenter {
     private void checkForSuccess() {
         if (mIsWalkthroughPassed) {
             if (mIsInformationLoaded) {
-                RepositoryProvider.provideKeyValueStorage().saveWalkthroughPassed();
+                //RepositoryProvider.provideKeyValueStorage().saveWalkthroughPassed();
                 mView.finishWalkthrough();
             } else if (mIsError) {
                 mView.showError();
@@ -132,6 +158,6 @@ public class WalkthroughPresenter {
                                   @Nullable List<Question> myQuestions) {
         return currentUser != null
                 && allQuestions != null && !allQuestions.isEmpty()
-                && myQuestions != null && !myQuestions.isEmpty();
+                && myQuestions != null;
     }
 }

@@ -65,8 +65,14 @@ public class WalkthroughActivity extends AppCompatActivity implements Walkthroug
         mRetryLayout = Views.findById(this, R.id.retryLayout);
         Views.findById(this, R.id.retryButton).setOnClickListener(this);
 
-        mPresenter = new WalkthroughPresenter(this, this, getLoaderManager());
-        mPresenter.init();
+        mPresenter = new WalkthroughPresenter(this, getLoaderManager(), this);
+        mPresenter.init(savedInstanceState);
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        mPresenter.onSaveInstanceState(outState);
     }
 
     @Override
@@ -93,8 +99,11 @@ public class WalkthroughActivity extends AppCompatActivity implements Walkthroug
         if (index == mPager.getCurrentItem()) {
             return;
         }
-        mPager.smoothScrollNext(getResources().getInteger(android.R.integer.config_shortAnimTime));
-
+        if (index == mPager.getCurrentItem() - 1) {
+            mPager.smoothScrollNext(getResources().getInteger(android.R.integer.config_shortAnimTime));
+        } else {
+            mPager.setCurrentItem(index);
+        }
     }
 
     @Override

@@ -6,12 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ru.arturvasilov.stackexchangeclient.api.RemoteRepository;
-import ru.arturvasilov.stackexchangeclient.api.service.AnswerService;
-import ru.arturvasilov.stackexchangeclient.api.service.ApplicationService;
-import ru.arturvasilov.stackexchangeclient.api.service.NotificationService;
-import ru.arturvasilov.stackexchangeclient.api.service.QuestionService;
-import ru.arturvasilov.stackexchangeclient.api.service.TagsService;
-import ru.arturvasilov.stackexchangeclient.api.service.UserInfoService;
 import ru.arturvasilov.stackexchangeclient.model.content.Answer;
 import ru.arturvasilov.stackexchangeclient.model.content.Badge;
 import ru.arturvasilov.stackexchangeclient.model.content.Notification;
@@ -20,6 +14,12 @@ import ru.arturvasilov.stackexchangeclient.model.content.Tag;
 import ru.arturvasilov.stackexchangeclient.model.content.User;
 import ru.arturvasilov.stackexchangeclient.model.content.UserTag;
 import ru.arturvasilov.stackexchangeclient.model.response.ApiError;
+import ru.arturvasilov.stackexchangeclient.testutils.service.AnswerServiceMock;
+import ru.arturvasilov.stackexchangeclient.testutils.service.ApplicationServiceMock;
+import ru.arturvasilov.stackexchangeclient.testutils.service.NotificationServiceMock;
+import ru.arturvasilov.stackexchangeclient.testutils.service.QuestionServiceMock;
+import ru.arturvasilov.stackexchangeclient.testutils.service.TagsServiceMock;
+import ru.arturvasilov.stackexchangeclient.testutils.service.UserInfoServiceMock;
 import rx.Observable;
 
 /**
@@ -27,10 +27,9 @@ import rx.Observable;
  */
 public class TestRemoteRepository extends RemoteRepository {
 
-    public TestRemoteRepository(@NonNull UserInfoService userInfoService, @NonNull QuestionService questionService,
-                                @NonNull AnswerService answerService, @NonNull TagsService tagsService,
-                                @NonNull NotificationService notificationService, @NonNull ApplicationService applicationService) {
-        super(userInfoService, questionService, answerService, tagsService, notificationService, applicationService);
+    public TestRemoteRepository() {
+        super(new UserInfoServiceMock(), new QuestionServiceMock(), new AnswerServiceMock(),
+                new TagsServiceMock(), new NotificationServiceMock(), new ApplicationServiceMock());
     }
 
     @NonNull
