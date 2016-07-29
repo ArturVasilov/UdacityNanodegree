@@ -11,9 +11,12 @@
 
     <string name="next_uppercase">NEXT</string>
     <string name="finish_uppercase">FINISH</string>
-    <string name="page_1_text">Stackoveflow1</string>
-    <string name="page_2_text">Stackoveflow2</string>
-    <string name="page_3_text">Stackoveflow3</string>
+    <string name="page_1_text">Stack Exchange is a network of 157 communities that are created and
+        run by experts and enthusiasts like you who are passionate about a specific topic
+    </string>
+    <string name="page_2_text">Stack Overflow is a question and answer site for professional and enthusiast programmers</string>
+    <string name="page_3_text">Whether you want to sit back and let us show you recommendations or search yourself,
+        we make it easy to find your dream job</string>
     <string name="retry">Retry</string>
     <string name="refresh">Refresh</string>
     <string name="profile">Profile</string>

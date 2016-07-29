@@ -35,9 +35,9 @@ public class WalkthroughAdapter extends FragmentPagerAdapter {
 
     public enum WalkthroughPage {
 
-        PAGE_1(R.drawable.page_1_background, R.drawable.so_logo, R.string.page_1_text),
+        PAGE_1(R.drawable.page_1_background, R.drawable.page_1_logo, R.string.page_1_text),
         PAGE_2(R.drawable.page_2_background, R.drawable.so_logo, R.string.page_2_text),
-        PAGE_3(R.drawable.page_3_background, R.drawable.so_logo, R.string.page_3_text);
+        PAGE_3(R.drawable.page_3_background, R.drawable.page_3_logo, R.string.page_3_text);
 
         private final int mBackgroundDrawableResId;
         private final int mImageResId;

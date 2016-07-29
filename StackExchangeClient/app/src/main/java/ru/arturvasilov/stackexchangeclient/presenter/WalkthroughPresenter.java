@@ -144,7 +144,7 @@ public class WalkthroughPresenter {
     private void checkForSuccess() {
         if (mIsWalkthroughPassed) {
             if (mIsInformationLoaded) {
-                //RepositoryProvider.provideKeyValueStorage().saveWalkthroughPassed();
+                RepositoryProvider.provideKeyValueStorage().saveWalkthroughPassed();
                 mView.finishWalkthrough();
             } else if (mIsError) {
                 mView.showError();

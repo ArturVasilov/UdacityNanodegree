@@ -52,6 +52,7 @@ public class WalkthroughActivity extends AppCompatActivity implements Walkthroug
         mActionButton.setOnClickListener(this);
 
         mPager = Views.findById(this, R.id.pager);
+
         PagerAdapter adapter = new WalkthroughAdapter(getSupportFragmentManager());
         mPager.setAdapter(adapter);
         mPager.setOnPageChangedListener(this);

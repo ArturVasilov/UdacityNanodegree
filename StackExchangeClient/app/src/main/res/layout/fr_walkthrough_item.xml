@@ -20,10 +20,12 @@
         android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/list_item_padding"
+        android:layout_marginRight="@dimen/list_item_padding"
         android:layout_marginTop="@dimen/walkthrough_text_margin"
-        android:fontFamily="sans-serif-light"
+        android:fontFamily="sans-serif"
         android:gravity="center"
         android:textColor="@color/white"
-        android:textSize="@dimen/text.22"/>
+        android:textSize="@dimen/text.18"/>
 
 </LinearLayout>
