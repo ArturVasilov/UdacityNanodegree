@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -27,10 +29,12 @@ import ru.arturvasilov.stackexchangeclient.view.QuestionsListView;
 /**
  * @author Artur Vasilov
  */
-public class QuestionsListFragment extends Fragment implements QuestionsListView, QuestionsListAdapter.OnItemClickListener {
+public class QuestionsListFragment extends Fragment implements QuestionsListView,
+        QuestionsListAdapter.OnItemClickListener, SwipeRefreshLayout.OnRefreshListener {
 
     private static final String TAG_KEY = "tag_key";
 
+    private SwipeRefreshLayout mRefreshLayout;
     private RecyclerView mRecyclerView;
     private TextView mEmptyView;
 
@@ -58,11 +62,24 @@ public class QuestionsListFragment extends Fragment implements QuestionsListView
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fr_questions_list, container, false);
-        mRecyclerView = Views.findById(root, R.id.recyclerView);
+        mRefreshLayout = (SwipeRefreshLayout) inflater.inflate(R.layout.fr_questions_list, container, false);
+        mRecyclerView = Views.findById(mRefreshLayout, R.id.recyclerView);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        mEmptyView = Views.findById(root, R.id.empty);
-        return root;
+        mEmptyView = Views.findById(mRefreshLayout, R.id.empty);
+        mRefreshLayout.setColorSchemeColors(ContextCompat.getColor(getActivity(), R.color.primary),
+                ContextCompat.getColor(getActivity(), R.color.primary_dark),
+                ContextCompat.getColor(getActivity(), R.color.accent));
+        mRefreshLayout.setOnRefreshListener(this);
+        mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                LinearLayoutManager layoutManager = (LinearLayoutManager) recyclerView.getLayoutManager();
+                if (dy > 0) {
+                    mPresenter.onScrolled(layoutManager.findLastVisibleItemPosition());
+                }
+            }
+        });
+        return mRefreshLayout;
     }
 
     @Override
@@ -71,6 +88,11 @@ public class QuestionsListFragment extends Fragment implements QuestionsListView
         mEmptyView.setText(R.string.empty_questions);
         mRecyclerView.setAdapter(mAdapter);
         mPresenter.init();
+    }
+
+    @Override
+    public void onRefresh() {
+        mPresenter.refresh();
     }
 
     @Override
@@ -85,6 +107,16 @@ public class QuestionsListFragment extends Fragment implements QuestionsListView
     @Override
     public void showQuestions(@NonNull List<Question> questions) {
         mAdapter.changeDataSet(questions);
+    }
+
+    @Override
+    public void addQuestions(@NonNull List<Question> questions) {
+        mAdapter.addNewValues(questions);
+    }
+
+    @Override
+    public void hideRefresh() {
+        mRefreshLayout.setRefreshing(false);
     }
 
     @Override

@@ -9,6 +9,7 @@ import ru.arturvasilov.stackexchangeclient.model.content.Question;
 import ru.arturvasilov.stackexchangeclient.view.ErrorView;
 import ru.arturvasilov.stackexchangeclient.view.LoadingView;
 import ru.arturvasilov.stackexchangeclient.view.QuestionView;
+import rx.functions.Action1;
 
 /**
  * @author Artur Vasilov
@@ -40,11 +41,11 @@ public class QuestionPresenter {
                 .subscribe(question -> {
                     mQuestion = question;
                     mView.showQuestion(question);
-                });
+                }, Throwable::printStackTrace);
 
         RepositoryProvider.provideRemoteRepository()
                 .questionAnswers(mQuestion.getQuestionId())
-                .subscribe(mView::showAnswers);
+                .subscribe(mView::showAnswers, Throwable::printStackTrace);
     }
 
 }

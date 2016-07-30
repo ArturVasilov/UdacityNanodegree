@@ -47,6 +47,7 @@ public class QuestionItemViewHolder extends RecyclerView.ViewHolder {
                      @Nullable View.OnClickListener iconClickListener) {
         Picasso.with(mAuthorIcon.getContext())
                 .load(question.getOwner().getProfileImage())
+                .error(R.mipmap.ic_icon)
                 .transform(PicassoUtils.circleTransform())
                 .into(mAuthorIcon);
         mAuthorIcon.setOnClickListener(iconClickListener);

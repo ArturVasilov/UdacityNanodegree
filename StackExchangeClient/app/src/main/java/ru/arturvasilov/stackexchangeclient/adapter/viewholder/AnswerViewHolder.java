@@ -39,6 +39,7 @@ public class AnswerViewHolder extends RecyclerView.ViewHolder {
     public void bind(@NonNull Answer answer, boolean isLast, int maxBodyLength) {
         Picasso.with(mAuthorIcon.getContext())
                 .load(answer.getOwner().getProfileImage())
+                .error(R.mipmap.ic_icon)
                 .transform(PicassoUtils.circleTransform())
                 .into(mAuthorIcon);
 

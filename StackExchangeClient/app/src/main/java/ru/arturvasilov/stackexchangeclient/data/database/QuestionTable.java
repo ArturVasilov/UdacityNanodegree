@@ -26,6 +26,7 @@ public class QuestionTable extends BaseTable<Question> {
     public static final String IS_ANSWERED = "is_answered";
     public static final String VIEW_COUNT = "view_count";
     public static final String ANSWER_COUNT = "answer_count";
+    public static final String CREATION_DATE = "creation_date";
     public static final String TAG = "tag";
 
     @Override
@@ -38,6 +39,7 @@ public class QuestionTable extends BaseTable<Question> {
                 .intColumn(IS_ANSWERED)
                 .intColumn(VIEW_COUNT)
                 .intColumn(ANSWER_COUNT)
+                .stringColumn(CREATION_DATE)
                 .stringColumn(TAG)
                 .primaryKey(QUESTION_ID, TAG)
                 .execute(database);
@@ -59,6 +61,7 @@ public class QuestionTable extends BaseTable<Question> {
         values.put(IS_ANSWERED, question.isAnswered() ? 1 : 0);
         values.put(VIEW_COUNT, question.getViewCount());
         values.put(ANSWER_COUNT, question.getAnswerCount());
+        values.put(CREATION_DATE, String.valueOf(question.getCreationDate()));
         values.put(TAG, question.getTag());
         return values;
     }
@@ -76,6 +79,7 @@ public class QuestionTable extends BaseTable<Question> {
         question.setAnswered(cursor.getInt(cursor.getColumnIndex(IS_ANSWERED)) > 0);
         question.setViewCount(cursor.getInt(cursor.getColumnIndex(VIEW_COUNT)));
         question.setAnswerCount(cursor.getInt(cursor.getColumnIndex(ANSWER_COUNT)));
+        question.setCreationDate(Long.parseLong(cursor.getString(cursor.getColumnIndex(CREATION_DATE))));
         question.setTag(cursor.getString(cursor.getColumnIndex(TAG)));
         return question;
     }

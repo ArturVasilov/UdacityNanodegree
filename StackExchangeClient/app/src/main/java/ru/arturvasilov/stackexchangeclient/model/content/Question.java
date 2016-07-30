@@ -40,6 +40,9 @@ public class Question implements Serializable {
     @SerializedName("answer_count")
     private int mAnswerCount;
 
+    @SerializedName("creation_date")
+    private long mCreationDate;
+
     private String mTag;
 
     public int getQuestionId() {
@@ -108,6 +111,14 @@ public class Question implements Serializable {
 
     public void setAnswerCount(int answerCount) {
         mAnswerCount = answerCount;
+    }
+
+    public long getCreationDate() {
+        return mCreationDate;
+    }
+
+    public void setCreationDate(long creationDate) {
+        mCreationDate = creationDate;
     }
 
     @NonNull

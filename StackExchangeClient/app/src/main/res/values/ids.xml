@@ -6,6 +6,8 @@
     <item name="user_full_info_loader_id" type="id"/>
     <item name="answers_loader_id" type="id"/>
     <item name="tags_loader_id" type="id"/>
+    <item name="questions_more_loader_id" type="id"/>
+    <item name="question_details_loader_id" type="id"/>
 
     <item name="test_loader_id" type="id"/>
 </resources>

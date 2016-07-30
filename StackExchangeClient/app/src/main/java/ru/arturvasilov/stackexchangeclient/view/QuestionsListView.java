@@ -13,4 +13,7 @@ public interface QuestionsListView extends EmptyListView {
 
     void showQuestions(@NonNull List<Question> questions);
 
+    void addQuestions(@NonNull List<Question> questions);
+
+    void hideRefresh();
 }

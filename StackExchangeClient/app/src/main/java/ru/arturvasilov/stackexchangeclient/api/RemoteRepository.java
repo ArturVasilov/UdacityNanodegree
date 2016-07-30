@@ -1,6 +1,7 @@
 package ru.arturvasilov.stackexchangeclient.api;
 
 import android.support.annotation.NonNull;
+import android.text.format.DateUtils;
 
 import java.util.List;
 
@@ -74,15 +75,8 @@ public class RemoteRepository {
 
     @NonNull
     public Observable<List<Question>> questions(@NonNull String tag) {
-        Observable<QuestionResponse> questionsObservable;
-        if (TextUtils.equals(ApiConstants.TAG_ALL, tag)) {
-            questionsObservable = mQuestionService.questions();
-        } else if (TextUtils.equals(ApiConstants.TAG_MY_QUESTIONS, tag)) {
-            questionsObservable = mQuestionService.myQuestions();
-        } else {
-            questionsObservable = mQuestionService.questions(tag);
-        }
-        return questionsObservable
+        long toDate = (System.currentTimeMillis() + DateUtils.DAY_IN_MILLIS) / 1000;
+        return buildQuestionsObservable(tag, toDate)
                 .compose(ErrorsHandler.handleErrors())
                 .map(QuestionResponse::getQuestions)
                 .flatMap(Observable::from)
@@ -99,6 +93,14 @@ public class RemoteRepository {
                     SQLite.get().insert(QuestionTable.TABLE).insert(questions);
                     return Observable.just(questions);
                 })
+                .compose(RxSchedulers.async());
+    }
+
+    @NonNull
+    public Observable<List<Question>> moreQuestions(@NonNull String tag, long toDate) {
+        return buildQuestionsObservable(tag, toDate)
+                .compose(ErrorsHandler.handleErrors())
+                .map(QuestionResponse::getQuestions)
                 .compose(RxSchedulers.async());
     }
 
@@ -176,6 +178,19 @@ public class RemoteRepository {
         return mApplicationService.logout(token)
                 .compose(ErrorsHandler.handleErrors())
                 .compose(RxSchedulers.async());
+    }
+
+    @NonNull
+    private Observable<QuestionResponse> buildQuestionsObservable(@NonNull String tag, long toDate) {
+        Observable<QuestionResponse> questionsObservable;
+        if (TextUtils.equals(ApiConstants.TAG_ALL, tag)) {
+            questionsObservable = mQuestionService.questions(toDate);
+        } else if (TextUtils.equals(ApiConstants.TAG_MY_QUESTIONS, tag)) {
+            questionsObservable = mQuestionService.myQuestions(toDate);
+        } else {
+            questionsObservable = mQuestionService.questions(tag, toDate);
+        }
+        return questionsObservable;
     }
 }
 

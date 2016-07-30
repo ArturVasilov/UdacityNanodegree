@@ -15,19 +15,19 @@ public class QuestionServiceMock implements QuestionService {
 
     @NonNull
     @Override
-    public Observable<QuestionResponse> questions() {
+    public Observable<QuestionResponse> questions(@Query("todate") long toDate) {
         return Observable.empty();
     }
 
     @NonNull
     @Override
-    public Observable<QuestionResponse> myQuestions() {
+    public Observable<QuestionResponse> myQuestions(@Query("todate") long toDate) {
         return Observable.empty();
     }
 
     @NonNull
     @Override
-    public Observable<QuestionResponse> questions(@NonNull @Query("tagged") String tag) {
+    public Observable<QuestionResponse> questions(@NonNull @Query("tagged") String tag, @Query("todate") long toDate) {
         return Observable.empty();
     }
 

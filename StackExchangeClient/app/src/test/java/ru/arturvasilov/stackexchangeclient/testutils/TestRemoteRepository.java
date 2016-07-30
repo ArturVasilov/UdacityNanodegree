@@ -54,6 +54,12 @@ public class TestRemoteRepository extends RemoteRepository {
 
     @NonNull
     @Override
+    public Observable<List<Question>> moreQuestions(@NonNull String tag, long toDate) {
+        return Observable.just(new ArrayList<>());
+    }
+
+    @NonNull
+    @Override
     public Observable<List<Tag>> searchTags(@NonNull String search) {
         return Observable.just(new ArrayList<>());
     }

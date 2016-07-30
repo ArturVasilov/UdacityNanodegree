@@ -14,16 +14,16 @@ import rx.Observable;
 public interface QuestionService {
 
     @NonNull
-    @GET("/questions?order=desc&sort=activity&pagesize=50")
-    Observable<QuestionResponse> questions();
+    @GET("/questions?order=desc&sort=creation&pagesize=50")
+    Observable<QuestionResponse> questions(@Query("todate") long toDate);
 
     @NonNull
-    @GET("/me/questions?order=desc&sort=activity&pagesize=50")
-    Observable<QuestionResponse> myQuestions();
+    @GET("/me/questions?order=desc&sort=creation&pagesize=50")
+    Observable<QuestionResponse> myQuestions(@Query("todate") long toDate);
 
     @NonNull
-    @GET("/questions?order=desc&sort=activity&pagesize=50")
-    Observable<QuestionResponse> questions(@NonNull @Query("tagged") String tag);
+    @GET("/questions?order=desc&sort=creation&pagesize=50")
+    Observable<QuestionResponse> questions(@NonNull @Query("tagged") String tag, @Query("todate") long toDate);
 
     @NonNull
     @GET("/questions/{ids}?order=desc&sort=activity&filter=withbody")

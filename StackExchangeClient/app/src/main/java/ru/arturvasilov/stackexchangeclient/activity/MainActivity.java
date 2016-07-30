@@ -165,7 +165,7 @@ public class MainActivity extends AppCompatActivity implements MainView,
     public void showUserImage(@NonNull String imageUrl) {
         Picasso.with(this)
                 .load(imageUrl)
-                .error(R.drawable.ic_person)
+                .error(R.mipmap.ic_icon)
                 .transform(PicassoUtils.circleTransform())
                 .into(mHeaderImage);
     }

@@ -13,11 +13,11 @@ import rx.Observable;
 public interface AnswerService {
 
     @NonNull
-    @GET("/users/{ids}/answers?order=desc&sort=activity&pagesize=100&filter=withbody")
+    @GET("/users/{ids}/answers?order=desc&sort=creation&pagesize=100&filter=withbody")
     Observable<AnswerResponse> answers(@Path("ids") int userId);
 
     @NonNull
-    @GET("/questions/{ids}/answers?order=desc&sort=activity&filter=withbody")
+    @GET("/questions/{ids}/answers?order=desc&sort=creation&filter=withbody")
     Observable<AnswerResponse> questionAnswers(@Path("ids") int questionId);
 
 }
