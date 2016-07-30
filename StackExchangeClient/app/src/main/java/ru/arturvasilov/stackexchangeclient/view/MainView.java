@@ -1,7 +1,6 @@
 package ru.arturvasilov.stackexchangeclient.view;
 
 import android.support.annotation.NonNull;
-import android.support.annotation.StringRes;
 
 import java.util.List;
 

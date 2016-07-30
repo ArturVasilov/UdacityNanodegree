@@ -2,8 +2,6 @@ package ru.arturvasilov.stackexchangeclient.data.keyvalue;
 
 import android.support.annotation.NonNull;
 
-import com.orhanobut.hawk.Hawk;
-
 import rx.Observable;
 
 /**

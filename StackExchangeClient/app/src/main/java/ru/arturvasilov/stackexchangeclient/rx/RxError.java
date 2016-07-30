@@ -19,11 +19,6 @@ public final class RxError {
     }
 
     @NonNull
-    public static ErrorView view(@NonNull Fragment fragment) {
-        return new ErrorViewImpl(fragment);
-    }
-
-    @NonNull
     public static ErrorView view(@NonNull Context context, @NonNull FragmentManager fm) {
         return new ErrorViewImpl(context, fm);
     }
@@ -67,11 +62,6 @@ public final class RxError {
         @Override
         public void showErrorMessage(@NonNull String message) {
             Toast.makeText(mContext, message, Toast.LENGTH_LONG).show();
-        }
-
-        @Override
-        public void hideErrorMessage() {
-            // Do nothing
         }
     }
 

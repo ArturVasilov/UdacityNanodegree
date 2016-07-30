@@ -79,7 +79,7 @@ public class TestRemoteRepository extends RemoteRepository {
     @NonNull
     @Override
     public Observable<Question> questionWithBody(int questionId) {
-        return super.questionWithBody(questionId);
+        return Observable.just(new Question());
     }
 
     @NonNull

@@ -122,11 +122,6 @@ public class CustomViewPager extends ViewPager {
 
         @Override
         public void onPageScrollStateChanged(int state) {
-            if (state == ViewPager.SCROLL_STATE_DRAGGING && mPreviousState == ViewPager.SCROLL_STATE_IDLE) {
-                if (mListener != null) {
-                    mListener.onPageScrollStarted(mCurrentPosition);
-                }
-            }
             mPreviousState = state;
         }
     }
@@ -149,8 +144,6 @@ public class CustomViewPager extends ViewPager {
     }
 
     public interface PagerStateListener {
-
-        void onPageScrollStarted(int currentPage);
 
         void onPageChanged(int selectedPage, boolean fromUser);
 

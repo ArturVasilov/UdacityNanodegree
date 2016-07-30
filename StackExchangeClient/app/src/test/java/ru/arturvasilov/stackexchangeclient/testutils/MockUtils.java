@@ -70,7 +70,6 @@ public final class MockUtils {
         doNothing().when(errorView).showNetworkError();
         doNothing().when(errorView).showUnexpectedError();
         doNothing().when(errorView).showErrorMessage(anyString());
-        doNothing().when(errorView).hideErrorMessage();
         return errorView;
     }
 

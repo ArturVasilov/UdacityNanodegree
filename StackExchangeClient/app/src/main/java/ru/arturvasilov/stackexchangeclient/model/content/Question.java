@@ -5,8 +5,6 @@ import android.support.annotation.NonNull;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import ru.arturvasilov.stackexchangeclient.api.ApiConstants;
 import ru.arturvasilov.stackexchangeclient.utils.TextUtils;
@@ -39,9 +37,6 @@ public class Question implements Serializable {
 
     @SerializedName("answer_count")
     private int mAnswerCount;
-
-    @SerializedName("score")
-    private int mScore;
 
     private String mTag;
 

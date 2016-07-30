@@ -86,11 +86,6 @@ public class WalkthroughActivity extends AppCompatActivity implements Walkthroug
     }
 
     @Override
-    public void onPageScrollStarted(int currentPage) {
-        // Do nothing
-    }
-
-    @Override
     public void onPageChanged(int selectedPage, boolean fromUser) {
         mPresenter.onBenefitSelected(fromUser, selectedPage);
     }

@@ -33,7 +33,6 @@ import ru.arturvasilov.stackexchangeclient.rx.RxSchedulers;
 import ru.arturvasilov.stackexchangeclient.sqlite.SQLite;
 import ru.arturvasilov.stackexchangeclient.utils.TextUtils;
 import rx.Observable;
-import rx.functions.Func1;
 
 /**
  * @author Artur Vasilov

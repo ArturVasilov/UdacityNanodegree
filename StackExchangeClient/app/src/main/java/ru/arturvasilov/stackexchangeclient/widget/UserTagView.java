@@ -7,7 +7,6 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import ru.arturvasilov.stackexchangeclient.R;
-import ru.arturvasilov.stackexchangeclient.app.Env;
 import ru.arturvasilov.stackexchangeclient.model.content.UserTag;
 import ru.arturvasilov.stackexchangeclient.utils.Views;
 

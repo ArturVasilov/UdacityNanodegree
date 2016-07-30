@@ -4,8 +4,6 @@ import android.support.annotation.NonNull;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.io.IOException;
-
 /**
  * @author Artur Vasilov
  */
