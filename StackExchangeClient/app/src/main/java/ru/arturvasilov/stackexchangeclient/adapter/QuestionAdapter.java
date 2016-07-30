@@ -20,9 +20,6 @@ import ru.arturvasilov.stackexchangeclient.model.content.Question;
  */
 public class QuestionAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    private static final int QUESTION_VIEW_TYPE = 1;
-    private static final int ANSWER_VIEW_TYPE = 2;
-
     private Question mQuestion;
     private final List<Answer> mAnswers;
 
@@ -45,15 +42,15 @@ public class QuestionAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     @Override
     public int getItemViewType(int position) {
         if (position == 0) {
-            return QUESTION_VIEW_TYPE;
+            return ViewType.QUESTION_VIEW_TYPE;
         }
-        return ANSWER_VIEW_TYPE;
+        return ViewType.ANSWER_VIEW_TYPE;
     }
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, @ViewType int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        if (viewType == QUESTION_VIEW_TYPE && mQuestion != null) {
+        if (viewType == ViewType.QUESTION_VIEW_TYPE && mQuestion != null) {
             return new QuestionItemViewHolder(inflater.inflate(R.layout.question_item, parent, false));
         }
         return new AnswerViewHolder(inflater.inflate(R.layout.answer_item, parent, false));
@@ -73,7 +70,9 @@ public class QuestionAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         return (mQuestion == null ? 0 : 1) + mAnswers.size();
     }
 
-    @IntDef({QuestionAdapter.QUESTION_VIEW_TYPE, QuestionAdapter.ANSWER_VIEW_TYPE})
+    @IntDef({ViewType.QUESTION_VIEW_TYPE, ViewType.ANSWER_VIEW_TYPE})
     private @interface ViewType {
+        int QUESTION_VIEW_TYPE = 1;
+        int ANSWER_VIEW_TYPE = 2;
     }
 }

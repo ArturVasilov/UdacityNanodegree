@@ -18,10 +18,6 @@ public class CustomViewPager extends ViewPager {
 
     private PagerStateListener mListener;
 
-    private int mCurrentPosition;
-
-    private int mPreviousState;
-
     private ValueAnimator mDragAnimator;
 
     public CustomViewPager(Context context) {
@@ -37,8 +33,6 @@ public class CustomViewPager extends ViewPager {
     @Override
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
-        mCurrentPosition = 0;
-        mPreviousState = SCROLL_STATE_IDLE;
         addOnPageChangeListener(mChangeListener);
     }
 
@@ -114,7 +108,6 @@ public class CustomViewPager extends ViewPager {
 
         @Override
         public void onPageSelected(int position) {
-            mCurrentPosition = position;
             if (mListener != null) {
                 mListener.onPageChanged(position, true);
             }
@@ -122,7 +115,7 @@ public class CustomViewPager extends ViewPager {
 
         @Override
         public void onPageScrollStateChanged(int state) {
-            mPreviousState = state;
+            //Do nothing
         }
     }
 

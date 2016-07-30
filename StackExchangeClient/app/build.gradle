@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-apply plugin: 'me.tatarka.retrolambda'
 apply plugin: 'io.fabric'
 
 android {
@@ -23,6 +22,10 @@ android {
         buildConfigField "String", "API_ENDPOINT", '"https://api.stackexchange.com/2.2/"'
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        jackOptions {
+            enabled true
+        }
     }
 
     compileOptions {

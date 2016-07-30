@@ -5,7 +5,6 @@ import android.support.annotation.NonNull;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
-import ru.arturvasilov.stackexchangeclient.model.content.Question;
 import ru.arturvasilov.stackexchangeclient.model.response.QuestionResponse;
 import rx.Observable;
 

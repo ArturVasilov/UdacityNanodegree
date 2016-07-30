@@ -35,12 +35,6 @@ public final class RxError {
             mFragment = null;
         }
 
-        public ErrorViewImpl(@NonNull Fragment fragment) {
-            mFragment = fragment;
-            mFm = null;
-            mContext = fragment.getActivity();
-        }
-
         @Override
         public void showNetworkError() {
             new NetworkErrorDialog().show(

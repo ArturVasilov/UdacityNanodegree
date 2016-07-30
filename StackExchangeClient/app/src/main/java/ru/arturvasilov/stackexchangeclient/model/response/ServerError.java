@@ -9,6 +9,8 @@ import java.io.IOException;
  */
 public class ServerError extends IOException {
 
+    private static final long serialVersionUID = ServerError.class.getName().hashCode();
+
     private final ApiError mError;
 
     public ServerError(@NonNull ApiError error) {

@@ -11,6 +11,8 @@ import java.io.Serializable;
  */
 public class User implements Serializable {
 
+    private static final long serialVersionUID = User.class.getName().hashCode();
+
     @SerializedName("user_id")
     private int mUserId;
 

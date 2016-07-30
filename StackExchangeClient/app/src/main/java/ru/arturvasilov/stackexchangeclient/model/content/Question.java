@@ -14,6 +14,8 @@ import ru.arturvasilov.stackexchangeclient.utils.TextUtils;
  */
 public class Question implements Serializable {
 
+    private static final long serialVersionUID = Question.class.getName().hashCode();
+
     @SerializedName("question_id")
     private int mQuestionId;
 
