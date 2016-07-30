@@ -7,6 +7,7 @@ import java.util.List;
 
 import ru.arturvasilov.stackexchangeclient.data.database.LocalRepository;
 import ru.arturvasilov.stackexchangeclient.model.content.Question;
+import ru.arturvasilov.stackexchangeclient.model.content.Tag;
 import ru.arturvasilov.stackexchangeclient.model.content.User;
 import rx.Observable;
 
@@ -43,5 +44,10 @@ public class TestLocalRepository extends LocalRepository {
     @Override
     public Observable<List<String>> tags() {
         return Observable.just(new ArrayList<>());
+    }
+
+    @Override
+    public boolean updateTag(@NonNull Tag tag) {
+        return true;
     }
 }

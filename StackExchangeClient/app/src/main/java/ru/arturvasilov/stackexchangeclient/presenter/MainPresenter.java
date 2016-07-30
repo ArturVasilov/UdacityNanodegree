@@ -87,6 +87,11 @@ public class MainPresenter {
                 .subscribe(mView::showTags, new StubAction<>());
     }
 
+    public void onReturnFromTags() {
+        mView.clearTabs();
+        showTabs();
+    }
+
     private void handleUser(@NonNull User user) {
         mCurrentUser = user;
         mView.showUserImage(user.getProfileImage());

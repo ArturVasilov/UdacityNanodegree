@@ -43,4 +43,15 @@
         <item name="colorControlHighlight">@color/highlight_color</item>
     </style>
 
+    <style name="PrimaryProgressBar">
+        <item name="android:theme">@style/PrimaryProgressBar.Color</item>
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary</item>
+    </style>
+
+    <style name="PrimaryProgressBar.Color">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary</item>
+    </style>
+
 </resources>

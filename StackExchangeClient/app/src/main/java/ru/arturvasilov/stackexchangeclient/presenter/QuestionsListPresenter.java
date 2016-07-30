@@ -4,15 +4,10 @@ import android.app.LoaderManager;
 import android.content.Context;
 import android.support.annotation.NonNull;
 
-import java.util.List;
-
-import ru.arturvasilov.stackexchangeclient.R;
 import ru.arturvasilov.stackexchangeclient.api.RepositoryProvider;
-import ru.arturvasilov.stackexchangeclient.model.content.Question;
 import ru.arturvasilov.stackexchangeclient.rx.StubAction;
 import ru.arturvasilov.stackexchangeclient.rx.rxloader.RxLoader;
 import ru.arturvasilov.stackexchangeclient.view.QuestionsListView;
-import rx.functions.Action1;
 
 /**
  * @author Artur Vasilov
@@ -37,25 +32,10 @@ public class QuestionsListPresenter {
     public void init() {
         RepositoryProvider.provideLocalRepository()
                 .questions(mTag)
-                .subscribe(new Action1<List<Question>>() {
-                    @Override
-                    public void call(List<Question> questions) {
-                        mView.showQuestions(questions);
-                    }
-                }, new StubAction<>());
+                .subscribe(mView::showQuestions, new StubAction<>());
 
         RxLoader.create(mContext, mLm, mTag.hashCode(),
                 RepositoryProvider.provideRemoteRepository().questions(mTag))
-                .init(new Action1<List<Question>>() {
-                    @Override
-                    public void call(List<Question> questions) {
-                        mView.showQuestions(questions);
-                    }
-                }, new Action1<Throwable>() {
-                    @Override
-                    public void call(Throwable throwable) {
-
-                    }
-                });
+                .init(mView::showQuestions, new StubAction<>());
     }
 }

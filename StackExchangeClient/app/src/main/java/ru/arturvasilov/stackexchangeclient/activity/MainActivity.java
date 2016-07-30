@@ -40,6 +40,8 @@ import ru.arturvasilov.stackexchangeclient.widget.CustomViewPager;
 public class MainActivity extends AppCompatActivity implements MainView,
         NavigationView.OnNavigationItemSelectedListener, TabLayout.OnTabSelectedListener {
 
+    private static final int TAGS_ACTIVITY_REQUEST_CODE = 101;
+
     private DrawerLayout mDrawerLayout;
     private NavigationView mNavigationView;
     private ActionBarDrawerToggle mDrawerToggle;
@@ -120,13 +122,21 @@ public class MainActivity extends AppCompatActivity implements MainView,
     }
 
     @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == TAGS_ACTIVITY_REQUEST_CODE) {
+            mPresenter.onReturnFromTags();
+        }
+    }
+
+    @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.profile) {
             mPresenter.onProfileSelected();
         } else if (item.getItemId() == R.id.my_answers) {
             mPresenter.onMyAnswersSelected();
         } else if (item.getItemId() == R.id.tags) {
-            startActivity(new Intent(this, TagsActivity.class));
+            startActivityForResult(new Intent(this, TagsActivity.class), TAGS_ACTIVITY_REQUEST_CODE);
         } else if (item.getItemId() == R.id.exit) {
             //TODO : show confirmation alert
         }
@@ -167,6 +177,11 @@ public class MainActivity extends AppCompatActivity implements MainView,
     @Override
     public void addTab(@NonNull String tabTitle) {
         mTabLayout.addTab(mTabLayout.newTab().setText(tabTitle));
+    }
+
+    @Override
+    public void clearTabs() {
+        mTabLayout.removeAllTabs();
     }
 
     @Override

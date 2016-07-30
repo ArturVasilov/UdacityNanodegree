@@ -16,6 +16,8 @@ public interface MainView {
 
     void showUserName(@NonNull String name);
 
+    void clearTabs();
+
     void addTab(@NonNull String tabTitle);
 
     void showTags(@NonNull List<String> tags);

@@ -138,6 +138,16 @@ public class MainPresenterTest {
         Mockito.verify(mView).openAnswers(any(User.class));
     }
 
+    @Test
+    public void testUpdateAfterTags() throws Exception {
+        RepositoryProvider.setLocalRepository(new TagsRepository());
+        mPresenter.init();
+
+        mPresenter.onReturnFromTags();
+        Mockito.verify(mView).clearTabs();
+        Mockito.verify(mView, times(2)).showTags(anyListOf(String.class));
+    }
+
     @SuppressWarnings("ConstantConditions")
     @After
     public void tearDown() throws Exception {

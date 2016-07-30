@@ -65,4 +65,12 @@
 
     <include layout="@layout/empty"/>
 
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@style/PrimaryProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:indeterminate="true"/>
+
 </FrameLayout>

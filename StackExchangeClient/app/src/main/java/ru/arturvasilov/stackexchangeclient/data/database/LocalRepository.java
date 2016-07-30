@@ -7,6 +7,7 @@ import java.util.List;
 
 import ru.arturvasilov.stackexchangeclient.api.RepositoryProvider;
 import ru.arturvasilov.stackexchangeclient.model.content.Question;
+import ru.arturvasilov.stackexchangeclient.model.content.Tag;
 import ru.arturvasilov.stackexchangeclient.model.content.User;
 import ru.arturvasilov.stackexchangeclient.rx.RxSchedulers;
 import ru.arturvasilov.stackexchangeclient.sqlite.SQLite;
@@ -53,5 +54,18 @@ public class LocalRepository {
                 .all()
                 .asObservable()
                 .compose(RxSchedulers.async());
+    }
+
+    public boolean updateTag(@NonNull Tag tag) {
+        if (tag.isFavourite()) {
+            SQLite.get().delete(TagTable.TABLE)
+                    .where(TagTable.TAG + "=?")
+                    .whereArgs(new String[]{tag.getName()})
+                    .execute();
+            return false;
+        } else {
+            SQLite.get().insert(TagTable.TABLE).insert(tag.getName());
+            return true;
+        }
     }
 }

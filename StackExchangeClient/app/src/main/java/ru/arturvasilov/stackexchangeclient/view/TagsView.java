@@ -20,7 +20,11 @@ public interface TagsView extends EmptyListView {
 
     void showTags(@NonNull List<Tag> tags);
 
+    void showFirstVisibleItem(int position);
+
     void showClearButton();
+
+    void hideClearButton();
 
     void notifyChanged();
 }
