@@ -54,4 +54,9 @@ public class TestKeyValueStorage implements KeyValueStorage {
     public Observable<Integer> getCurrentUserId() {
         return Observable.just((Integer) mMap.get(KEY_USER_ID));
     }
+
+    @Override
+    public void logout() {
+        mMap.clear();
+    }
 }

@@ -14,7 +14,7 @@ public class ApplicationServiceMock implements ApplicationService {
 
     @NonNull
     @Override
-    public Observable<ApiError> logout(@NonNull @Path("accessTokens") String path) {
+    public Observable<ApiError> logout(@NonNull @Path("accessTokens") String token) {
         return Observable.empty();
     }
 }

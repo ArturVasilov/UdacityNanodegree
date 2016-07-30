@@ -14,6 +14,6 @@ public interface ApplicationService {
 
     @NonNull
     @GET("/apps/{accessTokens}/de-authenticate")
-    Observable<ApiError> logout(@NonNull @Path("accessTokens") String path);
+    Observable<ApiError> logout(@NonNull @Path("accessTokens") String token);
 
 }

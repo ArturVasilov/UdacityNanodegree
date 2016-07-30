@@ -9,9 +9,13 @@ import ru.arturvasilov.stackexchangeclient.api.RepositoryProvider;
 import ru.arturvasilov.stackexchangeclient.model.content.Question;
 import ru.arturvasilov.stackexchangeclient.model.content.Tag;
 import ru.arturvasilov.stackexchangeclient.model.content.User;
+import ru.arturvasilov.stackexchangeclient.model.content.UserTag;
 import ru.arturvasilov.stackexchangeclient.rx.RxSchedulers;
+import ru.arturvasilov.stackexchangeclient.rx.StubAction;
 import ru.arturvasilov.stackexchangeclient.sqlite.SQLite;
 import rx.Observable;
+import rx.functions.Func1;
+import rx.schedulers.Schedulers;
 
 /**
  * @author Artur Vasilov
@@ -67,5 +71,18 @@ public class LocalRepository {
             SQLite.get().insert(TagTable.TABLE).insert(tag.getName());
             return true;
         }
+    }
+
+    public void logout() {
+        Observable.just(true)
+                .flatMap(value -> {
+                    SQLite.get().delete(UserTable.TABLE).execute();
+                    SQLite.get().delete(QuestionTable.TABLE).execute();
+                    SQLite.get().delete(TagTable.TABLE).execute();
+                    SQLite.get().delete(AnswerTable.TABLE).execute();
+                    return Observable.just(value);
+                })
+                .subscribeOn(Schedulers.io())
+                .subscribe(new StubAction<>(), new StubAction<>());
     }
 }

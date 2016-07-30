@@ -27,6 +27,7 @@ import java.util.List;
 
 import ru.arturvasilov.stackexchangeclient.R;
 import ru.arturvasilov.stackexchangeclient.adapter.MainScreenAdapter;
+import ru.arturvasilov.stackexchangeclient.app.Env;
 import ru.arturvasilov.stackexchangeclient.model.content.User;
 import ru.arturvasilov.stackexchangeclient.presenter.MainPresenter;
 import ru.arturvasilov.stackexchangeclient.utils.PicassoUtils;
@@ -138,7 +139,7 @@ public class MainActivity extends AppCompatActivity implements MainView,
         } else if (item.getItemId() == R.id.tags) {
             startActivityForResult(new Intent(this, TagsActivity.class), TAGS_ACTIVITY_REQUEST_CODE);
         } else if (item.getItemId() == R.id.exit) {
-            //TODO : show confirmation alert
+            Env.logout();
         }
 
         mDrawerLayout.closeDrawer(mNavigationView);

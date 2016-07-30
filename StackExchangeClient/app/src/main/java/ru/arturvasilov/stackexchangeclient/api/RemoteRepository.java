@@ -33,6 +33,7 @@ import ru.arturvasilov.stackexchangeclient.rx.RxSchedulers;
 import ru.arturvasilov.stackexchangeclient.sqlite.SQLite;
 import ru.arturvasilov.stackexchangeclient.utils.TextUtils;
 import rx.Observable;
+import rx.functions.Func1;
 
 /**
  * @author Artur Vasilov
@@ -172,8 +173,8 @@ public class RemoteRepository {
     }
 
     @NonNull
-    public Observable<ApiError> logout(@NonNull String path) {
-        return mApplicationService.logout(path)
+    public Observable<ApiError> logout(@NonNull String token) {
+        return mApplicationService.logout(token)
                 .compose(ErrorsHandler.handleErrors())
                 .compose(RxSchedulers.async());
     }

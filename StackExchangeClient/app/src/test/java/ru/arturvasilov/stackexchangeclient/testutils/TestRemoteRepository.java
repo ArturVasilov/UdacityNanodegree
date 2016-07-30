@@ -96,7 +96,7 @@ public class TestRemoteRepository extends RemoteRepository {
 
     @NonNull
     @Override
-    public Observable<ApiError> logout(@NonNull String path) {
-        return super.logout(path);
+    public Observable<ApiError> logout(@NonNull String token) {
+        return Observable.just(new ApiError());
     }
 }

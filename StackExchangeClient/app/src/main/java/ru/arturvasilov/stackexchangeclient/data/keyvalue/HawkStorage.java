@@ -61,4 +61,9 @@ public class HawkStorage implements KeyValueStorage {
     public Observable<Integer> getCurrentUserId() {
         return Hawk.getObservable(KEY_USER_ID, -1);
     }
+
+    @Override
+    public void logout() {
+        Hawk.clear();
+    }
 }
