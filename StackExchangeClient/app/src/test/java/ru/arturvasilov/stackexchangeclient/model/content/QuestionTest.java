@@ -101,6 +101,14 @@ public class QuestionTest {
     }
 
     @Test
+    public void testCreationDate() throws Exception {
+        Question question = new Question();
+        long creationDate = System.currentTimeMillis() / 1000;
+        question.setCreationDate(creationDate);
+        assertEquals(creationDate, question.getCreationDate());
+    }
+
+    @Test
     public void testTag() throws Exception {
         Question question = new Question();
         String tag = "android";

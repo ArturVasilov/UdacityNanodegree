@@ -102,6 +102,7 @@ public class ProfileActivity extends AppCompatActivity implements ProfileView {
         Analytics.buildEvent()
                 .putString(EventKeys.PROFILE_USER, GsonHolder.getGson().toJson(user))
                 .log(EventTags.SCREEN_PROFILE);
+
         mPresenter = new ProfilePresenter(this, getLoaderManager(), this,
                 LoadingDialog.view(getSupportFragmentManager()),
                 RxError.view(this, getSupportFragmentManager()),

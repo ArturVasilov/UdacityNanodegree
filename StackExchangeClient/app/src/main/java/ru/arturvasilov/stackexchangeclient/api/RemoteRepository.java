@@ -13,6 +13,7 @@ import ru.arturvasilov.stackexchangeclient.api.service.TagsService;
 import ru.arturvasilov.stackexchangeclient.api.service.UserInfoService;
 import ru.arturvasilov.stackexchangeclient.app.analytics.Analytics;
 import ru.arturvasilov.stackexchangeclient.data.database.AnswerTable;
+import ru.arturvasilov.stackexchangeclient.data.database.NotificationTable;
 import ru.arturvasilov.stackexchangeclient.data.database.QuestionTable;
 import ru.arturvasilov.stackexchangeclient.data.database.UserTable;
 import ru.arturvasilov.stackexchangeclient.model.content.Answer;
@@ -170,7 +171,14 @@ public class RemoteRepository {
         return mNotificationService.notifications()
                 .compose(ErrorsHandler.handleErrors())
                 .map(NotificationResponse::getNotifications)
-                .compose(RxSchedulers.async());
+                .flatMap(Observable::from)
+                .filter(notification -> !TextUtils.isEmpty(notification.getBody()))
+                .toList()
+                .flatMap(notifications -> {
+                    SQLite.get().delete(NotificationTable.TABLE).execute();
+                    SQLite.get().insert(NotificationTable.TABLE).insert(notifications);
+                    return Observable.just(notifications);
+                });
     }
 
     @NonNull

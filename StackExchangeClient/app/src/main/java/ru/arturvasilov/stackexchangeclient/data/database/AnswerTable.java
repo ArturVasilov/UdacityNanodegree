@@ -37,11 +37,6 @@ public class AnswerTable extends BaseTable<Answer> {
                 .execute(database);
     }
 
-    @Override
-    public int getLastUpgradeVersion() {
-        return 1;
-    }
-
     @NonNull
     @Override
     public ContentValues toValues(@NonNull Answer answer) {

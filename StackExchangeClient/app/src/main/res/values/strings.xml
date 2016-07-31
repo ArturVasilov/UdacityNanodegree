@@ -37,4 +37,5 @@
     <string name="answers_count">Answers: %1$d</string>
     <string name="answers">Answers</string>
     <string name="no_answers">No answers found</string>
+    <string name="open_profile">Open profile</string>
 </resources>

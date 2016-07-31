@@ -26,5 +26,6 @@ public class SQLiteProvider extends SQLiteContentProvider {
         schema.register(QuestionTable.TABLE);
         schema.register(AnswerTable.TABLE);
         schema.register(TagTable.TABLE);
+        schema.register(NotificationTable.TABLE);
     }
 }

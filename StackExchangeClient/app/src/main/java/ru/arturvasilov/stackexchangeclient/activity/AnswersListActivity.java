@@ -71,6 +71,7 @@ public class AnswersListActivity extends AppCompatActivity implements AnswersLis
         Analytics.buildEvent()
                 .putString(EventKeys.ANSWER_USER, GsonHolder.getGson().toJson(user))
                 .log(EventTags.SCREEN_ANSWERS);
+
         mPresenter = new AnswersListPresenter(this, getLoaderManager(), this,
                 LoadingDialog.view(getSupportFragmentManager()),
                 RxError.view(this, getSupportFragmentManager()),

@@ -17,6 +17,11 @@ public abstract class BaseTable<T> implements Table<T> {
         return SQLiteContentProvider.getBaseUri().buildUpon().appendPath(getTableName()).build();
     }
 
+    @Override
+    public int getLastUpgradeVersion() {
+        return 1;
+    }
+
     @NonNull
     @Override
     public String getTableName() {

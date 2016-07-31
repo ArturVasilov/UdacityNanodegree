@@ -26,11 +26,6 @@ public class TagTable extends BaseTable<String> {
                 .execute(database);
     }
 
-    @Override
-    public int getLastUpgradeVersion() {
-        return 1;
-    }
-
     @NonNull
     @Override
     public ContentValues toValues(@NonNull String tag) {

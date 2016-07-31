@@ -45,11 +45,6 @@ public class QuestionTable extends BaseTable<Question> {
                 .execute(database);
     }
 
-    @Override
-    public int getLastUpgradeVersion() {
-        return 1;
-    }
-
     @NonNull
     @Override
     public ContentValues toValues(@NonNull Question question) {

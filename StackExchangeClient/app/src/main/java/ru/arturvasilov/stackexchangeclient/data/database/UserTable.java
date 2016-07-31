@@ -37,11 +37,6 @@ public class UserTable extends BaseTable<User> {
                 .execute(database);
     }
 
-    @Override
-    public int getLastUpgradeVersion() {
-        return 1;
-    }
-
     @NonNull
     @Override
     public ContentValues toValues(@NonNull User user) {
