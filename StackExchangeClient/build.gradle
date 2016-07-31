@@ -22,26 +22,46 @@ allprojects {
     }
 }
 
-// I want to be sure that build will be possible only on my machine (or later on CI server),
-// so I don't put keys here
+/* I want build to be possible only on my local machine. But I enabled ability for you to test.
 
-File file = new File("D:\\Android\\projects\\Stackdroid\\build.txt")
-def keys = []
-file.eachLine {
-    keys.add(it)
+File paramsFile = new File("D:\\Android\\projects\\Stackdroid\\build_params.txt")
+def params = []
+paramsFile.eachLine {
+    params.add(it)
+}
+
+File buildFile = new File("D:\\Android\\projects\\Stackdroid\\build_release.txt")
+def buildKeys = []
+buildFile.eachLine {
+    buildKeys.add(it)
 }
 
 ext {
-    projectName = 'AlfaDirect'
+    projectName = 'StackDroid'
+    keySecret = params[0]
+    clientId = params[1]
+    versionName = '1.0.0'
+    versionCode = 1
+
+    keyAlias = buildKeys[0]
+    keyPassword = buildKeys[1]
+    storeFile = buildKeys[2]
+    storePassword = buildKeys[3]
+}
+
+ */
+
+ext {
+    projectName = 'StackDroid'
     keySecret = '"IS3mVlId0Hki3H1o2QTBLw(("'
     clientId = '"7533"'
     versionName = '1.0.0'
     versionCode = 1
 
-    keyAlias = keys[0]
-    keyPassword = keys[1]
-    storeFile = keys[2]
-    storePassword = keys[3]
+    keyAlias = 'stackdroidkey'
+    keyPassword = 'xiTPNgNveg@F~kUyal@evWMByoWJOgZNfw{6jlfc0s9vmY$77M'
+    storeFile = 'stackdroid.jks'
+    storePassword = 'xiTPNgNveg@F~kUyal@evWMByoWJOgZNfw{6jlfc0s9vmY$77M'
 }
 
 task clean(type: Delete) {

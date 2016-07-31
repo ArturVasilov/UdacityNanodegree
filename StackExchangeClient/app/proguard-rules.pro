@@ -10,6 +10,8 @@
 -keep public interface ru.arturvasilov.stackexchangeclient.** { *; }
 -dontwarn ru.arturvasilov.stackexchangeclient.**
 
+-dontnote **
+
 # gson
 -keep class com.google.gson.** { *; }
 -dontwarn com.google.gson.**
@@ -30,6 +32,7 @@
 
 # okhttp
 -dontwarn okio.**
+-dontwarn com.squareup.okhttp.**
 
 # RxJava
 -dontwarn sun.misc.**
