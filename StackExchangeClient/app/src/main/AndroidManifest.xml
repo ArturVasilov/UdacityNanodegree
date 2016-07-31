@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest package="ru.arturvasilov.stackexchangeclient"
-          xmlns:android="http://schemas.android.com/apk/res/android">
+          xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET"/>
 
@@ -51,6 +52,22 @@
             android:name=".activity.TagsActivity"
             android:theme="@style/AppTheme.LightGrey"
             android:windowSoftInputMode="adjustResize|stateVisible"/>
+
+        <service
+            android:name=".service.StackDroidFCMService"
+            tools:ignore="ExportedService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+
+        <service
+            android:name=".service.StackDroidFCMInstanceIdService"
+            tools:ignore="ExportedService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
 
         <provider
             android:name=".data.database.SQLiteProvider"

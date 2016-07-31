@@ -11,7 +11,7 @@ import android.view.animation.LinearInterpolator;
 /**
  * @author Artur Vasilov
  */
-public final class SplashLoadingAnimationCreator {
+final class SplashLoadingAnimationCreator {
 
     private static final float START_ALPHA = 0.35f;
     private static final float END_ALPHA = 0.1f;

@@ -65,7 +65,9 @@ public class QuestionPresenter {
                 .init(pair -> {
                     mQuestion = pair.first;
                     mView.showQuestion(mQuestion);
-                    mView.showAnswers(pair.second);
+                    if (!pair.second.isEmpty()) {
+                        mView.showAnswers(pair.second);
+                    }
                 }, throwable -> {
                     mView.showQuestion(mQuestion);
                     if (!mIsErrorShown) {

@@ -17,7 +17,6 @@
     <string name="page_2_text">Stack Overflow is a question and answer site for professional and enthusiast programmers</string>
     <string name="page_3_text">Whether you want to sit back and let us show you recommendations or search yourself,
         we make it easy to find your dream job</string>
-    <string name="retry">Retry</string>
     <string name="refresh">Refresh</string>
     <string name="profile">Profile</string>
     <string name="my_answers">My answers</string>
@@ -38,5 +37,4 @@
     <string name="answers_count">Answers: %1$d</string>
     <string name="answers">Answers</string>
     <string name="no_answers">No answers found</string>
-    <string name="cd_home">Home button</string>
 </resources>

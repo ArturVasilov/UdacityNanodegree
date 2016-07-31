@@ -4,6 +4,7 @@ import android.app.Application;
 import android.support.annotation.NonNull;
 
 import com.crashlytics.android.Crashlytics;
+import com.google.firebase.iid.FirebaseInstanceId;
 
 import io.fabric.sdk.android.Fabric;
 import ru.arturvasilov.stackexchangeclient.api.RepositoryProvider;
@@ -12,6 +13,7 @@ import ru.arturvasilov.stackexchangeclient.app.analytics.EventTags;
 import ru.arturvasilov.stackexchangeclient.data.keyvalue.HawkStorage;
 import ru.arturvasilov.stackexchangeclient.sqlite.SQLite;
 import ru.arturvasilov.stackexchangeclient.utils.PicassoUtils;
+import ru.arturvasilov.stackexchangeclient.utils.TextUtils;
 
 /**
  * @author Artur Vasilov
@@ -34,6 +36,11 @@ public class AppDelegate extends Application {
         RepositoryProvider.setKeyValueStorage(new HawkStorage(this));
 
         PicassoUtils.setup(this);
+
+        String token = FirebaseInstanceId.getInstance().getToken();
+        if (!TextUtils.isEmpty(token)) {
+            Analytics.setFcmRegistrationKey(token);
+        }
     }
 
     @NonNull

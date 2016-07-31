@@ -25,6 +25,7 @@ public class Analytics {
     private static final String ANDROID_DEVICE_MODEL_KEY = "android_device_model";
     private static final String USER_ID_KEY = "user_id";
     private static final String USER_NAME_KEY = "user_key";
+    private static final String FCM_REGISTRATION_KEY = "fcm_registration_key";
 
     private static FirebaseAnalytics sAnalytics;
 
@@ -39,6 +40,10 @@ public class Analytics {
     public static void setCurrentUser(@NonNull User currentUser) {
         sAnalytics.setUserProperty(USER_ID_KEY, String.valueOf(currentUser.getUserId()));
         sAnalytics.setUserProperty(USER_NAME_KEY, currentUser.getName());
+    }
+
+    public static void setFcmRegistrationKey(@NonNull String token) {
+        sAnalytics.setUserProperty(FCM_REGISTRATION_KEY, token);
     }
 
     @NonNull

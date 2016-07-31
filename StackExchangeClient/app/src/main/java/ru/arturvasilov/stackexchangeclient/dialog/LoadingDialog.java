@@ -6,7 +6,6 @@ import android.os.Handler;
 import android.os.Looper;
 import android.support.annotation.NonNull;
 import android.support.v4.app.DialogFragment;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AlertDialog;
 
@@ -27,11 +26,6 @@ public class LoadingDialog extends DialogFragment {
     @NonNull
     public static LoadingView view(@NonNull FragmentManager fm) {
         return new LoadingViewImpl(fm);
-    }
-
-    @NonNull
-    public static LoadingView view(@NonNull Fragment fragment) {
-        return new LoadingViewImpl(fragment);
     }
 
     @NonNull
@@ -78,27 +72,16 @@ public class LoadingDialog extends DialogFragment {
         private final AtomicBoolean mWaitForHide = new AtomicBoolean();
 
         private final FragmentManager mFm;
-        private final Fragment mFragment;
 
         public LoadingViewImpl(@NonNull FragmentManager fm) {
             mFm = fm;
-            mFragment = null;
-        }
-
-        public LoadingViewImpl(@NonNull Fragment fragment) {
-            mFm = null;
-            mFragment = fragment;
         }
 
         @Override
         public void showLoadingIndicator() {
             if (mWaitForHide.compareAndSet(false, true)) {
                 //noinspection ConstantConditions
-                new LoadingDialog().show(
-                        mFragment != null
-                                ? mFragment.getFragmentManager()
-                                : mFm,
-                        LoadingDialog.class.getName());
+                new LoadingDialog().show(mFm, LoadingDialog.class.getName());
             }
         }
 
@@ -106,11 +89,7 @@ public class LoadingDialog extends DialogFragment {
         public void hideLoadingIndicator() {
             if (mWaitForHide.compareAndSet(true, false)) {
                 //noinspection ConstantConditions
-                HANDLER.post(new HideTask(
-                        mFragment != null
-                                ? mFragment.getFragmentManager()
-                                : mFm)
-                );
+                HANDLER.post(new HideTask(mFm));
             }
         }
     }

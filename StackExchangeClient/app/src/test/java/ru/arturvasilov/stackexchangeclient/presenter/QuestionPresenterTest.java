@@ -30,6 +30,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyBoolean;
 import static org.mockito.ArgumentMatchers.anyListOf;
 import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.never;
 
 /**
  * @author Artur Vasilov
@@ -119,7 +120,9 @@ public class QuestionPresenterTest {
 
     @Test
     public void testQuestionShownEvenWithError() throws Exception {
-
+        mPresenter.init(null);
+        Mockito.verify(mView).showQuestion(any(Question.class));
+        Mockito.verify(mView, never()).showAnswers(anyListOf(Answer.class));
     }
 
     @After
