@@ -8,6 +8,9 @@ import android.support.annotation.StringDef;
 
 import com.google.firebase.analytics.FirebaseAnalytics;
 
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+
 import ru.arturvasilov.stackexchangeclient.BuildConfig;
 import ru.arturvasilov.stackexchangeclient.model.content.User;
 
@@ -63,11 +66,23 @@ public class Analytics {
 
     }
 
-    @StringDef({EventTags.APP_STARTED})
+    @Retention(RetentionPolicy.SOURCE)
+    @StringDef({EventTags.APP_STARTED, EventTags.SCREEN_AUTH, EventTags.AUTH_BUTTON_CLICKED, EventTags.SUCCESS_AUTH,
+            EventTags.SCREEN_WALKTHROUGH, EventTags.WALKTHROUGH_BUTTON_CLICK, EventTags.WALKTHROUGH_SWIPE,
+            EventTags.WALKTHROUGH_SELECTED_BENEFIT, EventTags.WALKTHROUGH_SPLASH, EventTags.WALKTHROUGH_ERROR,
+            EventTags.SCREEN_MAIN, EventTags.MAIN_TABS, EventTags.MAIN_DRAWER_ITEM_SELECTED,
+            EventTags.SCREEN_PROFILE, EventTags.PROFILE_BADGE_CLICKED,
+            EventTags.SCREEN_ANSWERS, EventTags.ANSWER_CLICKED,
+            EventTags.SCREEN_TAGS, EventTags.TAGS_ADD_FAVOURITE, EventTags.TAGS_REMOVE_FAVOURITE,
+            EventTags.SCREEN_QUESTION,
+            EventTags.PUSH_NOTIFICATION})
     private @interface EventTag {
     }
 
-    @StringDef({})
+    @Retention(RetentionPolicy.SOURCE)
+    @StringDef({EventKeys.WALKTHROUGH_BENEFIT_POSITION, EventKeys.MAIN_TAGS, EventKeys.MAIN_DRAWER_ITEM,
+            EventKeys.PROFILE_USER, EventKeys.PROFILE_BADGE, EventKeys.ANSWER_USER, EventKeys.ANSWER_CLICK,
+            EventKeys.TAG, EventKeys.QUESTION_ID, EventKeys.NOTIFICATION_ID, EventKeys.NOTIFICATION_SHOWN})
     private @interface EventKey {
     }
 

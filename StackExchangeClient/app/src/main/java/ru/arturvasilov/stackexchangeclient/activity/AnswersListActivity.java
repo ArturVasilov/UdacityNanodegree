@@ -18,6 +18,10 @@ import java.util.List;
 import ru.arturvasilov.stackexchangeclient.R;
 import ru.arturvasilov.stackexchangeclient.adapter.AnswersAdapter;
 import ru.arturvasilov.stackexchangeclient.app.Env;
+import ru.arturvasilov.stackexchangeclient.app.GsonHolder;
+import ru.arturvasilov.stackexchangeclient.app.analytics.Analytics;
+import ru.arturvasilov.stackexchangeclient.app.analytics.EventKeys;
+import ru.arturvasilov.stackexchangeclient.app.analytics.EventTags;
 import ru.arturvasilov.stackexchangeclient.dialog.LoadingDialog;
 import ru.arturvasilov.stackexchangeclient.model.content.Answer;
 import ru.arturvasilov.stackexchangeclient.model.content.User;
@@ -64,6 +68,9 @@ public class AnswersListActivity extends AppCompatActivity implements AnswersLis
         mEmptyView = Views.findById(this, R.id.empty);
 
         User user = (User) getIntent().getSerializableExtra(USER_KEY);
+        Analytics.buildEvent()
+                .putString(EventKeys.ANSWER_USER, GsonHolder.getGson().toJson(user))
+                .log(EventTags.SCREEN_ANSWERS);
         mPresenter = new AnswersListPresenter(this, getLoaderManager(), this,
                 LoadingDialog.view(getSupportFragmentManager()),
                 RxError.view(this, getSupportFragmentManager()),
@@ -95,6 +102,9 @@ public class AnswersListActivity extends AppCompatActivity implements AnswersLis
 
     @Override
     public void onItemClick(@NonNull Answer answer) {
+        Analytics.buildEvent()
+                .putString(EventKeys.ANSWER_CLICK, String.valueOf(answer.getQuestionId() + ":" + answer.getAnswerId()))
+                .log(EventTags.ANSWER_CLICKED);
         mPresenter.onItemClick(answer);
     }
 

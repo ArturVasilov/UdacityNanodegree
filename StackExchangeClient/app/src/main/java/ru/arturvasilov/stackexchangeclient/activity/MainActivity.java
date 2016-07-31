@@ -28,6 +28,10 @@ import java.util.List;
 import ru.arturvasilov.stackexchangeclient.R;
 import ru.arturvasilov.stackexchangeclient.adapter.MainScreenAdapter;
 import ru.arturvasilov.stackexchangeclient.app.Env;
+import ru.arturvasilov.stackexchangeclient.app.GsonHolder;
+import ru.arturvasilov.stackexchangeclient.app.analytics.Analytics;
+import ru.arturvasilov.stackexchangeclient.app.analytics.EventKeys;
+import ru.arturvasilov.stackexchangeclient.app.analytics.EventTags;
 import ru.arturvasilov.stackexchangeclient.model.content.User;
 import ru.arturvasilov.stackexchangeclient.presenter.MainPresenter;
 import ru.arturvasilov.stackexchangeclient.utils.PicassoUtils;
@@ -58,6 +62,7 @@ public class MainActivity extends AppCompatActivity implements MainView,
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ac_main);
+        Analytics.buildEvent().log(EventTags.SCREEN_MAIN);
         Toolbar toolbar = Views.findById(this, R.id.toolbar);
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
@@ -71,7 +76,12 @@ public class MainActivity extends AppCompatActivity implements MainView,
         mNavigationView.setNavigationItemSelectedListener(this);
         View headerView = mNavigationView.getHeaderView(0);
         mHeaderImage = Views.findById(headerView, R.id.headerImage);
-        mHeaderImage.setOnClickListener(view -> mPresenter.onProfileSelected());
+        mHeaderImage.setOnClickListener(view -> {
+            Analytics.buildEvent()
+                    .putString(EventKeys.MAIN_DRAWER_ITEM, "Image")
+                    .log(EventTags.MAIN_DRAWER_ITEM_SELECTED);
+            mPresenter.onProfileSelected();
+        });
         mHeaderText = Views.findById(headerView, R.id.headerText);
 
         mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar, 0, 0);
@@ -132,16 +142,23 @@ public class MainActivity extends AppCompatActivity implements MainView,
 
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
+        String eventItem = "";
         if (item.getItemId() == R.id.profile) {
+            eventItem = "Profile";
             mPresenter.onProfileSelected();
         } else if (item.getItemId() == R.id.my_answers) {
+            eventItem = "My answers";
             mPresenter.onMyAnswersSelected();
         } else if (item.getItemId() == R.id.tags) {
+            eventItem = "Tags";
             startActivityForResult(new Intent(this, TagsActivity.class), TAGS_ACTIVITY_REQUEST_CODE);
         } else if (item.getItemId() == R.id.exit) {
+            eventItem = "Exit";
             Env.logout();
         }
-
+        Analytics.buildEvent()
+                .putString(EventKeys.MAIN_DRAWER_ITEM, eventItem)
+                .log(EventTags.MAIN_DRAWER_ITEM_SELECTED);
         mDrawerLayout.closeDrawer(mNavigationView);
         return false;
     }
@@ -187,6 +204,9 @@ public class MainActivity extends AppCompatActivity implements MainView,
 
     @Override
     public void showTags(@NonNull List<String> tags) {
+        Analytics.buildEvent()
+                .putString(EventKeys.MAIN_TAGS, GsonHolder.getGson().toJson(tags))
+                .log(EventTags.MAIN_TABS);
         PagerAdapter adapter = new MainScreenAdapter(getSupportFragmentManager(), tags);
         mPager.setAdapter(adapter);
     }

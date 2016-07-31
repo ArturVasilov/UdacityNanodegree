@@ -13,6 +13,9 @@ import android.widget.TextView;
 import me.relex.circleindicator.CircleIndicator;
 import ru.arturvasilov.stackexchangeclient.R;
 import ru.arturvasilov.stackexchangeclient.adapter.WalkthroughAdapter;
+import ru.arturvasilov.stackexchangeclient.app.analytics.Analytics;
+import ru.arturvasilov.stackexchangeclient.app.analytics.EventKeys;
+import ru.arturvasilov.stackexchangeclient.app.analytics.EventTags;
 import ru.arturvasilov.stackexchangeclient.presenter.WalkthroughPresenter;
 import ru.arturvasilov.stackexchangeclient.utils.Views;
 import ru.arturvasilov.stackexchangeclient.view.WalkthroughView;
@@ -47,6 +50,8 @@ public class WalkthroughActivity extends AppCompatActivity implements Walkthroug
 
         setContentView(R.layout.ac_walkthrough);
 
+        Analytics.buildEvent().log(EventTags.SCREEN_WALKTHROUGH);
+
         mMainLayout = Views.findById(this, R.id.mainLayout);
         mActionButton = Views.findById(this, R.id.walkthroughActionButton);
         mActionButton.setOnClickListener(this);
@@ -79,6 +84,7 @@ public class WalkthroughActivity extends AppCompatActivity implements Walkthroug
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.walkthroughActionButton) {
+            Analytics.buildEvent().log(EventTags.WALKTHROUGH_BUTTON_CLICK);
             mPresenter.onActionButtonClick();
         } else if (view.getId() == R.id.retryButton) {
             mPresenter.onRetryButtonClick();
@@ -87,6 +93,7 @@ public class WalkthroughActivity extends AppCompatActivity implements Walkthroug
 
     @Override
     public void onPageChanged(int selectedPage, boolean fromUser) {
+        Analytics.buildEvent().log(EventTags.WALKTHROUGH_SWIPE);
         mPresenter.onBenefitSelected(fromUser, selectedPage);
     }
 
@@ -95,6 +102,9 @@ public class WalkthroughActivity extends AppCompatActivity implements Walkthroug
         if (index == mPager.getCurrentItem()) {
             return;
         }
+        Analytics.buildEvent()
+                .putString(EventKeys.WALKTHROUGH_BENEFIT_POSITION, String.valueOf(index))
+                .log(EventTags.WALKTHROUGH_SELECTED_BENEFIT);
         if (index == mPager.getCurrentItem() - 1) {
             mPager.smoothScrollNext(getResources().getInteger(android.R.integer.config_shortAnimTime));
         } else {
@@ -109,6 +119,7 @@ public class WalkthroughActivity extends AppCompatActivity implements Walkthroug
 
     @Override
     public void showLoadingSplash() {
+        Analytics.buildEvent().log(EventTags.WALKTHROUGH_SPLASH);
         mMainLayout.setVisibility(View.GONE);
         mLoadingLayout.setVisibility(View.VISIBLE);
         mAnimationView.startAnimation();
@@ -117,6 +128,7 @@ public class WalkthroughActivity extends AppCompatActivity implements Walkthroug
 
     @Override
     public void showError() {
+        Analytics.buildEvent().log(EventTags.WALKTHROUGH_ERROR);
         mMainLayout.setVisibility(View.GONE);
         mLoadingLayout.setVisibility(View.INVISIBLE);
         mAnimationView.stopAnimation();

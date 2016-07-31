@@ -6,6 +6,9 @@ import android.util.AttributeSet;
 import android.widget.Button;
 
 import ru.arturvasilov.stackexchangeclient.app.Env;
+import ru.arturvasilov.stackexchangeclient.app.analytics.Analytics;
+import ru.arturvasilov.stackexchangeclient.app.analytics.EventKeys;
+import ru.arturvasilov.stackexchangeclient.app.analytics.EventTags;
 import ru.arturvasilov.stackexchangeclient.model.content.Badge;
 
 /**
@@ -27,7 +30,12 @@ public class BadgeButton extends Button {
 
     public void setBadge(@NonNull Badge badge) {
         setText(badge.getName());
-        setOnClickListener(view -> Env.browseUrl(getContext(), badge.getLink()));
+        setOnClickListener(view -> {
+            Analytics.buildEvent()
+                    .putString(EventKeys.PROFILE_BADGE, badge.getName())
+                    .log(EventTags.PROFILE_BADGE_CLICKED);
+            Env.browseUrl(getContext(), badge.getLink());
+        });
     }
 
 }

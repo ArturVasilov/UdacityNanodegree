@@ -28,6 +28,10 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 import ru.arturvasilov.stackexchangeclient.R;
+import ru.arturvasilov.stackexchangeclient.app.GsonHolder;
+import ru.arturvasilov.stackexchangeclient.app.analytics.Analytics;
+import ru.arturvasilov.stackexchangeclient.app.analytics.EventKeys;
+import ru.arturvasilov.stackexchangeclient.app.analytics.EventTags;
 import ru.arturvasilov.stackexchangeclient.dialog.LoadingDialog;
 import ru.arturvasilov.stackexchangeclient.model.content.Badge;
 import ru.arturvasilov.stackexchangeclient.model.content.User;
@@ -95,6 +99,9 @@ public class ProfileActivity extends AppCompatActivity implements ProfileView {
         mTagsLayout = Views.findById(this, R.id.tagsLayout);
 
         User user = (User) getIntent().getSerializableExtra(USER_KEY);
+        Analytics.buildEvent()
+                .putString(EventKeys.PROFILE_USER, GsonHolder.getGson().toJson(user))
+                .log(EventTags.SCREEN_PROFILE);
         mPresenter = new ProfilePresenter(this, getLoaderManager(), this,
                 LoadingDialog.view(getSupportFragmentManager()),
                 RxError.view(this, getSupportFragmentManager()),

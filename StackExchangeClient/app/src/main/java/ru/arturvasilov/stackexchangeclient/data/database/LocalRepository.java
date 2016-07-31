@@ -6,6 +6,9 @@ import android.support.annotation.NonNull;
 import java.util.List;
 
 import ru.arturvasilov.stackexchangeclient.api.RepositoryProvider;
+import ru.arturvasilov.stackexchangeclient.app.analytics.Analytics;
+import ru.arturvasilov.stackexchangeclient.app.analytics.EventKeys;
+import ru.arturvasilov.stackexchangeclient.app.analytics.EventTags;
 import ru.arturvasilov.stackexchangeclient.model.content.Question;
 import ru.arturvasilov.stackexchangeclient.model.content.Tag;
 import ru.arturvasilov.stackexchangeclient.model.content.User;
@@ -64,9 +67,15 @@ public class LocalRepository {
                     .where(TagTable.TAG + "=?")
                     .whereArgs(new String[]{tag.getName()})
                     .execute();
+            Analytics.buildEvent()
+                    .putString(EventKeys.TAG, tag.getName())
+                    .log(EventTags.TAGS_REMOVE_FAVOURITE);
             return false;
         } else {
             SQLite.get().insert(TagTable.TABLE).insert(tag.getName());
+            Analytics.buildEvent()
+                    .putString(EventKeys.TAG, tag.getName())
+                    .log(EventTags.TAGS_ADD_FAVOURITE);
             return true;
         }
     }

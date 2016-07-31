@@ -22,6 +22,8 @@ import java.util.List;
 
 import ru.arturvasilov.stackexchangeclient.R;
 import ru.arturvasilov.stackexchangeclient.adapter.TagsAdapter;
+import ru.arturvasilov.stackexchangeclient.app.analytics.Analytics;
+import ru.arturvasilov.stackexchangeclient.app.analytics.EventTags;
 import ru.arturvasilov.stackexchangeclient.model.content.Tag;
 import ru.arturvasilov.stackexchangeclient.presenter.TagsPresenter;
 import ru.arturvasilov.stackexchangeclient.utils.Views;
@@ -53,6 +55,7 @@ public class TagsActivity extends AppCompatActivity implements TagsView, Loading
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
+        Analytics.buildEvent().log(EventTags.SCREEN_TAGS);
         mPresenter = new TagsPresenter(this, getLoaderManager(), this, this);
 
         mSearchEdit = Views.findById(this, R.id.searchEdit);

@@ -14,6 +14,9 @@ import java.util.List;
 
 import ru.arturvasilov.stackexchangeclient.R;
 import ru.arturvasilov.stackexchangeclient.adapter.QuestionAdapter;
+import ru.arturvasilov.stackexchangeclient.app.analytics.Analytics;
+import ru.arturvasilov.stackexchangeclient.app.analytics.EventKeys;
+import ru.arturvasilov.stackexchangeclient.app.analytics.EventTags;
 import ru.arturvasilov.stackexchangeclient.dialog.LoadingDialog;
 import ru.arturvasilov.stackexchangeclient.model.content.Answer;
 import ru.arturvasilov.stackexchangeclient.model.content.Question;
@@ -56,6 +59,9 @@ public class QuestionActivity extends AppCompatActivity implements QuestionView 
         recyclerView.setAdapter(mAdapter);
 
         Question question = (Question) getIntent().getSerializableExtra(QUESTION_KEY);
+        Analytics.buildEvent()
+                .putString(EventKeys.QUESTION_ID, String.valueOf(question.getQuestionId()))
+                .log(EventTags.SCREEN_QUESTION);
         mPresenter = new QuestionPresenter(this, getLoaderManager(), this,
                 LoadingDialog.view(getSupportFragmentManager()),
                 RxError.view(this, getSupportFragmentManager()),
