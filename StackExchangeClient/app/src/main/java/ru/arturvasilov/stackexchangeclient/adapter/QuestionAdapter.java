@@ -63,6 +63,7 @@ public class QuestionAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         } else {
             ((AnswerViewHolder) holder).bind(mAnswers.get(position - 1), position == mAnswers.size(), -1);
         }
+        holder.itemView.setClickable(false);
     }
 
     @Override

@@ -7,7 +7,7 @@ import android.support.annotation.NonNull;
  */
 public class TestContentClass {
 
-    private int mId;
+    private final int mId;
     private String mText;
 
     public TestContentClass(int id, @NonNull String text) {

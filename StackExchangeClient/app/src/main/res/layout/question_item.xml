@@ -57,6 +57,7 @@
             android:layout_marginTop="@dimen/margin_small"
             android:fontFamily="sans-serif-light"
             android:textColor="@color/secondary_text"
+            android:textColorLink="@color/blue"
             android:textSize="@dimen/text.15"
             android:visibility="gone"/>
 

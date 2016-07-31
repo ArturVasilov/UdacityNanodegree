@@ -31,6 +31,8 @@ public class QuestionActivity extends AppCompatActivity implements QuestionView 
 
     private QuestionAdapter mAdapter;
 
+    private QuestionPresenter mPresenter;
+
     public static void start(@NonNull Activity activity, @NonNull Question question) {
         Intent intent = new Intent(activity, QuestionActivity.class);
         intent.putExtra(QUESTION_KEY, question);
@@ -54,11 +56,11 @@ public class QuestionActivity extends AppCompatActivity implements QuestionView 
         recyclerView.setAdapter(mAdapter);
 
         Question question = (Question) getIntent().getSerializableExtra(QUESTION_KEY);
-        QuestionPresenter presenter = new QuestionPresenter(this, getLoaderManager(), this,
+        mPresenter = new QuestionPresenter(this, getLoaderManager(), this,
                 LoadingDialog.view(getSupportFragmentManager()),
                 RxError.view(this, getSupportFragmentManager()),
                 question);
-        presenter.init();
+        mPresenter.init(savedInstanceState);
     }
 
     @Override
@@ -70,6 +72,12 @@ public class QuestionActivity extends AppCompatActivity implements QuestionView 
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        mPresenter.onSaveInstanceState(outState);
     }
 
     @Override

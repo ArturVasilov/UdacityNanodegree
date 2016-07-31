@@ -7,7 +7,6 @@ import android.support.annotation.NonNull;
 import java.util.ArrayList;
 import java.util.List;
 
-import ru.arturvasilov.stackexchangeclient.R;
 import ru.arturvasilov.stackexchangeclient.api.RepositoryProvider;
 import ru.arturvasilov.stackexchangeclient.model.content.Question;
 import ru.arturvasilov.stackexchangeclient.rx.StubAction;
@@ -45,13 +44,13 @@ public class QuestionsListPresenter {
                 .questions(mTag)
                 .subscribe(this::handleQuestions, this::handleError);
 
-        RxLoader.create(mContext, mLm, R.id.questions_loader_id,
+        RxLoader.create(mContext, mLm, mTag.hashCode(),
                 RepositoryProvider.provideRemoteRepository().questions(mTag))
                 .init(this::handleQuestions, this::handleError);
     }
 
     public void refresh() {
-        RxLoader.create(mContext, mLm, R.id.questions_loader_id,
+        RxLoader.create(mContext, mLm, mTag.hashCode(),
                 RepositoryProvider.provideRemoteRepository().questions(mTag))
                 .restart(questions -> {
                     handleQuestions(questions);
@@ -62,7 +61,7 @@ public class QuestionsListPresenter {
     public void onScrolled(int lastVisibleItemPosition) {
         if (mQuestions.size() > VISIBILITY_MARGIN && mQuestions.size() - lastVisibleItemPosition <= VISIBILITY_MARGIN) {
             long toDate = mQuestions.get(mQuestions.size() - 1).getCreationDate() - 1;
-            RxLoader.create(mContext, mLm, R.id.questions_more_loader_id,
+            RxLoader.create(mContext, mLm, mTag.hashCode(),
                     RepositoryProvider.provideRemoteRepository().moreQuestions(mTag, toDate))
                     .restart(questions -> {
                         mQuestions.addAll(questions);
