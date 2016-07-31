@@ -7,33 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c5c65a10-9d2f-4208-aff9-b8a542d57c27" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/java/ru/arturvasilov/stackexchangeclient/data/database/NotificationTable.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/java/ru/arturvasilov/stackexchangeclient/service/NotificationsRemoteViewService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/java/ru/arturvasilov/stackexchangeclient/service/NotificationsWidgetProvider.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/java/ru/arturvasilov/stackexchangeclient/service/UpdateWidgetService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/res/drawable/notification_not_read.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/res/drawable/notification_read.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/res/layout/widget_layout.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/res/layout/widget_notification_item.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/res/layout/widget_notification_item_unread.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/res/xml/widget_info.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/java/ru/arturvasilov/stackexchangeclient/activity/AnswersListActivity.java" afterPath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/java/ru/arturvasilov/stackexchangeclient/activity/AnswersListActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/java/ru/arturvasilov/stackexchangeclient/activity/ProfileActivity.java" afterPath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/java/ru/arturvasilov/stackexchangeclient/activity/ProfileActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/java/ru/arturvasilov/stackexchangeclient/api/RemoteRepository.java" afterPath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/java/ru/arturvasilov/stackexchangeclient/api/RemoteRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/java/ru/arturvasilov/stackexchangeclient/api/service/NotificationService.java" afterPath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/java/ru/arturvasilov/stackexchangeclient/api/service/NotificationService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/java/ru/arturvasilov/stackexchangeclient/data/database/AnswerTable.java" afterPath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/java/ru/arturvasilov/stackexchangeclient/data/database/AnswerTable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/java/ru/arturvasilov/stackexchangeclient/data/database/QuestionTable.java" afterPath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/java/ru/arturvasilov/stackexchangeclient/data/database/QuestionTable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/java/ru/arturvasilov/stackexchangeclient/data/database/SQLiteProvider.java" afterPath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/java/ru/arturvasilov/stackexchangeclient/data/database/SQLiteProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/java/ru/arturvasilov/stackexchangeclient/data/database/TagTable.java" afterPath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/java/ru/arturvasilov/stackexchangeclient/data/database/TagTable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/java/ru/arturvasilov/stackexchangeclient/data/database/UserTable.java" afterPath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/java/ru/arturvasilov/stackexchangeclient/data/database/UserTable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/res/values/dimens.xml" afterPath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/res/values/dimens.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/res/values/integers.xml" afterPath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/res/values/integers.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/java/ru/arturvasilov/stackexchangeclient/adapter/viewholder/AnswerViewHolder.java" afterPath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/java/ru/arturvasilov/stackexchangeclient/adapter/viewholder/AnswerViewHolder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/java/ru/arturvasilov/stackexchangeclient/adapter/viewholder/QuestionItemViewHolder.java" afterPath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/java/ru/arturvasilov/stackexchangeclient/adapter/viewholder/QuestionItemViewHolder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/java/ru/arturvasilov/stackexchangeclient/service/UpdateWidgetService.java" afterPath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/java/ru/arturvasilov/stackexchangeclient/service/UpdateWidgetService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/../StackExchangeClient/app/src/main/res/values/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../StackExchangeClient/app/src/test/java/ru/arturvasilov/stackexchangeclient/model/content/QuestionTest.java" afterPath="$PROJECT_DIR$/../StackExchangeClient/app/src/test/java/ru/arturvasilov/stackexchangeclient/model/content/QuestionTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../StackExchangeClient/sqlite/src/main/java/ru/arturvasilov/stackexchangeclient/sqlite/table/BaseTable.java" afterPath="$PROJECT_DIR$/../StackExchangeClient/sqlite/src/main/java/ru/arturvasilov/stackexchangeclient/sqlite/table/BaseTable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="StockHawk.iws" />
     <ignored path=".idea/workspace.xml" />

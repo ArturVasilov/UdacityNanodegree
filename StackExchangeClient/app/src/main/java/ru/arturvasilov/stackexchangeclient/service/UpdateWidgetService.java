@@ -47,7 +47,7 @@ public class UpdateWidgetService extends IntentService {
     }
 
     @NonNull
-    public Action1<List<Notification>> handleNotifications(int[] appWidgetIds) {
+    private Action1<List<Notification>> handleNotifications(int[] appWidgetIds) {
         return notifications -> {
             AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(this);
             for (int widgetId : appWidgetIds) {
