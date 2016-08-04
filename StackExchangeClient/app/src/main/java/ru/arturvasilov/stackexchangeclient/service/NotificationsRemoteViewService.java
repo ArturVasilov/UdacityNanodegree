@@ -13,12 +13,13 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 
+import ru.arturvasilov.sqlite.core.SQLite;
+import ru.arturvasilov.sqlite.core.Where;
 import ru.arturvasilov.stackexchangeclient.R;
 import ru.arturvasilov.stackexchangeclient.data.database.NotificationTable;
 import ru.arturvasilov.stackexchangeclient.data.database.UserTable;
 import ru.arturvasilov.stackexchangeclient.model.content.Notification;
 import ru.arturvasilov.stackexchangeclient.model.content.User;
-import ru.arturvasilov.stackexchangeclient.sqlite.SQLite;
 import ru.arturvasilov.stackexchangeclient.utils.HtmlCompat;
 
 /**
@@ -39,9 +40,11 @@ public class NotificationsRemoteViewService extends RemoteViewsService {
 
         public NotificationsViewFactory() {
             mNotifications = new ArrayList<>();
-            User currentUser = SQLite.get().query(UserTable.TABLE).all().execute().get(0);
+            User currentUser = SQLite.get().queryObject(UserTable.TABLE, Where.create());
             mItemClickListenerIntent = new Intent(Intent.ACTION_VIEW);
-            mItemClickListenerIntent.setData(Uri.parse(currentUser.getLink()));
+            if (currentUser != null) {
+                mItemClickListenerIntent.setData(Uri.parse(currentUser.getLink()));
+            }
         }
 
         @Override
@@ -54,7 +57,7 @@ public class NotificationsRemoteViewService extends RemoteViewsService {
             final long identityToken = Binder.clearCallingIdentity();
 
             mNotifications.clear();
-            List<Notification> notifications = SQLite.get().query(NotificationTable.TABLE).all().execute();
+            List<Notification> notifications = SQLite.get().query(NotificationTable.TABLE, Where.create());
             mNotifications.addAll(notifications);
 
             Binder.restoreCallingIdentity(identityToken);

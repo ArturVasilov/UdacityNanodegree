@@ -2,9 +2,9 @@ package ru.arturvasilov.stackexchangeclient.data.database;
 
 import android.support.annotation.NonNull;
 
-import ru.arturvasilov.stackexchangeclient.sqlite.core.SQLiteConfig;
-import ru.arturvasilov.stackexchangeclient.sqlite.core.SQLiteContentProvider;
-import ru.arturvasilov.stackexchangeclient.sqlite.core.Schema;
+import ru.arturvasilov.sqlite.core.SQLiteConfig;
+import ru.arturvasilov.sqlite.core.SQLiteContentProvider;
+import ru.arturvasilov.sqlite.core.Schema;
 
 /**
  * @author Artur Vasilov

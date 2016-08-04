@@ -5,9 +5,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.annotation.NonNull;
 
-import ru.arturvasilov.stackexchangeclient.sqlite.table.BaseTable;
-import ru.arturvasilov.stackexchangeclient.sqlite.table.Table;
-import ru.arturvasilov.stackexchangeclient.sqlite.table.TableBuilder;
+import ru.arturvasilov.sqlite.core.BaseTable;
+import ru.arturvasilov.sqlite.core.Table;
+import ru.arturvasilov.sqlite.utils.TableBuilder;
 
 /**
  * @author Artur Vasilov
