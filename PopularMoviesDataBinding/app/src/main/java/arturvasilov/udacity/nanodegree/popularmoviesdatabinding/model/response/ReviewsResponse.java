@@ -4,6 +4,7 @@ import android.support.annotation.NonNull;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.model.content.Review;
@@ -18,6 +19,9 @@ public class ReviewsResponse {
 
     @NonNull
     public List<Review> getReviews() {
+        if (mReviews == null) {
+            mReviews = new ArrayList<>();
+        }
         return mReviews;
     }
 }

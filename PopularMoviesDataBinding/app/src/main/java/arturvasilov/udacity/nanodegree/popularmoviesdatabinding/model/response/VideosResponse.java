@@ -4,6 +4,7 @@ import android.support.annotation.NonNull;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import arturvasilov.udacity.nanodegree.popularmoviesdatabinding.model.content.Video;
@@ -18,6 +19,9 @@ public class VideosResponse {
 
     @NonNull
     public List<Video> getVideos() {
+        if (mVideos == null) {
+            return new ArrayList<>();
+        }
         return mVideos;
     }
 }
